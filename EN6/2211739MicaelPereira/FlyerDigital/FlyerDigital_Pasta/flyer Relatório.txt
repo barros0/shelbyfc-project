@@ -1,0 +1,284 @@
+Relatório de pacote
+
+-----------------------------------------------------------------------------
+Documento:
+Nome: flyer.ai
+Modo de cor: Cor CMYK
+Perfil de cor: Coated FOGRA39 (ISO 12647-2:2004)
+Unidades da régua: centímetros
+Dimensões da prancheta: 38,1 cm x 38,1 cm
+Mostrar imagens no modo de contorno: DESATIVADO
+Realçar fontes substituídas: DESATIVADO
+Realçar glifos substituídos: DESATIVADO
+Preservar capacidade de edição do texto
+Simular papel colorido: DESATIVADO
+
+-----------------------------------------------------------------------------
+Objetos de cor especial:
+
+-----------------------------------------------------------------------------
+Fontes ausentes:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes protegidas que não foram empacotadas:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes:
+Franklin Gothic Heavy (OTF)
+Myriad Pro (OTF)
+Peach Days (TrueType)
+PaybAck (TrueType)
+Stable (TrueType)
+
+-----------------------------------------------------------------------------
+Fontes incorporadas:
+NENHUM
+
+-----------------------------------------------------------------------------
+Vínculos ausentes:
+NENHUM
+
+-----------------------------------------------------------------------------
+Imagens vinculadas:
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\1 - pen usb\sem tampa\3-pens-usb.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 37204K, 3500 por 2177 pixels
+Dimensões: 1062,159 por 660,663 pontos 
+Resolução: 237,253 por 237,253 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,557 por 66,792 pontos 
+Resolução: 553,875 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,557 por 66,792 pontos 
+Resolução: 553,875 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\9 - copo canetas\copo-canetas-preto-frente-e-verso-ok.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 19531K, 2000 por 2000 pixels
+Dimensões: 739,121 por 739,121 pontos 
+Resolução: 194,826 por 194,826 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 116,241 por 116,241 pontos 
+Resolução: 317,134 por 317,134 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,403 por 66,792 pontos 
+Resolução: 555,16 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\4 - calendario\3x-calendarios---vermelhos.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 8239K, 1500 por 1125 pixels
+Dimensões: 1023,367 por 767,525 pontos 
+Resolução: 105,534 por 105,534 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,602 por 66,792 pontos 
+Resolução: 553,494 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\6-mochila\mochila-preto.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 53393K, 4050 por 2700 pixels
+Dimensões: 1265,424 por 843,616 pontos 
+Resolução: 230,437 por 230,437 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\socio.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 1280K, 512 por 512 pixels
+Dimensões: 258,051 por 258,051 pontos 
+Resolução: 142,856 por 142,856 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\donatebox.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 110,033 por 110,033 pontos 
+Resolução: 335,027 por 335,027 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\doar.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 1280K, 512 por 512 pixels
+Dimensões: 110,033 por 110,033 pontos 
+Resolução: 335,027 por 335,027 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\socio.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 1280K, 512 por 512 pixels
+Dimensões: 122,563 por 122,563 pontos 
+Resolução: 300,775 por 300,775 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,792 por 66,792 pontos 
+Resolução: 551,923 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\chevron.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 7K, 45 por 33 pixels
+Dimensões: 33 por 45 pontos 
+Resolução: 98,182 por 52,8 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\chevron.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 7K, 45 por 33 pixels
+Dimensões: 33 por 45 pontos 
+Resolução: 98,182 por 52,8 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\chevron.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 7K, 45 por 33 pixels
+Dimensões: 33 por 45 pontos 
+Resolução: 98,182 por 52,8 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\chevron.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 7K, 45 por 33 pixels
+Dimensões: 33 por 45 pontos 
+Resolução: 98,182 por 52,8 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\chevron.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 7K, 45 por 33 pixels
+Dimensões: 33 por 45 pontos 
+Resolução: 98,182 por 52,8 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 49,343 por 50,115 pontos 
+Resolução: 747,099 por 735,589 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\swipe.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 121,016 por 121,016 pontos 
+Resolução: 304,622 por 304,622 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\6-mochila\mochila-preto.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 53393K, 4050 por 2700 pixels
+Dimensões: 594,484 por 396,323 pontos 
+Resolução: 490,509 por 490,509 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,792 por 66,792 pontos 
+Resolução: 551,923 por 551,923 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\1 - pen usb\sem tampa\3-pens-usb.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 37204K, 3500 por 2177 pixels
+Dimensões: 580,743 por 361,222 pontos 
+Resolução: 433,927 por 433,927 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\9 - copo canetas\copo-canetas-preto-frente-e-verso-ok.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 19531K, 2000 por 2000 pixels
+Dimensões: 425,693 por 425,693 pontos 
+Resolução: 338,272 por 338,272 pixels por polegada
+
+
+C:\Users\submi\Desktop\shelbyfc-project\EN4+EN5\2211739MicaelPereira\Produtos_2211739_MicaelPereira\6-mochila\mochila-preto.png
+Tipo: CMYK transparente
+Bits por pixel: 40
+Canais: 5
+Tamanho: 53393K, 4050 por 2700 pixels
+Dimensões: 506,439 por 337,626 pontos 
+Resolução: 575,784 por 575,784 pixels por polegada
+
+
+C:\Users\submi\Downloads\flyer digital\flyer digital\flyer_Pasta\Links\click.png
+Tipo: Escala de cinza transparente
+Bits por pixel: 16
+Canais: 2
+Tamanho: 512K, 512 por 512 pixels
+Dimensões: 66,792 por 66,792 pontos 
+Resolução: 551,923 por 551,923 pixels por polegada
