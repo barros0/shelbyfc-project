@@ -15,3 +15,16 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('index');
+
+
+
+Route::get('/login', [PageController::class, 'login'])->name('login');
+Route::get('/registar', [PageController::class, 'registar'])->name('registar');
+Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
+
+
+Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
+    /*Route::get('/', [PageController::class, 'noticias'])->name('index');
+*/
+});
+
