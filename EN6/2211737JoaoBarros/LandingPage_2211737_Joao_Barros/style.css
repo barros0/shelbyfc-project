@@ -140,11 +140,12 @@ nav {
     justify-content: space-between;
 }
 
-.produtos_texts p {
-    cursor: pointer;
+.produtos_texts a {
+    color: white;
+    text-decoration: none;
     padding: 10px;
-    border-bottom: 3px solid #FF5559;
-    border-top: 3px solid #FF5559;
+    border-bottom: 2px solid #ff5559;
+    border-top: 2px solid #ff5559;
 }
 
 .produtos_texts h1 {
