@@ -43,5 +43,20 @@ body{
 }
 
 .nav-conta .title{
+        color: white;
+}
+
+.form{
+
+}
+
+.form input{
+    border: 2px solid #e4e4e4;
+    background-color: #fbfbfb;
+    height: 35px;
+}
+
+.form label{
+    color: var(--preto);
 
 }

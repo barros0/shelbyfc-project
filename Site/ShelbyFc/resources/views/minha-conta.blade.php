@@ -53,6 +53,16 @@
 
     </nav>
 
+
+        <div class="form">
+
+            <div class="">
+                <label class="form-label" for="nome">Nome</label>
+                <input class="form-control" type="text" name="nome" id="nome">
+            </div>
+
+        </div>
+
     </div>
 </section>
 
