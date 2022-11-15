@@ -23,23 +23,40 @@ body{
     padding: 4px 8px 4px 8px;
 }
 
+/*fim css geral*/
 
+
+
+
+
+
+/*minha conta*/
 .logout{
-
+color: white;
 }
+
+.logout .fa{
+    color: var(--vermelho);
+}
+
 
 .nav-conta{
     background-color: var(--preto);
 }
 
 .nav-conta ul{
-
+list-style-type: none;
 }
 
 .nav-conta ul li{
-    color: white;
+    font-size: 20px;
     margin-top: 14px;
     margin-bottom: 14px;
+}
+
+.nav-conta ul li a{
+    color: white;
+    text-decoration: none !important;
 }
 
 .nav-conta .title{
