@@ -20,4 +20,8 @@ class PageController extends Controller
 
         return back();
     }
+
+    public function minha_conta(){
+        return view('minha-conta');
+    }
 }

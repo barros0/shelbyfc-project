@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Gafata&display=swap');
+
+:root{
+    --vermelho: #c92337;
+    --preto: #333333;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+body{
+    font-family: 'Gafata';
+}
+
+
+.btn{
+    border-top: 2px solid var(--vermelho);
+    border-bottom: 2px solid var(--vermelho);
+    color: var(--preto);
+    padding: 4px 8px 4px 8px;
+}
+
+
+.logout{
+
+}
+
+.nav-conta{
+    background-color: var(--preto);
+}
+
+.nav-conta ul{
+
+}
+
+.nav-conta ul li{
+    color: white;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.nav-conta .title{
+
+}

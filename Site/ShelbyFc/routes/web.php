@@ -19,6 +19,8 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 
 
 Route::get('/login', [PageController::class, 'login'])->name('login');
+Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
+
 Route::get('/registar', [PageController::class, 'registar'])->name('registar');
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
 
