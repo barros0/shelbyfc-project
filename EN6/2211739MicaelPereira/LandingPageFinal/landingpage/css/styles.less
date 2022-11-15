@@ -57,7 +57,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: @@vermelhos;
+    background: @vermelhos;
 }
 
 html {
@@ -74,7 +74,7 @@ body {
     background-color: white;
     font-family: 'stable';
     height: 100%;
-    cursor: url("../images/cursors/ball.png"), auto;
+    /*cursor: url("../images/cursors/ball.png"), auto;*/
 }
 
 button {
@@ -95,8 +95,32 @@ h6 {
 .logo {
     position: absolute;
     top: 25px;
-    left: 25px;
+    left: 95px;
     max-width: 160px;
+}
+
+.btn{
+    border-top: 2px solid @vermelho;
+    border-bottom: 2px solid @vermelho;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    color: @vermelho;
+    border-radius: 0px;
+    font-size: 22px;
+    transition-duration: 0.2s;
+    animation-duration: 0.2s;
+
+    &:hover {
+        border-top: 2px solid @cizento;
+        border-bottom: 2px solid @cizento;
+        border-left: none;
+        border-right: none;
+        color: @cizento;
+        border-color: @cizento;
+        transform: scale(1.2);
+    }
+
 }
 
 .menu-lateral {
@@ -148,7 +172,7 @@ h6 {
             width: 16px;
             background-color: none;
             border-radius: 50%;
-            border: 1px solid @@vermelhos;
+            border: 1px solid @vermelhos;
             animation-duration: 0.2s;
             margin-bottom: 3px;
             margin-top: 3px;
@@ -161,7 +185,7 @@ h6 {
                     width: 10px;
                     height: 10px;
                     border-radius: 50%;
-                    background: @@vermelhos;
+                    background: @vermelhos;
                     display: grid;
                     top: 50%;
                     margin: auto;
@@ -202,7 +226,28 @@ h6 {
     .frase-motivacional {
         margin-top: 30px;
         font-size: 30px;
+/*
+        overflow: hidden;
+        border-right: 4px solid @vermelho; 
+        white-space: nowrap; 
+        margin: 0 auto; 
+        letter-spacing: 2px;
+        animation: typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;*/
     }
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: @vermelho; }
+}
+    
 
     .header-links {
         position: absolute;
@@ -324,7 +369,7 @@ h6 {
             color: @azul;
 
             &:hover {
-                color: @@vermelhos;
+                color: @vermelhos;
             }
         }
     }
@@ -336,7 +381,7 @@ h6 {
     }
 
     .bt-sub {
-        background-color: @@vermelhos;
+        background-color: @vermelhos;
         border-radius: 20px;
         color: white;
         padding: 8px;
@@ -359,21 +404,21 @@ h6 {
             .fa {
                 margin: 10px 12px 10px 7px;
                 font-size: 33px;
-                color: @@vermelhos;
+                color: @vermelhos;
             }
         }
 
 
 
         label {
-            border-radius: 25px;
-            background-color: @@vermelhos;
-            font-size: 25px;
+            border-radius: 14px;
+            background-color: @vermelhos;
+            font-size: 20px;
             color: white;
             position: absolute;
             z-index: 2;
             height: 50px;
-            padding: 5px 12px 0px 50px;
+            padding: 10px 18px 0px 53px;
 
             .icon {
                 background-color: white;
@@ -387,9 +432,10 @@ h6 {
             width: calc(100% - 105px);
             margin-left: 105px;
             position: relative;
-            border: 2px solid @@vermelhos;
-            height: 50px;
-            border-radius: 25px;
+            border: 2px solid @cizento;
+            height: 45px;
+            border-radius: 14px;
+            margin-top: 2.5px;
             padding: 0px 10px 0px 45px;
         }
 
@@ -426,7 +472,7 @@ h6 {
 }
 
 .img-limit {
-    max-width: 400px;
+    max-width: 450px;
 }
 
 .img-limit-s {
@@ -442,6 +488,8 @@ h6 {
     }
 
     li {
+        margin-top: 14px;
+        margin-bottom: 14px;
         font-size: 22px;
         list-style-type: none;
         color: @vermelho;
@@ -450,8 +498,8 @@ h6 {
 
     .check-mark {
         background: url(../images/check-mark.png);
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background-repeat: no-repeat;
         display: block;
         background-size: cover;
@@ -499,9 +547,8 @@ h6 {
     }
 }
 
-.bt-doar,
-.bt-loja {
-    background-color: @@vermelhos;
+.bt-doar{
+    background-color: @vermelhos;
     border-radius: 20px;
     color: white;
     padding: 8px 20px 8px 20px;
@@ -695,6 +742,14 @@ footer {
     }
 }
 
-.bt-loja {
-    font-size: 22px !important;
+
+.btn-loja {
+    font-size: 18px !important;
+    .icon {
+        height: 30px;
+    }
+
+    &:hover {
+        color: @cizento;
+    }
 }
