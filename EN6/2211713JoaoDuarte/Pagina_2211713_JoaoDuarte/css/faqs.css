@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 
@@ -101,7 +102,7 @@ span{
 }
 
 .panel p{
-  font-family: 'Ubuntu', sans-serif;  
+  font-family: "Montserrat", sans-serif;
   margin-bottom:5px;
 }
 
@@ -221,7 +222,7 @@ h2{
 .texto-fale-conosco p{
   color: white;
   font-size: 15px;
-  font-family: 'Ubuntu', sans-serif;
+     font-family: "Montserrat", sans-serif;
 }
 
 .btn-section{
@@ -237,9 +238,10 @@ h2{
   color: white;
   font-size: 15px;
   padding: 10px;
-  font-family: 'Ubuntu', sans-serif;
+     font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .btn-send:hover {
