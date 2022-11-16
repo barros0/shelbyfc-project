@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.ico" />
+    <title>Login - SHELBY FC</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Icones-->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--BootStrap-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar-esq">
+            <div class="logo">
+                <a class="link-logo" href="index.html">
+                    <img src="img/logo.svg" alt="Logo">
+                </a>
+            </div>
+        </div>
+
+        <div class="navbar-dir">
+
+            <a href="" id="conta">CRIAR CONTA</a>
+
+        </div>
+    </header>
+
+    <div id="seccao-login" class="d-flex justify-content-center align-items-center fullvh">
+        <section id="login" class="col-12">
+            <div class="row text-center col-12 title-login">
+                <h3 class="tit">Bem-Vindo de Volta!</h3>
+            </div>
+            <div class="login-wrapper">
+                <div class="login-regular">
+                    <form action="">
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" placeholder="nome@exemplo.com" required class="required"
+                            onkeyup="enableSubmit()">
+                        <label for="password">PASSWORD </label>
+                        <div class="pass-container">
+                            <input type="password" name="password" id="password" placeholder="Password" required
+                                class="required" onkeyup="enableSubmit()">
+                            <i class="fas fa-eye" id="eye" onclick="showPass()"></i>
+                            <a href="#" class="frgt">Esqueceu-se da Password?</a>
+                        </div>
+                        <input type="submit" id="login-btn" class="btn-login" value="INICIAR SESSÃO"
+                            disabled="disabled">
+                    </form>
+                </div>
+                <div class="vl">
+                    <span class="vl-innertext">OU</span>
+                </div>
+                <div class="login-socials">
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/google.svg" alt="Google"></div>
+                        <div class="nome-social">Continuar com o Google</div>
+                    </div>
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/apple.svg" alt="Apple"></div>
+                        <div class="nome-social">Continuar com a Apple</div>
+                    </div>
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/facebook.svg" alt="Facebook"></div>
+                        <div class="nome-social">Continuar com o Facebook</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row text-center col-12 title-login">
+                <a href="#" class="trouble">NÃO CONSEGUE INICIAR SESSÃO?</a>
+            </div>
+        </section>
+    </div>
+
+    <div id="seccao-registo" class="d-flex justify-content-center align-items-center fullvh">
+
+        <section id="registo" class="col-12">
+
+            <div class="row text-center col-12 title-login">
+                <h3 class="tit">Torne-se Membro!</h3>
+            </div>
+
+            <div class="login-wrapper">
+                <div class="login-regular">
+                    <form action="">
+
+                        <div class="tab">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                            <label for="nome">Sobrenome</label>
+                            <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required>
+                        </div>
+
+                        <div class="tab">
+                            <label for="email">EMAIL</label>
+                            <input type="email" name="email" placeholder="nome@exemplo.com" required class="required"
+                                onkeyup="enableSubmit()">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                        </div>
+
+                        <div class="tab">
+                        <label for="password">PASSWORD</label>
+                        <div class="pass-container">
+                            <input type="password" name="password_registo" id="password_registo" placeholder="Password" required
+                                class="required" onkeyup="enableSubmit()">
+                            <i class="fas fa-eye" id="eye_registo" onclick="showPassRegisto()"></i>
+                        </div>
+                        <label for="password_confirm">REPETIR PASSWORD</label>
+                        <div class="pass-container">
+                            <input type="password" name="password_confirm" id="password_confirm" placeholder="Confirmar password" required
+                                class="required" onkeyup="enableSubmit()">
+                            <i class="fas fa-eye" id="eye_confirm" onclick="showPassConfirm()"></i>
+                        </div>
+                        <input type="submit" id="login-btn" class="btn-login" value="CRIAR CONTA"
+                        disabled="disabled">
+                    </div>
+
+
+
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+
+                            <div style="text-align:center;margin-top:40px;">
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                              </div>
+                    </form>
+                </div>
+                <div class="vl">
+                    <span class="vl-innertext">OU</span>
+                </div>
+                <div class="login-socials">
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/google.svg" alt="Google"></div>
+                        <div class="nome-social">Continuar com o Google</div>
+                    </div>
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/apple.svg" alt="Apple"></div>
+                        <div class="nome-social">Continuar com a Apple</div>
+                    </div>
+
+                    <div class="social">
+                        <div class="logo-social"><img src="img/facebook.svg" alt="Facebook"></div>
+                        <div class="nome-social">Continuar com o Facebook</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+    </section>
+
+    </div>
+
+</body>
+
+<script src="js/scripts.js"></script>
+
+</html>
