@@ -19,6 +19,10 @@ a{
   color: #000 !important;
 } 
 
+#conta{
+  cursor: pointer;
+}
+
 a:hover{
 color: var(--ver) !important;
 }
@@ -302,13 +306,19 @@ i#eye_confirm {
 }
 /*registo*/
 
+.botoes{
+  margin-top: 10%;
+}
+
 button {
-  background-color: #04AA6D;
-  color: #ffffff;
   border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
+  margin: 0;
+  margin-top: 10%;
+  font-weight: bold;
+  padding: 15px;
+  background: var(--ver);
+  color: #fff;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -339,14 +349,14 @@ button:hover {
   opacity: 1;
 }
 
-/* Mark the steps that are finished and valid: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
 .step.finish {
-  background-color: #04AA6D;
+  background-color: var(--ver);
 }
 
-#seccao-registo{
-
-}
 
 @media only screen and (max-width: 800px) {
 

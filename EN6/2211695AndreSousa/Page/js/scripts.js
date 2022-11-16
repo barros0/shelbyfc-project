@@ -69,9 +69,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "CRIAR CONTA";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "SEGUINTE";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -126,4 +126,28 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class to the current step:
   x[n].className += " active";
+}
+
+function Mudar(){
+
+  let x = document.getElementById("conta");
+  let login = document.getElementById("seccao-login");
+  let registo = document.getElementById("seccao-registo");
+
+  if(registo.style.display == 'none'){
+
+    registo.style.setProperty("display", "flex", "important")
+    login.style.setProperty("display", "none", "important")
+    x.innerHTML = "INICIAR SESSÃO";
+
+  }else{
+
+    registo.style.setProperty("display", "none", "important")
+    login.style.setProperty("display", "flex", "important")
+    x.innerHTML = "CRIAR CONTA";
+
+
+  }
+
+
 }
