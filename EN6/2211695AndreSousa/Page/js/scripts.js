@@ -60,13 +60,24 @@ showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
-  var x = document.getElementsByClassName("tab");
+  let x = document.getElementsByClassName("tab");
+  let y = document.getElementsByClassName("btn-registo");
   x[n].style.display = "block";
   // ... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
+
+    for(var i=0; i< y.length;i++){
+      y[i].style.width = "100%";
+
+   }
   } else {
     document.getElementById("prevBtn").style.display = "inline";
+       for(var i=0; i< y.length;i++){
+      y[i].style.width = "45%";
+
+   }
+
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "CRIAR CONTA";

@@ -307,7 +307,9 @@ i#eye_confirm {
 /*registo*/
 
 .botoes{
+  display: flex;
   margin-top: 10%;
+  justify-content: space-between;
 }
 
 button {
@@ -355,6 +357,10 @@ input.invalid {
 
 .step.finish {
   background-color: var(--ver);
+}
+
+.btn-registo{
+  padding: 10px !important;
 }
 
 
