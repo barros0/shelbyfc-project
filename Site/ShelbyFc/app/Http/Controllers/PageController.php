@@ -22,6 +22,6 @@ class PageController extends Controller
     }
 
     public function minha_conta(){
-        return view('minha-conta');
+        return view('perfil.index');
     }
 }
