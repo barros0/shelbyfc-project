@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', cursive;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+}
+
+header {
+  width: 100%;
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.918);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+
+.conteudo-landingpage {
+  height: auto;
+  width: 100%;
+  display: flex;
+
+  z-index: 0;
+}
+
+.imagem-inicio {
+  background-image: url(../img/img2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  width: 400px;
+  color: white;
+  font-size: 35px;
+
+}
+
+.lado-esquerdo-inicio {
+  width: 50%;
+  height: 800px;
+  width: 50%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.lado-direito-inicio {
+  width: 50%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: auto;
+  height: 45px;
+  background-color: transparent;
+  border-top: 2px solid #fc3131;
+  border-bottom: 2px solid #fc3131;
+  border-right: 0px;
+  border-left: 0px;
+  color: #fc3131;
+  font-size: 20px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #fc3131;
+  color: white;
+  border: 2px solid #fc3131;
+  transition: background-color 1s ease-out 100ms;
+
+}
+
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container img {
+  width: 70px;
+  height: 70px;
+
+}
+
+
+.seccao2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 80px;
+}
+
+.proximo-jogo {
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.753);
+  border-right: 1px solid rgba(128, 128, 128, 0.418);
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.caixa-proximo {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.caixa-proximo img {
+  width: 160px;
+  height: 160px;
+}
+
+
+#caixa-meio {
+  padding: 80px;
+}
+
+#caixa-meio p {
+
+  font-size: 20px;
+}
+
+#titulo-caixa-meio {
+  font-weight: bold;
+  color: #fc3131;
+
+}
+
+.proximo-jogo p {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.caixa-proximo p {
+  font-size: 20px;
+}
+
+
+
+
+.seccao-produtos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: white;
+}
+
+#produtos1 {
+  background-image: url('..//img/equipamento1.png');
+  width: 33%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid white;
+}
+
+#produtos1:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+
+#produtos2:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+#produtos3:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+#produtos2 {
+  background-image: url('..//img/equipamento2.png');
+  width: 33%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid white;
+}
+
+#produtos3 {
+  background-image: url('..//img/equipamento3.png');
+  width: 33%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid white;
+}
+
+
+.lado-esquerdo-produtos {
+  width: 35%;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.lado-direito-produtos {
+  width: 65%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid white;
+}
+
+
+.lado-esquerdo-produtos p {
+  color: black;
+  font-size: 30px;
+}
+
+.botao-produtos {
+  background-color: #fc3131;
+  color: white;
+
+}
+
+.botao-produtos:hover {
+  background-color: transparent;
+  border-top: 2px solid #fc3131;
+  border-bottom: 2px solid #fc3131;
+  border-right: 0px;
+  border-left: 0px;
+  color: #fc3131;
+
+}
+
+
+.seccao-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+  padding: 25px;
+}
+
+.caixa {
+  height: 100%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid white;
+  background-color: #111111;
+  padding-top: 20px;
+  margin-right: 15px;
+}
+
+.caixa-ultima {
+  height: 100%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  background-color: #111111;
+  padding-top: 20px;
+}
+
+#parte-cima {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+#parte-baixo {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+#parte-baixo p {
+  font-size: 25px;
+}
+
+
+.caixa:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+.caixa-ultima:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+
+
+.tabela-class {
+  width: 50%;
+  background-color: white;
+  height: 300px;
+  background-image: url('../img/img3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.parte-cima-socios {
+  width: auto;
+  height: 70%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+
+.parte-baixo-socios {
+  width: 100%;
+  height: 30%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.lado-esquerdo {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+
+.lado-esquerdo p {
+  font-size: 18px;
+
+}
+
+.lado-direito {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#seta-socios {
+  color: #fc3131;
+}
+
+.lado-esquerdo:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+form {
+  width: auto;
+  height: auto;
+  font-size: 20px;
+
+}
+
+input {
+  font-size: 18px;
+  width: 350px;
+  height: 35px;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+select {
+  font-size: 18px;
+  width: 350px;
+  height: 35px;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid white;
+  color: rgb(156, 156, 156);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.botao-submeter {
+
+  border-bottom: 2px solid #fc3131;
+ 
+
+}
+
+
+.botao-submeter:hover {
+
+  background-color: #fc3131;
+  color: white;
+  border: 2px solid #fc3131;
+  transition: background-color 1s ease-out 100ms;
+
+}
+
+
+
+input::placeholder {
+  color: rgb(156, 156, 156);
+}
+
+input:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+label {
+  color: #fc3131;
+
+}
+
+#titulo-socio {
+  margin-bottom: 10px;
+}
