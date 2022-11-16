@@ -29,6 +29,7 @@ h1,h2,h3,h4,h5,h6{
     border-bottom: 2px solid var(--vermelho);
     color: var(--preto);
     padding: 4px 8px 4px 8px;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .btn:hover{
