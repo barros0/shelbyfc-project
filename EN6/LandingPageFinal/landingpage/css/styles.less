@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@vermelho: #FF2359;
+@vermelho: #C92337;
 @azul: #002b3a;
-@vermelhos: #C92337;
+@vermelhos: #FF2359;
 @cizento: #333333;
 
 /*fonts*/
@@ -103,6 +103,7 @@ h6 {
     @media only screen and (max-width: 800px) {
      left: 20px !important;
      max-width: 120px;
+     z-index: 5000;
 }
 }
 
@@ -110,11 +111,16 @@ h6 {
 
 .btn{
     background-color: @vermelho;
-    border-radius: 20px;
+    border-radius: 10px;
     color: white;
     padding: 6px 12px 8px 12px;
     font-size: 24px;
     transition: all .2s ease-in-out;
+    font-family: 'stable';
+    
+    .icon {
+        height: 30px;
+    }
     /*
     font-family: 'Bebas Neue', cursive;
     border-top: 2px solid @vermelho;
@@ -447,7 +453,7 @@ h6 {
         }
 
         input {
-            width: calc(100% - 105px);
+            width: ~"calc(100% - 105px)";
             margin-left: 105px;
             position: relative;
             border: 2px solid @cizento;
@@ -473,7 +479,7 @@ h6 {
             }
 
             input {
-                width: calc(100% - 95px);
+                width: ~"calc(100% - 95px)";
                 margin-left: 95px;
                 height: 40px;
                 font-size: 12px;
@@ -565,27 +571,6 @@ h6 {
     }
 }
 
-.bt-doar{
-    background-color: @vermelhos;
-    border-radius: 20px;
-    color: white;
-    padding: 8px 20px 8px 20px;
-    font-size: 28px;
-    text-decoration: none !important;
-    transition-duration: 0.2s;
-
-    &:hover {
-        transform: scale(1.2);
-    }
-
-    .icon {
-        height: 30px;
-    }
-
-    &:hover {
-        color: white;
-    }
-}
 
 .doar {
     margin-top: 40px;
@@ -751,7 +736,7 @@ footer {
     font-family: 'stable';
 
     .primary {
-        color: @vermelho;
+        color: @vermelhos;
     }
 
     .sub {

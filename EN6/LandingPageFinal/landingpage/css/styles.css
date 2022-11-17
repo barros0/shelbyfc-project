@@ -30,27 +30,27 @@
     border: 0;
 }
 
-::selection {
+ ::selection {
     color: white;
-    background: #FF2359;
+    background: #C92337;
 }
 
-::-webkit-scrollbar {
+ ::-webkit-scrollbar {
     width: 12px;
 }
 
-::-webkit-scrollbar-track {
+ ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #FF2359;
+ ::-webkit-scrollbar-thumb {
+    background: #C92337;
     border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #C92337;
+ ::-webkit-scrollbar-thumb:hover {
+    background: #FF2359;
 }
 
 html {
@@ -94,21 +94,27 @@ h6 {
     .logo {
         left: 20px !important;
         max-width: 120px;
+        z-index: 5000;
     }
 }
 
 .btn {
-    background-color: #FF2359;
-    border-radius: 20px;
+    background-color: #C92337;
+    border-radius: 10px;
     color: white;
     padding: 6px 12px 8px 12px;
     font-size: 24px;
     transition: all .2s ease-in-out;
+    font-family: 'stable';
+}
+
+.btn .icon {
+    height: 30px;
 }
 
 .btn:hover {
     transform: scale(1.2);
-    background-color: #C92337;
+    background-color: #FF2359;
     color: white;
 }
 
@@ -160,7 +166,7 @@ h6 {
     width: 16px;
     background-color: none;
     border-radius: 50%;
-    border: 1px solid #C92337;
+    border: 1px solid #FF2359;
     animation-duration: 0.2s;
     margin-bottom: 3px;
     margin-top: 3px;
@@ -171,7 +177,7 @@ h6 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #C92337;
+    background: #FF2359;
     display: grid;
     top: 50%;
     margin: auto;
@@ -185,7 +191,7 @@ h6 {
     padding-top: 80px;
     position: relative;
     min-height: 98vh;
-    background-color: #FF2359;
+    background-color: #C92337;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
 }
 
@@ -223,7 +229,7 @@ h6 {
         border-color: transparent;
     }
     .home 50% {
-        border-color: #FF2359;
+        border-color: #C92337;
     }
 }
 
@@ -334,21 +340,21 @@ h6 {
 }
 
 .form-subscrever .termos a {
-    color: #FF2359;
-}
-
-.form-subscrever .termos a:hover {
     color: #C92337;
 }
 
-.form-subscrever .title {
+.form-subscrever .termos a:hover {
     color: #FF2359;
+}
+
+.form-subscrever .title {
+    color: #C92337;
     font-size: 38px;
     font-family: 'payback';
 }
 
 .form-subscrever .bt-sub {
-    background-color: #C92337;
+    background-color: #FF2359;
     border-radius: 20px;
     color: white;
     padding: 8px;
@@ -370,12 +376,12 @@ h6 {
 .form-subscrever .input_group .icon .fa {
     margin: 10px 12px 10px 7px;
     font-size: 33px;
-    color: #C92337;
+    color: #FF2359;
 }
 
 .form-subscrever .input_group label {
     border-radius: 10px;
-    background-color: #C92337;
+    background-color: #FF2359;
     font-size: 20px;
     color: white;
     position: absolute;
@@ -439,7 +445,7 @@ h6 {
 .vantagens h2 {
     font-family: 'payback';
     font-size: 38px;
-    color: #FF2359;
+    color: #C92337;
 }
 
 .vantagens li {
@@ -447,7 +453,7 @@ h6 {
     margin-bottom: 14px;
     font-size: 22px;
     list-style-type: none;
-    color: #FF2359;
+    color: #C92337;
 }
 
 .vantagens .check-mark {
@@ -465,7 +471,7 @@ h6 {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #FF2359;
+    background-color: #C92337;
     padding-top: 130px;
     padding-bottom: 130px;
     clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
@@ -499,28 +505,6 @@ h6 {
     font-size: 33px;
 }
 
-.bt-doar {
-    background-color: #C92337;
-    border-radius: 20px;
-    color: white;
-    padding: 8px 20px 8px 20px;
-    font-size: 28px;
-    text-decoration: none !important;
-    transition-duration: 0.2s;
-}
-
-.bt-doar:hover {
-    transform: scale(1.2);
-}
-
-.bt-doar .icon {
-    height: 30px;
-}
-
-.bt-doar:hover {
-    color: white;
-}
-
 .doar {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -531,7 +515,7 @@ h6 {
 }
 
 .testemunhos .title {
-    color: #FF2359;
+    color: #C92337;
     font-size: 38px;
     font-family: 'payback';
 }
@@ -547,7 +531,7 @@ h6 {
 .testemunhos .testemunho .foto {
     overflow: hidden;
     margin: auto;
-    border: 2px solid #FF2359;
+    border: 2px solid #C92337;
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -556,7 +540,7 @@ h6 {
 }
 
 .testemunhos .testemunho .nome {
-    color: #FF2359;
+    color: #C92337;
     font-size: 24px;
 }
 
@@ -570,7 +554,7 @@ footer {
     padding-top: 8px;
     padding-bottom: 8px;
     margin-top: 30px;
-    background-color: #FF2359;
+    background-color: #C92337;
 }
 
 footer .links .link {
@@ -583,7 +567,7 @@ footer .links .link a {
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: #FF2359 !important;
+    color: #C92337 !important;
 }
 
 .swiper-button-next:after,
