@@ -152,17 +152,6 @@ Animations
 
 }
 
-.sidebar {
-  height: 100%;
-  width: 25%;
-  background-color: #fff;
-  display: flex;
-  position: fixed;
-  z-index: 99;
-  float: right;
-  right: 0;
-}
-
 .link-logo {
   text-decoration: none;
   display: flex;

@@ -1,0 +1,385 @@
+/*geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    /*user-select: none;*/
+  }
+  
+  :root {
+    --ver: #FF5559;
+    --bran: #ffffff;
+
+  }
+
+a{
+  text-decoration: none !important;
+  color: #000 !important;
+} 
+
+#conta{
+  cursor: pointer;
+}
+
+a:hover{
+color: var(--ver) !important;
+}
+
+/*navbar*/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  /*padding: 10px;*/
+  transition: all 0.6s ease-in-out;
+  justify-content: space-between;
+
+}
+
+.navbar-esq {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.logo {
+/*  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;*/
+  max-width: 30%;
+  flex-grow: 1;
+
+}
+
+.link-logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.navbar-dir {
+  width: 25%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 1px solid #ebebeb;
+  height: 300px;
+ /* background: #ebebeb;*/
+ background-color: #f7f7f7;
+ 
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f7f7f7;
+
+  /*background-color: #ffffff;*/
+  /* border: 1px solid #ccc; */
+  /* border-radius: 50%; */
+  padding: 20px;
+  color: #797979;
+}
+
+.fullvh{
+  height: 100vh;
+}
+
+.login-wrapper {
+  display: flex;
+ /* height: 100vh;*/
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-regular{
+ width: 100%;
+ padding: 30px;
+}
+
+.login-socials{
+  width: 100%;
+  padding: 30px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+ }
+
+ form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 70%;
+    margin: auto;
+
+}
+
+.social{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 10px 5px 10px 5px;
+        border: solid 2px black;
+    margin: 10px;
+
+}
+
+.social:hover{
+  background-color: #ebebeb;
+  cursor: pointer;
+}
+
+.nome-social {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.logo-social {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.logo-social img{
+  width: 32px;
+
+}
+
+input {
+  padding: 10px 5px 10px 5px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  background: #f7f7f7;
+  width: 100%;
+
+}
+
+label {
+  font-weight: bold;
+  font-size: smaller;
+  margin: 10px 0px 10px 0px;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+input:focus {
+outline: none;
+}
+
+input.btn-login {
+  border: none;
+  margin: 0;
+  margin-top: 10%;
+  font-weight: bold;
+  padding: 15px;
+  background: var(--ver);
+  color: #fff;
+}
+
+input.btn-login:disabled {
+   background-color: #ebebeb;
+  color: #d6d6d6;
+
+}
+body{
+  background-color: #f7f7f7 !important;
+}
+
+.title-login{
+  margin-top: 120px;
+  --bs-gutter-x: 0rem !important;
+
+}
+.frgt {
+  font-size: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  float: right;
+  margin-top: 5px;
+
+}
+
+
+.frgt:hover{
+  color: var(--ver);
+}
+
+
+.trouble{
+  margin-top: 50px !important;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+}
+
+.trouble:hover{
+  color: var(--ver);
+
+}
+
+.tit{
+  font-weight: bold;
+}
+
+/*password*/
+
+.pass-container{
+  position: relative;
+
+}
+
+input#password {
+  width: 100%;
+}
+
+input#password_registo {
+  width: 100%;
+}
+
+input#password_confirm {
+  width: 100%;
+}
+
+i#eye {
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  cursor: pointer;
+}
+
+i#eye_registo {
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  cursor: pointer;
+}
+
+i#eye_confirm {
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  cursor: pointer;
+}
+/*registo*/
+
+.botoes{
+  display: flex;
+  margin-top: 10%;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  margin: 0;
+  margin-top: 10%;
+  font-weight: bold;
+  padding: 15px;
+  background: var(--ver);
+  color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.step.finish {
+  background-color: var(--ver);
+}
+
+.btn-registo{
+  padding: 10px !important;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .login-wrapper {
+    flex-wrap: wrap;
+
+  }
+
+  .vl{
+    display: none;
+  }
+
+  header{
+    position: sticky;
+
+  }
+
+
+
+}
