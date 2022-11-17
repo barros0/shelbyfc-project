@@ -232,6 +232,14 @@ input.btn-login:disabled {
   color: #d6d6d6;
 
 }
+
+
+.btn-login:hover{
+  opacity: 0.8;
+
+
+}
+
 body{
   background-color: #f7f7f7 !important;
 }
@@ -410,6 +418,8 @@ width: 20% !important;
 height: 20px;
 
 }
+
+
 
 @media only screen and (max-width: 800px) {
 
