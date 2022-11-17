@@ -6,6 +6,11 @@
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #F7F7FF;
+
+}
+
 .navbar {
     width: 100%;
     height: 70px;
@@ -33,6 +38,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    cursor: pointer;
 }
 
 .option p, .option h3 {
@@ -50,6 +56,7 @@
     color: white;
     justify-content: flex-end;
     margin: 30px;
+    width: 68%;
 }
 
 .news_btn_date {
@@ -72,6 +79,10 @@
     border-radius: 17px;
 }
 
+.news_btn_date button:hover {
+    background-color: #f62e33;
+}
+
 .news_options {
     width: 33%;
 }
@@ -80,13 +91,19 @@
     background-color: rgb(255 85 89 / 87%);
 }
 
+.option:hover {
+    background-color: rgb(255 85 89 / 87%);
+}
+
 .container_last_matches {
     display: flex;
     margin: 40px auto;
     max-width: 80%;
     height: 200px;
-    background-color: #F7F7FF;
+    background-color: white;
     justify-content: space-between;
+    box-shadow: 0px 0px 52px #0000005c;
+    align-items: center;
 }
 
 .match {
@@ -102,8 +119,88 @@
     height: 120px;
 }
 
-.match_info{
+.match_info {
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.score {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.team_name {
+    font-weight: 700;
+}
+
+.separador {
+    height: 70%;
+    background-color: #c8c8c8;
+    width: 2px;
+}
+
+@media only screen and (max-width: 900px) {
+    .container_main_new {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .option {
+        height: 140px;
+    }
+
+    .container_new {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .news_details {
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    h1#news_title {
+        font-size: 15px;
+    }
+
+    .news_btn_date p {
+        font-size: 15px;
+    }
+
+    .news_options {
+        display: flex;
+        width: auto;
+    }
+
+    .option p, .option h3 {
+        font-size: 12px;
+    }
+
+    .container_last_matches {
+        flex-direction: column;
+        height: 280px;
+    }
+
+    .match {
+        width: 100%;
+    }
+
+    .match_home, .match_away {
+        width: 30%;
+    }
+
+    .match img {
+        width: 60px;
+        height: 60px;
+    }
+    .separador{
+        height: 2px;
+        width: 70px;
+    }
+
+    .score{
+        font-size: 21px;
+    }
 }
