@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minha conta | ShelbyFC</title>
+
+    <link rel="icon" type="./images/logo.ico" href="./images/logo.ico">
+
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./js/app.js"></script>
+
+    <script src="./bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+
+
+
+    
+    <section class="col-12 ">
+
+        <div class=" vh-100 d-flex flex-wrap">
+
+            <nav class="nav-conta container-user-settings ">
+                <div class="nav-conta-wrap">
+                    <div class="title">
+                        <h3>Definições de conta</h3>
+                    </div>
+
+                    <ul class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <li>
+                            <a href="#" class="active"
+                               class="active" id="v-pills-perfil-tab" data-bs-toggle="pill"
+                               data-bs-target="#v-pills-perfil" type="button" role="tab" aria-controls="v-pills-perfil"
+                               aria-selected="true"
+                            >
+                                <i class="fa fa-user"></i>
+                                Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="v-subscricoes-tab" data-bs-toggle="pill"
+                               data-bs-target="#v-subscricoes" type="button" role="tab"
+                               aria-controls="v-subscricoes" aria-selected="false">
+                                <i class="fa-sharp fa-solid fa-handshake"></i>
+                                Subscrições
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="v-seguranca-tab" data-bs-toggle="pill"
+                               data-bs-target="#v-seguranca" type="button" role="tab"
+                               aria-controls="v-seguranca" aria-selected="false">
+                                <i class="fa fa-lock"></i>
+                                Segurança
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="v-transacoes-tab" data-bs-toggle="pill"
+                               data-bs-target="#v-transacoes" type="button" role="tab"
+                               aria-controls="v-transacoes" aria-selected="false">
+                                <i class="fa fa-coins"></i>
+                                Transações
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="v-preferencias-tab" data-bs-toggle="pill"
+                               data-bs-target="#v-preferencias" type="button" role="tab"
+                               aria-controls="v-preferencias" aria-selected="false">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Preferências
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="logout d-flex justify-content-center align-items-center">
+                        <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+                        <p>Sair</p>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="tab-content justify-content-center">
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div class="fade show active" id="v-pills-perfil" role="tabpanel"
+                         aria-labelledby="v-pills-perfil-tab">
+                         <div class="d-flex justify-content-center justify-itens-center">
+
+                            <div class="photo-edit-wrap">
+                            <div class="photo">
+                                <img src="./images/users/pedro.png" alt="Image profile">
+                            </div>
+                            <div class="span edit">
+                                <i class="fa fa-pen"></i>
+                            </div>
+                            </div>
+                        
+                            <div class="info">
+                                <h3 id="name">Pedro Andrade</h3>
+                                <h6>Sócio - Subscrição ativa</h6>
+                                <a class="btn-remove" href="">Remover</a>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="nome">Nome</label>
+                                <input class="form-control" type="text" name="nome" id="nome">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="username">Username</label>
+                                <input class="form-control" type="text" name="username" id="username">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" name="email" id="email">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="telefone">Nº telefone</label>
+                                <input class="form-control" type="text" name="telefone" id="telefone">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="morada">Morada</label>
+                                <input class="form-control" type="text" name="morada" id="morada">
+                            </div>
+                        
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="distrito">Distrito</label>
+                                <select class="form-control" type="text" name="distrito" id="distrito">
+                                    <option value="">Distrito 1</option>
+                                </select>
+                            </div>
+                        
+                        
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="cod-postal">Código postal</label>
+                                <input class="form-control" type="text" name="cod-postal" id="cod-postal">
+                            </div>
+                        
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label" for="nif">NIF</label>
+                                <input class="form-control" type="number" name="nif" id="nif">
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Guardar
+                            </button>
+                        </div>
+                        
+                    </div>
+
+
+                   
+                    <div class="fade" id="v-subscricoes" role="tabpanel" aria-labelledby="v-subscricoes-tab">
+                        susbcricoes
+
+                    </div>
+
+              
+                    <div class="fade" id="v-seguranca" role="tabpanel" aria-labelledby="v-seguranca-tab">
+                        seguranca
+                    </div>
+
+                   
+                    <div class="fade" id="v-transacoes" role="tabpanel" aria-labelledby="v-transacoes-tab">
+                        transacoes
+                    </div>
+
+                    
+                    <div class="fade" id="v-preferencias" role="tabpanel" aria-labelledby="v-preferencias-tab">
+                        preferencias
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
