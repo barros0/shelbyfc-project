@@ -1,10 +1,12 @@
 <div class="d-flex justify-content-center justify-itens-center">
 
+    <div>
     <div class="photo">
         <img src="{{asset('images/users/pedro.png')}}" alt="Image profile">
-        <div class="span edit">
-            <i class="fa fa-pen"></i>
-        </div>
+    </div>
+    <div class="span edit">
+        <i class="fa fa-pen"></i>
+    </div>
     </div>
 
     <div class="info">
