@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center justify-itens-center">
 
-    <div>
+    <div class="photo-edit-wrap">
     <div class="photo">
         <img src="{{asset('images/users/pedro.png')}}" alt="Image profile">
     </div>
