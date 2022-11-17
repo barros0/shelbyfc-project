@@ -90,7 +90,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'stable';
     color: white;
 }
 
@@ -100,9 +100,22 @@ h6 {
     top: 25px;
     left: 95px;
     max-width: 160px;
+    @media only screen and (max-width: 800px) {
+     left: 20px !important;
+     max-width: 120px;
+}
 }
 
+
+
 .btn{
+    background-color: @vermelho;
+    border-radius: 20px;
+    color: white;
+    padding: 6px 12px 8px 12px;
+    font-size: 24px;
+    transition: all .2s ease-in-out;
+    /*
     font-family: 'Bebas Neue', cursive;
     border-top: 2px solid @vermelho;
     border-bottom: 2px solid @vermelho;
@@ -112,16 +125,18 @@ h6 {
     color: @vermelho;
     border-radius: 0px;
     font-size: 22px;
-    transition: all .2s ease-in-out;
+    */
 
     &:hover {
-        border-top: 2px solid @cizento;
+       /* border-top: 2px solid @cizento;
         border-bottom: 2px solid @cizento;
         border-left: none;
         border-right: none;
         color: @cizento;
-        border-color: @cizento;
+        border-color: @cizento;*/
         transform: scale(1.2);
+        background-color: @vermelhos;
+        color: white;
     }
 
 }
@@ -748,7 +763,10 @@ footer {
 
 
 .btn-loja {
-    font-size: 18px !important;
+    .i{
+        margin-left: 10px;
+    }
+  /*  font-size: 18px !important;
     .icon {
         height: 30px;
     }
@@ -756,4 +774,5 @@ footer {
     &:hover {
         color: @cizento;
     }
+    */
 }
