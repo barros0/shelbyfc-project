@@ -1,4 +1,8 @@
 /*geral*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -32,11 +36,13 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: transparent;
+  background-color: #fff;
   display: flex;
   align-items: center;
   z-index: 999;
   /*padding: 10px;*/
+  height: 90px;
+  border-bottom: 3px solid #c92337;
   transition: all 0.6s ease-in-out;
   justify-content: space-between;
 
@@ -55,7 +61,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;*/
-  max-width: 30%;
+  max-width: 25%;
   flex-grow: 1;
 
 }
@@ -97,7 +103,8 @@ header {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
+  background: transparent;
 
   /*background-color: #ffffff;*/
   /* border: 1px solid #ccc; */
@@ -153,6 +160,7 @@ header {
     padding: 10px 5px 10px 5px;
         border: solid 2px black;
     margin: 10px;
+    background: #f7f7f7;
 
 }
 
@@ -263,6 +271,8 @@ body{
 
 .tit{
   font-weight: bold;
+ /* font-family: 'Bebas Neue', cursive;
+font-size: 45px;*/
 }
 
 /*password*/
@@ -363,6 +373,43 @@ input.invalid {
   padding: 10px !important;
 }
 
+.dir{
+  width: 50%;
+
+}
+
+.left{
+  background: #ebebeb;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+
+}
+
+/*footer*/
+
+.footer-bg{
+  clip-path: polygon(0 90%, 100% 82%, 100% 100%, 0% 100%);
+  width: 100%;
+  background: #c92337;
+  bottom: 0;
+  height: 60%;
+  position: absolute;
+}
+
+.text-center{
+  display: flex;
+  justify-content: center;
+
+}
+
+.linha-ajuda{
+  clip-path: polygon(0 86%, 100% 63%, 100% 100%, 0% 100%);
+  background: #c92337;
+width: 20% !important;
+height: 20px;
+
+}
 
 @media only screen and (max-width: 800px) {
 
@@ -381,5 +428,15 @@ input.invalid {
   }
 
 
+
+}
+.background{
+  display: flex;
+  top: 0;
+
+  position: absolute;
+  height: 100%;
+    width: 100%;
+  z-index: -1;
 
 }
