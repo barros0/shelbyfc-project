@@ -13,7 +13,7 @@
             <nav class="nav-conta container-user-settings ">
                 <div class="nav-conta-wrap">
                     <div class="title">
-                        <h1>Definições de conta</h1>
+                        <h3>Definições de conta</h3>
                     </div>
 
                     <ul class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
