@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Tickets', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('game_id')->foreign('game_id')->references('id')->on('games');
-            $table->float('price');
-            $table->timestamps();
+            $table->float('value');
+            $table->dateTime('expires_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Tickets');
+        Schema::dropIfExists('subscriptions');
     }
 };

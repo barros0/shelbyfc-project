@@ -17,10 +17,8 @@ return new class extends Migration
         Schema::create('News', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('body');
+            $table->longText('body');
             $table->string('image');
-            $table->id();
-            $table->id();
             $table->integer('views')->default(0);
             $table->timestamps();
             $table->softDeletes();

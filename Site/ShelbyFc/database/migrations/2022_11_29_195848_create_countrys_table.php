@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Tickets', function (Blueprint $table) {
+        Schema::create('countrys', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('game_id')->foreign('game_id')->references('id')->on('games');
-            $table->float('price');
+            $table->string('name');
+            $table->string('adverb', 5);
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Tickets');
+        Schema::dropIfExists('countrys');
     }
 };
