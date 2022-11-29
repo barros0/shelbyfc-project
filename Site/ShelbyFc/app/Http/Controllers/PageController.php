@@ -13,22 +13,12 @@ class PageController extends Controller
         return view('index');
     }
 
-    public  function  login(){
+    public function  login(){
 
         return view('login');
     }
 
-    public function dologin(Request $request){
 
-        if (Auth::attempt(['email'=>$request->email], ['password'=>$request->password])) {
-            return redirect()->route('index');
-        }
-        else{
-
-        }
-
-        return back();
-    }
 
     public function minha_conta(){
         return view('perfil.index');

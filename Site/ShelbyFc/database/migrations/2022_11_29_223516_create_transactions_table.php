@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('countrys', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('adverb', 5);
-            $table->string('icon')->nullable();
-            $table->timestamps();
+            $table->integer('user_id')->nullable()->foreign('user_id')->references('id')->on('users');
+            $table->string('description');
+            $table->float('value');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countrys');
+        Schema::dropIfExists('transactions');
     }
 };
