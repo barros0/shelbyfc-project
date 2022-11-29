@@ -19,9 +19,20 @@
     <script src="{{'js/app.js'}}"></script>
 
     <script src="{{'bootstrap/js/bootstrap.js'}}"></script>
+
+    {{--  login --}}
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--BootStrap-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
 
 
-@yield('content')
+
 

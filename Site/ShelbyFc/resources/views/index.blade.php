@@ -5,6 +5,5 @@
 
 @section('content')
 
-
-
+<p>dsjdhj</p>
 @endsection
