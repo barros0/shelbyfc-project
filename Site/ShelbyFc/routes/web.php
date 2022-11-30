@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\Auth\SocialLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,27 @@ use App\Http\Controllers\PageController;
 |
 */
 
+Auth::routes();
+
+Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
+Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
+
 Route::get('/', [PageController::class, 'index'])->name('index');
 
 
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
 
-Route::get('/login', [PageController::class, 'login'])->name('login');
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('github')->user();
+
+    // $user->token
+});
+
+
+
+//Route::get('/login', [PageController::class, 'login'])->name('login');
 Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
 
 Route::get('/registar', [PageController::class, 'registar'])->name('registar');
@@ -30,3 +48,7 @@ Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
 */
 });
 
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

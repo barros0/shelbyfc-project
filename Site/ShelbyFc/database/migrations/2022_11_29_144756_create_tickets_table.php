@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('Tickets', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('game_id')->foreign('game_id')->references('id')->on('games');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('game_id')->unsigned();
+            $table->foreign('game_id')->references('id')->on('games');
             $table->float('price');
             $table->timestamps();
         });
