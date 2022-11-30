@@ -29,8 +29,8 @@
 
         <div class="login-wrapper">
             <div class="login-regular">
-                <form action="login.html">
-
+                <form method="post" action="{{route('register')}}">
+                    @csrf
                     <div class="tab">
                         <label for="nome">Nome</label>
                         <input type="text" name="name" id="nome" placeholder="Nome" required>

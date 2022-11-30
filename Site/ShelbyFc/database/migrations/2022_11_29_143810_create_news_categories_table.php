@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('News_categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('news_id')->foreign('news_id')->references('id')->on('news');
-            $table->integer('categories_id')->foreign('categories_id')->references('id')->on('categories');
+            $table->bigInteger('news_id')->unsigned();
+            $table->foreign('news_id')->references('id')->on('news');
+            $table->bigInteger('categories_id')->unsigned();
+            $table->foreign('categories_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

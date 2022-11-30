@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('token_session')->nullable();
             $table->integer('game_id')->foreign('game_id')->references('id')->on('games');
             $table->integer('quanty')->default(1);

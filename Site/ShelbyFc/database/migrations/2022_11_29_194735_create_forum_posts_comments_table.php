@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -15,9 +14,12 @@ return new class extends Migration
     {
         Schema::create('forum_posts_comments', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('post_id')->foreign('post_id')->references('id')->on('post_id');
-            $table->integer('reply_id')->foreign('reply_id')->references('id')->on('forum_posts_comments');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('forum_posts');
+            $table->bigInteger('reply_id')->unsigned();
+            $table->foreign('reply_id')->references('id')->on('forum_posts_comments');
             $table->text('comment');
             $table->timestamps();
             $table->softDeletes();

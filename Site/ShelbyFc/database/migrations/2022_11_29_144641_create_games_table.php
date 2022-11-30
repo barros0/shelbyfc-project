@@ -25,7 +25,8 @@ return new class extends Migration
             $table->integer('result_opponent');
             $table->string('location');
             $table->string('image');
-            $table->integer('team_id')->foreign('team_id')->references('id')->on('teams');
+            $table->bigInteger('team_id')->unsigned();
+            $table->foreign('team_id')->references('id')->on('teams');
             $table->dateTime('limit_bet');
             $table->dateTime('limit_buy_ticket');
             $table->integer('stock_tickets');

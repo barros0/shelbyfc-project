@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable()->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('description');
             $table->float('value');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

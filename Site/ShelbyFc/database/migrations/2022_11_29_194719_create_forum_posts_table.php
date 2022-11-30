@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('forum_posts', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
+            $table->bigInteger('user_id')->foreign('user_id')->references('id')->on('users');
             $table->text('body');
             $table->timestamps();
             $table->softDeletes();
