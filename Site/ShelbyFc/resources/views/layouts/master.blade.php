@@ -7,4 +7,4 @@
 
 
 @include('partials.footer')
-cd
+

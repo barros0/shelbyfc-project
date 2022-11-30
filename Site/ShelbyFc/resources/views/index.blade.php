@@ -5,5 +5,5 @@
 
 @section('content')
 
-<p>dsjdhj</p>
+  <h1>  <a href="{{route('login')}}">Login</a></h1>
 @endsection
