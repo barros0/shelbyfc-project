@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
             $table->integer('game_id')->foreign('game_id')->references('id')->on('games');
             $table->float('value');
-            $table->enum('state', ['A aguardar jogo','Processamento', 'Perda','Vitoria','Cancelado']);
+            $table->enum('result', ['Win','Defeat'])->nullable();
             $table->timestamps();
         });
     }
