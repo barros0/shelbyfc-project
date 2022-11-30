@@ -14,11 +14,15 @@ use App\Http\Controllers\PageController;
 |
 */
 
+Auth::routes();
+
+
+
 Route::get('/', [PageController::class, 'index'])->name('index');
 
 
 
-Route::get('/login', [PageController::class, 'login'])->name('login');
+//Route::get('/login', [PageController::class, 'login'])->name('login');
 Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
 
 Route::get('/registar', [PageController::class, 'registar'])->name('registar');
@@ -30,3 +34,7 @@ Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
 */
 });
 
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

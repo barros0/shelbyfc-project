@@ -15,10 +15,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="{{'js/jquery-3.6.1.min.js'}}"></script>
-    <script src="{{'js/app.js'}}"></script>
+    <script src="{{asset('js/jquery-3.6.1.min.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/functions.js')}}"></script>
 
-    <script src="{{'bootstrap/js/bootstrap.js'}}"></script>
+    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
 
     {{--  login --}}
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
