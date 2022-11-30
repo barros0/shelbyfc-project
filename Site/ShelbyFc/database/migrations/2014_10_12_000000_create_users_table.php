@@ -23,9 +23,9 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('nif')->nullable();
             $table->boolean('is_admin')->default(0); //#
-            $table->enum('status',['Pending email confirmation', 'Active', 'Suspended','Banned']); //#
-            $table->string('facebook_id')->nullable();
-            $table->string('google_id')->nullable();
+            $table->enum('status',['Active', 'Suspended','Banned']); //#
+            //$table->string('facebook_id')->nullable();
+            //$table->string('google_id')->nullable();
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
