@@ -87,8 +87,10 @@ function showTab(n) {
     }
     if (n == (x.length - 1)) {
         document.getElementById("nextBtn").innerHTML = "CRIAR CONTA";
+        console.log(3)
     } else {
         document.getElementById("nextBtn").innerHTML = "SEGUINTE";
+        console.log(2)
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
@@ -106,7 +108,7 @@ function nextPrev(n) {
     // if you have reached the end of the form... :
     if (currentTab >= x.length) {
         //...the form gets submitted:
-        document.getElementById("regForm").submit();
+        document.getElementById("register").submit();
         return false;
     }
     // Otherwise, display the correct tab:

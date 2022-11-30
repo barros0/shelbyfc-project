@@ -116,6 +116,9 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/ui" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

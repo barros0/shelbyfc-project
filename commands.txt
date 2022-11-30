@@ -1,4 +1,66 @@
 composer update
+php artisan migrate:fresh
+php artisan db:seed    
+npm install & npm run build
+
+// inicia serve -- login com redes sociais só funciona assim em localhost
+php artisan serve   
+
+aceder a 
+http://127.0.0.1:8000/login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+composer update
 
 // limpa a bd e cria tabelas
 php artisan migrate:fresh
@@ -8,3 +70,7 @@ php artisan db:seed
 
 // inicia serve -- login so funciona assim em localhost
 php artisan serve   
+
+
+npm install
+npm run dev

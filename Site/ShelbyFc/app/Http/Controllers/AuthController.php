@@ -26,10 +26,19 @@ class AuthController extends Controller
     public function doregister(Request $request){
         $this->validate($request,[
             'name' => 'required',
+            'subname' => 'required',
             'email' => 'required|email',
+           // 'phone' => 'required|required|regex:/(01)[0-9]{9}/',
             'password' => 'required|min:8',
-            'repeat_password' => 'required|same:password',
+            'password_confirmation' => 'required|same:password',
         ]);
+
+        $user = new User();
+        $user->name = $request->name.' '.$request->subname;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = bcrypt($request->name);
+        $user->save();
 
 
     }

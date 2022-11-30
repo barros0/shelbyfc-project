@@ -29,13 +29,13 @@
 
         <div class="login-wrapper">
             <div class="login-regular">
-                <form method="post" action="{{route('register')}}">
+                <form id="register" method="post" action="{{route('register')}}">
                     @csrf
                     <div class="tab">
                         <label for="nome">Nome</label>
                         <input type="text" name="name" id="nome" placeholder="Nome" required>
                         <label for="nome">Sobrenome</label>
-                        <input type="text" name="sobrenomesubname" id="sobrenome" placeholder="Sobrenome" required>
+                        <input type="text" name="subname" id="sobrenome" placeholder="Sobrenome" required>
                     </div>
 
                     <div class="tab">
@@ -54,7 +54,7 @@
                         </div>
                         <label for="password_confirm">REPETIR PASSWORD</label>
                         <div class="pass-container">
-                            <input type="password" name="password_confirm" id="password_confirm"
+                            <input type="password" name="password_confirmation" id="password_confirm"
                                    placeholder="Confirmar password" required>
                             <i class="fas fa-eye" id="eye_confirm" onclick="showPassConfirm()"></i>
                         </div>
@@ -71,6 +71,16 @@
                         </button>
 
                     </div>
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <p><strong>Opps Something went wrong</strong></p>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div style="text-align:center;margin-top:40px;">
                         <span class="step"></span>
                         <span class="step"></span>

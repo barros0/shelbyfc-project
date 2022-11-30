@@ -110,6 +110,9 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
