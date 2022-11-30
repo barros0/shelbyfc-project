@@ -1,5 +1,5 @@
 composer update
-php artisan migrate:fresh
+php artisan migrate
 php artisan db:seed    
 npm install & npm run build
 
@@ -8,3 +8,6 @@ php artisan serve
 
 aceder a 
 http://127.0.0.1:8000/login
+
+
+/*php artisan migrate:fresh*/
