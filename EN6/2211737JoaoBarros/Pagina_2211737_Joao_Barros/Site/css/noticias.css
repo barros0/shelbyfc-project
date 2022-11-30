@@ -8,7 +8,6 @@
 
 body {
     background-color: #F7F7FF;
-
 }
 
 .navbar {
@@ -21,7 +20,7 @@ body {
     margin: 40px auto;
     max-width: 80%;
     height: 555px;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8687850140056023) 0%, rgba(0, 0, 0, 0) 100%), url(img/gqwtqj3dtpbpe6oerjcw.jpg);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8687850140056023) 0%, rgba(0, 0, 0, 0) 100%), url(../img/gqwtqj3dtpbpe6oerjcw.jpg);
 }
 
 .container_new {
@@ -69,7 +68,7 @@ body {
     margin-left: 20px;
 }
 
-.news_btn_date button {
+button {
     outline: 0;
     border: 0;
     background-color: #ff5559;
@@ -79,7 +78,7 @@ body {
     border-radius: 17px;
 }
 
-.news_btn_date button:hover {
+button:hover {
     background-color: #f62e33;
 }
 
@@ -141,6 +140,83 @@ body {
     width: 2px;
 }
 
+.container_all_news {
+    display: flex;
+    margin: 40px auto;
+    max-width: 80%;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 0px 52px #0000005c;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_categories {
+    width: 100%;
+    background-color: rgb(0 0 0 / 87%);
+    height: 60px;
+}
+
+.container_title {
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    height: 45px;
+    background-color: rgb(0 0 0 / 100%);
+    color: white;
+    align-items: center;
+    border-left: 10px solid #ff5559;
+}
+
+.news_from_category {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.news_from_category a {
+    padding: 20px;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.selected_category {
+    background-color: #ff5559;
+}
+
+.news_body {
+    width: 50%;
+    padding: 20px;
+}
+
+.news_body img {
+    width: 100%;
+}
+
+.news_category {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button_date_news {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.button_date_news p {
+    margin-left: 10px;
+    
+}
+.news_body p{
+    margin-top: 10px;
+}
 @media only screen and (max-width: 900px) {
     .container_main_new {
         display: flex;
@@ -195,12 +271,13 @@ body {
         width: 60px;
         height: 60px;
     }
-    .separador{
+
+    .separador {
         height: 2px;
         width: 70px;
     }
 
-    .score{
+    .score {
         font-size: 21px;
     }
 }
