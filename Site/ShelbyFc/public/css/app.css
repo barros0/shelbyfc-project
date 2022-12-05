@@ -2,32 +2,33 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 @font-face {
     font-family: 'stable';
     src: url(../fonts/stable.ttf);
 }
 
-:root{
+:root {
     --vermelho: #c92337;
     --preto: #333333;
 }
 
-*{
+* {
     padding: 0px;
     margin: 0px;
     border: none;
 }
 
-body{
+body {
     font-family: "Montserrat";
 }
 
-h1,h2,h3,h4,h5,h6{
-   /* font-family: 'Bebas Neue', cursive;*/
+h1, h2, h3, h4, h5, h6 {
+    /* font-family: 'Bebas Neue', cursive;*/
     font-family: 'stable';
 }
 
-.btn{
+.btn {
     margin: 18px;
     border-top: 2px solid var(--vermelho);
     border-bottom: 2px solid var(--vermelho);
@@ -36,7 +37,7 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'Bebas Neue', cursive;
 }
 
-.btn:hover{
+.btn:hover {
 
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
@@ -45,58 +46,54 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
-img{
+img {
     max-height: 100%;
     max-width: 100%;
 }
 
-.tab-content-group{
+.tab-content-group {
     margin-top: 20px;
 }
 
-.form-group{
+.form-group {
     margin-top: 15px;
 }
 
 /*fim css geral*/
 
 
-
-
-
-
 /*minha conta*/
-.logout{
-color: white;
+.logout {
+    color: white;
 }
 
-.logout .fa{
+.logout .fa {
     color: var(--vermelho);
 }
 
 
-.nav-conta{
-   padding-top: 40px;
+.nav-conta {
+    padding-top: 40px;
     background-color: var(--preto);
     padding-left: 10%;
 }
-.nav-conta-wrap{
+
+.nav-conta-wrap {
     width: 300px;
 }
 
-
-.nav-conta ul{
+.nav-conta ul {
     margin-top: 40px;
-list-style-type: none;
+    list-style-type: none;
 }
 
-.nav-conta ul li{
+.nav-conta ul li {
     font-size: 20px;
     margin-top: 22px;
     margin-bottom: 14px;
 }
 
-.nav-conta ul li a{
+.nav-conta ul li a {
     color: white;
     font-size: 22px;
     text-decoration: none !important;
@@ -104,38 +101,36 @@ list-style-type: none;
     transition-duration: 0.1s;
 }
 
-.nav-conta ul li a:hover, .nav-conta ul li a.active{
+.nav-conta ul li a:hover, .nav-conta ul li a.active {
     border-left: 4px solid var(--vermelho);
 }
 
-.nav-conta ul li a.active:hover{
+.nav-conta ul li a.active:hover {
     border-left: 4px solid white;
 }
 
-
-
-.nav-conta .title{
-        color: white;
+.nav-conta .title {
+    color: white;
 }
 
-.tab-content{
+.tab-content {
     padding: 10px 30px 10px 30px;
     max-width: 700px;
     padding-top: 40px;
 }
 
-.tab-content input{
+.tab-content input {
     border: 2px solid #e4e4e4;
     background-color: #fbfbfb;
     height: 35px;
 }
 
-.tab-content label{
+.tab-content label {
     color: var(--preto);
 
 }
 
-.info .btn-remove{
+.info .btn-remove {
     margin-top: 14px;
     background-color: var(--vermelho);
     border-radius: 8px;
@@ -144,14 +139,14 @@ list-style-type: none;
     text-decoration: none;
 }
 
-.photo-edit-wrap{
+.photo-edit-wrap {
     width: 100px;
     height: 100px;
     position: relative;
     margin-right: 20px;
 }
 
-.photo{
+.photo {
     border-radius: 50%;
     border: 2px solid var(--vermelho);
     width: 100px;
@@ -160,14 +155,15 @@ list-style-type: none;
 
 
 }
-.photo img{
+
+.photo img {
     object-position: center;
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.edit{
+.edit {
     position: absolute;
     bottom: 0px;
     right: 4px;
@@ -182,29 +178,25 @@ list-style-type: none;
 }
 
 
-.container-user-settings{
+.container-user-settings {
     padding-left: 12%;
 }
 
-.logout{
+.logout {
     font-size: 22px;
-font-size: 24px;
+    font-size: 24px;
     margin-top: 30px;
 }
 
-.logout i{
+.logout i {
     color: var(--vermelho);
 }
 
-.logout p{
+.logout p {
     padding: 0px !important;
     margin: 0px 0px 0px 10px;
 
 }
-
-
-
-
 
 /************/
 
@@ -226,19 +218,18 @@ font-size: 24px;
 :root {
     --ver: #FF5559;
     --bran: #ffffff;
-
 }
 
-a{
+a {
     text-decoration: none !important;
     color: #000 !important;
 }
 
-#conta{
+#conta {
     cursor: pointer;
 }
 
-a:hover{
+a:hover {
     color: var(--ver) !important;
 }
 
@@ -251,7 +242,6 @@ header {
     display: flex;
     align-items: center;
     z-index: 999;
-    /*padding: 10px;*/
     height: 90px;
     border-bottom: 3px solid #c92337;
     transition: all 0.6s ease-in-out;
@@ -268,13 +258,8 @@ header {
 }
 
 .logo {
-    /*  display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;*/
     max-width: 25%;
     flex-grow: 1;
-
 }
 
 .link-logo {
@@ -294,7 +279,6 @@ header {
     justify-content: center;
     align-content: center;
     font-weight: bold;
-
 }
 
 /* vertical line */
@@ -304,7 +288,6 @@ header {
     transform: translate(-50%);
     border: 1px solid #ebebeb;
     height: 300px;
-    /* background: #ebebeb;*/
     background-color: #f7f7f7;
 
 }
@@ -314,34 +297,28 @@ header {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    /*background-color: #f7f7f7;*/
     background: transparent;
-
-    /*background-color: #ffffff;*/
-    /* border: 1px solid #ccc; */
-    /* border-radius: 50%; */
     padding: 20px;
     color: #797979;
 }
 
-.fullvh{
+.fullvh {
     height: 100vh;
 }
 
 .login-wrapper {
     display: flex;
-    /* height: 100vh;*/
     align-content: center;
     justify-content: center;
     align-items: center;
 }
 
-.login-regular{
+.login-regular {
     width: 100%;
     padding: 30px;
 }
 
-.login-socials{
+.login-socials {
     width: 100%;
     padding: 30px;
     display: flex;
@@ -349,20 +326,18 @@ header {
     align-items: center;
     align-content: center;
     flex-direction: column;
-
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     width: 70%;
     margin: auto;
-
 }
 
-.social{
+.social {
     width: 60%;
     display: flex;
     align-items: center;
@@ -372,10 +347,9 @@ form{
     border: solid 2px black;
     margin: 10px;
     background: #f7f7f7;
-
 }
 
-.social:hover{
+.social:hover {
     background-color: #ebebeb;
     cursor: pointer;
 }
@@ -388,7 +362,6 @@ form{
     align-content: center;
     font-weight: bold;
     text-align: center;
-
 }
 
 .logo-social {
@@ -399,9 +372,8 @@ form{
     align-content: center;
 }
 
-.logo-social img{
+.logo-social img {
     width: 32px;
-
 }
 
 input {
@@ -411,7 +383,6 @@ input {
     margin-bottom: 20px;
     background: #f7f7f7;
     width: 100%;
-
 }
 
 label {
@@ -441,25 +412,22 @@ input.btn-login {
 input.btn-login:disabled {
     background-color: #ebebeb;
     color: #d6d6d6;
-
 }
 
-
-.btn-login:hover{
+.btn-login:hover {
     opacity: 0.8;
-
-
 }
 
-body{
+body {
     background-color: #f7f7f7 !important;
 }
 
-.title-login{
+.title-login {
     margin-top: 120px;
     --bs-gutter-x: 0rem !important;
 
 }
+
 .frgt {
     font-size: 10px;
     text-decoration: none;
@@ -470,25 +438,24 @@ body{
 
 }
 
-
-.frgt:hover{
+.frgt:hover {
     color: var(--ver);
 }
 
 
-.trouble{
+.trouble {
     margin-top: 50px !important;
     font-size: 12px;
     font-weight: bold;
     color: #000;
 }
 
-.trouble:hover{
+.trouble:hover {
     color: var(--ver);
 
 }
 
-.tit{
+.tit {
     font-weight: bold;
     /* font-family: 'Bebas Neue', cursive;
    font-size: 45px;*/
@@ -496,7 +463,7 @@ body{
 
 /*password*/
 
-.pass-container{
+.pass-container {
     position: relative;
 
 }
@@ -533,9 +500,10 @@ i#eye_confirm {
     right: 4%;
     cursor: pointer;
 }
+
 /*registo*/
 
-.botoes{
+.botoes {
     display: flex;
     margin-top: 10%;
     justify-content: space-between;
@@ -560,6 +528,7 @@ button:hover {
 #prevBtn {
     background-color: #bbbbbb;
 }
+
 .tab {
     display: none;
 }
@@ -588,16 +557,16 @@ input.invalid {
     background-color: var(--ver);
 }
 
-.btn-registo{
+.btn-registo {
     padding: 10px !important;
 }
 
-.dir{
+.dir {
     width: 50%;
 
 }
 
-.left{
+.left {
     background: #ebebeb;
     width: 50%;
     height: 100%;
@@ -607,7 +576,7 @@ input.invalid {
 
 /*footer*/
 
-.footer-bg{
+.footer-bg {
     clip-path: polygon(0 90%, 100% 82%, 100% 100%, 0% 100%);
     width: 100%;
     background: #c92337;
@@ -616,13 +585,13 @@ input.invalid {
     position: absolute;
 }
 
-.text-center{
+.text-center {
     display: flex;
     justify-content: center;
 
 }
 
-.linha-ajuda{
+.linha-ajuda {
     clip-path: polygon(0 86%, 100% 63%, 100% 100%, 0% 100%);
     background: #c92337;
     width: 20% !important;
@@ -639,11 +608,11 @@ input.invalid {
 
     }
 
-    .vl{
+    .vl {
         display: none;
     }
 
-    header{
+    header {
         position: sticky;
 
     }
@@ -651,7 +620,8 @@ input.invalid {
 
 
 }
-.background{
+
+.background {
     display: flex;
     top: 0;
 
@@ -662,4 +632,26 @@ input.invalid {
 
 }
 
+/*nav*/
+.navbar-first-container {
+    background-color: #1a1a1a;
+    color: white;
+    height: 30px;
+}
 
+.navbar-first-container p {
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.navbar-first-container .line {
+    background-color: white;
+    width: 2px;
+    height: 20px;
+}
+
+.clip-path {
+    clip-path: polygon(0 55%, 0 100%, 100% 55%);
+    width: 150px;
+    background: red;
+}
