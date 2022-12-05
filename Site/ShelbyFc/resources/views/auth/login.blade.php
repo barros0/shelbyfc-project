@@ -27,34 +27,29 @@
                 <form method="post" action="{{ route('login') }}">
                     @csrf
                     <label for="email">EMAIL</label>
-                    <input value="{{ old('email') }}" class="@error('email') is-invalid @enderror" type="email"
-                           id="email" name="email" placeholder="nome@exemplo.com" required autocomplete="email"
-                           autofocus
-                           onkeyup="enableSubmit()">
+                    <input value="{{ old('email') }}" class="@error('email') is-invalid @enderror" type="email" id="email" name="email" placeholder="nome@exemplo.com" required autocomplete="email" autofocus onkeyup="enableSubmit()">
 
                     @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
 
                     <label for="password">PASSWORD </label>
 
                     <div class="pass-container">
-                        <input @error('password') is-invalid @enderror type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password"
-                               class="required" onkeyup="enableSubmit()">
+                        <input @error('password') is-invalid @enderror type="password" name="password" id="password" placeholder="Password" required autocomplete="current-password" class="required" onkeyup="enableSubmit()">
                         <i class="fas fa-eye" id="eye" onclick="showPass()"></i>
                         <a href="#" class="frgt">Esqueceu-se da Password?</a>
                     </div>
                     @error('password')
                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                        <strong>{{ $message }}</strong>
+                    </span>
                     @enderror
 
 
-                    <input type="submit" id="login-btn" class="btn-login" value="INICIAR SESSÃO"
-                           disabled="disabled">
+                    <input type="submit" id="login-btn" class="btn-login" value="INICIAR SESSÃO" disabled="disabled">
                 </form>
             </div>
             <div class="vl">
@@ -72,7 +67,7 @@
                     <div class="nome-social">Continuar com a Apple</div>
                 </a>
 
-                <a href="{{ route('social.redirect','facebook') }}"  class="social">
+                <a href="{{ route('social.redirect','facebook') }}" class="social">
                     <div class="logo-social"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook"></div>
                     <div class="nome-social">Continuar com o Facebook</div>
                 </a>
