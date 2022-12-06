@@ -18,8 +18,6 @@ class PageController extends Controller
         return view('login');
     }
 
-
-
     public function minha_conta(){
         return view('perfil.index');
     }
