@@ -6,6 +6,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -50,7 +51,8 @@ Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
 });
 
 
-Route::group(['prefix'=>'admin/','as'=>'admin.'], function(){
+Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('/categorias', CategoriesController::class);
     Route::resource('/games', GamesController::class);
 });
