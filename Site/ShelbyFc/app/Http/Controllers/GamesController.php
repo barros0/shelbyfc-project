@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use MongoDB\Driver\Session;
+use Session;
 
 class GamesController extends Controller
 {
@@ -36,6 +37,34 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'title' => 'required',
+            'small_description' => 'required',
+            'description' => 'required',
+            'ticket_avaliable' => 'boolean',
+            'title' => 'required',
+            'title' => 'required',
+            'title' => 'required',
+            'title' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
+
+
+
+        $game = New Game();
+        $game->title = $request->title;
+        $game->small_description = $request->title;
+        $game->description = $request->title;
+        $game->ticket_avaliable = $request->title;
+        $game->ticket_price = $request->title;
+        $game->ticket_price_partner = $request->title;
+        $game->location = $request->title;
+        $game->team_id = $request->team;
+        $game->limit_bet = $request->limit_bet;
+        $game->limit_buy_ticket = $request->limit_buy_ticket;
+        $game->stock_tickets = $request->title;
+        $game->datetime_game = $request->title;
+        $game->save();
 
     }
 
