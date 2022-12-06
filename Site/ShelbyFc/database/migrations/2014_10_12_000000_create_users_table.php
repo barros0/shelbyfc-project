@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('nif')->nullable();
             $table->boolean('is_admin')->default(0); //#
-            $table->enum('status',['Active', 'Suspended','Banned']); //#
+            $table->enum('status',['Ativo', 'Suspenso','Banido']); //#
             //$table->string('facebook_id')->nullable();
             //$table->string('google_id')->nullable();
             $table->string('image')->nullable();

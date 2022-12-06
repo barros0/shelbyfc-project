@@ -1,1 +1,1 @@
-<?php
+{{__('frase_boasvindas')}}
