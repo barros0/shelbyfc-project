@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('ip')->nullable();
             $table->string('location')->nullable();
             $table->string('agent')->nullable();
-            $table->enum('state', ['Success', 'Failed']);
+            $table->enum('state', ['Sucesso', 'Falhada']);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }

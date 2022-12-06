@@ -1,0 +1,1 @@
+{{__('frase_boasvindas')}}
