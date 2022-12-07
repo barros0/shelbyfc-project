@@ -28,6 +28,8 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
+Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
 
