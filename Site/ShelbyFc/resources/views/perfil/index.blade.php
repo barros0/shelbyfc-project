@@ -6,9 +6,9 @@
 @section('content')
 
 
-    <section class="col-12 ">
+    <section class="container ">
 
-        <div class=" vh-100 d-flex flex-wrap  justify-content-center">
+        <div class="vh-100 d-flex flex-wrap  justify-content-center">
 
 
 
