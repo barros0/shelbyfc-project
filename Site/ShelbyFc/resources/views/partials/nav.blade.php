@@ -15,7 +15,7 @@
     <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
     </div>
     <div class="navbar-third-container">
-        <ul class="d-flex flex-row justify-content-center">
+        <ul class="d-flex flex-row justify-content-center align-items-center">
             <li>
                 <a href="">Loja Online</a>
             </li>

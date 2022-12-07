@@ -6,7 +6,7 @@
 @section('content')
 <div class="container_main_new">
     <div class="mask-gradient">
-    <img src="{{asset('images/noticias/gqwtqj3dtpbpe6oerjcw.jpg')}}" alt="#">
+        <img src="{{asset('images/noticias/gqwtqj3dtpbpe6oerjcw.jpg')}}" alt="#">
     </div>
     <div class="container_new">
         <div class="news_details">
