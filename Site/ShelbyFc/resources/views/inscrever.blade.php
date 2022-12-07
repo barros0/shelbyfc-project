@@ -6,7 +6,7 @@
 
 <div class="background-foto">
 <h1 class="tit-principal">NÃO FIQUES NO ESCURO.<br>ACENDE A TUA CHAMA.</h1>
-<img src="img/credit-card.png" alt="Cartão Sócio" class="cartao-socio">
+<img src="{{ asset('images/inscrever/credit-card.png') }}" alt="Cartão Sócio" class="cartao-socio">
 <a class="botao-inscreve" href="#inscrever">INSCREVER SÓCIO</a>
 </div>
 
