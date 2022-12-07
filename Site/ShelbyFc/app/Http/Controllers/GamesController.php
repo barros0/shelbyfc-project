@@ -42,11 +42,14 @@ class GamesController extends Controller
             'small_description' => 'required',
             'description' => 'required',
             'ticket_avaliable' => 'boolean',
-            'title' => 'required',
-            'title' => 'required',
-            'title' => 'required',
-            'title' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'ticket_price' => 'nullable|numeric',
+            'ticket_price_partner' => 'nullable|numeric',
+            'location' => 'required',
+            'team' => 'required',
+            'limit_bet' => 'required',
+            'limit_buy_ticket' => 'required',
+            'stock_tickets' => 'required',
+            'date_game' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
 
@@ -62,10 +65,12 @@ class GamesController extends Controller
         $game->team_id = $request->team;
         $game->limit_bet = $request->limit_bet;
         $game->limit_buy_ticket = $request->limit_buy_ticket;
-        $game->stock_tickets = $request->title;
-        $game->datetime_game = $request->title;
+        $game->stock_tickets = $request->stock_tickets;
+        $game->datetime_game = $request->date_game;
         $game->save();
 
+        Session::flash('success', 'Jogo publicado!');
+        return back();
     }
 
     /**

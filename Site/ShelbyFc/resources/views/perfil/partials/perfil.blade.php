@@ -17,6 +17,8 @@
 </div>
 
 <div class="row">
+    <form action="{{route('user.')}}" method="post" enctype="multipart/form-data">
+        @csrf
     <div class="col-lg-6 form-group">
         <label class="form-label" for="nome">Nome</label>
         <input class="form-control" type="text" name="nome" id="nome" value="{{Auth::user()->name}}">
@@ -58,6 +60,7 @@
         <label class="form-label" for="nif">NIF</label>
         <input class="form-control" type="number" name="nif" id="nif" value="{{Auth::user()->nif}}">
     </div>
+    </form>
 </div>
 
 <div class="col-12 text-center">
