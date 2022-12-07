@@ -6,6 +6,8 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -26,6 +28,11 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
+Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
+Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
+
+
+
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('github')->redirect();
@@ -35,13 +42,15 @@ Route::get('/auth/callback', function () {
     $user = Socialite::driver('github')->user();
 });
 
-
+Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
 //Route::get('/login', [PageController::class, 'login'])->name('login');
 Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
 /*
 Route::get('/registar', [PageController::class, 'registar'])->name('registar');*/
-Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
+Route::get('/noticias', [UserController::class, 'noticias'])->name('noticias');
+
+
 
 
 Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
@@ -50,9 +59,18 @@ Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
 });
 
 
-Route::group(['prefix'=>'admin/','as'=>'admin.'], function(){
+Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+
+
+
+
     Route::resource('/categorias', CategoriesController::class);
     Route::resource('/games', GamesController::class);
+    Route::resource('/users', GamesController::class);
+    Route::resource('/news', GamesController::class);
+    Route::resource('/teams', GamesController::class);
+
 });
 
 

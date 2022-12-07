@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,9 @@ class PageController extends Controller
         return view('login');
     }
 
-
-
     public function minha_conta(){
-        return view('perfil.index');
+
+        $countrys = Country::all();
+        return view('perfil.index', compact('countrys'));
     }
 }

@@ -602,10 +602,8 @@ input.invalid {
 
 
 @media only screen and (max-width: 800px) {
-
     .login-wrapper {
         flex-wrap: wrap;
-
     }
 
     .vl {
@@ -614,22 +612,16 @@ input.invalid {
 
     header {
         position: sticky;
-
     }
-
-
-
 }
 
 .background {
     display: flex;
     top: 0;
-
     position: absolute;
     height: 100%;
     width: 100%;
     z-index: -1;
-
 }
 
 /*nav*/
@@ -639,9 +631,14 @@ input.invalid {
     height: 30px;
 }
 
-.navbar-first-container p {
+.navbar-first-container p, .container-login a {
     font-weight: 600;
     margin: 0 10px;
+    color: white !important;
+}
+
+.navbar-first-container i {
+    margin-right: 10px;
 }
 
 .navbar-first-container .line {
@@ -650,8 +647,6 @@ input.invalid {
     height: 20px;
 }
 
-.clip-path {
-    clip-path: polygon(0 55%, 0 100%, 100% 55%);
-    width: 150px;
-    background: red;
+.container-login a:hover{
+    color: #FF5559 !important;
 }

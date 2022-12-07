@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->bigInteger('game_id')->unsigned();
             $table->foreign('game_id')->references('id')->on('games');
             $table->float('value');
-            $table->enum('result', ['Win', 'Defeat'])->nullable();
+            $table->enum('result', ['Vitorio', 'Derrota'])->nullable();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
-use MongoDB\Driver\Session;
+use Session;
 
 class GamesController extends Controller
 {
@@ -36,7 +36,40 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'title' => 'required',
+            'small_description' => 'required',
+            'description' => 'required',
+            'ticket_avaliable' => 'boolean',
+            'ticket_price' => 'nullable|numeric',
+            'ticket_price_partner' => 'nullable|numeric',
+            'location' => 'required',
+            'team' => 'required',
+            'limit_bet' => 'required',
+            'limit_buy_ticket' => 'required',
+            'stock_tickets' => 'required',
+            'date_game' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
 
+
+
+        $game = New Game();
+        $game->title = $request->title;
+        $game->small_description = $request->title;
+        $game->description = $request->title;
+        $game->ticket_avaliable = $request->title;
+        $game->ticket_price = $request->title;
+        $game->ticket_price_partner = $request->title;
+        $game->location = $request->title;
+        $game->team_id = $request->team;
+        $game->limit_bet = $request->limit_bet;
+        $game->limit_buy_ticket = $request->limit_buy_ticket;
+        $game->stock_tickets = $request->stock_tickets;
+        $game->datetime_game = $request->date_game;
+        $game->save();
+
+        Session::flash('success', 'Jogo publicado!');
+        return back();
     }
 
     /**

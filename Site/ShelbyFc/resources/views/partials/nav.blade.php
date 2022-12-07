@@ -1,18 +1,20 @@
 <nav id="navbar" class="d-flex flex-column">
     <div class="navbar-first-container d-flex flex-row justify-content-around align-items-center">
         <div class="container-contacts d-flex flex-row justify-content-center align-items-center">
-            <p>244 144 102</p>
+            <p class="d-flex align-items-center"> <i class='bx bxs-phone'></i> 244 144 102</p>
             <div class="line"></div>
-            <p>shelbyfc@gmail.com</p>
+            <p class="d-flex align-items-center"> <i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
         </div>
-        <div class="container-login justify-content-around">
+        <div class="container-login d-flex justify-content-around align-items-center">
             <a href="{{route('login')}}">Login</a>
+            <div class="line"></div>
+            <a href="{{route('register')}}">Register</a>
         </div>
     </div>
-    <div class="navbar-second-container d-flex flex-row">
-        <div class="clip-path">
-
-        </div>
+    <div class="navbar-second-container">
+    <img src="{{asset('images/logo.svg')}}" width="10%" alt="Logo">
+    </div>
+    <div class="navbar-third-container d-flex flex-row">
         <ul>
             <li>
                 <a href="">Loja Online</a>

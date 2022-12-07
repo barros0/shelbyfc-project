@@ -139,7 +139,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../laragon/www/Micael" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -167,7 +167,10 @@
       <workItem from="1668636354626" duration="807000" />
       <workItem from="1668721852504" duration="1795000" />
       <workItem from="1669749100843" duration="4416000" />
-      <workItem from="1669833272008" duration="2792000" />
+      <workItem from="1669833272008" duration="3984000" />
+      <workItem from="1670105682814" duration="823000" />
+      <workItem from="1670263747111" duration="636000" />
+      <workItem from="1670352565540" duration="584000" />
     </task>
     <servers />
   </component>
