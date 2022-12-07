@@ -22,24 +22,24 @@
     <div class="row">
         <div class="col-lg-6 form-group">
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-control" type="text" name="nome" id="nome" value="{{Auth::user()->name}}">
+            <input class="" type="text" name="nome" id="nome" value="{{Auth::user()->name}}">
         </div>
         <div class="col-lg-6 form-group">
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" disabled value="{{Auth::user()->email}}">
+            <input class="" type="email" name="email" id="email" disabled value="{{Auth::user()->email}}">
         </div>
         <div class="col-lg-6 form-group">
             <label class="form-label" for="telefone">Nº telefone</label>
-            <input class="form-control" type="text" name="telefone" id="telefone" value="{{Auth::user()->phone}}">
+            <input class="" type="text" name="telefone" id="telefone" value="{{Auth::user()->phone}}">
         </div>
         <div class="col-lg-6 form-group">
             <label class="form-label" for="morada">Morada</label>
-            <input class="form-control" type="text" name="morada" id="morada" value="{{Auth::user()->address}}">
+            <input class="" type="text" name="morada" id="morada" value="{{Auth::user()->address}}">
         </div>
 
         <div class="col-lg-6 form-group">
             <label class="form-label" for="distrito">Pais</label>
-            <select class="form-control" name="distrito" id="distrito">
+            <select class="" name="distrito" id="distrito">
                 <option value="">Selecione o seu pais</option>
                 @foreach($countrys as $country)
                     <option
@@ -54,13 +54,13 @@
 
         <div class="col-lg-6 form-group">
             <label class="form-label" for="cod-postal">Código postal</label>
-            <input class="form-control" type="text" name="cod-postal" id="cod-postal"
+            <input class="" type="text" name="cod-postal" id="cod-postal"
                    value="{{Auth::user()->postal_code}}">
         </div>
 
         <div class="col-lg-6 form-group">
             <label class="form-label" for="nif">NIF</label>
-            <input class="form-control" type="number" name="nif" id="nif" value="{{Auth::user()->nif}}">
+            <input class="" type="number" name="nif" id="nif" value="{{Auth::user()->nif}}">
         </div>
     </div>
 </form>
@@ -68,7 +68,6 @@
 
 <div class="col-12 text-center">
     <button type="submit" class="btn">
-        <i class="fa-solid fa-floppy-disk"></i>
         Guardar
     </button>
 </div>

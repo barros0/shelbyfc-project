@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'stable';
 }
 
-button {
+button, input[type=button], input[type=submit], .btn {
     outline: 0;
     border: 0;
     background-color: var(--vermelho);
@@ -57,7 +57,7 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
     background-color: var(--vermelho);
     transform: scale(1.05);
     transition: 0.5s;
@@ -68,7 +68,7 @@ img {
     max-width: 100%;
 }
 
-tr.header {
+tr.header, tr th {
     background: #ff5559;
     color: #fff;
     text-transform: uppercase;
@@ -112,23 +112,14 @@ form {
 
 
 input {
-    padding: 10px 5px 10px 5px;
+    padding: 0px 5px 0px 5px !important;
     border: none;
     border-bottom: 1px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
     background: #f7f7f7;
     width: 100%;
 }
 
-label {
-    font-weight: bold;
-    font-size: smaller;
-    margin: 10px 0px 10px 0px;
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-
-}
 
 input:focus {
     outline: none;
@@ -158,6 +149,8 @@ body {
 }
 
 
+
+
 input {
     padding: 10px 5px 10px 5px;
     border: none;
@@ -165,7 +158,10 @@ input {
     margin-bottom: 20px;
     background: #f7f7f7;
     width: 100%;
+}
 
+input:focus {
+    outline: none;
 }
 
 label {
@@ -175,12 +171,8 @@ label {
     display: flex !important;
     justify-content: space-between;
     align-items: center;
-
 }
 
-input:focus {
-    outline: none;
-}
 
 input.btn-login {
     border: none;
@@ -196,16 +188,6 @@ input.btn-login:disabled {
     background-color: #ebebeb;
     color: #d6d6d6;
 
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
-    /*user-select: none;*/
 }
 
 
@@ -271,17 +253,6 @@ input.invalid {
     padding: 10px 30px 10px 30px;
     max-width: 700px;
     padding-top: 40px;
-}
-
-.tab-content input {
-    border: 2px solid #e4e4e4;
-    background-color: #fbfbfb;
-    height: 35px;
-}
-
-.tab-content label {
-    color: var(--preto);
-
 }
 
 .info .btn-remove {
