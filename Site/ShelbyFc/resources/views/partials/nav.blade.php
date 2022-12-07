@@ -20,16 +20,16 @@
                 <a href="">Loja Online</a>
             </li>
             <li>
-                <a href="">Forúm</a>
+                <a href="{{route('forum.home')}}">Forúm</a>
             </li>
             <li>
-                <a href="">Notícias</a>
+                <a href="{{route('noticias')}}">Notícias</a>
             </li>
             <li>
-                <a href="">Jogos</a>
+                <a href="{{route('jogos')}}">Jogos</a>
             </li>
             <li>
-                <a href="">Suporte</a>
+                <a href="{{route('contactos')}}">Suporte</a>
             </li>
         </ul>
     </div>

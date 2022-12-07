@@ -93,7 +93,7 @@ class UserController extends Controller
         }
 
         $user = Auth::user();
-        $user->password = bcrypt($request->new_password);
+        $user->password = bcrypt($request->nova_password);
         $user->save();
 
         Session::flash('success', 'A sua password foi atualizada!');

@@ -1,8 +1,5 @@
 
 /*login*/
-
-
-
 function enableSubmit() {
     let inputs = document.getElementsByClassName("required");
     let btn = document.getElementById("login-btn");

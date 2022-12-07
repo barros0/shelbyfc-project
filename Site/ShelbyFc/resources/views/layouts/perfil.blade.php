@@ -8,11 +8,11 @@
 
     <section class="container ">
 
-        <div class="vh-100 d-flex flex-wrap  justify-content-center">
+        <div class="vh-100 d-flex justify-content-center">
 
 
 
-            <div class="tab-content d-flex justify-content-center">
+            <div class="tab-content d-flex justify-content-center flex-wrapx">
 
                 <nav class="nav-conta container-user-settings ">
                     <div class="nav-conta-wrap">
@@ -20,39 +20,39 @@
                             <h3>Definições de conta</h3>
                         </div>
 
-                        <ul class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                        <ul class="row nav flex-wrap nav-pills me-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
-                            <li>
+                            <li class="col-6 col-lg-12">
                                 <a href="#" class="active" class="active">
                                     <i class="fa fa-user"></i>
                                     Perfil
                                 </a>
                             </li>
-                            <li>
+                            <li class="col-6 col-lg-12">
                                 <a href="{{route('subscricoes')}}">
                                     <i class="fa-sharp fa-solid fa-handshake"></i>
                                     Subscrições
                                 </a>
                             </li>
-                            <li>
+                            <li class="col-6 col-lg-12">
                                 <a href="{{route('seguranca')}}">
                                     <i class="fa fa-lock"></i>
                                     Segurança
                                 </a>
                             </li>
-                            <li>
+                            <li class="col-6 col-lg-12">
                                 <a href="{{route('transacoes')}}">
                                     <i class="fa fa-coins"></i>
                                     Transações
                                 </a>
                             </li>
-                            <li>
+                            <li class="col-6 col-lg-12">
                                 <a href="{{route('preferencias')}}">
                                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
                                     Preferências
                                 </a>
                             </li>
-                            <li>
+                            <li class="col-6 col-lg-12">
 
                                 <a class="logoutbt" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" id="v-preferencias-tab" data-bs-toggle="pill"
                                    data-bs-target="#v-preferencias" type="button" role="tab"

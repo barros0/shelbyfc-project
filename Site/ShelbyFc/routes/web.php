@@ -57,14 +57,16 @@ Route::get('/auth/callback', function () {
 
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
-Route::get('/noticias', [UserController::class, 'noticias'])->name('noticias');
+Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
+Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
+Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 
 
 
 
 Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
-    /*Route::get('/', [PageController::class, 'noticias'])->name('index');
-*/
+    Route::get('/', [PageController::class, 'forum'])->name('home');
+
 });
 
 

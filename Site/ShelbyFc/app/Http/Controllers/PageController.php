@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Game;
+use App\Models\News;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -55,6 +57,19 @@ class PageController extends Controller
     public function preferencias(){
 
         return view('perfil.preferencias');
+    }
+
+
+    public function noticia($id){
+
+        $noticia = News::findOrFail($id);
+        return view('noticia', compact('noticia'));
+    }
+
+    public function jogo($id){
+
+        $game = Game::findOrFail($id);
+        return view('noticia', compact('game'));
     }
 
 }

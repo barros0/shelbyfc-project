@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
-use App\Models\New;
+use App\Models\News;
+use App\Models\News_Categories;
 use Illuminate\Http\Request;
+use Psy\Util\Str;
 
 class NewsController extends Controller
 {
@@ -37,28 +39,61 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'titulo' => 'required',
+            'body' => 'required',
+            'categorias' => 'required',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
+
+
+        $categories = $request->categorias;
+        $image = $request->imagem;
+
+        $new =  new News();
+        $new->title = $request->title;
+        $new->body = $request->body;
+
+        if($image){
+            $extension = $image->getClientOriginalExtension();
+            $image_name = $image->getClientOriginalName().Str::random(5).'.' . $extension;
+            $image->move(public_path('noticias/'), $image_name);
+            $new->image = $image_name;
+        }
+        $new->save();
+
+        foreach ($categories as $category) {
+            $addcategory = new News_Categories();
+            $addcategory->news_id = $new->id;
+            $addcategory->categories_id = $category;
+            $addcategory->save();
+        }
+
+        Session::flash('success', 'Noticia inserida!');
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\New  $news
+     * @param  \App\Models\News  $new
      * @return \Illuminate\Http\Response
      */
-    public function show(New $news)
+    public function show($new)
     {
-            return view('admin.news.index', compact('categories'));
+
+            return view('admin.news.index');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\New  $new
+     * @param  \App\Models\News  $new
      * @return \Illuminate\Http\Response
      */
-    public function edit(New $new)
+    public function edit($new)
     {
+        $categories = Categorie::all();
         return view('admin.news.edit', compact('categories'));
     }
 
@@ -66,10 +101,10 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\New  $new
+     * @param  \App\Models\News  $new
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, New $new)
+    public function update(Request $request, $new)
     {
         //
     }
@@ -77,10 +112,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\New  $new
+     * @param  \App\Models\News  $new
      * @return \Illuminate\Http\Response
      */
-    public function destroy(New $new)
+    public function destroy($new)
     {
         //
     }
