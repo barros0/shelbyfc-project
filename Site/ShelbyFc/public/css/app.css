@@ -648,17 +648,18 @@ input.invalid {
     z-index: -1;
 }
 
-/*nav*/
+/*navbar_geral*/
 .navbar-first-container {
     background-color: #1a1a1a;
     color: white;
-    height: 30px;
+    padding: 5px 0;
 }
 
-.navbar-first-container p, .container-login a {
+.navbar-first-container p, .container-login a,.navbar-third-container ul li a {
     font-weight: 600;
     margin: 0 10px;
     color: white !important;
+    font-size:15px;
 }
 
 .navbar-first-container i {
@@ -673,6 +674,18 @@ input.invalid {
 
 .container-login a:hover{
     color: #FF5559 !important;
+}
+.navbar-second-container{
+    margin: 10px 0;
+}
+.navbar-third-container{
+    background-color: #FF5559;
+    padding: 5px 0;
+}
+.navbar-third-container ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 /*inscrever*/
