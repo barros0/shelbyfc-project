@@ -67,13 +67,20 @@
                         </ul>
 
                         <div class="logout d-flex justify-content-center align-items-center">
-                            <a href="{{route('logout')}}">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                class="d-flex">
                                 <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
                                 <p>Sair</p>
                             </a>
                         </div>
                     </div>
-                </nav>
+                </nav><a>
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
 
                 <div class="tab-content" id="v-pills-tabContent">
 

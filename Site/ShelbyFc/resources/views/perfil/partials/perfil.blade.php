@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<form action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
+<form class="form-profile" action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="row">

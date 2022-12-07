@@ -26,6 +26,7 @@
 
 body {
     font-family: "Montserrat";
+    background-color: #f7f7f7 !important;
 }
 
 
@@ -97,23 +98,6 @@ td{
     border-bottom: 1px solid black !important;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 70%;
-    margin: auto;
-}
-
-.tab-content-group {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-top: 15px;
-}
-
 
 input {
     padding: 0px 5px 0px 5px !important;
@@ -148,9 +132,33 @@ input.btn-login:disabled {
     opacity: 0.8;
 }
 
-body {
-    background-color: #f7f7f7 !important;
+
+
+.form-profile{
+   padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
 }
+
+/*
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}*/
+
+.tab-content-group {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-top: 15px;
+}
+
+
 
 
 
@@ -230,7 +238,7 @@ input.invalid {
 }
 
 .nav-conta ul li a {
-    font-size: 15px;
+    font-size: 17px;
     text-decoration: none !important;
     padding-left: 4px;
     transition-duration: 0.1s;
@@ -244,8 +252,8 @@ input.invalid {
     border-left: 4px solid white;
 }
 
-.nav-conta .title {
-    color: white;
+.title {
+    color: var(--preto);
 }
 
 .tab-content {
