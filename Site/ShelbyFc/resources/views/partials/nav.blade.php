@@ -11,11 +11,11 @@
             <a href="{{route('register')}}">Register</a>
         </div>
     </div>
-    <div class="navbar-second-container">
-    <img src="{{asset('images/logo.svg')}}" width="10%" alt="Logo">
+    <div class="navbar-second-container d-flex justify-content-center">
+    <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
     </div>
-    <div class="navbar-third-container d-flex flex-row">
-        <ul>
+    <div class="navbar-third-container">
+        <ul class="d-flex flex-row justify-content-center">
             <li>
                 <a href="">Loja Online</a>
             </li>
