@@ -28,6 +28,11 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
+Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
+Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
+
+
+
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('github')->redirect();

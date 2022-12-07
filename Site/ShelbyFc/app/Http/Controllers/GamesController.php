@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
-use MongoDB\Driver\Session;
 use Session;
 
 class GamesController extends Controller

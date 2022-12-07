@@ -34,6 +34,8 @@
 </head>
 <body>
 
+@include('partials.alerts')
+
 
 
 

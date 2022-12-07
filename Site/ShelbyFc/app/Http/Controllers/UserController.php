@@ -17,7 +17,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function atualizar(Request $request)
+    public function update_account(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
@@ -49,12 +49,8 @@ class UserController extends Controller
 
         Session::flash('success', 'Os seus dados foram atualizados!');
         return back();
-
-
-
-
-
     }
+
 
     public function comprar_bilhete($gameid, Request $request)
     {
@@ -75,35 +71,37 @@ class UserController extends Controller
             $ticket->save();
         }
 
+
         return;
     }
 
 
-    public function changePasswordPost(Request $request) {
-        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-            // The passwords matches
+    public function update_password(Request $request) {
+
+        $validatedData = $request->validate([
+            'atual_password' => 'required',
+            'new_password' => 'required|string|min:8|confirmed',
+            'confirmacao_new_password' => 'required|string|min:8|confirmed',
+        ]);
+
+        if (!(Hash::check($request->atual_password, Auth::user()->password))) {
+            Session::flash('error','A password atual não coincide com a password.');
             return redirect()->back()->with("error","Your current password does not matches with the password.");
         }
 
-        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
-            // Current password and new password same
-            return redirect()->back()->with("error","New Password cannot be same as your current password.");
+        if(strcmp($request->atual_password, $request->new_password) == 0){
+            Session::flash('error','A nova password não pode ser igual à tua passowrd atual.');
+            return redirect()->back();
         }
 
-        $validatedData = $request->validate([
-            'current-password' => 'required',
-            'new_password' => 'required|string|min:8|confirmed',
-            'confirm_password' => 'required|string|min:8|confirmed',
-        ]);
-
-        //Change Password
         $user = Auth::user();
-        $user->password = bcrypt($request->password);
+        $user->password = bcrypt($request->new_password);
         $user->save();
 
         Session::flash('success', 'A sua password foi atualizada!');
         return redirect()->back();
     }
+
 
     public function index()
     {
