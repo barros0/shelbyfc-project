@@ -28,6 +28,12 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
+<<<<<<< HEAD
+Route::get('styles', [PageController::class, 'styles'])->name('styles');
+=======
+Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+>>>>>>> eedacc179679b62c129221e9723dacaa36909461
+
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
 

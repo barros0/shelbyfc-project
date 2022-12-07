@@ -14,14 +14,24 @@ class PageController extends Controller
         return view('index');
     }
 
-    public function  login(){
+    public function login(){
 
         return view('login');
+    }
+
+    public function inscrever(){
+
+        return view('inscrever');
     }
 
     public function minha_conta(){
 
         $countrys = Country::all();
         return view('perfil.index', compact('countrys'));
+    }
+
+    public function styles(){
+
+        return view('styles');
     }
 }
