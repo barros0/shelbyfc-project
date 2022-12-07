@@ -24,14 +24,37 @@ class PageController extends Controller
         return view('inscrever');
     }
 
-    public function minha_conta(){
 
-        $countrys = Country::all();
-        return view('perfil.index', compact('countrys'));
-    }
 
     public function styles(){
 
         return view('styles');
     }
+
+    public function minha_conta(){
+
+        $countrys = Country::all();
+        return view('perfil.perfil', compact('countrys'));
+    }
+
+    public function subscricoes(){
+
+        return view('perfil.subscricoes');
+    }
+
+    public function seguranca(){
+
+        return view('perfil.seguranca');
+    }
+
+    public function transacoes(){
+
+        return view('perfil.transacoes');
+    }
+
+    public function preferencias(){
+
+        return view('perfil.preferencias');
+    }
+
 }

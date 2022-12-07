@@ -1,3 +1,7 @@
+@extends('layouts.perfil')
+
+@section('content-perfil')
+
 @if(empty($transacoes))
 
     <h2>Você ainda não fez nenhuma transação</h2>
@@ -25,3 +29,4 @@
     </table>
 
 @endif
+@endsection

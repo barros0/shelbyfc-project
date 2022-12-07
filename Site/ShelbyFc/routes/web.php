@@ -34,6 +34,13 @@ Route::get('styles', [PageController::class, 'styles'])->name('styles');
 Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
 
 
+
+Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
+Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
+Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
+Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
+Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
 
@@ -50,10 +57,6 @@ Route::get('/auth/callback', function () {
 
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
-//Route::get('/login', [PageController::class, 'login'])->name('login');
-Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
-/*
-Route::get('/registar', [PageController::class, 'registar'])->name('registar');*/
 Route::get('/noticias', [UserController::class, 'noticias'])->name('noticias');
 
 

@@ -1,3 +1,6 @@
+@extends('layouts.perfil')
+
+@section('content-perfil')
 <div class="d-flex justify-content-center justify-itens-center">
 
     <div class="photo-edit-wrap">
@@ -38,8 +41,8 @@
         </div>
 
         <div class="col-lg-6 form-group">
-            <label class="form-label" for="distrito">Pais</label>
-            <select class="" name="distrito" id="distrito">
+            <label class="form-label" for="pais">Pais</label>
+            <select class="" name="pais" id="pais">
                 <option value="">Selecione o seu pais</option>
                 @foreach($countrys as $country)
                     <option
@@ -53,8 +56,8 @@
 
 
         <div class="col-lg-6 form-group">
-            <label class="form-label" for="cod-postal">Código postal</label>
-            <input class="" type="text" name="cod-postal" id="cod-postal"
+            <label class="form-label" for="codigo_postal">Código postal</label>
+            <input class="" type="text" name="codigo_postal" id="codigo_postal"
                    value="{{Auth::user()->postal_code}}">
         </div>
 
@@ -62,12 +65,14 @@
             <label class="form-label" for="nif">NIF</label>
             <input class="" type="number" name="nif" id="nif" value="{{Auth::user()->nif}}">
         </div>
+
+        <div class="col-lg-6 text-center">
+            <button type="submit" class="btn">
+                Guardar
+            </button>
+        </div>
     </div>
 </form>
 
+@endsection
 
-<div class="col-12 text-center">
-    <button type="submit" class="btn">
-        Guardar
-    </button>
-</div>

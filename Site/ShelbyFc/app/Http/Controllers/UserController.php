@@ -21,10 +21,10 @@ class UserController extends Controller
     public function update_account(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'nullable',
-            'pais' => 'nullable|exists:countrys',
+            'nome' => 'required',
+            'telefone' => 'nullable',
+            'morada' => 'nullable',
+            'pais' => 'nullable|exists:countries,id',
             'codigo_postal' => 'nullable',
             'nif' => 'nullable',
         ]);
@@ -38,12 +38,10 @@ class UserController extends Controller
             $user->photo = $name_photo;
         }
 
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
+        $user->name = $request->nome;
+        $user->phone = $request->telefone;
         $user->address = $request->morada;
-        $user->pais_id = $request->pais;
+        $user->country_id = $request->pais;
         $user->postal_code = $request->codigo_postal;
         $user->nif = $request->nif;
         $user->save();
