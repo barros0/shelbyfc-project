@@ -24,6 +24,10 @@
     /*user-select: none;*/
 }
 
+body {
+    font-family: "Montserrat";
+}
+
 
 a {
     text-decoration: none !important;
@@ -37,12 +41,8 @@ a {
 a:hover {
     color: var(--vermelho) !important;
 }
-body {
-    font-family: "Montserrat";
-}
 
 h1, h2, h3, h4, h5, h6 {
-    /* font-family: 'Bebas Neue', cursive;*/
     font-family: 'stable';
 }
 
@@ -61,6 +61,10 @@ button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
     background-color: var(--vermelho);
     transform: scale(1.05);
     transition: 0.5s;
+}
+
+select{
+    padding: 5px;
 }
 
 img {
@@ -230,7 +234,7 @@ input.invalid {
 }
 
 .nav-conta ul li a {
-    color: white;
+    color: white !important;
     font-size: 22px;
     text-decoration: none !important;
     padding-left: 4px;
@@ -497,11 +501,6 @@ header {
 
 }
 
-.tit {
-    font-weight: bold;
-    /* font-family: 'Bebas Neue', cursive;
-   font-size: 45px;*/
-}
 
 /*password*/
 
