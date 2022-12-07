@@ -163,5 +163,5 @@ Great page for testing the style guide for a website.
 
     <small><a href="#wrapper">[top]</a></small>
     <!-- End of Sample Content -->
-    
+
 @endsection
