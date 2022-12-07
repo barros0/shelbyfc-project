@@ -8,11 +8,11 @@
 
         <div class="col-lg-6 form-group">
             <label class="form-label" for="nova_password">Nova password</label>
-            <input class="form-control" type="password" name="new_password" id="nova_password">
+            <input class="form-control" type="password" name="nova_password" id="nova_password">
         </div>
         <div class="col-lg-6 form-group">
-            <label class="form-label" for="confirmacao_nova_password">Confirmação da nova password</label>
-            <input class="form-control" type="password" name="confirmacao_new_password" id="confirmacao_nova_password">
+            <label class="form-label" for="nova_password_confirmation">Confirmação da nova password</label>
+            <input class="form-control" type="password" name="nova_password_confirmation" id="nova_password_confirmation">
         </div>
     </div>
 

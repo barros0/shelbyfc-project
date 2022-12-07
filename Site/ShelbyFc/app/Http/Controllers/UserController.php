@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Session;
 use Str;
+use Hash;
 
 class UserController extends Controller
 {
@@ -80,13 +81,12 @@ class UserController extends Controller
 
         $validatedData = $request->validate([
             'atual_password' => 'required',
-            'new_password' => 'required|string|min:8|confirmed',
-            'confirmacao_new_password' => 'required|string|min:8|confirmed',
+            'nova_password' => 'required|string|min:8|confirmed',
         ]);
 
         if (!(Hash::check($request->atual_password, Auth::user()->password))) {
             Session::flash('error','A password atual não coincide com a password.');
-            return redirect()->back()->with("error","Your current password does not matches with the password.");
+            return redirect()->back();
         }
 
         if(strcmp($request->atual_password, $request->new_password) == 0){

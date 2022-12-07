@@ -11,14 +11,32 @@
 :root {
     --vermelho: #c92337;
     --preto: #333333;
+    --main-color: #FF5559;
 }
 
 * {
     padding: 0px;
     margin: 0px;
     border: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    /*user-select: none;*/
 }
 
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+#conta {
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--vermelho) !important;
+}
 body {
     font-family: "Montserrat";
 }
@@ -28,22 +46,21 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'stable';
 }
 
-.btn {
-    margin: 18px;
-    border-top: 2px solid var(--vermelho);
-    border-bottom: 2px solid var(--vermelho);
-    color: var(--preto);
-    padding: 4px 8px 4px 8px;
-    font-family: 'Bebas Neue', cursive;
+button {
+    outline: 0;
+    border: 0;
+    background-color: var(--vermelho);
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    border-radius: 17px;
+    transition: 0.5s;
 }
 
-.btn:hover {
-
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    color: white;
+button:hover {
     background-color: var(--vermelho);
-
+    transform: scale(1.05);
+    transition: 0.5s;
 }
 
 img {
@@ -76,12 +93,124 @@ td{
     border-bottom: 1px solid black !important;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
 .tab-content-group {
     margin-top: 20px;
 }
 
 .form-group {
     margin-top: 15px;
+}
+
+
+input {
+    padding: 10px 5px 10px 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    background: #f7f7f7;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    font-size: smaller;
+    margin: 10px 0px 10px 0px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+input.btn-login {
+    border: none;
+    margin: 0;
+    margin-top: 10%;
+    font-weight: bold;
+    padding: 15px;
+    background: var(--ver);
+    color: #fff;
+}
+
+input.btn-login:disabled {
+    background-color: #ebebeb;
+    color: #d6d6d6;
+}
+
+.btn-login:hover {
+    opacity: 0.8;
+}
+
+body {
+    background-color: #f7f7f7 !important;
+}
+
+
+input {
+    padding: 10px 5px 10px 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    background: #f7f7f7;
+    width: 100%;
+
+}
+
+label {
+    font-weight: bold;
+    font-size: smaller;
+    margin: 10px 0px 10px 0px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+input.btn-login {
+    border: none;
+    margin: 0;
+    margin-top: 10%;
+    font-weight: bold;
+    padding: 15px;
+    background: var(--main-color);
+    color: #fff;
+}
+
+input.btn-login:disabled {
+    background-color: #ebebeb;
+    color: #d6d6d6;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    /*user-select: none;*/
+}
+
+
+input.invalid {
+    background-color: #ffdddd;
 }
 
 /*fim css geral*/
@@ -227,36 +356,7 @@ td{
 
 
 /*geral*/
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
-    /*user-select: none;*/
-}
-
-:root {
-    --ver: #FF5559;
-    --bran: #ffffff;
-}
-
-a {
-    text-decoration: none !important;
-    color: #000 !important;
-}
-
-#conta {
-    cursor: pointer;
-}
-
-a:hover {
-    color: var(--ver) !important;
-}
 
 /*navbar*/
 header {
@@ -353,14 +453,6 @@ header {
     flex-direction: column;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 70%;
-    margin: auto;
-}
 
 .social {
     width: 60%;
@@ -399,52 +491,6 @@ form {
 
 .logo-social img {
     width: 32px;
-}
-
-input {
-    padding: 10px 5px 10px 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    margin-bottom: 20px;
-    background: #f7f7f7;
-    width: 100%;
-}
-
-label {
-    font-weight: bold;
-    font-size: smaller;
-    margin: 10px 0px 10px 0px;
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-input:focus {
-    outline: none;
-}
-
-input.btn-login {
-    border: none;
-    margin: 0;
-    margin-top: 10%;
-    font-weight: bold;
-    padding: 15px;
-    background: var(--ver);
-    color: #fff;
-}
-
-input.btn-login:disabled {
-    background-color: #ebebeb;
-    color: #d6d6d6;
-}
-
-.btn-login:hover {
-    opacity: 0.8;
-}
-
-body {
-    background-color: #f7f7f7 !important;
 }
 
 .title-login {
@@ -534,21 +580,6 @@ i#eye_confirm {
     justify-content: space-between;
 }
 
-button {
-    border: none;
-    margin: 0;
-    margin-top: 10%;
-    font-weight: bold;
-    padding: 15px;
-    background: var(--ver);
-    color: #fff;
-    width: 100%;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.8;
-}
 
 #prevBtn {
     background-color: #bbbbbb;
@@ -679,19 +710,6 @@ input.invalid {
 /*inscrever*/
 
 /*geral*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
-    /*user-select: none;*/
-  }
-  
-  :root {
-    --main-color: #FF5559;
-  }
-
 
 .background-foto{
     height: 100vh;
@@ -715,7 +733,7 @@ input.invalid {
 
 .cartao-socio{
     text-align: center;
- 
+
 }
 
 .botao-inscreve{
@@ -731,8 +749,8 @@ input.invalid {
 
 .botao-inscreve:hover{
     opacity: 0.8;
-color: #fff;
-transform: scale(1.1);
+    color: #fff;
+    transform: scale(1.1);
 }
 
 .row-vant {
@@ -754,19 +772,19 @@ transform: scale(1.1);
 }
 
 .vantagens{
-   background-color: #f4f2f2;
+    background-color: #f4f2f2;
 }
 
 .vantagem{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        justify-content: center;
-        text-align: center;
-        font-weight: bold;
-        align-content: center;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    align-content: center;
+
 }
 
 .tit-vant{
@@ -809,110 +827,54 @@ transform: scale(1.1);
 .login-regular{
     width: 100%;
     padding: 20px;
-   }
+}
 
-   .tabela-preco{
+.tabela-preco{
     padding: 20px;
     width: 100%;
 
-   }
+}
 
-   button {
-    border: none;
-    margin: 0;
-    margin-top: 10%;
-    font-weight: bold;
-    padding: 15px;
-    background: var(--main-color);
-    color: #fff;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  #prevBtn {
+
+
+#prevBtn {
     background-color: #bbbbbb;
-  }
-  .tab {
+}
+.tab {
     display: none;
-  }
-  
-  /* Make circles that indicate the steps of the form: */
-  .step {
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
     height: 15px;
     width: 15px;
     margin: 0 2px;
     background-color: #bbbbbb;
-    border: none;  
+    border: none;
     border-radius: 50%;
     display: inline-block;
     opacity: 0.5;
-  }
-  
-  .step.active {
-    opacity: 1;
-  }
-  
-  input.invalid {
-    background-color: #ffdddd;
-  }
-  
-  .step.finish {
-    background-color: var(--ver);
-  }
+}
 
-  
+.step.active {
+    opacity: 1;
+}
+
+
+.step.finish {
+    background-color: var(--ver);
+}
+
+
 .btn-registo{
     padding: 10px !important;
-  }
+}
 
-  input {
-    padding: 10px 5px 10px 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    margin-bottom: 20px;
-    background: #f7f7f7;
-    width: 100%;
-  
-  }
-  
-  label {
-    font-weight: bold;
-    font-size: smaller;
-    margin: 10px 0px 10px 0px;
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-  
-  }
-  
-  input:focus {
-  outline: none;
-  }
-  
-  input.btn-login {
-    border: none;
-    margin: 0;
-    margin-top: 10%;
-    font-weight: bold;
-    padding: 15px;
-    background: var(--main-color);
-    color: #fff;
-  }
-  
-  input.btn-login:disabled {
-     background-color: #ebebeb;
-    color: #d6d6d6;
-  
-  }
 
-  .botoes{
+.botoes{
     display: flex;
     margin-top: 10%;
     justify-content: space-between;
-  }
-  
-  
+}
+
+

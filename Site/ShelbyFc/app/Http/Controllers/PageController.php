@@ -29,4 +29,9 @@ class PageController extends Controller
         $countrys = Country::all();
         return view('perfil.index', compact('countrys'));
     }
+
+    public function styles(){
+
+        return view('styles');
+    }
 }
