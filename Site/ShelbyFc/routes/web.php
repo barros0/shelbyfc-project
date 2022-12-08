@@ -23,13 +23,13 @@ use App\Http\Controllers\PostsController;
 
 Auth::routes();
 
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('styles', [PageController::class, 'styles'])->name('styles');
+
+/** AUTH PROVIDERS & CALLBACK**/
 Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
 Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
 
-Route::get('/', [PageController::class, 'index'])->name('index');
-
-
-Route::get('styles', [PageController::class, 'styles'])->name('styles');
 
 Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
 
@@ -45,15 +45,6 @@ Route::post('/atualizar', [UserController::class, 'update_account'])->name('user
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
 
 
-
-
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('github')->redirect();
-});
-
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('github')->user();
-});
 
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
@@ -72,9 +63,6 @@ Route::group(['prefix'=>'forum','as'=>'forum.','middleware'=>'subscriber'], func
 
 Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-
-
-
 
     Route::resource('/categorias', CategoriesController::class);
     Route::resource('/games', GamesController::class);
