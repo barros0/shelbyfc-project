@@ -56,7 +56,7 @@ class NewsController extends Controller
 
         if($image){
             $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().Str::random(5).'.' . $extension;
+            $image_name = $image->getClientOriginalName().time().'.' . $extension;
             $image->move(public_path('noticias/'), $image_name);
             $new->image = $image_name;
         }

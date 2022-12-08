@@ -113,6 +113,7 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

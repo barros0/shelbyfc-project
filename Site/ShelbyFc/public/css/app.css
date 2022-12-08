@@ -32,7 +32,7 @@ body {
 
 a {
     text-decoration: none !important;
-    color: #000 !important;
+    color: #000;
 }
 
 #conta {
@@ -66,6 +66,7 @@ button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
 
 select {
     padding: 5px;
+    max-width: 100%;
 }
 
 img {
@@ -213,6 +214,12 @@ input.invalid {
 
 
 /*minha conta*/
+
+.bt-fix{
+    margin-top: 60%;
+    /*margin-left: 100%;*/
+}
+
 .logout {
     color: white;
 }

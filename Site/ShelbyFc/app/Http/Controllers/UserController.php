@@ -9,6 +9,8 @@ use Auth;
 use Session;
 use Str;
 use Hash;
+use Storage;
+
 
 class UserController extends Controller
 {
@@ -20,22 +22,25 @@ class UserController extends Controller
 
     public function update_account(Request $request)
     {
+
+
         $this->validate($request, [
             'nome' => 'required',
             'telefone' => 'nullable',
             'morada' => 'nullable',
             'pais' => 'nullable|exists:countries,id',
-            'codigo_postal' => 'nullable',
-            'nif' => 'nullable',
+            'codigo_postal' => 'nullable|regex:/^\d{4}-\d{3}?$/',
+            'nif' => 'nullable|numeric|digits:9',
+            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         $user = Auth::user();
+        $photo = $request->foto_perfil;
 
-        if($request->photo){
-            $photo = $request->photo;
-            $name_photo = 'Profile_photo-'.Auth::id().'-'.Str::random(5) . '.png';
-            Storage::put('users/' . $name_photo, $photo);
-            $user->photo = $name_photo;
+        if($photo){
+            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.png';
+            $photo->move(public_path('/images/users'),$name_photo);
+            $user->image = $name_photo;
         }
 
         $user->name = $request->nome;

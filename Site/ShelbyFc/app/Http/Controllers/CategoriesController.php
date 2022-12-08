@@ -46,7 +46,7 @@ class CategoriesController extends Controller
         $image = $request->image;
         if($image){
             $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().Str::random(5).'.' . $extension;
+            $image_name = $image->getClientOriginalName().time().'.' . $extension;
             $image->move(public_path('categories/'), $image_name);
         }
 
@@ -98,7 +98,7 @@ class CategoriesController extends Controller
         $image = $request->image;
         if($image){
             $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().Str::random(5).'.' . $extension;
+            $image_name = $image->getClientOriginalName().time().'.' . $extension;
             $image->move(public_path('categories/'), $image_name);
         }
 

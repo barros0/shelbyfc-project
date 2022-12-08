@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a9a9356f311809cf20a1b25ecdec4ca",
+    "content-hash": "257603de95a8e7c67808b999de35f03b",
     "packages": [
         {
             "name": "brick/math",
@@ -3039,6 +3039,56 @@
                 }
             ],
             "time": "2022-11-05T23:03:38+00:00"
+        },
+        {
+            "name": "square-bit/laravel-pt-rules",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/square-bit/laravel-pt-rules.git",
+                "reference": "1bcc3fa892f18b144a5b9cf974b94bbce26575e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/square-bit/laravel-pt-rules/zipball/1bcc3fa892f18b144a5b9cf974b94bbce26575e9",
+                "reference": "1bcc3fa892f18b144a5b9cf974b94bbce26575e9",
+                "shasum": ""
+            },
+            "require-dev": {
+                "laravel/framework": "^8.13|^9.0",
+                "phpunit/phpunit": "^9.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Squarebit\\PTRules\\PTRulesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Squarebit\\PTRules\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Squarebit",
+                    "email": "info@square-bit.com",
+                    "homepage": "https://square-bit.com/"
+                }
+            ],
+            "description": "Validation rules relevant to Portugal",
+            "homepage": "https://github.com/square-bit/laravel-pt-rules",
+            "support": {
+                "issues": "https://github.com/square-bit/laravel-pt-rules/issues",
+                "source": "https://github.com/square-bit/laravel-pt-rules/tree/v1.2"
+            },
+            "time": "2022-10-17T10:57:17+00:00"
         },
         {
             "name": "symfony/console",
@@ -8040,5 +8090,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

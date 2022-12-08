@@ -23,7 +23,7 @@
                         <ul class="row nav flex-wrap nav-pills me-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
                             <li class="col-6 col-lg-12">
-                                <a href="#" class="active" class="active">
+                                <a href="{{route('minha.conta')}}" class="active" class="active">
                                     <i class="fa fa-user"></i>
                                     Perfil
                                 </a>
