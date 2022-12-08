@@ -4,7 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Carbon\Carbon;
-use     Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -58,10 +58,19 @@ class User extends Authenticatable
 
     function subscrived()
     {
-        return $this->hasOne(Subscriprion::class,)
-                ->where('state', 2)
-                ->where('expires_at', '=>', Carbon::now())
-                ->first();
+        return $this->hasOne(Subscription::class,)
+            ->where('state', 2)
+            ->where('expires_at', '>=', Carbon::now());
+    }
+
+    function subscriptions()
+    {
+        return $this->hasMany(Subscription::class,);
+    }
+
+    function transactions()
+    {
+        return $this->hasOne(Transactions::class,);
     }
 
     function country(){
@@ -76,7 +85,5 @@ class User extends Authenticatable
         return $this->hasOne(Cart::class,);
     }
 
-    function transactions(){
-        return $this->hasMany(Transactions::class,);
-    }
+
 }

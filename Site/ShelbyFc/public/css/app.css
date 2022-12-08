@@ -231,11 +231,10 @@ input.invalid {
 
 .nav-conta {
     padding-top: 40px;
-    padding-left: 10%;
 }
 
 .nav-conta-wrap {
-    width: 300px;
+    width: 250px;
 }
 
 .nav-conta ul {
@@ -320,14 +319,13 @@ input.invalid {
     background-color: var(--vermelho);
 }
 
-
-.container-user-settings {
-    padding-left: 12%;
+.alert-profile{
+    margin-top: 80px;
 }
+
 
 .logout {
     font-size: 22px;
-    font-size: 24px;
     margin-top: 30px;
 }
 

@@ -64,7 +64,7 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 
 
-Route::group(['prefix'=>'forum','as'=>'forum.'], function(){
+Route::group(['prefix'=>'forum','as'=>'forum.','middleware'=>'subscriber'], function(){
     Route::get('/', [PageController::class, 'forum'])->name('home');
 
 });
