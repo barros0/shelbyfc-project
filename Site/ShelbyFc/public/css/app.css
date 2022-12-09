@@ -60,6 +60,7 @@ button, input[type=button], input[type=submit], .btn {
 
 button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
     background-color: var(--vermelho);
+    color: black;
     transform: scale(1.05);
     transition: 0.5s;
 }
@@ -1164,7 +1165,7 @@ h2{
 
 .fale-conosco{
   width: 100%;
-  height: 400px;
+  height: 470px;
   background-color: white;
   padding-left: 180px;
   padding-right: 180px;
@@ -1226,7 +1227,7 @@ h2{
   color: white;
   font-size: 15px;
   padding: 10px;
-     font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;

@@ -5,9 +5,6 @@
 @section('content')
 <div class="conteudo-faqs">
     <div class="imagem-inicio">
-      <div class="parte-cima-banner">
-        <div class="logo-container"><img src="{{ asset('images/faqs/logo-shelby.png') }}" alt="logotipo"></div>
-      </div>
 
       <div class="parte-baixo-banner">
         <div class="texto-banner">Apoio ao Cliente</div>
