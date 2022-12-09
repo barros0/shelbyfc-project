@@ -11,7 +11,6 @@
 :root {
     --vermelho: #FF5559;
     --preto: #333333;
-    --main-color: #FF5559;
 }
 
 * {
@@ -21,14 +20,12 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
-    /*user-select: none;*/
 }
 
 body {
     font-family: "Montserrat";
     background-color: #f7f7f7 !important;
 }
-
 
 a {
     text-decoration: none !important;
@@ -76,7 +73,7 @@ img {
 }
 
 tr.header, tr th {
-    background: #ff5559;
+    background: var(--vermelho);
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -100,7 +97,6 @@ td {
     border-bottom: 1px solid black !important;
 }
 
-
 input {
     padding: 0px 5px 0px 5px !important;
     border: none;
@@ -109,7 +105,6 @@ input {
     background: #f7f7f7;
     width: 100%;
 }
-
 
 input:focus {
     outline: none;
@@ -134,8 +129,6 @@ input.btn-login:disabled {
 .btn-login:hover {
     opacity: 0.8;
 }
-
-
 
 .form-profile {
     padding-left: 20px;
@@ -162,11 +155,8 @@ form {
 }
 
 .logoutbt {
-    color: var(--main-color) !important;
+    color: var(--vermelho) !important;
 }
-
-
-
 
 input {
     padding: 10px 5px 10px 5px;
@@ -190,8 +180,6 @@ label {
     align-items: center;
 }
 
-
-
 input.invalid {
     background-color: #ffdddd;
 }
@@ -203,7 +191,6 @@ input.invalid {
 
 .bt-fix {
     margin-top: 60%;
-    /*margin-left: 100%;*/
 }
 
 .logout {
@@ -213,7 +200,6 @@ input.invalid {
 .logout .fa {
     color: var(--vermelho);
 }
-
 
 .nav-conta {
     padding-top: 40px;
@@ -246,7 +232,7 @@ input.invalid {
 }
 
 .nav-conta ul li a.active:hover {
-    border-left: 4px solid var(--main-color);
+    border-left: 4px solid var(--vermelho);
 }
 
 .title {
@@ -280,8 +266,6 @@ input.invalid {
     width: 100px;
     height: 100px;
     overflow: hidden;
-
-
 }
 
 .photo img {
@@ -324,9 +308,6 @@ input.invalid {
     margin: 0px 0px 0px 10px;
 
 }
-
-/************/
-
 
 /*geral*/
 
@@ -387,7 +368,6 @@ header {
     border: 1px solid #ebebeb;
     height: 300px;
     background-color: #f7f7f7;
-
 }
 
 /* text inside the vertical line */
@@ -467,9 +447,7 @@ header {
 }
 
 .title-login {
-    /*margin-top: 120px;*/
     --bs-gutter-x: 0rem !important;
-
 }
 
 .frgt {
@@ -479,13 +457,11 @@ header {
     font-weight: bold;
     float: right;
     margin-top: 5px;
-
 }
 
 .frgt:hover {
     color: var(--ver);
 }
-
 
 .trouble {
     margin-top: 50px !important;
@@ -496,7 +472,6 @@ header {
 
 .trouble:hover {
     color: var(--ver);
-
 }
 
 
@@ -504,7 +479,6 @@ header {
 
 .pass-container {
     position: relative;
-
 }
 
 input#password {
@@ -588,7 +562,6 @@ input.invalid {
 
 .dir {
     width: 50%;
-
 }
 
 .left {
@@ -596,7 +569,6 @@ input.invalid {
     width: 50%;
     height: 100%;
     z-index: -1;
-
 }
 
 /*footer*/
@@ -613,7 +585,6 @@ input.invalid {
 .text-center {
     display: flex;
     justify-content: center;
-
 }
 
 .linha-ajuda {
@@ -621,10 +592,7 @@ input.invalid {
     background: #c92337;
     width: 20% !important;
     height: 20px;
-
 }
-
-
 
 @media only screen and (max-width: 800px) {
     .login-wrapper {
@@ -683,7 +651,7 @@ input.invalid {
 }
 
 .container-login a:hover {
-    color: #FF5559 !important;
+    color: var(--vermelho) !important;
 }
 
 .navbar-second-container {
@@ -692,7 +660,7 @@ input.invalid {
 }
 
 .navbar-third-container {
-    background-color: #FF5559;
+    background-color: var(--vermelho);
 }
 
 .navbar-third-container ul {
@@ -707,7 +675,7 @@ input.invalid {
 
 .navbar-third-container ul li:hover {
     background-color: #1a1a1a;
-    color: #FF5559;
+    color: var(--vermelho);
 }
 
 /*inscrever*/
@@ -736,11 +704,10 @@ input.invalid {
 
 .cartao-socio {
     text-align: center;
-
 }
 
 .botao-inscreve {
-    background-color: var(--main-color);
+    background-color: var(--vermelho);
     padding: 10px 15px 10px 15px;
     text-transform: uppercase;
     font-weight: bold;
@@ -763,15 +730,13 @@ input.invalid {
     max-width: 60%;
     justify-content: space-between;
     margin: auto;
-    /* text-align: center; */
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .icon-vant {
-    color: var(--main-color);
+    color: var(--vermelho);
     font-size: 70px;
-
 }
 
 .vantagens {
@@ -791,7 +756,7 @@ input.invalid {
 }
 
 .tit-vant {
-    color: var(--main-color);
+    color: var(--vermelho);
     font-weight: bolder;
     text-align: center;
     padding-top: 20px;
@@ -814,7 +779,6 @@ input.invalid {
     align-content: center;
     justify-content: center;
     align-items: center;
-
 }
 
 .metade h1 {
@@ -824,7 +788,6 @@ input.invalid {
     align-content: flex-start;
     height: 100%;
     padding-top: 50px;
-
 }
 
 .login-regular {
@@ -835,10 +798,7 @@ input.invalid {
 .tabela-preco {
     padding: 20px;
     width: 100%;
-
 }
-
-
 
 #prevBtn {
     background-color: #bbbbbb;
@@ -955,7 +915,7 @@ input.invalid {
 button {
     outline: 0;
     border: 0;
-    background-color: #ff5559;
+    background-color: var(--vermelho);
     padding: 10px;
     color: white;
     font-weight: 800;
@@ -983,7 +943,7 @@ button:hover {
 
 .container_last_matches {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     width: 80%;
     max-width: 1100px;
     height: 200px;
@@ -1022,7 +982,7 @@ button:hover {
     font-weight: 800;
     font-size: 32px;
     margin: 5px;
-    background: #ff5559;
+    background: var(--vermelho);
     border-radius: 11px;
     color: white;
     padding: 5px 10px;
@@ -1042,7 +1002,7 @@ button:hover {
 .see_more {
     padding: 10px;
     text-decoration: none;
-    color: #ff5559;
+    color: var(--vermelho);
     width: 80%;
     max-width: 1100px;
     margin: 0 auto;

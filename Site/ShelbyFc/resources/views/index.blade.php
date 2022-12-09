@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+<a class="see_more" href="">Ver mais &#x2192;</a>
 <div class="container_last_matches">
     <div class="match">
         <div class="match_home d-flex flex-column justify-content-between align-items-center">
@@ -71,5 +72,4 @@
         </div>
     </div>
 </div>
-<a class="see_more" href="">Ver mais &#x2192;</a>
 @endsection
