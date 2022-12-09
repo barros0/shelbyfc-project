@@ -620,6 +620,7 @@ input.invalid {
 }
 
 /*navbar_geral*/
+
 .navbar-first-container {
     background-color: #1a1a1a;
     color: white;
@@ -716,7 +717,6 @@ input.invalid {
     text-decoration: none !important;
     color: #fff !important;
     transition: all 0.6s ease-in-out;
-
 }
 
 .botao-inscreve:hover {
@@ -754,7 +754,6 @@ input.invalid {
     text-align: center;
     font-weight: bold;
     align-content: center;
-
 }
 
 .tit-vant {
@@ -763,7 +762,6 @@ input.invalid {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
 
 .fullpage-row {
@@ -811,6 +809,7 @@ input.invalid {
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
     height: 15px;
     width: 15px;
@@ -826,16 +825,13 @@ input.invalid {
     opacity: 1;
 }
 
-
 .step.finish {
     background-color: var(--ver);
 }
 
-
 .btn-registo {
     padding: 10px !important;
 }
-
 
 .botoes {
     display: flex;
@@ -843,8 +839,8 @@ input.invalid {
     justify-content: space-between;
 }
 
-
 /*HOMEPAGE*/
+
 .container_main_new {
     margin: 40px auto;
     width: 80%;
@@ -1018,15 +1014,7 @@ button:hover {
     font-weight: 500;
 }
 
-
-
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
-
-
-
-
-
-
 
 span {
     color: #fc3131;
@@ -1049,12 +1037,9 @@ span {
     align-items: center;
 }
 
-
-
 .logo-container img {
     width: 70px;
     height: 70px;
-
 }
 
 .accordion {
@@ -1070,7 +1055,6 @@ span {
     font-size: 23px;
     border-bottom: 1px solid rgba(203, 203, 203, 0.499);
     font-family: 'Bebas Neue', cursive;
-
 }
 
 .accordion:hover {
@@ -1081,7 +1065,6 @@ span {
     background-color: transparent;
     color: #fc3131;
     border-color: transparent;
-
 }
 
 .active:hover {
@@ -1090,7 +1073,6 @@ span {
 
 .panel.active2 {
     border-bottom: 1px solid #fc3131;
-
 }
 
 .panel {
@@ -1099,7 +1081,6 @@ span {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     width: 100%;
-
 }
 
 .panel p {
@@ -1113,13 +1094,11 @@ span {
     color: #777;
     float: right;
     margin-left: 5px;
-
 }
 
 .active:after {
     content: "\2796";
 }
-
 
 .section-faqs {
     width: 100%;
@@ -1151,7 +1130,6 @@ span {
     align-items: center;
     align-content: center;
 }
-
 
 .texto-banner {
     color: white;
