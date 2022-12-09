@@ -3,7 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use     Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -20,7 +21,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'address',
+        'country_id',
+        'postal_code',
         'password',
+        'nif',
+        'status',
+        'image',
     ];
 
     /**
@@ -31,6 +39,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'is_admin',
     ];
 
     /**
@@ -42,7 +51,39 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function socialAccounts(){
+    public function socialAccounts()
+    {
         return $this->hasMany(socialAccount::class);
     }
+
+    function subscrived()
+    {
+        return $this->hasOne(Subscription::class,)
+            ->where('state', 2)
+            ->where('expires_at', '>=', Carbon::now());
+    }
+
+    function subscriptions()
+    {
+        return $this->hasMany(Subscription::class,);
+    }
+
+    function transactions()
+    {
+        return $this->hasOne(Transactions::class,);
+    }
+
+    function country(){
+        return $this->hasOne(Country::class,);
+    }
+
+    function posts(){
+        return $this->hasMany(Posts::class,);
+    }
+
+    function cart(){
+        return $this->hasOne(Cart::class,);
+    }
+
+
 }

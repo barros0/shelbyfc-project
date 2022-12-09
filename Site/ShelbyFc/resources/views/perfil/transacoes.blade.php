@@ -1,6 +1,12 @@
+@extends('layouts.perfil')
+
+@section('content-perfil')
+
 @if(empty($transacoes))
 
-    <h2>Você ainda não fez nenhuma transação</h2>
+    <div class="alert-profile">
+    <h4>Você ainda não fez nenhuma transação</h4>
+    </div>
 
 @else
 
@@ -16,8 +22,8 @@
         @foreach($transacoes as $transacao)
         <tr>
             <td>{{$transacao->id}}</td>
-            <td>{{$transacao->descricao}}</td>
-            <td>{{$transacao->valor}}</td>
+            <td>{{$transacao->description}}</td>
+            <td>{{$transacao->value}}</td>
             <td>{{$transacao->created_at}}</td>
         </tr>
         @endforeach
@@ -25,3 +31,4 @@
     </table>
 
 @endif
+@endsection

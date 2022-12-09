@@ -127,6 +127,7 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Hb9iZ1RgjZS4Q8nRSnP0vBDj3v" />
@@ -171,6 +172,7 @@
       <workItem from="1670105682814" duration="823000" />
       <workItem from="1670263747111" duration="636000" />
       <workItem from="1670352565540" duration="584000" />
+      <workItem from="1670520438111" duration="5721000" />
     </task>
     <servers />
   </component>

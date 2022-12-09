@@ -9,6 +9,8 @@ use Auth;
 use Session;
 use Str;
 use Hash;
+use Storage;
+
 
 class UserController extends Controller
 {
@@ -20,30 +22,31 @@ class UserController extends Controller
 
     public function update_account(Request $request)
     {
+
+
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'nullable',
-            'pais' => 'nullable|exists:countrys',
-            'codigo_postal' => 'nullable',
-            'nif' => 'nullable',
+            'nome' => 'required',
+            'telefone' => 'nullable',
+            'morada' => 'nullable',
+            'pais' => 'nullable|exists:countries,id',
+            'codigo_postal' => 'nullable|regex:/^\d{4}-\d{3}?$/',
+            'nif' => 'nullable|numeric|digits:9',
+            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         $user = Auth::user();
+        $photo = $request->foto_perfil;
 
-        if($request->photo){
-            $photo = $request->photo;
-            $name_photo = 'Profile_photo-'.Auth::id().'-'.Str::random(5) . '.png';
-            Storage::put('users/' . $name_photo, $photo);
-            $user->photo = $name_photo;
+        if($photo){
+            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.png';
+            $photo->move(public_path('/images/users'),$name_photo);
+            $user->image = $name_photo;
         }
 
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
-        $user->nome = $request->nome;
+        $user->name = $request->nome;
+        $user->phone = $request->telefone;
         $user->address = $request->morada;
-        $user->pais_id = $request->pais;
+        $user->country_id = $request->pais;
         $user->postal_code = $request->codigo_postal;
         $user->nif = $request->nif;
         $user->save();
@@ -95,7 +98,7 @@ class UserController extends Controller
         }
 
         $user = Auth::user();
-        $user->password = bcrypt($request->new_password);
+        $user->password = bcrypt($request->nova_password);
         $user->save();
 
         Session::flash('success', 'A sua password foi atualizada!');

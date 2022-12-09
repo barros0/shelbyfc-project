@@ -44,7 +44,7 @@ class SocialLoginController extends Controller
                     $url = $social_user->getavatar();
                     $contents = file_get_contents($url);
                     $name = substr($url, strrpos($url, '/') + 1).'.png';
-                    Storage::put('users/'.$name, $contents);
+                    $contents->move(public_path('/images/users'),$name);
                     $avatar = $name;
                 }
                 else{

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->enum('status',['Ativo', 'Suspenso','Banido']); //#
             //$table->string('facebook_id')->nullable();
             //$table->string('google_id')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('noimage.png')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

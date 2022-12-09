@@ -9,7 +9,7 @@
 }
 
 :root {
-    --vermelho: #c92337;
+    --vermelho: #FF5559;
     --preto: #333333;
     --main-color: #FF5559;
 }
@@ -26,12 +26,13 @@
 
 body {
     font-family: "Montserrat";
+    background-color: #f7f7f7 !important;
 }
 
 
 a {
     text-decoration: none !important;
-    color: #000 !important;
+    color: #000;
 }
 
 #conta {
@@ -63,8 +64,9 @@ button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
     transition: 0.5s;
 }
 
-select{
+select {
     padding: 5px;
+    max-width: 100%;
 }
 
 img {
@@ -92,26 +94,9 @@ th {
     padding: 5px;
 }
 
-td{
+td {
     padding: 5px;
     border-bottom: 1px solid black !important;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 70%;
-    margin: auto;
-}
-
-.tab-content-group {
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-top: 15px;
 }
 
 
@@ -149,8 +134,34 @@ input.btn-login:disabled {
     opacity: 0.8;
 }
 
-body {
-    background-color: #f7f7f7 !important;
+
+
+.form-profile {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+
+/*
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}*/
+
+.tab-content-group {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-top: 15px;
+}
+
+.logoutbt {
+    color: var(--main-color) !important;
 }
 
 
@@ -188,6 +199,12 @@ input.invalid {
 
 
 /*minha conta*/
+
+.bt-fix {
+    margin-top: 60%;
+    /*margin-left: 100%;*/
+}
+
 .logout {
     color: white;
 }
@@ -199,11 +216,10 @@ input.invalid {
 
 .nav-conta {
     padding-top: 40px;
-    padding-left: 10%;
 }
 
 .nav-conta-wrap {
-    width: 300px;
+    width: 250px;
 }
 
 .nav-conta ul {
@@ -218,7 +234,7 @@ input.invalid {
 }
 
 .nav-conta ul li a {
-    font-size: 15px;
+    font-size: 17px;
     text-decoration: none !important;
     padding-left: 4px;
     transition-duration: 0.1s;
@@ -229,16 +245,15 @@ input.invalid {
 }
 
 .nav-conta ul li a.active:hover {
-    border-left: 4px solid white;
+    border-left: 4px solid var(--main-color);
 }
 
-.nav-conta .title {
-    color: white;
+.title {
+    color: var(--preto);
 }
 
 .tab-content {
     padding: 10px 30px 10px 30px;
-    max-width: 700px;
     padding-top: 40px;
 }
 
@@ -289,14 +304,13 @@ input.invalid {
     background-color: var(--vermelho);
 }
 
-
-.container-user-settings {
-    padding-left: 12%;
+.alert-profile {
+    margin-top: 80px;
 }
+
 
 .logout {
     font-size: 22px;
-    font-size: 24px;
     margin-top: 30px;
 }
 
@@ -641,11 +655,11 @@ input.invalid {
     padding: 5px 0;
 }
 
-.navbar-first-container p, .container-login a,.navbar-third-container ul li a {
+.navbar-first-container p, .container-login a, .navbar-third-container ul li a {
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 20px;
     color: white !important;
-    font-size:15px;
+    font-size: 15px;
 }
 
 .navbar-first-container i {
@@ -658,27 +672,48 @@ input.invalid {
     height: 20px;
 }
 
-.container-login a:hover{
+.navbar-second-container p {
+    margin: 0;
+}
+
+.patrocionadores img {
+    width: 65px;
+    height: 35px;
+}
+
+.container-login a:hover {
     color: #FF5559 !important;
 }
-.navbar-second-container{
+
+.navbar-second-container {
+    max-height: 65px;
     margin: 10px 0;
 }
-.navbar-third-container{
+
+.navbar-third-container {
     background-color: #FF5559;
-    padding: 5px 0;
 }
-.navbar-third-container ul{
+
+.navbar-third-container ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.navbar-third-container ul li {
+    padding: 5px 0;
+}
+
+.navbar-third-container ul li:hover {
+    background-color: #1a1a1a;
+    color: #FF5559;
 }
 
 /*inscrever*/
 
 /*geral*/
 
-.background-foto{
+.background-foto {
     height: 100vh;
     width: 100%;
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7091211484593838) 100%, rgba(0, 0, 0, 1) 100%), url(../images/inscrever/socios.png);
@@ -691,19 +726,19 @@ input.invalid {
     align-items: center;
 }
 
-.tit-principal{
+.tit-principal {
     text-align: center;
     color: white;
     font-weight: bolder;
     vertical-align: middle;
 }
 
-.cartao-socio{
+.cartao-socio {
     text-align: center;
 
 }
 
-.botao-inscreve{
+.botao-inscreve {
     background-color: var(--main-color);
     padding: 10px 15px 10px 15px;
     text-transform: uppercase;
@@ -714,7 +749,7 @@ input.invalid {
 
 }
 
-.botao-inscreve:hover{
+.botao-inscreve:hover {
     opacity: 0.8;
     color: #fff;
     transform: scale(1.1);
@@ -732,17 +767,17 @@ input.invalid {
     margin-bottom: 30px;
 }
 
-.icon-vant{
+.icon-vant {
     color: var(--main-color);
     font-size: 70px;
 
 }
 
-.vantagens{
+.vantagens {
     background-color: #f4f2f2;
 }
 
-.vantagem{
+.vantagem {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -754,7 +789,7 @@ input.invalid {
 
 }
 
-.tit-vant{
+.tit-vant {
     color: var(--main-color);
     font-weight: bolder;
     text-align: center;
@@ -763,13 +798,13 @@ input.invalid {
 
 }
 
-.fullpage-row{
+.fullpage-row {
     height: 100vh;
     width: 100%;
     display: flex;
 }
 
-.metade{
+.metade {
     width: 100%;
     text-align: center;
     padding: 30px;
@@ -781,7 +816,7 @@ input.invalid {
 
 }
 
-.metade h1{
+.metade h1 {
     font-weight: bolder;
     display: flex;
     position: absolute;
@@ -791,12 +826,12 @@ input.invalid {
 
 }
 
-.login-regular{
+.login-regular {
     width: 100%;
     padding: 20px;
 }
 
-.tabela-preco{
+.tabela-preco {
     padding: 20px;
     width: 100%;
 
@@ -807,6 +842,7 @@ input.invalid {
 #prevBtn {
     background-color: #bbbbbb;
 }
+
 .tab {
     display: none;
 }
@@ -833,12 +869,12 @@ input.invalid {
 }
 
 
-.btn-registo{
+.btn-registo {
     padding: 10px !important;
 }
 
 
-.botoes{
+.botoes {
     display: flex;
     margin-top: 10%;
     justify-content: space-between;
@@ -848,7 +884,8 @@ input.invalid {
 /*HOMEPAGE*/
 .container_main_new {
     margin: 40px auto;
-    max-width: 80%;
+    width: 80%;
+    max-width: 1100px;
     height: 555px;
     position: relative;
 }
@@ -856,6 +893,7 @@ input.invalid {
 .container_main_new img {
     position: relative;
     height: 100%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -863,7 +901,8 @@ input.invalid {
     height: 100%;
     position: absolute;
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8687850140056023) 0%, rgba(0, 0, 0, 0) 100%);
-    width: 100%;}
+    width: 100%;
+}
 
 .container_new {
     position: relative;
@@ -908,6 +947,7 @@ input.invalid {
 }
 
 .news_btn_date p {
+    margin: 0;
     margin-left: 20px;
 }
 

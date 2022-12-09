@@ -119,6 +119,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/league/oauth1-client" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/ui" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
