@@ -75,8 +75,8 @@
         <p>A senha de acesso deverá ter:</p>
         <br>
         <p>Pelo menos um caracter não alfanumérico (. - ! - # - %)</p>
-        <p>Pelo menos um digito (0 – 9 )</p>
-        <p>Pelo menos um caracter maiúsculo (A – Z)</p>
+        <p>Pelo menos um digito (0 - 9 )</p>
+        <p>Pelo menos um caracter maiúsculo (A - Z)</p>
         <p>Pelo menos 8 caracteres</p>
         <br>
       </div>
