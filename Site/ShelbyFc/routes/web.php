@@ -40,7 +40,7 @@ Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscr
 Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
 Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
 Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
-
+Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
 

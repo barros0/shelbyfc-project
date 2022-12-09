@@ -26,7 +26,10 @@ class PageController extends Controller
         return view('inscrever');
     }
 
+    public function faqs(){
 
+        return view('faqs');
+    }
 
     public function styles(){
 
