@@ -37,7 +37,7 @@
                     <a href="{{route('jogos')}}">Jogos</a>
                 </li>
                 <li>
-                    <a href="{{route('contactos')}}">Suporte</a>
+                    <a href="{{route('faqs')}}">Suporte</a>
                 </li>
             </ul>
         </div>

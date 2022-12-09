@@ -987,35 +987,11 @@ button:hover {
 
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Bebas Neue', cursive;
-  scroll-behavior: smooth;
-}
 
-body {
-  background-color: white;
-}
 
-header {
-  width: 100%;
-  height: 90px;
-  background-color: rgba(0, 0, 0, 0.918);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0;
-}
 
 span{
   color: #fc3131;
@@ -1058,6 +1034,7 @@ span{
   transition: 0.4s #fc3131;
   font-size: 23px;
   border-bottom: 1px solid rgba(203, 203, 203, 0.499);
+  font-family: 'Bebas Neue', cursive;
   
 }
 
@@ -1219,23 +1196,3 @@ h2{
   
 }
 
-.btn-send {
-  width: 200px;
-  height: 40px;
-  background-color: #ff5559;
-  border: 0px solid;
-  color: white;
-  font-size: 15px;
-  padding: 10px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.btn-send:hover {
-  background-color: #fd6a6a;
-  color: white;
-  transition: background-color 1s 100ms;
-
-}
