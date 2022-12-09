@@ -19,13 +19,13 @@
         <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
         <div class="patrocionadores d-flex align-items-center justify-content-center">
             <img src="{{asset('images/icons/amazon.svg')}}" width="10%" alt="nike_logo">
-            <img src="{{asset('images/icons/nike.svg')}}" width="10%" alt="nike_logo">
+            <img src="{{asset('images/icons/jordao.svg')}}" width="10%" alt="nike_logo">
         </div>
         </div>
         <div class="navbar-third-container">
             <ul class="d-flex flex-row justify-content-center align-items-center">
                 <li>
-                    <a href="">Loja Online</a>
+                    <a target="_blank" href="http://teste.social-bubble.pt/">Loja Online</a>
                 </li>
                 <li>
                     <a href="{{route('forum.home')}}">Forúm</a>

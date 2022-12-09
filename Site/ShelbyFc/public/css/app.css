@@ -700,6 +700,7 @@ input.invalid {
 }
 
 .navbar-second-container {
+    max-height: 65px;
     margin: 10px 0;
 }
 
