@@ -122,4 +122,4 @@
 </div>
 
 
-<script src="{{asset('js/functions.js')}}"></script>
+<script src="{{asset('js/login.js')}}"></script>
