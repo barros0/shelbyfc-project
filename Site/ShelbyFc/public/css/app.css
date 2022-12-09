@@ -11,7 +11,6 @@
 :root {
     --vermelho: #FF5559;
     --preto: #333333;
-    --main-color: #FF5559;
 }
 
 * {
@@ -21,14 +20,12 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     scroll-behavior: smooth;
-    /*user-select: none;*/
 }
 
 body {
     font-family: "Montserrat";
     background-color: #f7f7f7 !important;
 }
-
 
 a {
     text-decoration: none !important;
@@ -70,13 +67,15 @@ select {
     max-width: 100%;
 }
 
-img {
-    max-height: 100%;
-    max-width: 100%;
+.navbar-second-container img {
+    height: 100%;
+    width: 100%;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 tr.header, tr th {
-    background: #ff5559;
+    background: var(--vermelho);
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -100,7 +99,6 @@ td {
     border-bottom: 1px solid black !important;
 }
 
-
 input {
     padding: 0px 5px 0px 5px !important;
     border: none;
@@ -109,7 +107,6 @@ input {
     background: #f7f7f7;
     width: 100%;
 }
-
 
 input:focus {
     outline: none;
@@ -120,7 +117,7 @@ input.btn-login {
     margin: 0;
     margin-top: 10%;
     font-weight: bold;
-    padding: 15px !important; 
+    padding: 15px !important;
     background: var(--vermelho) !important;
     color: #fff !important;
     border-radius: 0 !important;
@@ -134,8 +131,6 @@ input.btn-login:disabled {
 .btn-login:hover {
     opacity: 0.8;
 }
-
-
 
 .form-profile {
     padding-left: 20px;
@@ -162,11 +157,8 @@ form {
 }
 
 .logoutbt {
-    color: var(--main-color) !important;
+    color: var(--vermelho) !important;
 }
-
-
-
 
 input {
     padding: 10px 5px 10px 5px;
@@ -190,8 +182,6 @@ label {
     align-items: center;
 }
 
-
-
 input.invalid {
     background-color: #ffdddd;
 }
@@ -203,7 +193,6 @@ input.invalid {
 
 .bt-fix {
     margin-top: 60%;
-    /*margin-left: 100%;*/
 }
 
 .logout {
@@ -213,7 +202,6 @@ input.invalid {
 .logout .fa {
     color: var(--vermelho);
 }
-
 
 .nav-conta {
     padding-top: 40px;
@@ -246,7 +234,7 @@ input.invalid {
 }
 
 .nav-conta ul li a.active:hover {
-    border-left: 4px solid var(--main-color);
+    border-left: 4px solid var(--vermelho);
 }
 
 .title {
@@ -280,8 +268,6 @@ input.invalid {
     width: 100px;
     height: 100px;
     overflow: hidden;
-
-
 }
 
 .photo img {
@@ -324,9 +310,6 @@ input.invalid {
     margin: 0px 0px 0px 10px;
 
 }
-
-/************/
-
 
 /*geral*/
 
@@ -387,7 +370,6 @@ header {
     border: 1px solid #ebebeb;
     height: 300px;
     background-color: #f7f7f7;
-
 }
 
 /* text inside the vertical line */
@@ -467,9 +449,7 @@ header {
 }
 
 .title-login {
-    /*margin-top: 120px;*/
     --bs-gutter-x: 0rem !important;
-
 }
 
 .frgt {
@@ -479,13 +459,11 @@ header {
     font-weight: bold;
     float: right;
     margin-top: 5px;
-
 }
 
 .frgt:hover {
     color: var(--ver);
 }
-
 
 .trouble {
     margin-top: 50px !important;
@@ -496,15 +474,12 @@ header {
 
 .trouble:hover {
     color: var(--ver);
-
 }
-
 
 /*password*/
 
 .pass-container {
     position: relative;
-
 }
 
 input#password {
@@ -521,7 +496,6 @@ input#password_confirm {
 
 i#eye {
     position: absolute;
-    /*top: 28%;*/
     right: 4%;
     cursor: pointer;
 }
@@ -548,7 +522,6 @@ i#eye_confirm {
     justify-content: space-between;
 }
 
-
 #prevBtn {
     background-color: #bbbbbb;
 }
@@ -558,6 +531,7 @@ i#eye_confirm {
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
     height: 15px;
     width: 15px;
@@ -588,7 +562,6 @@ input.invalid {
 
 .dir {
     width: 50%;
-
 }
 
 .left {
@@ -596,7 +569,6 @@ input.invalid {
     width: 50%;
     height: 100%;
     z-index: -1;
-
 }
 
 /*footer*/
@@ -613,7 +585,6 @@ input.invalid {
 .text-center {
     display: flex;
     justify-content: center;
-
 }
 
 .linha-ajuda {
@@ -621,10 +592,7 @@ input.invalid {
     background: #c92337;
     width: 20% !important;
     height: 20px;
-
 }
-
-
 
 @media only screen and (max-width: 800px) {
     .login-wrapper {
@@ -650,6 +618,7 @@ input.invalid {
 }
 
 /*navbar_geral*/
+
 .navbar-first-container {
     background-color: #1a1a1a;
     color: white;
@@ -683,16 +652,16 @@ input.invalid {
 }
 
 .container-login a:hover {
-    color: #FF5559 !important;
+    color: var(--vermelho) !important;
 }
 
 .navbar-second-container {
-    max-height: 65px;
+    max-height: 100px;
     margin: 10px 0;
 }
 
 .navbar-third-container {
-    background-color: #FF5559;
+    background-color: var(--vermelho);
 }
 
 .navbar-third-container ul {
@@ -707,7 +676,7 @@ input.invalid {
 
 .navbar-third-container ul li:hover {
     background-color: #1a1a1a;
-    color: #FF5559;
+    color: var(--vermelho);
 }
 
 /*inscrever*/
@@ -736,18 +705,16 @@ input.invalid {
 
 .cartao-socio {
     text-align: center;
-
 }
 
 .botao-inscreve {
-    background-color: var(--main-color);
+    background-color: var(--vermelho);
     padding: 10px 15px 10px 15px;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none !important;
     color: #fff !important;
     transition: all 0.6s ease-in-out;
-
 }
 
 .botao-inscreve:hover {
@@ -763,15 +730,13 @@ input.invalid {
     max-width: 60%;
     justify-content: space-between;
     margin: auto;
-    /* text-align: center; */
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .icon-vant {
-    color: var(--main-color);
+    color: var(--vermelho);
     font-size: 70px;
-
 }
 
 .vantagens {
@@ -787,16 +752,14 @@ input.invalid {
     text-align: center;
     font-weight: bold;
     align-content: center;
-
 }
 
 .tit-vant {
-    color: var(--main-color);
+    color: var(--vermelho);
     font-weight: bolder;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
 
 .fullpage-row {
@@ -814,7 +777,6 @@ input.invalid {
     align-content: center;
     justify-content: center;
     align-items: center;
-
 }
 
 .metade h1 {
@@ -824,7 +786,6 @@ input.invalid {
     align-content: flex-start;
     height: 100%;
     padding-top: 50px;
-
 }
 
 .login-regular {
@@ -835,10 +796,7 @@ input.invalid {
 .tabela-preco {
     padding: 20px;
     width: 100%;
-
 }
-
-
 
 #prevBtn {
     background-color: #bbbbbb;
@@ -849,6 +807,7 @@ input.invalid {
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
     height: 15px;
     width: 15px;
@@ -864,16 +823,13 @@ input.invalid {
     opacity: 1;
 }
 
-
 .step.finish {
     background-color: var(--ver);
 }
 
-
 .btn-registo {
     padding: 10px !important;
 }
-
 
 .botoes {
     display: flex;
@@ -881,8 +837,8 @@ input.invalid {
     justify-content: space-between;
 }
 
-
 /*HOMEPAGE*/
+
 .container_main_new {
     margin: 40px auto;
     width: 80%;
@@ -955,7 +911,7 @@ input.invalid {
 button {
     outline: 0;
     border: 0;
-    background-color: #ff5559;
+    background-color: var(--vermelho);
     padding: 10px;
     color: white;
     font-weight: 800;
@@ -977,222 +933,275 @@ button:hover {
     background-color: rgb(255 85 89 / 87%);
 }
 
+#news_title {
+    margin-bottom: 0;
+}
+
 .option:hover {
     background-color: rgb(255 85 89 / 87%);
 }
 
+.container_last_matches {
+    display: flex;
+    margin: 0 auto 40px auto;
+    width: 80%;
+    max-width: 1100px;
+    height: 200px;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 0px 52px #0000005c;
+    align-items: center;
+}
 
+.match {
+    display: flex;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    justify-content: space-between;
+}
 
+.match img {
+    width: 110px;
+    height: 110px;
+}
 
+.match_info {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+}
+
+.score_away, .score_home {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 5px;
+    background: var(--vermelho);
+    border-radius: 11px;
+    color: white;
+    padding: 5px 10px;
+}
+
+.team_name {
+    font-weight: 700;
+    margin: 0;
+}
+
+.separador {
+    height: 70%;
+    background-color: #c8c8c8;
+    width: 2px;
+}
+
+.see_more {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--vermelho);
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+    font-weight: 500;
+}
 
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
-
-
-
-
-
-
-span{
-  color: #fc3131;
+span {
+    color: #fc3131;
 }
 
-.parte-cima-banner{
-  height: 15%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.parte-cima-banner {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.parte-baixo-banner{
-  height: 70%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.parte-baixo-banner {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-
 
 .logo-container img {
-  width: 70px;
-  height: 70px;
-
+    width: 70px;
+    height: 70px;
 }
 
 .accordion {
-  background-color: transparent;
-  color: rgb(43, 43, 43);
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s #fc3131;
-  font-size: 23px;
-  border-bottom: 1px solid rgba(203, 203, 203, 0.499);
-  font-family: 'Bebas Neue', cursive;
-  
+    background-color: transparent;
+    color: rgb(43, 43, 43);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s #fc3131;
+    font-size: 23px;
+    border-bottom: 1px solid rgba(203, 203, 203, 0.499);
+    font-family: 'Bebas Neue', cursive;
 }
 
-.accordion:hover{
-  border-bottom: 1px solid #fc3131;
+.accordion:hover {
+    border-bottom: 1px solid #fc3131;
 }
 
 .active {
-  background-color: transparent;
-  color: #fc3131;
-  border-color: transparent;
-  
+    background-color: transparent;
+    color: #fc3131;
+    border-color: transparent;
 }
 
-.active:hover{
-  border: 0px;
+.active:hover {
+    border: 0px;
 }
 
-.panel.active2{
-  border-bottom: 1px solid #fc3131;
- 
+.panel.active2 {
+    border-bottom: 1px solid #fc3131;
 }
 
 .panel {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  width: 100%;
-  
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 100%;
 }
 
-.panel p{
-  font-family: "Montserrat", sans-serif;
-  margin-bottom:5px;
+.panel p {
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 5px;
 }
 
 .accordion:after {
-  content: '\02795' ;
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-  
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
 }
 
 .active:after {
-  content: "\2796"; 
+    content: "\2796";
 }
 
-
-.section-faqs{
-  width: 100%;
-  height: auto;
-  padding-left: 300px;
-  padding-right: 300px;
-  display: flex;
-   flex-direction: column;
+.section-faqs {
+    width: 100%;
+    height: auto;
+    padding-left: 300px;
+    padding-right: 300px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .conteudo-faqs {
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  z-index: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
 }
 
 .imagem-inicio {
-  background-image: url(../images/faqs/fundo-faqs.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    background-image: url(../images/faqs/fundo-faqs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-
-.texto-banner{
-  color: white;
-  font-size: 85px;
+.texto-banner {
+    color: white;
+    font-size: 85px;
+    font-family: 'Bebas Neue', cursive;
 }
 
-.imagem-inicio p{
-color: white;
-font-size: 20px;
+.imagem-inicio p {
+    color: white;
+    font-size: 20px;
 }
 
-h1{
-  margin-bottom: 60px;
-  margin-top: 60px;
-  font-size: 50px;
+.section-faqs h1 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    font-size: 50px;
 }
 
-h2{
-  margin-bottom: 60px;
-  margin-top: 60px;
-  font-size: 50px;
+.fale-conosco {
+    width: 100%;
+    height: 470px;
+    background-color: white;
+    padding-left: 180px;
+    padding-right: 180px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
-
-.fale-conosco{
-  width: 100%;
-  height: 470px;
-  background-color: white;
-  padding-left: 180px;
-  padding-right: 180px;
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
 
 .imagem-fale-conosco {
-  background-image: url(../images/faqs/fundo-fale-conosco.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+    background-image: url(../images/faqs/fundo-fale-conosco.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-.lado-esquerdo{
-  width: 55%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 50px;
+.lado-esquerdo {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
 }
 
-.lado-direito{
-  width: 45%;
-  height: 100%;
+.lado-direito {
+    width: 45%;
+    height: 100%;
 }
 
 
-.titulo-fale-conosco{
-  color: white;
-  font-size: 50px;
-  
+.titulo-fale-conosco {
+    color: white;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+
 }
 
-.texto-fale-conosco p{
-  color: white;
-  font-size: 15px;
-     font-family: "Montserrat", sans-serif;
+.titulo-fale-conosco p {
+    font-family: 'Bebas Neue', cursive;
 }
 
-.btn-section{
-  margin-top: 30px;
-  
+.texto-fale-conosco p {
+    color: white;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
+.btn-section {
+    margin-top: 30px;
+
+}
