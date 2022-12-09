@@ -1121,6 +1121,7 @@ span{
 .texto-banner{
   color: white;
   font-size: 85px;
+  font-family: 'Bebas Neue', cursive;
 }
 
 .imagem-inicio p{
@@ -1181,14 +1182,19 @@ h2{
 
 .titulo-fale-conosco{
   color: white;
-  font-size: 50px;
+  font-size: 40px;
+  font-family: 'Bebas Neue', cursive;
   
+}
+
+.titulo-fale-conosco p{
+    font-family: 'Bebas Neue', cursive;
 }
 
 .texto-fale-conosco p{
   color: white;
   font-size: 15px;
-     font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .btn-section{
