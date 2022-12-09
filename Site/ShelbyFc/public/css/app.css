@@ -476,7 +476,6 @@ header {
     color: var(--ver);
 }
 
-
 /*password*/
 
 .pass-container {
@@ -497,7 +496,6 @@ input#password_confirm {
 
 i#eye {
     position: absolute;
-    /*top: 28%;*/
     right: 4%;
     cursor: pointer;
 }
@@ -524,7 +522,6 @@ i#eye_confirm {
     justify-content: space-between;
 }
 
-
 #prevBtn {
     background-color: #bbbbbb;
 }
@@ -534,6 +531,7 @@ i#eye_confirm {
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
     height: 15px;
     width: 15px;
