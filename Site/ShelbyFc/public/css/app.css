@@ -135,8 +135,8 @@ input.btn-login:disabled {
 
 
 
-.form-profile{
-   padding-left: 20px;
+.form-profile {
+    padding-left: 20px;
     padding-right: 20px;
     margin: auto;
 }
@@ -159,7 +159,7 @@ form {
     margin-top: 15px;
 }
 
-.logoutbt{
+.logoutbt {
     color: var(--main-color) !important;
 }
 
@@ -215,7 +215,7 @@ input.invalid {
 
 /*minha conta*/
 
-.bt-fix{
+.bt-fix {
     margin-top: 60%;
     /*margin-left: 100%;*/
 }
@@ -319,7 +319,7 @@ input.invalid {
     background-color: var(--vermelho);
 }
 
-.alert-profile{
+.alert-profile {
     margin-top: 80px;
 }
 
@@ -686,6 +686,15 @@ input.invalid {
     height: 20px;
 }
 
+.navbar-second-container p {
+    margin: 0;
+}
+
+.patrocionadores img {
+    width: 65px;
+    height: 35px;
+}
+
 .container-login a:hover {
     color: #FF5559 !important;
 }
@@ -707,10 +716,12 @@ input.invalid {
 .navbar-third-container ul li {
     padding: 5px 0;
 }
+
 .navbar-third-container ul li:hover {
     background-color: #1a1a1a;
     color: #FF5559;
 }
+
 /*inscrever*/
 
 /*geral*/
