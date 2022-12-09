@@ -118,7 +118,7 @@
 </div>
 
 <div class="inscricao"></div>
-<script src="js/script.js"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
 
 
 @endsection
