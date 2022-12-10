@@ -625,7 +625,7 @@ input.invalid {
     padding: 5px 0;
 }
 
-.navbar-first-container p, .container-login a, .navbar-third-container ul li a {
+.navbar-first-container p, .container-login a{
     font-weight: 600;
     margin: 0 20px;
     color: white !important;
@@ -670,8 +670,15 @@ input.invalid {
     margin: 0;
 }
 
-.navbar-third-container ul li {
-    padding: 5px 0;
+.navbar-third-container ul li a{
+    display: flex;
+    width: 126px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: white !important;
+    font-size: 15px;
 }
 
 .navbar-third-container ul li:hover {
