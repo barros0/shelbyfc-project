@@ -1,5 +1,5 @@
 <footer class="d-flex flex-row justify-content-around">
-    <div class="footer-first-container">
+    <div class="footer-first-container d-flex flex-column">
         <a class="d-flex justify-content-center" href="{{route('index')}}">
             <img src="{{asset('images/logo.svg')}}" width="30%" alt="Logo">
         </a>

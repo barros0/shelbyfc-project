@@ -767,6 +767,10 @@ footer {
     margin-bottom: 10px;
 }
 
+.footer-first-container {
+    justify-content: space-evenly;
+}
+
 .footer-first-container .patrocionadores {
     text-align: center;
 }
