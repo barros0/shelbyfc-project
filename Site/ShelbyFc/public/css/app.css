@@ -393,6 +393,8 @@ header {
     background: transparent;
     padding: 20px;
     color: #797979;
+    font-weight: bold;
+
 }
 
 .fullvh {
@@ -404,6 +406,15 @@ header {
     align-content: center;
     justify-content: center;
     align-items: center;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
 }
 
 .login-regular {
@@ -437,6 +448,7 @@ header {
 .social:hover {
     background-color: #ebebeb;
     cursor: pointer;
+    color: #000;
 }
 
 .nome-social {
@@ -469,9 +481,9 @@ header {
     font-size: 10px;
     text-decoration: none;
     color: #000;
-    font-weight: bold;
+    font-weight: bold  !important;
     float: right;
-    margin-top: 5px;
+    margin-top: -16px;
 }
 
 .frgt:hover {
@@ -556,7 +568,7 @@ i#eye_confirm {
     opacity: 0.5;
 }
 
-.step.active {
+.step.activo {
     opacity: 1;
 }
 
@@ -927,26 +939,6 @@ footer {
     display: none;
 }
 
-/* Make circles that indicate the steps of the form: */
-
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-.step.finish {
-    background-color: var(--ver);
-}
 
 .btn-registo {
     padding: 10px !important;
@@ -1044,6 +1036,7 @@ button:hover {
     background-color: #f62e33;
     transform: scale(1.05);
     transition: 0.5s;
+    color: #fff;
 }
 
 .news_options {

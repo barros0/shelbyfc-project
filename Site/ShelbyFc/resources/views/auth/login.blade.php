@@ -24,7 +24,7 @@
         </div>
         <div class="login-wrapper">
             <div class="login-regular">
-                <form method="post" action="{{ route('login') }}">
+                <form class="form-login" method="post" action="{{ route('login') }}">
                     @csrf
                     <label for="email">EMAIL</label>
                     <input value="{{ old('email') }}" class="@error('email') is-invalid @enderror" type="email" id="email" name="email" placeholder="nome@exemplo.com" required autocomplete="email" autofocus onkeyup="enableSubmit()">
