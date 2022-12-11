@@ -13,15 +13,15 @@
     </div>
     <div class="navbar-second-container d-flex justify-content-around align-items-center">
         <div class="patrocionadores d-flex align-items-center justify-content-center">
-            <img src="{{asset('images/icons/hp.svg')}}" width="10%" alt="nike_logo">
-            <img src="{{asset('images/icons/nike.svg')}}" width="10%" alt="nike_logo">
+            <img src="{{asset('images/icons/hp-preto.png')}}" alt="hp_logo">
+            <img src="{{asset('images/icons/nike.svg')}}" alt="nike_logo">
         </div>
         <a class="link-logo" href="{{route('index')}}">
             <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
         </a>
         <div class="patrocionadores d-flex align-items-center justify-content-center">
-            <img src="{{asset('images/icons/amazon.svg')}}" width="10%" alt="nike_logo">
-            <img src="{{asset('images/icons/jordao.svg')}}" width="10%" alt="nike_logo">
+            <img src="{{asset('images/icons/amazon.svg')}}" alt="amazon_logo">
+            <img src="{{asset('images/icons/jordao.svg')}}" alt="jordan_logo">
         </div>
     </div>
     <div class="navbar-third-container d-flex align-items-center justify-content-center">

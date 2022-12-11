@@ -659,9 +659,10 @@ input.invalid {
     margin: 0;
 }
 
-.patrocionadores img {
+.patrocionadores img, .pagamentos img {
     width: 65px;
     height: 35px;
+    object-fit: contain;
 }
 
 .container-login a:hover {
@@ -744,6 +745,56 @@ input.invalid {
     color: white;
 }
 
+/*FOOTER*/
+footer {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.footer-second-container {
+    width: 50%;
+}
+
+.footer-first-container, .footer-third-container {
+    width: 25%;
+}
+
+.footer-first-container, .footer-second-container, .footer-third-container {
+    margin: 25px 0;
+}
+
+.footer-first-container a {
+    margin-bottom: 10px;
+}
+
+.footer-first-container .patrocionadores {
+    text-align: center;
+}
+
+.footer-second-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-second-container ul li {
+    padding: 10px;
+    padding-top: 0;
+}
+
+.footer-second-container ul li a {
+    color: white;
+    font-weight: 700;
+}
+
+.footer-third-container p i {
+    padding-right: 10px;
+}
+
+.footer-third-container p {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
 
 /*inscrever*/
 
