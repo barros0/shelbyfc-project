@@ -16,29 +16,77 @@
             <img src="{{asset('images/icons/hp.svg')}}" width="10%" alt="nike_logo">
             <img src="{{asset('images/icons/nike.svg')}}" width="10%" alt="nike_logo">
         </div>
-        <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
+        <a class="link-logo" href="{{route('index')}}">
+            <img src="{{asset('images/logo.svg')}}" width="7%" alt="Logo">
+        </a>
         <div class="patrocionadores d-flex align-items-center justify-content-center">
             <img src="{{asset('images/icons/amazon.svg')}}" width="10%" alt="nike_logo">
             <img src="{{asset('images/icons/jordao.svg')}}" width="10%" alt="nike_logo">
         </div>
-        </div>
-        <div class="navbar-third-container">
-            <ul class="d-flex flex-row justify-content-center align-items-center">
-                <li>
-                    <a target="_blank" href="http://teste.social-bubble.pt/">Loja Online</a>
-                </li>
-                <li>
-                    <a href="{{route('forum.home')}}">Forúm</a>
-                </li>
-                <li>
-                    <a href="{{route('noticias')}}">Notícias</a>
-                </li>
-                <li>
-                    <a href="{{route('jogos')}}">Jogos</a>
-                </li>
-                <li>
-                    <a href="{{route('faqs')}}">Suporte</a>
-                </li>
-            </ul>
-        </div>
+    </div>
+    <div class="navbar-third-container d-flex align-items-center justify-content-center">
+        <ul>
+            <li>
+                <a class="d-flex align-items-center justify-content-center" target="_blank" href="https://teste.social-bubble.pt">
+                    Loja Online
+                </a>
+            </li>
+            <li>
+                <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                    Forúm
+                </a>
+            </li>
+            <li>
+                <a class="d-flex align-items-center justify-content-center" href="{{route('noticias')}}">
+                    Notícias
+                </a>
+            </li>
+            <li>
+                Jogos
+                <ul>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Calendário
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Bilheteira
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Apostas
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                Suporte
+                <ul>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Quem Somos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            FAQs
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Termos e Condições
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                            Contactos
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </nav>
