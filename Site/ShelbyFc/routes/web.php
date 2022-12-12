@@ -9,6 +9,7 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FaqsController;
 
 /*
 |--------------------------------------------------------------------------
