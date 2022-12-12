@@ -13,14 +13,20 @@
     </div>
 
 
+
     <div class="section-faqs">
       <h1>Informações de sócio</h1>
-      @foreach ($faqResults as $faqResult)
-      <button class="accordion">{{ $faqResult->Pergunta}}</button>
+      <button class="accordion">Sou sócio e já tinha conta na plataforma Shelby FC</button>
       <div class="panel">
-      <p>{{ $faqResult->Resposta}}</p>
+        <p>É necessário registar nova conta selecionando a opção Sócio e inserir o seu número.</p>
+        <p>Ser-lhe-ão apresentados contactos existentes para validar o acesso.</p>
+        <p> No caso de falta de contactos associados, surgirá um alerta para contactar os serviços, através:</p>
+        <br>
+        <p> <span>Email: </span>suporte@shelbyfc.pt</p>
+        <p> <span>Telefone:</span> +351 22 508 33 52</p>
+        <br>
       </div>
-      @endforeach
+
       <button class="accordion">Sou Sócio e já não tenho acesso aos dados existentes para validação (email e contacto
         inativos)</button>
       <div class="panel">
