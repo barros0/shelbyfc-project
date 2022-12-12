@@ -38,7 +38,7 @@ class FaqsTableSeeder extends Seeder
             ],
             [
                 'pergunta' => 'Os dados preenchidos no formulário de login refletem-se na ficha de sócio?',
-                'resposta' => 'Não. Se quiser alterar alguma informação na ficha de sócio contacte os nossos serviços através:<br><span>Email: </span>suporte@shelbyfc.pt<span><br><span>Telefone:</span> +351 22 508 33 52',
+                'resposta' => 'Não. Se quiser alterar alguma informação na ficha de sócio contacte os nossos serviços através:<br><span>Email: </span>suporte@shelbyfc.pt<br><span>Telefone:</span> +351 22 508 33 52',
                 'categoria' => 'informacoes'
             ],
             [
