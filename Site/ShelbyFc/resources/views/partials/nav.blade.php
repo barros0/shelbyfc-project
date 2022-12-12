@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex align-items-center justify-content-center" href="{{route('forum.home')}}">
+                        <a class="d-flex align-items-center justify-content-center" href="{{route('faqs')}}">
                             FAQs
                         </a>
                     </li>
