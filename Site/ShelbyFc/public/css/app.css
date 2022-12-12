@@ -101,6 +101,7 @@ tr {
 
 table {
     width: 100%;
+    text-align: center;
 }
 
 th {
@@ -420,6 +421,7 @@ header {
 .login-regular {
     width: 100%;
     padding: 30px;
+    z-index: 6;
 }
 
 .login-socials {
@@ -887,6 +889,10 @@ footer {
     align-content: center;
 }
 
+span.texto-vant {
+    color: #000;
+}
+
 .tit-vant {
     color: var(--vermelho);
     font-weight: bolder;
@@ -921,23 +927,19 @@ footer {
     padding-top: 50px;
 }
 
-.login-regular {
-    width: 100%;
-    padding: 30px;
+.titulo-sec-3{
+ z-index: 1;
 }
-
 .tabela-preco {
     padding: 20px;
     width: 100%;
+    z-index: 6;
 }
 
 #prevBtn {
     background-color: #bbbbbb;
 }
 
-.tab {
-    display: none;
-}
 
 
 .btn-registo {

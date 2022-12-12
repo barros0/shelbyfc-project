@@ -1,4 +1,6 @@
-@extends("layouts.master");
+@include('partials.head')
+
+@extends("layouts.master")
 
 @section('title','Inscrever - Shelby FC')
 
@@ -35,10 +37,10 @@
 <div id="inscrever" class="fullpage-row">
     <div class="metade">
         
-        <h1>INSCRIÇÃO PARA SÓCIO</h1>
+        <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
 
         <div class="login-regular">
-            <form action="login.html">
+            <form class="form-login" action="login.html">
 
                 <div class="tab">
                     <label for="nome">Nome</label>
@@ -90,7 +92,7 @@
 
     <div class="metade">
 
-        <h1>TABELA DE PREÇOS</h1>
+        <h1 class="titulo-sec-3">TABELA DE PREÇOS</h1>
 
         <div class="tabela-preco">
     <table>
@@ -100,16 +102,13 @@
             <th>Idade</th>
             <th>Mensalidade</th>
             </tr>
+            @foreach ($users as $user) <!--para cada registo de pacote-->
             <tr>
-            <td>teste</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>{{ $user->pack }}</td>
+            <td>{{ $user->age }}</td>
+            <td>{{ $user->price }}</td>
             </tr>
-            <tr>
-            <td>teste</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            </tr>
+            @endforeach
             </tbody>
             </table>
 
@@ -119,6 +118,5 @@
 
 <div class="inscricao"></div>
 <script src="{{ asset('js/functions.js') }}"></script>
-
 
 @endsection
