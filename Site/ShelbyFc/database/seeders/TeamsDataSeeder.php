@@ -6,6 +6,8 @@ use App\Models\Team;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
+
 
 class TeamsDataSeeder extends Seeder
 {
@@ -16,7 +18,9 @@ class TeamsDataSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         DB::table('teams')->truncate();
+        Schema::enableForeignKeyConstraints();
 
         $teams = [
             ['name' => 'Shelby FC', 'images' => 'images/liga/shelby_fc.png'],
@@ -38,5 +42,7 @@ class TeamsDataSeeder extends Seeder
             ['name' => 'CD Trofense', 'images' => 'images/liga/trofense.png'],
             ['name' => 'SC Covilhã', 'images' => 'images/liga/covilha.png'],
         ];
+
+        DB::table('teams')->insert($teams);
     }
 }
