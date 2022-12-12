@@ -1,14 +1,18 @@
 <nav id="navbar" class="d-flex flex-column">
     <div class="navbar-first-container d-flex flex-row justify-content-around align-items-center">
         <div class="container-contacts d-flex flex-row justify-content-center align-items-center">
-            <p class="d-flex align-items-center"> <i class='bx bxs-phone'></i> 244 144 102</p>
+            <p class="d-flex align-items-center"><i class='bx bxs-phone'></i> 244 144 102</p>
             <div class="line"></div>
-            <p class="d-flex align-items-center"> <i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
+            <p class="d-flex align-items-center"><i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
         </div>
         <div class="container-login d-flex justify-content-around align-items-center">
-            <a href="{{route('login')}}">Login</a>
-            <div class="line"></div>
-            <a href="{{route('register')}}">Register</a>
+            @if(Auth::check())
+                <a href="{{route('minha.conta')}}">Minha conta</a>
+            @else
+                <a href="{{route('login')}}">Login</a>
+                <div class="line"></div>
+                <a href="{{route('register')}}">Register</a>
+            @endif
         </div>
     </div>
     <div class="navbar-second-container d-flex justify-content-around align-items-center">
@@ -27,7 +31,8 @@
     <div class="navbar-third-container d-flex align-items-center justify-content-center">
         <ul>
             <li>
-                <a class="d-flex align-items-center justify-content-center" target="_blank" href="https://teste.social-bubble.pt">
+                <a class="d-flex align-items-center justify-content-center" target="_blank"
+                   href="https://teste.social-bubble.pt">
                     Loja Online
                 </a>
             </li>

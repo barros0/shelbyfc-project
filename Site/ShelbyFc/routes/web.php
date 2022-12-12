@@ -24,6 +24,7 @@ use App\Http\Controllers\PostsController;
 Auth::routes();
 
 Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/home', [PageController::class, 'index'])->name('home');
 Route::get('styles', [PageController::class, 'styles'])->name('styles');
 
 /** AUTH PROVIDERS & CALLBACK**/
@@ -75,4 +76,3 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
