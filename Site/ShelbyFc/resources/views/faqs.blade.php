@@ -63,7 +63,7 @@
       </div>
 
 
-      <h2>Criar conta</h2>
+      <h1>Criar conta</h1>
       <button class="accordion">Ao autenticar é-me apresentado uma janela de consentimentos, o que fazer?</button>
       <div class="panel">
         <p>É necessário aceitar os consentimentos.</p>
