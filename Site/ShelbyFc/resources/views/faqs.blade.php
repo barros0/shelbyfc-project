@@ -16,12 +16,13 @@
     <div class="section-faqs">
       <h1>Informações de sócio</h1>
       @foreach ($faqs as $faq)
-      <button class="accordion">{!! $faq->pergunta !!}</button>
+      @if($faq->categoria =='informacoes')
+      <button class="accordion">{!! $faq->pergunta !!}</button>  
+      @endif
       <div class="panel">
       <p>{!!  $faq->resposta !!}</p>
       <br>
       </div>
-     
       @endforeach
       
       
@@ -29,15 +30,45 @@
 
 
       <h1>Criar conta</h1>
-     
+      @foreach ($faqs as $faq)
+      @if($faq->categoria =='criar_conta')
+      <button class="accordion">{!! $faq->pergunta !!}</button>  
+      @endif
+      <div class="panel">
+      <p>{!!  $faq->resposta !!}</p>
+      <br>
+      </div>
+      @endforeach
+      
+      
 
 
       <h1>Jogos e Apostas</h1>
+      @foreach ($faqs as $faq)
+      @if($faq->categoria =='jogos_apostas')
+      <button class="accordion">{!! $faq->pergunta !!}</button>  
+      @endif
+      <div class="panel">
+      <p>{!!  $faq->resposta !!}</p>
+      <br>
+      </div>
+      @endforeach
+      
       
 
 
       
       <h1>Depósitos e Levantamentos</h1>
+      @foreach ($faqs as $faq)
+      @if($faq->categoria =='depositos_levantamentos')
+      <button class="accordion">{!! $faq->pergunta !!}</button>  
+      @endif
+      <div class="panel">
+      <p>{!!  $faq->resposta !!}</p>
+      <br>
+      </div>
+      @endforeach
+      
       
 
     </div>
