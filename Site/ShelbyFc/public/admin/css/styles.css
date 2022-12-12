@@ -328,13 +328,14 @@ main .copyright span {
 }
 
 .sidebar-top {
+    margin-bottom: 30px;
     position: relative;
     display: flex;
     align-items: center;
 }
 
 .sidebar-top .logo {
-    width: 2.1rem;
+    width: 60px;
     margin: 0 0.8rem;
 }
 

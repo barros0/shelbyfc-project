@@ -10,6 +10,7 @@ use Session;
 use Str;
 use Hash;
 use Storage;
+use App\Models\User;
 
 
 class UserController extends Controller
@@ -108,7 +109,8 @@ class UserController extends Controller
 
     public function index()
     {
-        //
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**

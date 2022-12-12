@@ -148,13 +148,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../laragon/www/Micael" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/admin/users" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\users" />
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\news" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\public" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc" />
@@ -184,7 +186,7 @@
       <workItem from="1670520438111" duration="5721000" />
       <workItem from="1670610582771" duration="907000" />
       <workItem from="1670624618375" duration="611000" />
-      <workItem from="1670871726693" duration="3411000" />
+      <workItem from="1670871726693" duration="6667000" />
     </task>
     <servers />
   </component>
