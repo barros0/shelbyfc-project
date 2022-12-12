@@ -26,7 +26,7 @@
             <li>
                 <ul>
                     <li><a href="{{route('forum.home')}}">Quem Somos</a></li>
-                    <li><a href="{{route('forum.home')}}">FAQs</a></li>
+                    <li><a href="{{route('faqs')}}">FAQs</a></li>
                     <li><a href="{{route('forum.home')}}">Termos e Condições</a></li>
                     <li><a href="{{route('forum.home')}}">Contactos</a></li>
                 </ul>

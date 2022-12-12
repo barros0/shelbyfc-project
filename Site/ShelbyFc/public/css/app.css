@@ -70,7 +70,7 @@ button, input[type=button], input[type=submit], .btn {
 
 button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
     background-color: var(--vermelho);
-    color: black;
+    color: white;
     transform: scale(1.05);
     transition: 0.5s;
 }
