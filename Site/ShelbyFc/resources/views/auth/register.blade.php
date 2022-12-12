@@ -29,7 +29,7 @@
 
         <div class="login-wrapper">
             <div class="login-regular">
-                <form id="register" method="post" action="{{route('register')}}">
+                <form class="form-login" id="register" method="post" action="{{route('register')}}">
                     @csrf
                     <div class="tab">
                         <label for="nome">Nome</label>
