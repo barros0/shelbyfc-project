@@ -32,18 +32,20 @@ Route::get('styles', [PageController::class, 'styles'])->name('styles');
 Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
 Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
 
+Route::group(['middleware'=>'auth'], function() {
+    Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+    Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
-Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
-Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
+
+    Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
+    Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
+    Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
+    Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
+    Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+});
 
 
 Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
-
-Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
-Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
-Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
-Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
-Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');

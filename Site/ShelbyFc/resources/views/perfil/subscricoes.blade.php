@@ -16,14 +16,14 @@
                 <th>#</th>
                 <th>Estado</th>
                 <th>Valor</th>
-                <th>Data</th>
-                <th>Expira/ou</th>
+                <th>Subscreveu a:</th>
+                <th>Expira/ou:</th>
             </tr>
             @foreach($subscriptions as $subscription)
                 <tr>
                     <td>{{$subscription->id}}</td>
                     <td>{{$subscription->state}}</td>
-                    <td>{{$subscription->value}}</td>
+                    <td>{{$subscription->value}}€</td>
                     <td>{{$subscription->created_at}}</td>
                     <td>{{$subscription->expires_at}}</td>
                 </tr>
