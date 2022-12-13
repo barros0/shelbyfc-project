@@ -18,6 +18,19 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->enum('state', ['Pendente','Ativa','Expirada']);
+
+
+            $table->string('name')->nullable();
+            $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->date('birthdate');
+            $table->string('nif')->nullable();
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
+
             $table->float('value');
             $table->dateTime('expires_at');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

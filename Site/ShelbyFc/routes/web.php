@@ -34,8 +34,7 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 
 Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
-
-
+Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 
 Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
 Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');

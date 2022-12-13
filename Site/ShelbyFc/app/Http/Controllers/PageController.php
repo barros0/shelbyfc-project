@@ -9,6 +9,7 @@ use App\Models\faqs;
 use App\Models\socio_price;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class PageController extends Controller
 {
@@ -27,7 +28,7 @@ class PageController extends Controller
 
         $noticias = News::all();
 
-        return view('noticias')->with('noticias', $noticias);
+        return view('noticias', compact('noticias'));
     }
     public function inscrever()
     {
@@ -83,8 +84,10 @@ class PageController extends Controller
     {
 
         $noticia = News::findOrFail($id);
+
         return view('noticia', compact('noticia'));
     }
+
 
     public function jogo($id)
     {

@@ -41,6 +41,12 @@
                 <label class="form-label" for="telefone">Nº telefone</label>
                 <input class="" type="text" name="telefone" id="telefone" value="{{Auth::user()->phone}}">
             </div>
+
+            <div class="col-lg-6 form-group">
+                <label class="form-label" for="cidade">Morada</label>
+                <input class="" type="text" name="cidade" id="cidade" value="{{Auth::user()->cidade}}">
+            </div>
+
             <div class="col-lg-6 form-group">
                 <label class="form-label" for="morada">Morada</label>
                 <input class="" type="text" name="morada" id="morada" value="{{Auth::user()->address}}">

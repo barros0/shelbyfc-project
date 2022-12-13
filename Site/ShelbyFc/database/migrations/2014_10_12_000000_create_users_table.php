@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->nullable();
-            $table->string('country_id')->nullable();
             $table->string('postal_code')->nullable();
+            $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('nif')->nullable();
             $table->boolean('is_admin')->default(0); //#
