@@ -41,7 +41,7 @@ class UserController extends Controller
         $photo = $request->foto_perfil;
 
         if($photo){
-            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.png';
+            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.'.$photo->getClientOriginalExtension();
             $photo->move(public_path('/images/users'),$name_photo);
             $user->image = $name_photo;
         }

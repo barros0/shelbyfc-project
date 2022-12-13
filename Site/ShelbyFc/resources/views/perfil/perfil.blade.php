@@ -3,7 +3,7 @@
 @section('perfil.active','perfil')
 
 @section('content-perfil')
-    <div class="d-flex justify-content-center justify-itens-center">
+    <div class="d-flex justify-content-center-no justify-itens-center">
 
         <div class="photo-edit-wrap">
             <div class="photo">
