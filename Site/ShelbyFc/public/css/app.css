@@ -1374,6 +1374,10 @@ span {
     background-color: #ff5559;
 }
 
+.selected_category:hover {
+    color: white !important;
+}
+
 .news_body {
     margin: 20px;
     display: flex;

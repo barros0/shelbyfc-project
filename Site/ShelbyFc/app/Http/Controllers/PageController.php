@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\faqs;
 use App\Models\socio_price;
 use App\Models\Subscription;
+use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -28,7 +29,9 @@ class PageController extends Controller
     {
         $noticias = News::all();
 
-        return view('noticias', compact('noticias'));
+        $categories = Categorie::all();
+
+        return view('noticias', compact('noticias', 'categories'));
     }
     public function inscrever()
     {
@@ -55,9 +58,9 @@ class PageController extends Controller
         $subscription = new Subscription();
         $cc = $request->cc;
 
-        if($cc){
-            $name_cc = 'cc-'. Auth::id().'-'.time() . '.' . $cc->getClientOriginalExtension();
-            $cc->move(public_path('users/cc'),$name_cc);
+        if ($cc) {
+            $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
+            $cc->move(public_path('users/cc'), $name_cc);
             $subscription->image = $name_cc;
         }
 
@@ -69,10 +72,9 @@ class PageController extends Controller
         $subscription->nif = $request->nif;
         $subscription->birthdate = $request->birthdate;
         $subscription->save();
-       
+
         Session::flash('success', 'Os seus dados foram atualizados!');
         return back();
-
     }
 
     public function faqs()

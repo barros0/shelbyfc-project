@@ -60,7 +60,7 @@ class NewsController extends Controller
 
         $extension = $image->getClientOriginalExtension();
         $image_name = $image->getClientOriginalName() . time() . '.' . $extension;
-        $image->move(public_path('image/noticias'), $image_name);
+        $image->move(public_path('images/noticias'), $image_name);
         $new->image = $image_name;
 
         $new->save();
