@@ -77,7 +77,6 @@ class PageController extends Controller
         $subscription->postal_code = $request->zipcode;
         $subscription->nif = $request->nif;
         $subscription->birthdate = $request->birthdate;
-
         $subscription->save();
 
         $user = Auth::user();

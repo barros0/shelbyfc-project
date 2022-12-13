@@ -37,12 +37,17 @@ Route::group(['middleware'=>'auth'], function() {
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
 
-    Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
-    Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
-    Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
-    Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
-    Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
-});
+    Route::group(['prefix'=>'minha-conta'], function(){
+        Route::get('/', [PageController::class, 'minha_conta'])->name('minha.conta');
+        Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
+        Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
+        Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
+        Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
+        Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+
+
+    });
+   });
 
 
 Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
