@@ -40,7 +40,7 @@
         <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
 
         <div class="login-regular">
-            <form class="form-login" action="">
+            <form class="form-login" id="inscrever-socio" action="{{route('inscrever.post')}}">
 
                 <div class="tab">
                     <label for="nif">NIF</label>
@@ -62,7 +62,7 @@
                     <input type="text" name="cidade" placeholder="Cidade" required value="{{ Auth::user()->city }}">
                     <label for="zipcode">Código Postal</label>
                     <input type="text" name="zipcode" placeholder="Código Postal" required value="{{ Auth::user()->postal_code }}">
-                    <label for="country">País</label>
+                    <label for="pais">País</label>
                     <select class="" name="pais" id="pais">
                     <option value="">Selecione o seu país</option>
                     @foreach($nacionalidades as $country)
