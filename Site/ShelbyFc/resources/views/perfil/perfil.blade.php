@@ -86,7 +86,7 @@
             </div>
 
             <div class="col-lg-6 form-group">
-                <label class="form-label" for="morada">Nascimento</label>
+                <label class="form-label" for="morada">Data de Nascimento</label>
                 <input class="" type="date" name="nascimento" id="nascimento" value="{{Auth::user()->birthdate}}">
             </div>
 
