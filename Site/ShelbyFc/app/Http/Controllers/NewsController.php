@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\News_Categories;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
+use Session;
 
 
 class NewsController extends Controller
@@ -18,7 +19,6 @@ class NewsController extends Controller
      */
     public function index()
     {
-
         $news = News::all();
         return view('admin.news.index', compact('news'));
     }
@@ -41,31 +41,31 @@ class NewsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request,[
-            'titulo' => 'required',
+    {        
+        $this->validate($request, [
+            'title' => 'required',
+            'small_description' => 'required',
             'body' => 'required',
-            'categorias' => 'required',
-            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'categories' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-
-        $categories = $request->categorias;
-        $image = $request->imagem;
+        $categorias = $request->categories;
+        $image = $request->image;
 
         $new =  new News();
         $new->title = $request->title;
+        $new->small_description = $request->small_description;
         $new->body = $request->body;
 
-        if($image){
-            $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().time().'.' . $extension;
-            $image->move(public_path('noticias/'), $image_name);
-            $new->image = $image_name;
-        }
+        $extension = $image->getClientOriginalExtension();
+        $image_name = $image->getClientOriginalName() . time() . '.' . $extension;
+        $image->move(public_path('image/noticias'), $image_name);
+        $new->image = $image_name;
+
         $new->save();
 
-        foreach ($categories as $category) {
+        foreach ($categorias as $category) {
             $addcategory = new News_Categories();
             $addcategory->news_id = $new->id;
             $addcategory->categories_id = $category;
@@ -85,7 +85,7 @@ class NewsController extends Controller
     public function show($new)
     {
 
-            return view('admin.news.index');
+        return view('admin.news.index');
     }
 
     /**

@@ -26,7 +26,6 @@ class PageController extends Controller
     }
     public function noticias()
     {
-
         $noticias = News::all();
 
         return view('noticias', compact('noticias'));
