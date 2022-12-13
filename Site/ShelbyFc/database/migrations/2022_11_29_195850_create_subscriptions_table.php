@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('state', ['Pendente','Ativa','Expirada']);
 
             $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('address')->nullable();
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->foreign('country_id')->references('id')->on('countries');
             $table->float('value')->nullable();
             $table->dateTime('expires_at')->nullable();
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

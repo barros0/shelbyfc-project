@@ -12,6 +12,8 @@ use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
+
 
 class PageController extends Controller
 {
@@ -44,6 +46,7 @@ class PageController extends Controller
 
     public function inscrever_post(Request $request)
     {
+        
         $this->validate($request, [
             'nif' => 'required|numeric|digits:9',
             'birthdate' => 'required|date',
@@ -61,11 +64,11 @@ class PageController extends Controller
         $subscription = new Subscription();
         $cc = $request->cc;
 
-        if ($cc) {
             $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
             $cc->move(public_path('users/cc'), $name_cc);
-            $subscription->image = $name_cc;
-        }
+            $subscription->user_id = $user;
+            $subscription->email = $email;
+            $subscription->cc = $name_cc;
 
         $subscription->address = $request->morada;
         //$subscription->address = $request->cc;
