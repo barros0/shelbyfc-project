@@ -143,12 +143,12 @@
         <div class="admin-user tooltip-element" data-tooltip="1">
             <div class="admin-profile hide">
                 <img src="{{asset('images/users/'. Auth::user()->image)}}" alt="">
-                <div class="admin-info" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <div class="admin-info">
                     <h3>{{Auth::user()->name}}</h3>
                     <h5>Admin</h5>
                 </div>
             </div>
-            <a href="#" class="log-out">
+            <a href="#" class="log-out"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class='bx bx-log-out'></i>
             </a>
         </div>
