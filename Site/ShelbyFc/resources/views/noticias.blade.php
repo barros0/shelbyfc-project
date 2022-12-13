@@ -15,13 +15,13 @@
     <div class="news_category">
         @foreach ($noticias as $noticia)
         <div class="news_body">
-            <img src="img/fod-w.webp" alt="noticia">
+            <img src="{{asset('images/noticias/'. $noticia->image)}}" alt="noticia">
             <div class="date_category">
                 <p class="news_date">15 Jun 2022</p>
                 <p class="newsbody_category">Segunda Liga</p>
             </div>
             <h2>{{ $noticia->title }}</h2>
-            <p class="new_small_description">{!! $noticia->body !!}</p>
+            <p class="new_small_description">{!! $noticia->small_description !!}</p>
         </div>
         @endforeach
     </div>
@@ -31,7 +31,7 @@
             <p class="pages" id="page_selected">1</p>
             <p class="pages">2</p>
             <p class="pages">3</p>
-            <p class="pages">5</p>
+            <p class="pages">4</p>
         </div>
         <p class="arrows">&#x3e;</p>
     </div>
