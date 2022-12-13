@@ -1,5 +1,7 @@
 @extends('layouts.perfil')
 
+@section('perfil.active','perfil')
+
 @section('content-perfil')
     <div class="d-flex justify-content-center justify-itens-center">
 
