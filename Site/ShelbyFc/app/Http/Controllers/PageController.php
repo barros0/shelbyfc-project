@@ -12,6 +12,8 @@ use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
+
 
 class PageController extends Controller
 {
@@ -44,6 +46,7 @@ class PageController extends Controller
 
     public function inscrever_post(Request $request)
     {
+        
         $this->validate($request, [
             'nif' => 'required|numeric|digits:9',
             'birthdate' => 'required|date',
