@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('state', ['Pendente','Ativa','Expirada']);
 
             $table->string('name')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('postal_code')->nullable();
             $table->string('address')->nullable();
