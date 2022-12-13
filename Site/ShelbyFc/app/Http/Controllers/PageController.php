@@ -54,7 +54,10 @@ class PageController extends Controller
             'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
         ]);
 
-        return 1;
+        //return 1;
+        $user = Auth::user()->id;
+        $email = Auth::user()->email;
+
         $subscription = new Subscription();
         $cc = $request->cc;
 
@@ -64,13 +67,14 @@ class PageController extends Controller
             $subscription->image = $name_cc;
         }
 
-        $subscription->name = $request->nome;
         $subscription->address = $request->morada;
+        //$subscription->address = $request->cc;
         $subscription->city = $request->cidade;
         $subscription->country_id = $request->pais;
         $subscription->postal_code = $request->zipcode;
         $subscription->nif = $request->nif;
         $subscription->birthdate = $request->birthdate;
+
         $subscription->save();
 
         Session::flash('success', 'Os seus dados foram atualizados!');
@@ -99,8 +103,8 @@ class PageController extends Controller
     public function subscricoes()
     {
 
-        $subscricoes = Auth::user()->subscri;
-        return view('perfil.subscricoes');
+        $subscriptions = Auth::user()->subscriptions;
+        return view('perfil.subscricoes', compact('subscriptions'));
     }
 
     public function seguranca()

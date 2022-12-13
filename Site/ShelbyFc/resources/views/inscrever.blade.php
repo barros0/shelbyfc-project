@@ -40,7 +40,8 @@
         <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
 
         <div class="login-regular">
-            <form class="form-login" id="inscrever-socio" action="{{route('inscrever.post')}}">
+            <form class="form-login" id="inscrever-socio" method="post" enctype="multipart/form-data" action="{{route('inscrever.post')}}">
+            @csrf
 
                 <div class="tab">
                     <label for="nif">NIF</label>
