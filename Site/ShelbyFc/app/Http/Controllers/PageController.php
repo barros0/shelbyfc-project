@@ -9,6 +9,7 @@ use App\Models\faqs;
 use App\Models\socio_price;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class PageController extends Controller
 {
@@ -22,7 +23,13 @@ class PageController extends Controller
 
         return view('login');
     }
+    public function noticias()
+    {
 
+        $noticias = News::all();
+
+        return view('noticias', compact('noticias'));
+    }
     public function inscrever()
     {
         $socio_price = socio_price::all();
@@ -54,6 +61,7 @@ class PageController extends Controller
     public function subscricoes()
     {
 
+        $subscricoes = Auth::user()->subscri;
         return view('perfil.subscricoes');
     }
 
@@ -80,8 +88,10 @@ class PageController extends Controller
     {
 
         $noticia = News::findOrFail($id);
+
         return view('noticia', compact('noticia'));
     }
+
 
     public function jogo($id)
     {

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
-class IsSubscrived
+class IsSubscribed
 {
     /**
      * Handle an incoming request.
@@ -26,7 +26,7 @@ class IsSubscrived
         }
 
         /** se nao estiver subscrito manda para a inscricao */
-        if(!$request->user()->subscrived) {
+        if(!$request->user()->subscribed) {
             Session::flash('error','Página interdita, é necessário ser subscritor para aceder a este conteúdo!');
             return redirect()->route('inscrever');
         }
