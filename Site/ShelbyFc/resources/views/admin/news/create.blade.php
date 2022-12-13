@@ -10,7 +10,7 @@
     <form action="{{ route('admin.news.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-lg-9">
                 <div class="form-group">
                     <label for="title_new">Title</label>
                     <input type="text" class="form-control" name="title" id="title_new" placeholder="Enter Title">
@@ -27,7 +27,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <h3>Categorias</h3>
                 <div class="form-group">
                     <label for="categoria">Categories</label>
