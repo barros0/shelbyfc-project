@@ -99,8 +99,8 @@ class PageController extends Controller
     public function subscricoes()
     {
 
-        $subscricoes = Auth::user()->subscri;
-        return view('perfil.subscricoes');
+        $subscriptions = Auth::user()->subscriptions;
+        return view('perfil.subscricoes', compact('subscriptions'));
     }
 
     public function seguranca()

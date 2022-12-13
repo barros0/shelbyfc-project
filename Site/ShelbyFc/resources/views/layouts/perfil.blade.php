@@ -12,11 +12,11 @@
 
 
 
-            <div class="tab-content row justify-content-center  ">
+            <div class="tab-content row justify-content-center w-100">
                 <nav class="nav-conta container-user-settings col-12 col-md-3">
                     <div class="nav-conta-wrap">
                         <div class="title">
-                            <h3>Definições de conta</h3>
+                            <h3>Minha conta</h3>
                         </div>
 
                         <ul class="row nav flex-wrap nav-pills me-3">
