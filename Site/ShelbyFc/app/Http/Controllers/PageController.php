@@ -6,6 +6,7 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\socio_price;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,16 +25,16 @@ class PageController extends Controller
 
     public function inscrever()
     {
-        return view('inscrever');
-    }
+        $socio_price = socio_price::all();
 
+        return view('inscrever')->with('socio_price', $socio_price);
+    }
     public function faqs()
     {
         $faqs = faqs::all();
 
         return view('faqs')->with('faqs', $faqs);
     }
-
     public function styles()
     {
 

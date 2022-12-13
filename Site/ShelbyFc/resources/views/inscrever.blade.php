@@ -102,11 +102,11 @@
             <th>Idade</th>
             <th>Mensalidade</th>
             </tr>
-            @foreach ($users as $user) <!--para cada registo de pacote-->
+            @foreach ($socio_price as $sociopacote) <!--para cada registo de pacote-->
             <tr>
-            <td>{{ $user->pack }}</td>
-            <td>{{ $user->age }}</td>
-            <td>{{ $user->price }}</td>
+            <td>{{ $sociopacote->name }}</td>
+            <td>{{ $sociopacote->idade }}</td>
+            <td>{{ $sociopacote->preco }}</td>
             </tr>
             @endforeach
             </tbody>
