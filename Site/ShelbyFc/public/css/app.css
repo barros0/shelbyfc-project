@@ -712,6 +712,7 @@ input.invalid {
     align-items: center;
     color: white;
     font-weight: 700;
+    transition: 0.5s;
 }
 
 .navbar-third-container ul li a {
@@ -756,6 +757,7 @@ input.invalid {
 
 .navbar-third-container ul li:hover {
     background-color: #1a1a1a;
+    transition: 0.5s;
     color: white;
 }
 
@@ -1401,7 +1403,6 @@ span {
 }
 
 .news_category {
-    margin: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
@@ -1435,7 +1436,8 @@ span {
     padding: 10px;
     text-decoration: none;
     color: #ff5559;
-    max-width: 80%;
+    width: 80%;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
