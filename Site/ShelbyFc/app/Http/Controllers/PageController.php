@@ -6,8 +6,12 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\socio_price;
+use App\Models\Subscription;
+use App\Models\Categorie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class PageController extends Controller
 {
@@ -21,10 +25,56 @@ class PageController extends Controller
 
         return view('login');
     }
+    public function noticias()
+    {
+        $noticias = News::all();
 
+        $categories = Categorie::all();
+
+        return view('noticias', compact('noticias', 'categories'));
+    }
     public function inscrever()
     {
-        return view('inscrever');
+        $socio_price = socio_price::all();
+
+        $nacionalidades = Country::all();
+
+        return view('inscrever', compact("socio_price", "nacionalidades"));
+    }
+
+    public function inscrever_post(Request $request)
+    {
+        $this->validate($request, [
+            'nif' => 'required|numeric|digits:9',
+            'birthdate' => 'required|date',
+            'morada' => 'required',
+            'cidade' => 'required',
+            'pais' => 'required|exists:countries,id',
+            'zipcode' => 'required|regex:/^\d{4}-\d{3}?$/',
+            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
+        ]);
+
+        return 1;
+        $subscription = new Subscription();
+        $cc = $request->cc;
+
+        if ($cc) {
+            $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
+            $cc->move(public_path('users/cc'), $name_cc);
+            $subscription->image = $name_cc;
+        }
+
+        $subscription->name = $request->nome;
+        $subscription->address = $request->morada;
+        $subscription->city = $request->cidade;
+        $subscription->country_id = $request->pais;
+        $subscription->postal_code = $request->zipcode;
+        $subscription->nif = $request->nif;
+        $subscription->birthdate = $request->birthdate;
+        $subscription->save();
+
+        Session::flash('success', 'Os seus dados foram atualizados!');
+        return back();
     }
 
     public function faqs()
@@ -33,7 +83,6 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
-
     public function styles()
     {
 
@@ -50,6 +99,7 @@ class PageController extends Controller
     public function subscricoes()
     {
 
+        $subscricoes = Auth::user()->subscri;
         return view('perfil.subscricoes');
     }
 
@@ -76,8 +126,10 @@ class PageController extends Controller
     {
 
         $noticia = News::findOrFail($id);
+
         return view('noticia', compact('noticia'));
     }
+
 
     public function jogo($id)
     {

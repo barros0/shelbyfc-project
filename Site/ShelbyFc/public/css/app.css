@@ -409,7 +409,7 @@ header {
     align-items: center;
 }
 
-.form-login{
+.form-login {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -483,7 +483,7 @@ header {
     font-size: 10px;
     text-decoration: none;
     color: #000;
-    font-weight: bold  !important;
+    font-weight: bold !important;
     float: right;
     margin-top: -16px;
 }
@@ -579,7 +579,7 @@ input.invalid {
 }
 
 .step.finish {
-    background-color: var(--ver);
+    background-color: var(--vermelho);
 }
 
 .btn-registo {
@@ -712,6 +712,7 @@ input.invalid {
     align-items: center;
     color: white;
     font-weight: 700;
+    transition: 0.5s;
 }
 
 .navbar-third-container ul li a {
@@ -756,6 +757,7 @@ input.invalid {
 
 .navbar-third-container ul li:hover {
     background-color: #1a1a1a;
+    transition: 0.5s;
     color: white;
 }
 
@@ -902,7 +904,7 @@ span.texto-vant {
 }
 
 .fullpage-row {
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
     display: flex;
 }
@@ -921,15 +923,15 @@ span.texto-vant {
 .metade h1 {
     font-weight: bolder;
     display: flex;
-    position: absolute;
     align-content: flex-start;
-    height: 100%;
-    padding-top: 50px;
+
+
 }
 
-.titulo-sec-3{
- z-index: 1;
+.titulo-sec-3 {
+    z-index: 1;
 }
+
 .tabela-preco {
     padding: 20px;
     width: 100%;
@@ -1319,5 +1321,173 @@ span {
 
 .btn-section {
     margin-top: 30px;
+}
 
+/*NOTICIAS*/
+
+.container_all_news {
+    display: flex;
+    margin: 40px auto;
+    max-width: 80%;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 0px 52px #0000005c;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_categories {
+    width: 100%;
+    background-color: rgb(0 0 0 / 87%);
+    height: 60px;
+}
+
+.container_title {
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    height: 45px;
+    background-color: #181818;
+    color: white;
+    align-items: center;
+    border-left: 10px solid #ff5559;
+}
+
+.news_from_category {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.news_from_category a {
+    font-size: 15px;
+    padding: 20px;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.selected_category {
+    background-color: #ff5559;
+}
+
+.selected_category:hover {
+    color: white !important;
+}
+
+.news_body {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: auto;
+}
+
+.news_body img {
+    display: block;
+    transition: transform 1s;
+    width: 100%;
+}
+
+.news_body:hover img {
+    transform: scale(1.05);
+    transition: transform 1s;
+}
+
+.news_body:hover h2 {
+    color: #ff5559;
+}
+
+.news_body h2 {
+    font-size: 20px;
+}
+
+.news_category {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.date_category {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    background-color: white;
+    z-index: 999;
+}
+
+.news_date {
+    border-bottom: 3px solid #ff5559;
+}
+
+.newsbody_category {
+    padding: 3px;
+    border: 3px solid #ff5559;
+}
+
+.new_small_description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #262626;
+}
+
+.see_more {
+    padding: 10px;
+    text-decoration: none;
+    color: #ff5559;
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container_news_pages {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.news_pages {
+    display: flex;
+}
+
+.arrows {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.arrows:hover {
+    color: #ff5559;
+}
+
+.pages {
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 5px 10px;
+    background-color: #ebebeb;
+    margin: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+#page_selected {
+    background-color: #ff5559;
+}
+
+.pages:hover {
+    background-color: #bebebe;
 }

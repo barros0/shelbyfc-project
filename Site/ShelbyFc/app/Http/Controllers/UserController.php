@@ -29,9 +29,11 @@ class UserController extends Controller
             'nome' => 'required',
             'telefone' => 'nullable',
             'morada' => 'nullable',
+            'cidade' => 'nullable',
             'pais' => 'nullable|exists:countries,id',
             'codigo_postal' => 'nullable|regex:/^\d{4}-\d{3}?$/',
             'nif' => 'nullable|numeric|digits:9',
+            'nascimento' => 'nullable|date',
             'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
@@ -39,7 +41,7 @@ class UserController extends Controller
         $photo = $request->foto_perfil;
 
         if($photo){
-            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.png';
+            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.'.$photo->getClientOriginalExtension();
             $photo->move(public_path('/images/users'),$name_photo);
             $user->image = $name_photo;
         }
@@ -47,9 +49,11 @@ class UserController extends Controller
         $user->name = $request->nome;
         $user->phone = $request->telefone;
         $user->address = $request->morada;
+        $user->city = $request->cidade;
         $user->country_id = $request->pais;
         $user->postal_code = $request->codigo_postal;
         $user->nif = $request->nif;
+        $user->birthdate = $request->nascimento;
         $user->save();
 
         Session::flash('success', 'Os seus dados foram atualizados!');

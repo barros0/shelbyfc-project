@@ -11,18 +11,13 @@ return new class extends Migration
      *
      * @return void
      */
-
     public function up()
     {
-        Schema::create('News', function (Blueprint $table) {
+        Schema::create('socio_price', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('small_description');
-            $table->longText('body');
-            $table->string('image');
-            $table->integer('views')->default(0);
-            $table->timestamps();
-            $table->softDeletes();
+            $table->string('name')->nullable();
+            $table->string('idade')->nullable();
+            $table->double('preco')->nullable();
         });
     }
 
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('News');
+        Schema::dropIfExists('socio_price');
     }
 };

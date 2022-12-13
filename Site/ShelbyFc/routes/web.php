@@ -34,8 +34,10 @@ Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider']
 
 
 Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
 
+Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 
 Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
 Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
@@ -45,6 +47,7 @@ Route::get('/preferencias', [PageController::class, 'preferencias'])->name('pref
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
+
 
 
 
