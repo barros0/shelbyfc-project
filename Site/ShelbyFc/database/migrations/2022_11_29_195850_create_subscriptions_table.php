@@ -32,7 +32,7 @@ return new class extends Migration
             $table->foreign('country_id')->references('id')->on('countries');
             $table->float('value')->nullable();
             $table->dateTime('expires_at')->nullable();
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

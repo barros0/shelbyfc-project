@@ -61,11 +61,11 @@ class PageController extends Controller
         $subscription = new Subscription();
         $cc = $request->cc;
 
-        if ($cc) {
             $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
             $cc->move(public_path('users/cc'), $name_cc);
-            $subscription->image = $name_cc;
-        }
+            $subscription->user_id = $user;
+            $subscription->email = $email;
+            $subscription->cc = $name_cc;
 
         $subscription->address = $request->morada;
         //$subscription->address = $request->cc;
