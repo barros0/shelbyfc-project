@@ -58,6 +58,7 @@ class PageController extends Controller
     public function subscricoes()
     {
 
+        $subscricoes = Auth::user()->subscri;
         return view('perfil.subscricoes');
     }
 

@@ -10,7 +10,6 @@
 
     @else
 
-
         <table>
             <tbody>
             <tr class="header">

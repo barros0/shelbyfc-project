@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('address')->nullable();
             $table->string('nif')->nullable();
+            $table->date('birthdate')->nullable();
             $table->boolean('is_admin')->default(0); //#
             $table->enum('status',['Ativo', 'Suspenso','Banido']); //#
             //$table->string('facebook_id')->nullable();

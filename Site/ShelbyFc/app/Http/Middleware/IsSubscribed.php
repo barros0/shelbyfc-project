@@ -26,7 +26,7 @@ class IsSubscribed
         }
 
         /** se nao estiver subscrito manda para a inscricao */
-        if(!$request->user()->subscrived) {
+        if(!$request->user()->subscribed) {
             Session::flash('error','Página interdita, é necessário ser subscritor para aceder a este conteúdo!');
             return redirect()->route('inscrever');
         }

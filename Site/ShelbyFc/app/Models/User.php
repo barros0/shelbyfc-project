@@ -27,6 +27,7 @@ class User extends Authenticatable
         'postal_code',
         'password',
         'nif',
+        'city',
         'status',
         'image',
     ];
@@ -56,7 +57,7 @@ class User extends Authenticatable
         return $this->hasMany(socialAccount::class);
     }
 
-    function subscrived()
+    function subscribed()
     {
         return $this->hasOne(Subscription::class,)
             ->where('state', 2)
