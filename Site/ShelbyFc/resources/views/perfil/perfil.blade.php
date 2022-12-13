@@ -28,7 +28,7 @@
                 <h6>Sem subscrição ativa</h6>
             @endif
 
-            <a class="btn-remove" href="">Remover</a>
+            <a class="btn-remove" href="{{route('user.remove.photo')}}">Remover</a>
         </div>
     </div>
 

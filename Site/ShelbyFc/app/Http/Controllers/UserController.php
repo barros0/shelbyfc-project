@@ -60,6 +60,15 @@ class UserController extends Controller
         return back();
     }
 
+    public function remove_photo()
+    {
+        $user = Auth::user();
+        $user->image = 'noimage.png';
+        $user->save();
+
+        Session::flash('success', 'A sua fotografia foi removida!');
+        return redirect()->back();
+    }
 
     public function comprar_bilhete($gameid, Request $request)
     {
