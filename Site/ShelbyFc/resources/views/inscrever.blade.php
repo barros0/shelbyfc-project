@@ -40,36 +40,39 @@
         <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
 
         <div class="login-regular">
-            <form class="form-login" action="login.html">
+            <form class="form-login" action="">
 
                 <div class="tab">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
-                    <label for="nome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required>
+                    <label for="nif">NIF</label>
+                    <input type="number" name="nif" placeholder="NIF" required value="{{ Auth::user()->nif }}">
+                    <label for="birthdate">Data de Nascimento</label>
+                    <input type="date" name="birthdate" placeholder="Data de Nascimento" required value="{{ Auth::user()->birthdate }}">
                 </div>
 
                 <div class="tab">
-                    <label for="email_registo">EMAIL</label>
-                    <input type="email" id="email_registo" name="email" placeholder="nome@exemplo.com" required>
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                <label for="cc">Cartão de Cidadão (Ou documento equivalente)</label>
+                    <input type="file" name="cc" placeholder="cc" required>
+                    
                 </div>
 
                 <div class="tab">
-                    <label for="password_registo">PASSWORD</label>
-                    <div class="pass-container">
-                        <input type="password" name="password_registo" id="password_registo"
-                            placeholder="Password" required>
-                        <i class="fas fa-eye" id="eye_registo" onclick="showPassRegisto()"></i>
-                    </div>
-                    <label for="password_confirm">REPETIR PASSWORD</label>
-                    <div class="pass-container">
-                        <input type="password" name="password_confirm" id="password_confirm"
-                            placeholder="Confirmar password" required>
-                        <i class="fas fa-eye" id="eye_confirm" onclick="showPassConfirm()"></i>
-                    </div>
-
+                    <label for="morada">Morada</label>
+                    <input type="text" name="morada" placeholder="Morada" required value="{{ Auth::user()->address }}">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" placeholder="Cidade" required value="{{ Auth::user()->city }}">
+                    <label for="zipcode">Código Postal</label>
+                    <input type="text" name="zipcode" placeholder="Código Postal" required value="{{ Auth::user()->postal_code }}">
+                    <label for="country">País</label>
+                    <select class="" name="pais" id="pais">
+                    <option value="">Selecione o seu país</option>
+                    @foreach($nacionalidades as $country)
+                        <option
+                            @if($country->id == Auth::user()->country_id)
+                            selected
+                            @endif
+                            value="{{$country->id}}">{{$country->name}}</option>
+                    @endforeach
+                </select>
                 </div>
 
 

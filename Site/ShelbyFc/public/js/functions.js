@@ -68,7 +68,7 @@ function showTab(n) {
 
   }
   if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "CRIAR CONTA";
+      document.getElementById("nextBtn").innerHTML = "TERMINAR";
       console.log(3)
   } else {
       document.getElementById("nextBtn").innerHTML = "SEGUINTE";

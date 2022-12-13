@@ -579,7 +579,7 @@ input.invalid {
 }
 
 .step.finish {
-    background-color: var(--ver);
+    background-color: var(--vermelho);
 }
 
 .btn-registo {
@@ -902,7 +902,7 @@ span.texto-vant {
 }
 
 .fullpage-row {
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
     display: flex;
 }
@@ -921,10 +921,9 @@ span.texto-vant {
 .metade h1 {
     font-weight: bolder;
     display: flex;
-    position: absolute;
     align-content: flex-start;
-    height: 100%;
-    padding-top: 50px;
+
+
 }
 
 .titulo-sec-3{

@@ -27,8 +27,11 @@ class PageController extends Controller
     {
         $socio_price = socio_price::all();
 
-        return view('inscrever')->with('socio_price', $socio_price);
+        $nacionalidades = Country::all();
+
+        return view('inscrever', compact("socio_price", "nacionalidades"));
     }
+
     public function faqs()
     {
         $faqs = faqs::all();
