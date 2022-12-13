@@ -28,13 +28,14 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->date('birthdate');
             $table->string('cc');
+            $table->string('image')->nullable();
             $table->string('nif')->nullable();
             $table->bigInteger('country_id')->unsigned();
             $table->foreign('country_id')->references('id')->on('countries');
 
             $table->float('value');
             $table->dateTime('expires_at');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 
