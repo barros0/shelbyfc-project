@@ -22,7 +22,13 @@ class PageController extends Controller
 
         return view('login');
     }
+    public function noticias()
+    {
 
+        $noticias = News::all();
+
+        return view('noticias')->with('noticias', $noticias);
+    }
     public function inscrever()
     {
         $socio_price = socio_price::all();

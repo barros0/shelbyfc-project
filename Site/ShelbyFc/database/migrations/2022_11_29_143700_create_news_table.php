@@ -17,8 +17,10 @@ return new class extends Migration
         Schema::create('News', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('small_description');
             $table->longText('body');
             $table->string('image');
+            $table->enum('categoria', ['SegundaLiga', 'Bilhetes', 'RelatorioJogo', 'PreJogo']);
             $table->integer('views')->default(0);
             $table->timestamps();
             $table->softDeletes();
