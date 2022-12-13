@@ -46,7 +46,7 @@ class PageController extends Controller
 
     public function inscrever_post(Request $request)
     {
-        
+
         $this->validate($request, [
             'nif' => 'required|numeric|digits:9',
             'birthdate' => 'required|date',
@@ -79,6 +79,15 @@ class PageController extends Controller
         $subscription->birthdate = $request->birthdate;
 
         $subscription->save();
+
+        $user = Auth::user();
+        $user->address = $request->morada;
+        $user->city = $request->cidade;
+        $user->country_id = $request->pais;
+        $user->postal_code = $request->zipcode;
+        $user->nif = $request->nif;
+        $user->birthdate = $request->birthdate;
+
 
         Session::flash('success', 'Os seus dados foram atualizados!');
         return back();
