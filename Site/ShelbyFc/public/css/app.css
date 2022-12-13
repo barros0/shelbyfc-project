@@ -217,6 +217,11 @@ input.invalid {
     color: var(--vermelho);
 }
 
+
+.content-perfil{
+    margin-bottom: 40px;
+}
+
 .nav-conta {
     padding-top: 40px;
 }

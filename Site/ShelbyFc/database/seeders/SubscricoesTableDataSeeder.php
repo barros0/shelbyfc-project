@@ -21,7 +21,8 @@ class SubscricoesTableDataSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         $categories = [
-            ['user_id' => 1,'state' => 2,
+            ['user_id' => 1,
+                'state' => 2,
                 'name' => 'Pedro Andrade',
                 'email' => 'admin@admin.com',
                 'phone' => '987456123',

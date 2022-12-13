@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="footer-second-container">
-        <ul class="d-flex">
+        <ul class="d-flex flex-wrap">
             <li><a target="_blank" href="https://teste.social-bubble.pt">Loja Online</a></li>
             <li><a href="{{route('forum.home')}}">Forúm</a></li>
             <li><a href="{{route('noticias')}}">Notícias</a></li>
