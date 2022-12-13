@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="tab">
-                <label for="cc">Cartão de Cidadão (Ou documento equivalente)</label>
+                <label for="cc">Cartão de Cidadão (Ou outro documento de identificação)</label>
                     <input type="file" name="cc" placeholder="cc" required>
                     
                 </div>
@@ -110,7 +110,7 @@
             <tr>
             <td>{{ $sociopacote->name }}</td>
             <td>{{ $sociopacote->idade }}</td>
-            <td>{{ $sociopacote->preco }}</td>
+            <td>{{ $sociopacote->preco }} €/Mês</td>
             </tr>
             @endforeach
             </tbody>
