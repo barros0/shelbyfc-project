@@ -8,6 +8,11 @@
         <div class="container-login d-flex justify-content-around align-items-center">
             @if(Auth::check())
                 <a href="{{route('minha.conta')}}">Minha conta</a>
+
+                @if(Auth::user()->is_admin)
+                    <div class="line"></div>
+                    <a href="{{route('admin.dashboard')}}">Administração</a>
+                    @endif
             @else
                 <a href="{{route('login')}}">Login</a>
                 <div class="line"></div>
