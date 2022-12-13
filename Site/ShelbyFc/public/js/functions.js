@@ -68,7 +68,7 @@ function showTab(n) {
 
   }
   if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "CRIAR CONTA";
+      document.getElementById("nextBtn").innerHTML = "TERMINAR";
       console.log(3)
   } else {
       document.getElementById("nextBtn").innerHTML = "SEGUINTE";
@@ -90,7 +90,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
       //...the form gets submitted:
-      document.getElementById("register").submit();
+      document.getElementById("inscrever-socio").submit();
       return false;
   }
   // Otherwise, display the correct tab:

@@ -25,7 +25,7 @@
             </li>
 
             <li class="tooltip-element" data-tooltip="1">
-                <a href="#" data-active="1">
+                <a href="{{route('admin.news.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
                         <i class='bx bxs-folder'></i>
@@ -33,13 +33,9 @@
                     <span class="link hide">Noticias</span>
                 </a>
             </li>
-            <li class="tooltip-element" data-tooltip="2">
-
             <div class="tooltip">
                 <span class="show">Dashboard</span>
-                <span>Projects</span>
-                <span>Messages</span>
-                <span>Analytics</span>
+                <span>Noticias</span>
             </div>
         </ul>
 
@@ -75,7 +71,7 @@
         <h4 class="hide">Jogos</h4>
         <ul>
             <li class="tooltip-element" data-tooltip="0">
-                <a href="#" class="active" data-active="0">
+                <a href="{{route('admin.games.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-tachometer'></i>
                         <i class='bx bxs-tachometer'></i>
@@ -85,7 +81,7 @@
             </li>
 
             <li class="tooltip-element" data-tooltip="1">
-                <a href="#" data-active="1">
+                <a href="{{route('admin.teams.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
                         <i class='bx bxs-folder'></i>
@@ -123,13 +119,30 @@
 
 
 
+        <ul>
+            <li class="tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.users.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-tachometer'></i>
+                        <i class='bx bxs-tachometer'></i>
+                    </div>
+                    <span class="link hide">Utilizadores</span>
+                </a>
+            </li>
+
+            <div class="tooltip">
+                <span class="show">Utilizadores</span>
+            </div>
+        </ul>
+
+
     <div class="sidebar-footer">
         <a href="#" class="account tooltip-element" data-tooltip="0">
             <i class='bx bx-user'></i>
         </a>
         <div class="admin-user tooltip-element" data-tooltip="1">
             <div class="admin-profile hide">
-                <img ssrc="{{asset('images/users/'. Auth::user()->image)}}" alt="">
+                <img src="{{asset('images/users/'. Auth::user()->image)}}" alt="">
                 <div class="admin-info" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <h3>{{Auth::user()->name}}</h3>
                     <h5>Admin</h5>

@@ -2,7 +2,7 @@
 
 @section('content-perfil')
 
-    @if(empty($subscricoes))
+    @if(empty($subscriptions))
 
         <div class="alert-profile">
             <h4>Você ainda não fez nenhuma subscrição</h4>
@@ -10,23 +10,22 @@
 
     @else
 
-
         <table>
             <tbody>
             <tr class="header">
                 <th>#</th>
                 <th>Estado</th>
                 <th>Valor</th>
-                <th>Data</th>
-                <th>Expira/ou</th>
+                <th>Subscreveu a:</th>
+                <th>Expira/ou:</th>
             </tr>
-            @foreach($subscricoes as $subscricao)
+            @foreach($subscriptions as $subscription)
                 <tr>
-                    <td>{{$subscricao->id}}</td>
-                    <td>{{$subscricao->state}}</td>
-                    <td>{{$subscricao->value}}</td>
-                    <td>{{$subscricao->created_at}}</td>
-                    <td>{{$subscricao->expires_at}}</td>
+                    <td>{{$subscription->id}}</td>
+                    <td>{{$subscription->state}}</td>
+                    <td>{{$subscription->value}}€</td>
+                    <td>{{$subscription->created_at}}</td>
+                    <td>{{$subscription->expires_at}}</td>
                 </tr>
             @endforeach
             </tbody>

@@ -1,7 +1,9 @@
 @extends('layouts.perfil')
 
+@section('perfil.active','perfil')
+
 @section('content-perfil')
-    <div class="d-flex justify-content-center justify-itens-center">
+    <div class="d-flex justify-content-center-no justify-itens-center">
 
         <div class="photo-edit-wrap">
             <div class="photo">
@@ -20,14 +22,19 @@
 
         <div class="info">
             <h3 id="name">{{Auth::user()->name}}</h3>
-            <h6>Sócio - Subscrição ativa</h6>
+            @if(Auth::user()->subscribed)
+                <h6>Sócio - Subscrição ativa</h6>
+            @else
+                <h6>Sem subscrição ativa</h6>
+            @endif
+
             <a class="btn-remove" href="">Remover</a>
         </div>
     </div>
 
     <form class="form-profile" action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="file" id="photo_profile" name="foto_perfil">
+        <input hidden onchange="this.form.submit()" type="file" id="photo_profile" name="foto_perfil">
         <div class="row">
             <div class="col-lg-6 form-group">
                 <label class="form-label" for="nome">Nome</label>
@@ -41,6 +48,12 @@
                 <label class="form-label" for="telefone">Nº telefone</label>
                 <input class="" type="text" name="telefone" id="telefone" value="{{Auth::user()->phone}}">
             </div>
+
+            <div class="col-lg-6 form-group">
+                <label class="form-label" for="cidade">Cidade</label>
+                <input class="" type="text" name="cidade" id="cidade" value="{{Auth::user()->city}}">
+            </div>
+
             <div class="col-lg-6 form-group">
                 <label class="form-label" for="morada">Morada</label>
                 <input class="" type="text" name="morada" id="morada" value="{{Auth::user()->address}}">
@@ -70,6 +83,11 @@
             <div class="col-lg-6 form-group">
                 <label class="form-label" for="nif">NIF</label>
                 <input class="" type="text" name="nif" id="nif" value="{{Auth::user()->nif}}">
+            </div>
+
+            <div class="col-lg-6 form-group">
+                <label class="form-label" for="morada">Data de Nascimento</label>
+                <input class="" type="date" name="nascimento" id="nascimento" value="{{Auth::user()->birthdate}}">
             </div>
 
             <div class="col-lg-6 text-center">

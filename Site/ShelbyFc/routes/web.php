@@ -9,6 +9,7 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,19 +32,24 @@ Route::get('styles', [PageController::class, 'styles'])->name('styles');
 Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
 Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
 
+Route::group(['middleware'=>'auth'], function() {
+    Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+    Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
-Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
+
+    Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
+    Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
+    Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
+    Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
+    Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+});
 
 
-
-Route::get('/minha-conta', [PageController::class, 'minha_conta'])->name('minha.conta');
-Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
-Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
-Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
-Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
 Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
+
 
 
 
@@ -64,11 +70,10 @@ Route::group(['prefix'=>'forum','as'=>'forum.','middleware'=>'subscriber'], func
 
 Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-
     Route::resource('/categorias', CategoriesController::class);
     Route::resource('/games', GamesController::class);
-    Route::resource('/users', GamesController::class);
-    Route::resource('/news', GamesController::class);
+    Route::resource('/users', UserController::class);
+    Route::resource('/news', NewsController::class);
     Route::resource('/teams', GamesController::class);
 
 });
