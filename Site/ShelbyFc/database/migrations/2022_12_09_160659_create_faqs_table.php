@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->string('pergunta')->nullable();
-            $table->string('resposta')->nullable();
+            $table->text('pergunta')->nullable();
+            $table->text('resposta')->nullable();
             $table->enum('categoria', ['informacoes','criar_conta','jogos_apostas','depositos_levantamentos']);
 
         });

@@ -9,6 +9,7 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ use App\Http\Controllers\PostsController;
 Auth::routes();
 
 Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/home', [PageController::class, 'index'])->name('home');
 Route::get('styles', [PageController::class, 'styles'])->name('styles');
 
 /** AUTH PROVIDERS & CALLBACK**/
@@ -66,8 +68,8 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
 
     Route::resource('/categorias', CategoriesController::class);
     Route::resource('/games', GamesController::class);
-    Route::resource('/users', GamesController::class);
-    Route::resource('/news', GamesController::class);
+    Route::resource('/users', UserController::class);
+    Route::resource('/news', NewsController::class);
     Route::resource('/teams', GamesController::class);
 
 });
@@ -75,4 +77,3 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -8,6 +8,7 @@ use App\Models\News_Categories;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
 
+
 class NewsController extends Controller
 {
     /**
@@ -17,7 +18,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index');
+
+        $news = News::all();
+        return view('admin.news.index', compact('news'));
     }
 
     /**
@@ -28,7 +31,7 @@ class NewsController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        return view('admin.news.index', compact('categories'));
+        return view('admin.news.create', compact('categories'));
     }
 
     /**
