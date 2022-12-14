@@ -88,7 +88,7 @@ class PageController extends Controller
         $user->birthdate = $request->birthdate;
 
 
-        Session::flash('success', 'Os seus dados foram atualizados!');
+        Session::flash('success', 'Obrigado pela sua subscrição! Receberá uma notificação no seu email quando for aprovada');
         return back();
     }
 
