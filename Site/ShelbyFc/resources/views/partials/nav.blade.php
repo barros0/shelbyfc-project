@@ -7,7 +7,7 @@
         </div>
         <div class="container-login d-flex justify-content-around align-items-center">
             @if(Auth::check())
-                <a href="{{route('minha.conta')}}">Minha conta</a>
+                <a href="{{route('perfil')}}">Minha conta</a>
 
                 @if(Auth::user()->is_admin)
                     <div class="line"></div>

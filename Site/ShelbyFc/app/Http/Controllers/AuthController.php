@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function dologin(Request $request){
-        $this->validate($request,[
+       /* $this->validate($request,[
             'email' => 'required|email',
             'password' => 'required',
         ]);
@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         }
 
-        return back();
+        return back();*/
     }
 
     public function doregister(Request $request){

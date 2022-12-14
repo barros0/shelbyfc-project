@@ -24,18 +24,8 @@
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
-                <a href="{{route('admin.news.index')}}" data-active="1">
-                    <div class="icon">
-                        <i class='bx bx-folder'></i>
-                        <i class='bx bxs-folder'></i>
-                    </div>
-                    <span class="link hide">Noticias</span>
-                </a>
-            </li>
             <div class="tooltip">
                 <span class="show">Dashboard</span>
-                <span>Noticias</span>
             </div>
         </ul>
 
@@ -43,10 +33,10 @@
         <h4 class="hide">Noticias</h4>
         <ul>
             <li class="tooltip-element" data-tooltip="0">
-                <a href="#" class="active" data-active="0">
+                <a href="{{route('admin.news.index')}}" class="active" data-active="0">
                     <div class="icon">
-                        <i class='bx bx-bar-chart-square'></i>
-                        <i class='bx bxs-bar-chart-square'></i>
+                        <i class='bx bx-news'></i>
+                        <i class='bx bxs-news'></i>
                     </div>
                     <span class="link hide">Noticias</span>
                 </a>
@@ -73,8 +63,8 @@
             <li class="tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.games.index')}}" class="active" data-active="0">
                     <div class="icon">
-                        <i class='bx bx-tachometer'></i>
-                        <i class='bx bxs-tachometer'></i>
+                        <i class='bx bx-calendar'></i>
+                        <i class='bx bxs-calendar'></i>
                     </div>
                     <span class="link hide">Calendario</span>
                 </a>
@@ -83,8 +73,8 @@
             <li class="tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.teams.index')}}" data-active="1">
                     <div class="icon">
-                        <i class='bx bx-folder'></i>
-                        <i class='bx bxs-folder'></i>
+                        <i class='bx bx-football'></i>
+                        <i class='bx bxs-football'></i>
                     </div>
                     <span class="link hide">Equipas</span>
                 </a>
@@ -103,8 +93,8 @@
             <li class="tooltip-element" data-tooltip="1">
                 <a href="#" data-active="1">
                     <div class="icon">
-                        <i class='bx bx-message-square-detail'></i>
-                        <i class='bx bxs-message-square-detail'></i>
+                        <i class='bx bx-money-withdraw'></i>
+                        <i class='bx bxs-money-withdraw'></i>
                     </div>
                     <span class="link hide">Apostas</span>
                 </a>
@@ -123,8 +113,8 @@
             <li class="tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.users.index')}}" class="active" data-active="0">
                     <div class="icon">
-                        <i class='bx bx-tachometer'></i>
-                        <i class='bx bxs-tachometer'></i>
+                        <i class='bx bx-user'></i>
+                        <i class='bx bxs-user'></i>
                     </div>
                     <span class="link hide">Utilizadores</span>
                 </a>
@@ -143,12 +133,12 @@
         <div class="admin-user tooltip-element" data-tooltip="1">
             <div class="admin-profile hide">
                 <img src="{{asset('images/users/'. Auth::user()->image)}}" alt="">
-                <div class="admin-info" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <div class="admin-info">
                     <h3>{{Auth::user()->name}}</h3>
                     <h5>Admin</h5>
                 </div>
             </div>
-            <a href="#" class="log-out">
+            <a href="#" class="log-out"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class='bx bx-log-out'></i>
             </a>
         </div>

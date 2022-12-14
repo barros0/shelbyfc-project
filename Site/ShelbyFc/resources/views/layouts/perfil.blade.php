@@ -8,7 +8,7 @@
 
     <section class="container ">
 
-        <div class="vh-100 d-flex justify-content-center">
+        <div class="d-flex justify-content-center content-perfil">
 
 
 
@@ -21,7 +21,7 @@
 
                         <ul class="row nav flex-wrap nav-pills me-3">
                             <li class="col-6 col-md-12">
-                                <a href="{{route('minha.conta')}}" @if(Route::currentRouteName() == 'minha.conta')class="active"@endif>
+                                <a href="{{route('perfil')}}" @if(Route::currentRouteName() == 'perfil')class="active"@endif>
                                     <i class="fa fa-user"></i>
                                     Perfil
                                 </a>

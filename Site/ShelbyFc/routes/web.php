@@ -37,8 +37,8 @@ Route::group(['middleware'=>'auth'], function() {
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
 
-    Route::group(['prefix'=>'minha-conta'], function(){
-        Route::get('/', [PageController::class, 'minha_conta'])->name('minha.conta');
+    Route::group(['prefix'=>'perfil'], function(){
+        Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
