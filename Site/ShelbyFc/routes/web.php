@@ -23,6 +23,7 @@ use App\Http\Controllers\NewsController;
 */
 
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/home', [PageController::class, 'index'])->name('home');

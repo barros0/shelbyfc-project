@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users_Verify;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Str;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -64,11 +67,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'] .' '.$data['subname'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
+        $id=$user->id;
+
+        $token = Str::random(64);
+
+        Users_Verify::create([
+            'user_id' => $id,
+            'token' => $token
+        ]);
+
+
+        Mail::send('email.emailVerificationEmail', compact('id','token'), function($message) use($data){
+            $message->to($data['email']);
+            $message->subject('Confirme o seu e-mail');
+        });
+
+        return $user;
     }
 }
