@@ -27,6 +27,7 @@ class PageController extends Controller
 
         return view('login');
     }
+
     public function noticias()
     {
         $noticias = News::all();
@@ -35,6 +36,7 @@ class PageController extends Controller
 
         return view('noticias', compact('noticias', 'categories'));
     }
+
     public function inscrever()
     {
         $socio_price = socio_price::all();
@@ -64,11 +66,11 @@ class PageController extends Controller
         $subscription = new Subscription();
         $cc = $request->cc;
 
-            $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
-            $cc->move(public_path('users/cc'), $name_cc);
-            $subscription->user_id = $user;
-            $subscription->email = $email;
-            $subscription->cc = $name_cc;
+        $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
+        $cc->move(public_path('users/cc'), $name_cc);
+        $subscription->user_id = $user;
+        $subscription->email = $email;
+        $subscription->cc = $name_cc;
 
         $subscription->address = $request->morada;
         //$subscription->address = $request->cc;
@@ -98,6 +100,7 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
+
     public function styles()
     {
 

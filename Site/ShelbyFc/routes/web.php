@@ -44,23 +44,21 @@ Route::group(['middleware'=>'auth'], function() {
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
         Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
         Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
-        
+
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
     });
    });
 
-
+Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
 
-
-
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
-Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
+
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 
