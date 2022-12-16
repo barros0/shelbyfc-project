@@ -27,6 +27,7 @@ class PageController extends Controller
     {
         return view('login');
     }
+
     public function noticias()
     {
         $noticias = News::all();
@@ -35,6 +36,7 @@ class PageController extends Controller
 
         return view('noticias', compact('noticias', 'categories'));
     }
+
     public function inscrever()
     {
         $socio_price = socio_price::all();
@@ -98,6 +100,7 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
+
     public function styles()
     {
 
