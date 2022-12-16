@@ -1509,3 +1509,68 @@ span {
 .pages:hover {
     background-color: #bebebe;
 }
+
+@media only screen and (max-width: 900px) {
+    .container_main_new {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .option {
+        height: 140px;
+    }
+
+    .container_new {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .news_details {
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    h1#news_title {
+        font-size: 15px;
+    }
+
+    .news_btn_date p {
+        font-size: 15px;
+    }
+
+    .news_options {
+        display: flex;
+        width: auto;
+    }
+
+    .option p, .option h3 {
+        font-size: 12px;
+    }
+
+    .container_last_matches {
+        flex-direction: column;
+        min-height: 300px;
+    }
+
+    .match {
+        width: 100%;
+    }
+
+    .match_home, .match_away {
+        width: 30%;
+    }
+
+    .match img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .separador {
+        height: 2px;
+        width: 70px;
+    }
+
+    .score_home, .score_away {
+        font-size: 21px;
+    }
+}

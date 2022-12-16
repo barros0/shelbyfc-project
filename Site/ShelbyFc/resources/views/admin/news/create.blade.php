@@ -5,8 +5,6 @@
 
 @section('content')
     <h1>Nova noticia</h1>
-
-
     <form action="{{ route('admin.news.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">

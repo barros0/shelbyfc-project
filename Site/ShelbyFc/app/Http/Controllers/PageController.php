@@ -19,12 +19,12 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $noticias = News::all();
+        
+        return view('index', compact('noticias'));
     }
-
     public function login()
     {
-
         return view('login');
     }
     public function noticias()
@@ -64,11 +64,11 @@ class PageController extends Controller
         $subscription = new Subscription();
         $cc = $request->cc;
 
-            $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
-            $cc->move(public_path('users/cc'), $name_cc);
-            $subscription->user_id = $user;
-            $subscription->email = $email;
-            $subscription->cc = $name_cc;
+        $name_cc = 'cc-' . Auth::id() . '-' . time() . '.' . $cc->getClientOriginalExtension();
+        $cc->move(public_path('users/cc'), $name_cc);
+        $subscription->user_id = $user;
+        $subscription->email = $email;
+        $subscription->cc = $name_cc;
 
         $subscription->address = $request->morada;
         //$subscription->address = $request->cc;
