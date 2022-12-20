@@ -6,19 +6,19 @@
 @section('content')
 <div class="container_main_new">
     <div class="mask-gradient">
-        <img src="{{asset('images/noticias/gqwtqj3dtpbpe6oerjcw.jpg')}}" alt="#">
+        <img src="{{asset('images/noticias/')}}" alt="#">
     </div>
     <div class="container_new">
         <div class="news_details">
-            <h1 id="news_title">PRESS ROOM POST SHELBY FC vs LAZIO INTERVIEWS</h1>
+            <h1 id="news_title"></h1>
             <div class="news_btn_date">
                 <button>Ler Mais</button>
-                <p id="news_date">15 Jun 2022</p>
+                <p id="news_date"></p>
             </div>
         </div>
         <div class="news_options">
             @foreach($noticias->take(3) as $noticia)
-            <div class="option" id="noticia1">
+            <div class="option">
                 <p>{{$noticia->created_at}}</p>
                 <h3>{{$noticia->title}}</h3>
             </div>
