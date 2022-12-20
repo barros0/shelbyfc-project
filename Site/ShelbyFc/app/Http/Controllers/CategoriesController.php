@@ -27,7 +27,7 @@ class CategoriesController extends Controller
     public function create(Request $request)
     {
 
-
+        return view('admin.categories.create');
     }
 
     /**
@@ -62,21 +62,23 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Categorie  $categories
+     * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categories)
+    public function show(Categorie $categorie)
     {
-        //
+
+
+        return view('admin.categories.show', compact('categories'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Categorie  $categories
+     * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categories)
+    public function edit(Categorie $categorie)
     {
         //
     }

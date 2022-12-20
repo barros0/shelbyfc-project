@@ -12,7 +12,8 @@
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
-        "square-bit/laravel-pt-rules": "^1.2"
+        "square-bit/laravel-pt-rules": "^1.2",
+        "srmklive/paypal": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -43,7 +43,7 @@
             </li>
 
             <li class="tooltip-element" data-tooltip="1">
-                <a href="#" data-active="1">
+                <a href="{{route('admin.categories.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
                         <i class='bx bxs-folder'></i>
@@ -81,7 +81,7 @@
             </li>
 
             <li class="tooltip-element" data-tooltip="1">
-                <a href="#" data-active="1">
+                <a href="" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
                         <i class='bx bxs-folder'></i>

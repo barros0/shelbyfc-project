@@ -37,11 +37,11 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {
         $this->validate($request, [
             'title' => 'required',
             'small_description' => 'required',
@@ -53,7 +53,7 @@ class NewsController extends Controller
         $categorias = $request->categories;
         $image = $request->image;
 
-        $new =  new News();
+        $new = new News();
         $new->title = $request->title;
         $new->small_description = $request->small_description;
         $new->body = $request->body;
@@ -79,7 +79,7 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\News  $new
+     * @param \App\Models\News $new
      * @return \Illuminate\Http\Response
      */
     public function show($new)
@@ -91,7 +91,7 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\News  $new
+     * @param \App\Models\News $new
      * @return \Illuminate\Http\Response
      */
     public function edit($new)
@@ -103,19 +103,58 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\News  $new
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\News $new
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $new)
     {
-        //
+
+        $this->validate($request, [
+            'title' => 'required',
+            'small_description' => 'required',
+            'body' => 'required',
+            'categories' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
+
+        $categorias = $request->categories;
+        $image = $request->image;
+
+        $new->title = $request->title;
+        $new->small_description = $request->small_description;
+        $new->body = $request->body;
+
+        if ($image) {
+            $extension = $image->getClientOriginalExtension();
+            $image_name = $image->getATime() . '.' . $extension;
+            $image->move(public_path('images/noticias'), $image_name);
+            $new->image = $image_name;
+        }
+
+        $new->save();
+
+        foreach ($categorias as $category) {
+            //check a se a categoria noticia existe
+            $check_categorie_new = News_Categories::where('categorie_id', $category)->where('new_id', $new->id)->exists();
+
+                /*
+            if ($check_categorie_new) {
+                $addcategory = new News_Categories();
+                $addcategory->news_id = $new->id;
+                $addcategory->categories_id = $category;
+                $addcategory->save();
+            }*/
+        }
+
+        Session::flash('success', 'Noticia atualizada!');
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\News  $new
+     * @param \App\Models\News $new
      * @return \Illuminate\Http\Response
      */
     public function destroy($new)
