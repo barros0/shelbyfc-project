@@ -120,6 +120,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/srmklive/paypal" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

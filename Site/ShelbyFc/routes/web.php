@@ -74,11 +74,12 @@ Route::group(['prefix'=>'forum','as'=>'forum.','middleware'=>'subscriber'], func
 
 Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-    Route::resource('/categorias', CategoriesController::class);
+    Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
     Route::resource('/teams', GamesController::class);
+
 
 });
 

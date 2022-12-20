@@ -37,9 +37,15 @@ php artisan serve
 ! o login login com redes sociais só funciona assim em localhost, devido as urls autorizadas pela google e facebook
 http://127.0.0.1:8000/login
 
+Configurar chaves no .env
+
+Documentação de packages:
+
+PayPal: https://github.com/srmklive/laravel-paypal | https://srmklive.github.io/laravel-paypal/docs.html
+
 
 Created by:
-- **[Micael Pereira](https://)**
+- **[Micael Pereira](https://micael.cansados.pt)**
 - **[João Barros](https://)**
 - **[João Duarte](https://)**
 - **[André Sousa](https://)**
