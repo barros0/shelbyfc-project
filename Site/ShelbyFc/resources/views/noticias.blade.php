@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Noticias - Shelby FC')
+@section('title', 'Notícias - Shelby FC')
 
 @section('content')
     <div class="container_all_news">
@@ -17,7 +17,7 @@
                 <div class="news_body">
                     <img src="{{ asset('images/noticias/' . $noticia->image) }}" alt="noticia">
                     <div class="date_category">
-                        <p class="news_date">15 Jun 2022</p>
+                        <p class="news_date">{{ $noticia->created_at }}</p>
                         <p class="newsbody_category">{{ $noticia->name }}</p>
                     </div>
                     <h2>{{ $noticia->title }}</h2>

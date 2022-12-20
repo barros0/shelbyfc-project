@@ -218,7 +218,7 @@ input.invalid {
 }
 
 
-.content-perfil{
+.content-perfil {
     margin-bottom: 40px;
 }
 
@@ -877,16 +877,16 @@ footer {
 }
 
 @media only screen and (max-width: 650px) {
-    .row-vant{
-        flex-direction: column;
-    
-    }
-
-    .fullpage-row{
+    .row-vant {
         flex-direction: column;
 
     }
-  }
+
+    .fullpage-row {
+        flex-direction: column;
+
+    }
+}
 
 
 .icon-vant {

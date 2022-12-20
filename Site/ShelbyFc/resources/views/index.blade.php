@@ -19,8 +19,8 @@
         <div class="news_options">
             @foreach($noticias->take(3) as $noticia)
             <div class="option" id="noticia1">
-                <p>15 Jun 2022</p>
-                <h3>UNDER 19 | ROME-SHELBYFC, THE GAME</h3>
+                <p>{{$noticia->created_at}}</p>
+                <h3>{{$noticia->title}}</h3>
             </div>
             @endforeach
         </div>
