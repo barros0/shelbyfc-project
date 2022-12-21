@@ -79,10 +79,10 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\News $new
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function show($new)
+    public function show(News $news)
     {
 
         return view('admin.news.index');
@@ -91,24 +91,23 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\News $new
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function edit($new)
+    public function edit(News $news)
     {
         $categories = Categorie::all();
-        $news = News::all();
-        return view('admin.news.edit', compact('categories', 'news'));
+        return view('admin.news.edit', compact('categories','new'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\News $new
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $new)
+    public function update(Request $request, News $news)
     {
 
         $this->validate($request, [
@@ -155,10 +154,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\News $new
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy($new)
+    public function destroy(News $news)
     {
         //
     }

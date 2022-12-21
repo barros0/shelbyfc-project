@@ -32,7 +32,7 @@
                     <td>{{ $new->category }}</td>
                     <td>{{ $new->views }}</td>
                     <td>
-                        <a href="{{ route('admin.news.edit', $new->id) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
+                        <a href="{{ route('admin.news.edit', $new) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
                         <a href="{{ route('admin.news.create') }}" class="btn"><i class='bx bx-trash'></i></a>
                     </td>
                 </tr>
