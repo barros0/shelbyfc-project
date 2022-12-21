@@ -24,7 +24,6 @@
                 <th>Actions</th>
             </tr>
             @foreach ($news as $new)
-                <!--para cada registo de pacote-->
                 <tr>
                     <td>{{ $new->id }}</td>
                     <td>{{ $new->title }}</td>

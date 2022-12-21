@@ -7,24 +7,24 @@
 
     <h1>Editar Noticia</h1>
 
-    <form action="{{ route('admin.news.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.update', $news->id) }}" method="put" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-lg-9">
                 <div class="form-group">
                     <label for="title_new">Title</label>
-                    <input type="text" class="form-control" name="title" id="title_new" placeholder="Enter Title"
+                    <input type="text" class="form-control" name="title" id="title_new" value="{{ $news->title }}"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="small_description_new">Small Description</label>
-                    <input type="text" class="form-control" name="small_description" value="{{ $news->title }}"
+                    <input type="text" class="form-control" name="small_description" value="{{ $news->small_description }}"
                         required>
                 </div>
-                <textarea name="body" class="editor"></textarea>
+                <textarea name="body" class="editor">{{ $news->body }}</textarea>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input class="form-control" name="image" type="file" id="image" required>
+                    <input class="form-control" name="image" type="file" id="image">
                 </div>
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
@@ -41,7 +41,4 @@
                 </div>
             </div>
     </form>
-
-
-
 @endsection
