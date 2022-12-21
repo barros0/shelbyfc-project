@@ -32,7 +32,7 @@ class PageController extends Controller
     public function noticias()
     {
 
-        $noticias = News::paginate(1);
+        $noticias = News::paginate(10);
 
         $categories = Categorie::all();
 
