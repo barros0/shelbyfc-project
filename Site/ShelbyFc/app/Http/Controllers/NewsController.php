@@ -121,18 +121,18 @@ class NewsController extends Controller
         $categorias = $request->categories;
         $image = $request->image;
 
-        $new->title = $request->title;
-        $new->small_description = $request->small_description;
-        $new->body = $request->body;
+        $news->title = $request->title;
+        $news->small_description = $request->small_description;
+        $news->body = $request->body;
 
         if ($image) {
             $extension = $image->getClientOriginalExtension();
             $image_name = $image->getATime() . '.' . $extension;
             $image->move(public_path('images/noticias'), $image_name);
-            $new->image = $image_name;
+            $news->image = $image_name;
         }
 
-        $new->save();
+        $news->save();
 
         foreach ($categorias as $category) {
             //check a se a categoria noticia existe
