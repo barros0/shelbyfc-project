@@ -20,7 +20,7 @@ class News extends Model
     ];
 
    public function categorie(){
-        return $this->hasMany(Categorie::class);
+        return $this->hasOne(Categorie::class, 'id', 'categorie_id');
     }
 
 }
