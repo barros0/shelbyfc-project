@@ -26,6 +26,13 @@
             @endforeach
         </div>
         <div class="container_news_pages">
+
+            @if ($noticias->hasPages())
+                <div class="pagination-wrapper">
+                    {{ $noticias->links() }}
+                </div>
+            @endif
+
             <p class="arrows">&#x3c;</p>
             <div class="news_pages">
                 <p class="pages" id="page_selected">1</p>
