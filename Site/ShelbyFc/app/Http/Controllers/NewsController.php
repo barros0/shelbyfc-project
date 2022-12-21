@@ -114,8 +114,8 @@ class NewsController extends Controller
             'title' => 'required',
             'small_description' => 'required',
             'body' => 'required',
-            'categories' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'categories' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         $categorias = $request->categories;
@@ -134,7 +134,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        foreach ($categorias as $category) {
+       /* foreach ($categorias as $category) {
             //check a se a categoria noticia existe
             $check_categorie_new = News_Categories::where('categorie_id', $category)->where('new_id', $new->id)->exists();
 
@@ -145,7 +145,7 @@ class NewsController extends Controller
                 $addcategory->categories_id = $category;
                 $addcategory->save();
             }*/
-        }
+        //}
 
         Session::flash('success', 'Noticia atualizada!');
         return back();
