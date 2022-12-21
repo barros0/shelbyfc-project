@@ -699,80 +699,6 @@ input.invalid {
     width: 100px;
     background-color: var(--preto);
 }
-
-.navbar-third-container {
-    width: 70%;
-    height: 45px;
-}
-
-.navbar-third-container ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-}
-
-.navbar-third-container ul li {
-    user-select: none;
-    cursor: pointer;
-    float: left;
-    width: 126px;
-    height: 34px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--preto);
-    font-weight: 700;
-}
-
-.navbar-third-container ul li a {
-    width: 126px;
-    height: 34px;
-    color: var(--preto) !important;
-}
-
-.navbar-third-container ul li ul {
-    background-color: #ff5559;
-    display: none;
-    top: 34px;
-    z-index: 999;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.navbar-third-container ul li ul li {
-    float: none;
-    width: 190px;
-    height: 45px;
-    border-bottom: 2px solid white;
-}
-
-.navbar-third-container ul li ul li a {
-    width: 190px;
-    height: 45px;
-}
-
-.navbar-third-container ul li ul li:last-child {
-    border-bottom: 0;
-}
-
-.navbar-third-container ul li ul li:last-child:hover {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.navbar-third-container ul li:hover ul {
-    display: block;
-}
-
-.navbar-third-container ul li:hover a {
-    color: var(--vermelho);
-}
-
-.navbar-third-container ul li:hover {
-    color: var(--vermelho);
-}
-
 /*FOOTER*/
 footer {
     background-color: var(--preto);
@@ -1589,8 +1515,9 @@ span {
 /*NOVA NAVBAR*/
 
 .navbar-logo-container {
+    clip-path: polygon(0 0, 100% 0%, 100% 35%, 77% 100%, 0 100%);
+    width: 18%;
     background-color: var(--preto);
-    width: 15%;
 }
 
 .navbar-logo-container img {
@@ -1599,7 +1526,8 @@ span {
 }
 
 .navbar-menu-container {
-    width: 85%;
+    margin-left: -1px;
+    width: 82%;
 }
 
 .navbar-info-container {
@@ -1628,9 +1556,75 @@ span {
     height: 65px;
 }
 
-.navbar-navigation-container .clip-path {
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-    width: 100px;
+.navbar-third-container {
+    width: 100%;
     height: 65px;
-    background-color: var(--preto);
+}
+
+.navbar-third-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.navbar-third-container ul li {
+    user-select: none;
+    cursor: pointer;
+    float: left;
+    width: 126px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--preto);
+    font-weight: 700;
+}
+
+.navbar-third-container ul li a {
+    width: 126px;
+    height: 34px;
+    color: var(--preto) !important;
+}
+
+.navbar-third-container ul li ul {
+    background-color: #ff5559;
+    display: none;
+    top: 34px;
+    z-index: 999;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.navbar-third-container ul li ul li {
+    float: none;
+    width: 190px;
+    height: 45px;
+    border-bottom: 2px solid white;
+}
+
+.navbar-third-container ul li ul li a {
+    width: 190px;
+    height: 45px;
+}
+
+.navbar-third-container ul li ul li:last-child {
+    border-bottom: 0;
+}
+
+.navbar-third-container ul li ul li:last-child:hover {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.navbar-third-container ul li:hover ul {
+    display: block;
+}
+
+.navbar-third-container ul li:hover a {
+    color: var(--vermelho);
+}
+
+.navbar-third-container ul li:hover {
+    color: var(--vermelho);
 }

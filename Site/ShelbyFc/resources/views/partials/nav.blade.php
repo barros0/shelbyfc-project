@@ -27,7 +27,6 @@
             </div>
         </div>
         <div class="navbar-navigation-container d-flex">
-            <div class="clip-path"></div>
             <div class="navbar-third-container d-flex align-items-center justify-content-center">
                 <ul>
                     <li>
