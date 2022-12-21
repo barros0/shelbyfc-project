@@ -16,5 +16,9 @@ class News extends Model
         'body',
         'image',
     ];
-    
+
+   public function categories(){
+        return $this->hasMany(News_Categories::class, 'id', 'categories_id');
+    }
+
 }

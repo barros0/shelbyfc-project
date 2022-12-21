@@ -31,6 +31,10 @@ class PageController extends Controller
 
     public function noticias()
     {
+
+
+        return News::find(3)->categories;
+
         $noticias = News::all();
 
         $categories = Categorie::all();
