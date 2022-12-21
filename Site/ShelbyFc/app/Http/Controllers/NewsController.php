@@ -97,7 +97,7 @@ class NewsController extends Controller
     public function edit(News $news)
     {
         $categories = Categorie::all();
-        return view('admin.news.edit', compact('categories','new'));
+        return view('admin.news.edit', compact('categories','news'));
     }
 
     /**

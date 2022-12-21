@@ -7,7 +7,8 @@
 
     <h1>Editar Noticia</h1>
 
-    <form action="{{ route('admin.news.update', $news->id) }}" method="put" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.update', $news->id) }}" method="post" enctype="multipart/form-data">
+        @method('put')
         @csrf
         <div class="row">
             <div class="col-lg-9">
