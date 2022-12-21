@@ -19,6 +19,7 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>IMG</th>
+                <th>Category</th>
                 <th>Views</th>
                 <th>Actions</th>
             </tr>
@@ -28,10 +29,11 @@
                     <td>{{ $new->id }}</td>
                     <td>{{ $new->title }}</td>
                     <td>{{ $new->image }}</td>
+                    <td>{{ $new->category }}</td>
                     <td>{{ $new->views }}</td>
                     <td>
-                        <a href="{{ route('admin.news.create') }}" class="btn"><i class='bx bx-edit-alt' ></i></a>
-                        <a href="{{ route('admin.news.create') }}" class="btn"><i class='bx bx-trash' ></i></a>
+                        <a href="{{ route('admin.news.edit', $new->id) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
+                        <a href="{{ route('admin.news.create') }}" class="btn"><i class='bx bx-trash'></i></a>
                     </td>
                 </tr>
             @endforeach

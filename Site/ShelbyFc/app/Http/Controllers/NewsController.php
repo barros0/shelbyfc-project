@@ -97,7 +97,8 @@ class NewsController extends Controller
     public function edit($new)
     {
         $categories = Categorie::all();
-        return view('admin.news.edit', compact('categories'));
+        $news = News::all();
+        return view('admin.news.edit', compact('categories', 'news'));
     }
 
     /**
@@ -138,7 +139,7 @@ class NewsController extends Controller
             //check a se a categoria noticia existe
             $check_categorie_new = News_Categories::where('categorie_id', $category)->where('new_id', $new->id)->exists();
 
-                /*
+            /*
             if ($check_categorie_new) {
                 $addcategory = new News_Categories();
                 $addcategory->news_id = $new->id;
