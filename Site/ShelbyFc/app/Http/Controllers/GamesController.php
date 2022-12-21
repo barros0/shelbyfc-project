@@ -119,4 +119,5 @@ class GamesController extends Controller
         Session::flash('success', 'Jogo eliminado!');
         return back();
     }
+
 }
