@@ -9,7 +9,7 @@ class News extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $table = "news";
 
     protected $fillable = [
@@ -19,8 +19,8 @@ class News extends Model
         'image',
     ];
 
-   public function categories(){
-        return $this->hasMany(News_Categories::class, 'id', 'categories_id');
+   public function categorie(){
+        return $this->hasMany(Categorie::class);
     }
 
 }
