@@ -33,7 +33,6 @@ class PageController extends Controller
     {
 
 
-        return News::find(3)->categories;
 
         $noticias = News::all();
 

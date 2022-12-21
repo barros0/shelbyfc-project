@@ -159,6 +159,8 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        $news->delete();
+        Session::flash('success', 'Noticia Apagada!');
+        return back();
     }
 }

@@ -32,7 +32,12 @@
                     <td>{{ $new->views }}</td>
                     <td>
                         <a href="{{ route('admin.news.edit', $new) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
-                        <a href="{{ route('admin.news.create') }}" class="btn"><i class='bx bx-trash'></i></a>
+                        <form action="{{ route('admin.news.destroy', $new) }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit"><i class='bx bx-trash'></i></button>
+                        </form>
+                        
                     </td>
                 </tr>
             @endforeach
