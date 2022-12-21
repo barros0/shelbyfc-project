@@ -11,7 +11,7 @@
 :root {
     --vermelho: #FF5559;
     --preto: #333333;
-
+    --vermelho-hover: #f62e33;
 
     --main-color-dark: #FF5559;
     --main-color: #333333;
@@ -55,10 +55,6 @@ a {
     cursor: pointer;
 }
 
-a:hover {
-    color: var(--vermelho) !important;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'stable';
 }
@@ -75,9 +71,8 @@ button, input[type=button], input[type=submit], .btn {
 }
 
 button:hover, input[type=button]:hover, input[type=submit]:hover, .btn:hover {
-    background-color: var(--vermelho);
+    background-color: var(--vermelho-hover);
     color: white;
-    transform: scale(1.05);
     transition: 0.5s;
 }
 
@@ -179,13 +174,6 @@ button:hover {
     transition: 0.5s;
     color: #fff;
 }
-
-
-span {
-    color: #fc3131;
-}
-
-
 
 .active {
     background-color: transparent;
@@ -316,13 +304,14 @@ main h1 {
     margin-bottom: 1rem;
 }
 
-main .copyright {
-    margin-top: auto;
-    font-size: 0.9rem;
+.copyright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
-main .copyright span {
-    color: var(--main-color);
+.copyright span {
+    color: var(--vermelho);
     font-weight: 500;
     cursor: pointer;
 }
@@ -592,12 +581,12 @@ nav:hover .shrink-btn,
     opacity: 1;
 }
 
-.tooltip-element:hover ~ .tooltip {
+.tooltip-element:hover~.tooltip {
     opacity: 1;
     pointer-events: all;
 }
 
-.tooltip-element span{
+.tooltip-element span {
     color: white !important;
 }
 
@@ -642,6 +631,14 @@ nav:hover .shrink-btn,
 
 .shrink .tooltip {
     display: grid;
+}
+
+.form-menu {
+    margin-bottom: 10px;
+}
+
+.form-menu input {
+    height: 100%;
 }
 
 /*nav f*/
