@@ -27,8 +27,8 @@ class CategoriesController extends Controller
      */
     public function create(Request $request)
     {
-
-        return view('admin.categories.create');
+        $categories = Categorie::all();
+        return view('admin.categories.create', compact('categories'));
     }
 
     /**
@@ -39,22 +39,14 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+
+        $this->validate($request, [
             'name' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-        $image = $request->image;
-        if($image){
-            $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().time().'.' . $extension;
-            $image->move(public_path('categories/'), $image_name);
-        }
-
-        $categoria = new Categorie();
-        $categoria->name = $request->name;
-        $categoria->image = $image_name;
-        $categoria->save();
+        $categories = new Categorie();
+        $categories->name = $request->name;
+        $categories->save();
 
         Session::flash('success', 'Categoria adicionada!');
         return back();
@@ -66,11 +58,11 @@ class CategoriesController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show(Categorie $categories)
     {
 
 
-        return view('admin.categories.show', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -79,9 +71,11 @@ class CategoriesController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Categorie $categories)
     {
-        //
+        $categories = Categorie::all();
+
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -91,23 +85,14 @@ class CategoriesController extends Controller
      * @param  \App\Models\Categorie  $categorie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, Categorie $categories)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-        $image = $request->image;
-        if($image){
-            $extension = $image->getClientOriginalExtension();
-            $image_name = $image->getClientOriginalName().time().'.' . $extension;
-            $image->move(public_path('categories/'), $image_name);
-        }
-
-        $categorie->name = $request->name;
-        $categorie->image = $image_name;
-        $categorie->save();
+        $categories->name = $request->name;
+        $categories->save();
 
         return back();
     }

@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 
-@section('title', 'News | Shelby FC')
+@section('title', 'Categories | Shelby FC')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="form-search">
             <input type="text" name="" class="form-control" placeholder="Search">
         </div>
-        <a href="" class="btn">Adicionar</a>
+        <a href="{{ route('admin.categories.create') }}" class="btn">Adicionar</a>
     </div>
     <table>
         <tbody>
@@ -24,14 +24,17 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <a href="" class="btn"><i class='bx bx-edit-alt'></i></a>
-                        <a href="" class="btn"><i class='bx bx-trash'></i></a>
+                        <a href="{{ route('admin.categories.edit', $category) }}" class="btn"><i
+                                class='bx bx-edit-alt'></i></a>
+                        <form action="{{ route('admin.categories.destroy', $category) }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit"><i class='bx bx-trash'></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
 
 @endsection
