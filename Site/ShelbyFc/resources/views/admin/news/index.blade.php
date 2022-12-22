@@ -28,7 +28,7 @@
                     <td>{{ $new->id }}</td>
                     <td>{{ $new->title }}</td>
                     <td>{{ $new->image }}</td>
-                    <td>{{ $new->category }}</td>
+                    <td>{{ $new->categorie->name }}</td>
                     <td>{{ $new->views }}</td>
                     <td>
                         <a href="{{ route('admin.news.edit', $new) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
@@ -37,7 +37,7 @@
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
-                        
+
                     </td>
                 </tr>
             @endforeach

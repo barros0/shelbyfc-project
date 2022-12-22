@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\News;
-use App\Models\News_Categories;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
 use Session;
-
-
 class NewsController extends Controller
 {
     /**
@@ -46,17 +43,17 @@ class NewsController extends Controller
             'title' => 'required',
             'small_description' => 'required',
             'body' => 'required',
-            'categories' => 'required',
+            'categorie_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-        $categorias = $request->categories;
         $image = $request->image;
 
         $new = new News();
         $new->title = $request->title;
         $new->small_description = $request->small_description;
         $new->body = $request->body;
+        $new->categorie_id = $request->categorie_id;
 
         $extension = $image->getClientOriginalExtension();
         $image_name = $image->getATime() . '.' . $extension;
@@ -64,13 +61,6 @@ class NewsController extends Controller
         $new->image = $image_name;
 
         $new->save();
-
-        foreach ($categorias as $category) {
-            $addcategory = new News_Categories();
-            $addcategory->news_id = $new->id;
-            $addcategory->categories_id = $category;
-            $addcategory->save();
-        }
 
         Session::flash('success', 'Noticia inserida!');
         return back();
@@ -97,7 +87,7 @@ class NewsController extends Controller
     public function edit(News $news)
     {
         $categories = Categorie::all();
-        return view('admin.news.edit', compact('categories','news'));
+        return view('admin.news.edit', compact('categories', 'news'));
     }
 
     /**
@@ -118,12 +108,12 @@ class NewsController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-        $categorias = $request->categories;
         $image = $request->image;
 
         $news->title = $request->title;
         $news->small_description = $request->small_description;
         $news->body = $request->body;
+        $news->categorie_id = $request->categorie_id;
 
         if ($image) {
             $extension = $image->getClientOriginalExtension();
@@ -134,7 +124,7 @@ class NewsController extends Controller
 
         $news->save();
 
-       /* foreach ($categorias as $category) {
+        /* foreach ($categorias as $category) {
             //check a se a categoria noticia existe
             $check_categorie_new = News_Categories::where('categorie_id', $category)->where('new_id', $new->id)->exists();
 

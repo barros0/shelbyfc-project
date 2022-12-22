@@ -4,7 +4,10 @@
 @section('title', 'News | Shelby FC')
 
 @section('content')
+
+    <a style="font-size:25px;" href="{{ route('admin.news.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
     <h1>Nova noticia</h1>
+
     <form action="{{ route('admin.news.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -29,13 +32,11 @@
             <div class="col-lg-3">
                 <h3>Categorias</h3>
                 <div class="form-group">
-                    @foreach ($categories as $category)
-                        <div class="d-flex">
-                            <input style=" width:auto; margin:0 10px 0 0 !important; padding:0 !important; " type="checkbox"
-                                name="categories[]" id="{{ $category->name }}" value="{{ $category->id }}">
-                            <label for="{{ $category->name }}">{{ $category->name }}</label>
-                        </div>
-                    @endforeach
+                    <select name="categorie_id">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
     </form>
