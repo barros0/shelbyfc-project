@@ -48,6 +48,7 @@ class PageController extends Controller
         return view('inscrever', compact("socio_price", "nacionalidades"));
     }
 
+
     public function inscrever_post(Request $request)
     {
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PayPalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Auth::routes(['verify' => true]);
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/home', [PageController::class, 'index'])->name('home');
 Route::get('styles', [PageController::class, 'styles'])->name('styles');
+
+Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepaypal');
 
 /** AUTH PROVIDERS & CALLBACK**/
 Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
@@ -83,6 +86,12 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
 
 });
 
+
+
+Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 
 
 
