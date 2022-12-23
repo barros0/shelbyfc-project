@@ -10,7 +10,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\PayPalController;
+=======
+use App\Http\Controllers\InscreverController;
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +85,7 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
     Route::resource('/games', GamesController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
+    Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', GamesController::class);
 
 

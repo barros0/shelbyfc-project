@@ -99,6 +99,15 @@
                     <span class="link hide">Apostas</span>
                 </a>
             </li>
+            <li class="tooltip-element" data-tooltip="1">
+                <a href="{{route('admin.inscrever.index')}}" data-active="1">
+                    <div class="icon">
+                        <i class='bx bx-money-withdraw'></i>
+                        <i class='bx bxs-money-withdraw'></i>
+                    </div>
+                    <span class="link hide">Inscrever</span>
+                </a>
+            </li>
             <div class="tooltip">
                 <span class="show">Calendario</span>
                 <span>Equipas</span>
