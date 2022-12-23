@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Session;
-use Psy\Util\Str;
 
 class CategoriesController extends Controller
 {
@@ -68,32 +67,31 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Categorie  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categories)
-    {
-        $categories = Categorie::all();
+    public function edit(Categorie $category){
 
-        return view('admin.categories.edit', compact('categories'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Categorie  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categories)
+    public function update(Request $request, Categorie $category)
     {
         $this->validate($request, [
             'name' => 'required',
         ]);
 
-        $categories->name = $request->name;
-        $categories->save();
+        $category->name = $request->name;
+        $category->save();
 
+        Session::flash('success', 'Categoria atualizada!');
         return back();
     }
 

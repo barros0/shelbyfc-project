@@ -159,6 +159,11 @@ class PageController extends Controller
         return view('noticia', compact('game'));
     }
 
+    public function contactos(){
+
+        return view('contactos');
+    }
+
 
     public function sendcontact(Request $request)
     {

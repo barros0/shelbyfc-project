@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use App\Models\Game;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Session;
 
@@ -15,7 +17,9 @@ class GamesController extends Controller
      */
     public function index()
     {
-        return view('admin.games.index');
+
+        $games = Game::orderby('datetime_game','desc')->get();
+        return view('admin.games.index', compact('games'));
     }
 
     /**
@@ -25,7 +29,9 @@ class GamesController extends Controller
      */
     public function create()
     {
-        return view('admin.games.create');
+
+        $teams = Team::all();
+        return view('admin.games.create', compact('teams'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Session;
 
 class TeamsController extends Controller
 {
@@ -14,7 +15,9 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        return view('admin.teams.index');
+        $teams = Team::all();
+
+        return view('admin.teams.index', compact('teams'));
     }
 
     /**
@@ -30,18 +33,38 @@ class TeamsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'nome' => 'required|unique:teams,name',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
+
+        $image = $request->imagem;
+        $extension = $image->getClientOriginalExtension();
+        $image_name = $request->nome . '.' . $extension;
+        $image->move(public_path('images/ligas'), $image_name);
+
+
+        $team = new Team();
+        $team->name = $request->nome;
+        $team->image = $image_name;
+        $team->save();
+
+
+        Session::flash('success', 'Equipa adicionada!');
+        return back();
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param \App\Models\Team $team
      * @return \Illuminate\Http\Response
      */
     public function show(Team $team)
@@ -52,34 +75,60 @@ class TeamsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Team  $team
+     * @param \App\Models\Team $team
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Team $team, Request $request)
     {
-        return view('admin.teams.edit',compact('team'));
+
+        return view('admin.teams.edit', compact('team'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Team  $team
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Team $team
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Team $team)
     {
         //
+
+        $this->validate($request, [
+            'nome' => 'required|unique:teams,name',
+            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+        ]);
+
+        $image = $request->imagem;
+
+        if ($image) {
+            $extension = $image->getClientOriginalExtension();
+            $image_name = $request->nome . '.' . $extension;
+            $image->move(public_path('images/ligas'), $image_name);
+            $team->image = $image_name;
+        }
+
+        $team->name = $request->nome;
+        $team->save();
+
+
+        Session::flash('success', 'Equipa atualizada!');
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Team  $team
+     * @param \App\Models\Team $team
      * @return \Illuminate\Http\Response
      */
     public function destroy(Team $team)
     {
         //
+        $team->delete();
+
+        Session::flash('success', 'Equipa eliminada!');
+        return back();
     }
 }

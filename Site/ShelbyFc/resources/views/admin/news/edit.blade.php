@@ -31,7 +31,7 @@
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
             <div class="col-lg-3">
-                <h3>Categorias</h3>
+                <h3>Categoria</h3>
                 <div class="form-group">
                     <select name="categorie_id">
                         @foreach ($categories as $category)
