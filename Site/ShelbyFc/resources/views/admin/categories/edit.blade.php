@@ -5,6 +5,7 @@
 
 @section('content')
 
+    <a style="font-size:25px;" href="{{ route('admin.categories.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
     <h1>Editar Categoria</h1>
 
     <form action="{{ route('admin.categories.update', $category->id) }}" method="post" enctype="multipart/form-data">

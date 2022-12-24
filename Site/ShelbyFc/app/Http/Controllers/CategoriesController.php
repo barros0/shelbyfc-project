@@ -101,9 +101,9 @@ class CategoriesController extends Controller
      * @param  \App\Models\Categorie  $categories
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categories)
+    public function destroy(Categorie $category)
     {
-        $categories->delete();
+        $category->delete();
         Session::flash('success', 'Categoria eliminada!');
         return back();
     }
