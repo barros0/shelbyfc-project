@@ -14,6 +14,7 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 
@@ -40,6 +41,13 @@ Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepa
 /** AUTH PROVIDERS & CALLBACK**/
 Route::get('auth/{provider}/callback', [SocialLoginController::class, 'providerCallback']);
 Route::get('auth/{provider}', [SocialLoginController::class, 'redirectToProvider'])->name('social.redirect');
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');

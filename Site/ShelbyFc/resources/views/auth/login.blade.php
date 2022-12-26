@@ -75,7 +75,7 @@
 
         </div>
         <div class="row text-center col-12 title-login">
-            <a href="#" class="trouble">NÃO CONSEGUE INICIAR SESSÃO?</a>
+            <a href="{{route('forget.password.get')}}" class="trouble">NÃO CONSEGUE INICIAR SESSÃO?</a>
             <div class="linha-ajuda"></div>
         </div>
         <div class="row footer-bg col-12 title-login"></div>
