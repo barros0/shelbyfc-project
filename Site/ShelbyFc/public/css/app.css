@@ -1170,8 +1170,6 @@ span {
 .section-faqs {
     width: 100%;
     height: auto;
-    padding-left: 300px;
-    padding-right: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
