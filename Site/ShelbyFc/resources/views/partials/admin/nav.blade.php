@@ -57,6 +57,34 @@
             </div>
         </ul>
 
+        <h4 class="hide">Suporte</h4>
+        <ul>
+            <li class="tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.faqs.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-question-mark'></i>
+                        <i class='bx bx-question-mark'></i>
+                    </div>
+                    <span class="link hide">FaQs</span>
+                </a>
+            </li>
+
+            <li class="tooltip-element" data-tooltip="1">
+                <a href="{{route('admin.news.index')}}" data-active="1">
+                    <div class="icon">
+                        <i class='bx bx-support'></i>
+                        <i class='bx bxs-support'></i>
+                    </div>
+                    <span class="link hide">Contactos</span>
+                </a>
+            </li>
+            <div class="tooltip">
+                <span class="show">FaQs</span>
+                <span>Contactos</span>
+            </div>
+        </ul>
+
+
 
         <h4 class="hide">Jogos</h4>
         <ul>

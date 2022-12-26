@@ -13,6 +13,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\FaqsController;
 
 
 /*
@@ -86,7 +87,8 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
     Route::resource('/news', NewsController::class);
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
-
+    Route::resource('/faqs', FaqsController::class);
+    
 
 });
 
