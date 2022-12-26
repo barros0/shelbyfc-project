@@ -16,6 +16,7 @@ use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -1,6 +1,6 @@
 @extends("layouts.master")
 
-@section('title','FaQS - Shelby FC')
+@section('title','FaQS | Shelby FC')
 
 @section('content')
 <div class="conteudo-faqs">

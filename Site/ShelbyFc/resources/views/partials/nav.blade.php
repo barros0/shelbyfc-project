@@ -91,7 +91,7 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('forum.home') }}">
+                                    href="{{ route('contactos') }}">
                                     Contactos
                                 </a>
                             </li>
