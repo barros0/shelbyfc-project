@@ -12,6 +12,8 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\InscreverController;
+use App\Http\Controllers\TeamsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +85,7 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
     Route::resource('/inscrever', InscreverController::class);
-    Route::resource('/teams', GamesController::class);
+    Route::resource('/teams', TeamsController::class);
 
 
 });

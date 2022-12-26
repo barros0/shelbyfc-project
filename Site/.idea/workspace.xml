@@ -149,18 +149,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/admin/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin" />
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\games" />
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\users" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\news" />
-      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\public" />
-      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views" />
-      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\public\fonts" />
@@ -192,6 +192,7 @@
       <workItem from="1671574917985" duration="2412000" />
       <workItem from="1671653951445" duration="7277000" />
       <workItem from="1671749371905" duration="689000" />
+      <workItem from="1671833947989" duration="4063000" />
     </task>
     <servers />
   </component>

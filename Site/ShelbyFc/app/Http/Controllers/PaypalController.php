@@ -54,7 +54,7 @@ class PayPalController extends Controller
                 ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
-    /**
+    /**<<<<<< Updated upstream
      * success transaction.
      *
      * @return \Illuminate\Http\Response
