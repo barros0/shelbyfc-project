@@ -23,13 +23,12 @@
                 <th>Views</th>
                 <th>Actions</th>
             </tr>
-            @foreach ($news as $new)
+            @foreach ($inscrever as $item_db)
                 <tr>
-                    <td>{{ $new->id }}</td>
-                    <td>{{ $new->title }}</td>
-                    <td>{{ $new->image }}</td>
-                    <td>{{ $new->category }}</td>
-                    <td>{{ $new->views }}</td>
+                    <td>{{ $item_db->id }}</td>
+                    <td>{{ $item_db->name }}</td>
+                    <td>{{ $item_db->idade }}</td>
+                    <td>{{ $item_db->preco }}</td>
                     <td>
                         <a href="{{ route('admin.inscrever.edit', $new) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
                         <form action="{{ route('admin.inscrever.destroy', $new) }}" method="post">

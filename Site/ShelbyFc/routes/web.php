@@ -10,11 +10,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
-<<<<<<< Updated upstream
 use App\Http\Controllers\PayPalController;
-=======
 use App\Http\Controllers\InscreverController;
->>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
