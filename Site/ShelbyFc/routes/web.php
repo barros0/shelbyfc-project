@@ -38,15 +38,15 @@ Route::get('styles', [PageController::class, 'styles'])->name('styles');
 Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepaypal');
 
 /** AUTH PROVIDERS & CALLBACK**/
-Route::get('auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
-Route::get('auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
+Route::get('auth/{provider}/callback', [SocialLoginController::class, 'providerCallback']);
+Route::get('auth/{provider}', [SocialLoginController::class, 'redirectToProvider'])->name('social.redirect');
 
-Route::group(['middleware'=>'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
 
-    Route::group(['prefix'=>'perfil'], function(){
+    Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
@@ -57,12 +57,11 @@ Route::group(['middleware'=>'auth'], function() {
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
     });
-   });
+});
 
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
-
 
 
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
@@ -72,15 +71,13 @@ Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 
 
-
-
-Route::group(['prefix'=>'forum','as'=>'forum.','middleware'=>'subscriber'], function(){
+Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [PageController::class, 'forum'])->name('home');
 
 });
 
 
-Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function(){
+Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
@@ -89,10 +86,12 @@ Route::group(['prefix'=>'admin/','as'=>'admin.','middleware'=>'admin'], function
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
     Route::resource('/faqs', FaqsController::class);
-    
 
+    Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
+        Route::get('/', [AdminController::class,'contacts'])->name('index');
+        Route::get('/{contact}', [AdminController::class,'contact'])->name('show');
+    });
 });
-
 
 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
