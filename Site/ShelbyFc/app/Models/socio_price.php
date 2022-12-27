@@ -18,4 +18,5 @@ class socio_price extends Model
         'idade',
         'preco',
     ];
+
 }

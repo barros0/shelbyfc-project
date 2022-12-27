@@ -28,8 +28,7 @@ class InscreverController extends Controller
 
      public function create()
     {
-        $precos = socio_price::all();
-        return view('admin.inscrever.create', compact('precos'));
+        return view('admin.inscrever.create');
     }
      
      /**
@@ -54,7 +53,7 @@ class InscreverController extends Controller
 
         $item->save();
 
-        Session::flash('success', 'Pacote Inserido!');
+        Session::flash('Sucesso!', 'Pacote Inserido!');
         return back();
     }
 
@@ -64,10 +63,10 @@ class InscreverController extends Controller
      * @param \App\Models\socio_price 
      * @return \Illuminate\Http\Response
      */
-    public function show(socio_price $inscrever)
+    public function show(socio_price $item)
     {
 
-        return view('admin.inscrever.index');
+        return view('admin.inscrever.show');
     }
 
     /**
@@ -76,9 +75,8 @@ class InscreverController extends Controller
      * @param \App\Models\socio_price $inscrever
      * @return \Illuminate\Http\Response
      */
-    public function edit(socio_price $inscrever)
+    public function edit(socio_price $item, Request $request)
     {
-        $inscrever = socio_price::all();
         return view('admin.inscrever.edit', compact('inscrever'));
     }
 
@@ -86,11 +84,11 @@ class InscreverController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\socio_price $inscrever
+     * @param \App\Models\socio_price $item
      * @return \Illuminate\Http\Response 
      */
 
-    public function update(Request $request, socio_price $inscrever)
+    public function update(Request $request, socio_price $item)
     {
 
         $this->validate($request, [
@@ -99,11 +97,11 @@ class InscreverController extends Controller
             'preco' => 'required',
         ]);
 
-        $inscrever->name = $request->name;
-        $inscrever->idade = $request->idade;
-        $inscrever->preco = $request->preco;
+        $item->name = $request->name;
+        $item->idade = $request->idade;
+        $item->preco = $request->preco;
 
-        $inscrever->save();
+        $item->save();
 
         Session::flash('success', 'Pacote Atualizado!');
         return back();
@@ -112,12 +110,12 @@ class InscreverController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\socio_price $inscrever
+     * @param \App\Models\socio_price $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(socio_price $inscrever)
+    public function destroy(socio_price $item)
     {
-        $inscrever->delete();
+        $item->delete();
         Session::flash('success', 'Noticia Apagada!');
         return back();
     }

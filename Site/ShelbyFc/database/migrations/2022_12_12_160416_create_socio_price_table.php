@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('idade')->nullable();
             $table->double('preco')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
