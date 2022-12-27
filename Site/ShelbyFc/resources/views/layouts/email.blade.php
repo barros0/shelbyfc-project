@@ -122,6 +122,7 @@
 
                                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                 <tr>
+                                                <tr>
                                                     <td style="padding: 0px;background-color: #f9f9f9;" align="center">
                                                         <table cellpadding="0" cellspacing="0" border="0"
                                                                style="width:600px;">
@@ -233,11 +234,11 @@
                                                                                                         <img
                                                                                                             align="center"
                                                                                                             border="0"
-                                                                                                            src="images/image-2.jpeg"
+                                                                                                            src="{{asset('images/logo.svg')}}"
                                                                                                             alt="Image"
                                                                                                             title="Image"
-                                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 29%;max-width: 168.2px;"
-                                                                                                            width="168.2"/>
+                                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;max-width: 100px;"
+                                                                                                            width="100"/>
 
                                                                                                     </td>
                                                                                                 </tr>
