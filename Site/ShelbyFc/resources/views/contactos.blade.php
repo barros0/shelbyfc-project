@@ -40,10 +40,10 @@
 
     <div class="ret-section">
 
-    <div class="ret" id="ret1"></div>
-    <div class="ret" id="ret2"></div>
-    <div class="ret" id="ret3"></div>
-    <div class="ret" id="ret4"></div>
+    <div class="ret" ><div id="ret1"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret2"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret3"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret4"></div><div id="ret-info"></div></div>
 
 </div>
 
