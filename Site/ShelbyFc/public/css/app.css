@@ -1730,15 +1730,24 @@ span {
 .what-section .up-side{
     height: 30%;
     width: 100%;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 20px;
+    
 }
 
 .what-section .down-side{
     height: 70%;
     width: 100%;
+    text-align: left;
+    font-weight: bold;
 }
 
 .what-section i{
-    font-size: 25px;
+    font-size: 40px;
     color: white;
     display: flex;
     justify-content: center;

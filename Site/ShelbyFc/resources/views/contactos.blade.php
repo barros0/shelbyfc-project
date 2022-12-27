@@ -31,11 +31,23 @@
       <div class="left-side"><i class='bx bx-football'></i></div>
       <div class="right-side">
         <div class="up-side">Futebol</div>
-        <div class="down-side"></div>
+        <div class="down-side">7x Campeão Nacional <br> 2x Taça de Portugal <br> 387 Jogadores <br> Escalões de 7-18 anos</div>
       </div>
     </div>
-    <div class="ret" id="ret2"></div>
-    <div class="ret" id="ret3"></div>
+    <div class="ret" id="ret2">
+      <div class="left-side"><i class='bx bx-buildings' ></i></div>
+      <div class="right-side">
+        <div class="up-side">Instituição</div>
+        <div class="down-side">2 567 321€ angariados <br> 4.500 Alunos <br> 12.300 Crianças <br> 127 Voluntários</div>
+      </div>
+    </div>
+    <div class="ret" id="ret3">
+      <div class="left-side"><i class='bx bx-user'></i></div>
+      <div class="right-side">
+        <div class="up-side">Sócios</div>
+        <div class="down-side">2340 Sócios <br> 1840 Sócios Adultos <br> 500 Sócios Menores</div>
+      </div>
+    </div>
 
     </div>
     </div>
