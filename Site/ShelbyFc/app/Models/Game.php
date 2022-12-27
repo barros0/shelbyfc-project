@@ -10,4 +10,11 @@ class Game extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+
+
+    public function bets()
+    {
+        return $this->hasMany(Bets::class, 'game_id', 'id');
+    }
 }

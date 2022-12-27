@@ -22,6 +22,28 @@ class GamesController extends Controller
         return view('admin.games.index', compact('games'));
     }
 
+
+    public function publicar_resultados(Game $game,Request $request)
+    {
+
+        $request->validate([
+            'home_result' => 'required|numeric',
+            'visit_result' => 'required|numeric',
+        ]);
+
+
+        $bets = $game->bets;
+
+        foreach ($bets as $bet){
+
+
+
+        }
+
+
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

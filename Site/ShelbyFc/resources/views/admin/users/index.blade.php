@@ -17,9 +17,7 @@
             <th>Nome</th>
             <th>Email</th>
             <th>Estado</th>
-            <th>x</th>
-            <th>x</th>
-            <th>x</th>
+            <th>Editar</th>
         </tr>
         @foreach ($users as $user)
         <tr>
@@ -28,9 +26,9 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->status }}</td>
-            <td>{{ $user->price }}</td>
-            <td>{{ $user->price }}</td>
-            <td>{{ $user->price }}</td>
+            <td><a href="{{route('admin.users.edit',$user->id)}}">
+                    <i class="fa fa-pen"></i>
+                </a></td>
         </tr>
         @endforeach
         </tbody>

@@ -32,11 +32,20 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Auth::routes();
 Auth::routes(['verify' => true]);
 
+/*--------------------tests--------------------*/
+
+Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepaypal');
+
+Route::get("/email", function(){
+    return View("email.forgetpassword");
+});
+
+/*-----------------tests--------------------*/
+
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/home', [PageController::class, 'index'])->name('home');
 Route::get('styles', [PageController::class, 'styles'])->name('styles');
 
-Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepaypal');
 
 /** AUTH PROVIDERS & CALLBACK**/
 Route::get('auth/{provider}/callback', [SocialLoginController::class, 'providerCallback']);
