@@ -17,7 +17,7 @@
                 <div class="news_body">
                     <img src="{{ asset('images/noticias/' . $noticia->image) }}" alt="noticia">
                     <div class="date_category">
-                        <p class="news_date">{{ $noticia->created_at }}</p>
+                        <p class="news_date">{{ $noticia->created_at->format('Y-m-d') }}</p>
                         <p class="newsbody_category">{{ $noticia->categorie->name }}</p>
                     </div>
                     <h2>{{ $noticia->title }}</h2>
