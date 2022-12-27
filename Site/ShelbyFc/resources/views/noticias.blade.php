@@ -8,7 +8,7 @@
             <div class="news_from_category">
                 <a href="" class="selected_category">Geral</a>
                 @foreach ($categories as $category)
-                    <a href="">{{ $category->name }}</a>
+                    <a href="{{route('news.categorie',$category->name)}}">{{ $category->name }}</a>
                 @endforeach
             </div>
         </div>

@@ -42,6 +42,25 @@ class PageController extends Controller
         return view('noticias', compact('noticias', 'categories'));
     }
 
+    public function noticia($id)
+    {
+        $noticia = News::findOrFail($id);
+        $categories = Categorie::all();
+
+        return view('noticia', compact('noticia', 'categories'));
+    }
+
+    public function news_categories($category)
+    {
+
+        $category = Categorie::where('name',$category)->firstOrFail();
+
+        $noticias = $category->news()->paginate(6);
+        $categories = Categorie::all();
+
+        return view('noticias', compact('noticias', 'categories'));
+    }
+
     public function inscrever()
     {
         $socio_price = socio_price::all();
@@ -143,15 +162,6 @@ class PageController extends Controller
     {
 
         return view('perfil.preferencias');
-    }
-
-
-    public function noticia($id)
-    {
-
-        $noticia = News::findOrFail($id);
-
-        return view('noticia', compact('noticia'));
     }
 
 

@@ -68,6 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
+Route::get('/noticias/categoria/{category}', [PageController::class, 'news_categories'])->name('news.categorie');
 Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
