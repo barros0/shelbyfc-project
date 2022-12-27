@@ -1665,7 +1665,7 @@ span {
     height: 100%;
     width: 700px;
     background-color: white;
-    box-shadow: 5px 5px 5px 5px #dfdfdf;
+    box-shadow: 0px 0px 52px #000000ad;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -1681,5 +1681,96 @@ span {
     height: 100%;
     width: 40%;
     background-image: url(../images/sobre/fundo-about.svg);
+    background-size: cover;
+}
+
+
+.what-section{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.what-section .texto-banner{
+    color: rgb(32, 32, 32);
+    font-size: 50px;
+}
+
+.what-section span{
+    color: red;
+}
+
+.ret-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.what-section .ret{
+    width:350px;
+    height: 170px;
+    margin: 70px;
+    box-shadow: 0px 0px 52px #000000ad;
+}
+
+.what-section #ret1{
+    background-color: var(--vermelho);
+}
+
+.what-section #ret2{
+    background-color:#fc393c;
+}
+
+.what-section #ret3{
+    background-color:#fa2c2f;
+}
+
+
+.team-section{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-section .texto-banner{
+    color: rgb(32, 32, 32);
+    font-size: 50px;
+}
+
+.team-section span{
+    color: red;
+}
+
+.team-section .ret{
+    width:270px;
+    height: 350px;
+    margin: 25px;
+    box-shadow: 0px 0px 52px #000000ad;
+    
+}
+
+.team-section #ret1{
+    background-image: url(../images/sobre/bart.JPG);
+    background-size: cover;
+}
+
+.team-section #ret2{
+    background-image: url(../images/sobre/bart.JPG);
+    background-size: cover;
+}
+
+.team-section #ret3{
+    background-image: url(../images/sobre/bart.JPG);
+    background-size: cover;
+}
+
+.team-section #ret4{
+    background-image: url(../images/sobre/bart.JPG);
     background-size: cover;
 }
