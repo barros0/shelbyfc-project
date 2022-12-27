@@ -15,7 +15,7 @@
 
     <div class="about-section">
         <div class="about-text">
-            <div class="left-side"></div>
+            <div class="left-side"><div class="up-side"><h1>Sobre Nós</h1></div><div class="down-side"><p>O Shelby Football Club consiste num clube desportivo amador local que visa promover o desporto rei tendo um maior foco em jovens desfavorecidos cuja vida é praticamente passada em instituições (7-18 anos).</p></div></div>
             <div class="right-side"></div>
         </div>
 
@@ -27,7 +27,13 @@
 
     <div class="ret-section">
 
-    <div class="ret" id="ret1"></div>
+    <div class="ret" id="ret1">
+      <div class="left-side"><i class='bx bx-football'></i></div>
+      <div class="right-side">
+        <div class="up-side">Futebol</div>
+        <div class="down-side"></div>
+      </div>
+    </div>
     <div class="ret" id="ret2"></div>
     <div class="ret" id="ret3"></div>
 
