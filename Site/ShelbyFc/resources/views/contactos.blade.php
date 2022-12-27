@@ -21,7 +21,33 @@
 
     </div>
 
+    <div class="what-section">
 
+    <div class="texto-banner"><span>|</span> DESCOBRE MAIS DO QUE FAZEMOS <span>|</span></div>
+
+    <div class="ret-section">
+
+    <div class="ret" id="ret1"></div>
+    <div class="ret" id="ret2"></div>
+    <div class="ret" id="ret3"></div>
+
+    </div>
+    </div>
+
+
+    <div class="team-section">
+    <div class="texto-banner"><span>|</span> A NOSSA EQUIPA <span>|</span></div>
+
+    <div class="ret-section">
+
+    <div class="ret" ><div id="ret1"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret2"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret3"></div><div id="ret-info"></div></div>
+    <div class="ret" ><div id="ret4"></div><div id="ret-info"></div></div>
+
+</div>
+
+    </div>
 
 
 </div>

@@ -156,6 +156,7 @@ class UserController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -164,9 +165,11 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $id)
     {
         //
+
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -176,9 +179,20 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $id)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'subname' => 'required',
+            'email' => 'required|email',
+            // 'phone' => 'required|required|regex:/(01)[0-9]{9}/',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password',
+        ]);
+
+
+
+
     }
 
     /**
@@ -191,4 +205,8 @@ class UserController extends Controller
     {
         //
     }
+
+
+
+
 }
