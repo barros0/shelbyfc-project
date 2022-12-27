@@ -21,8 +21,12 @@ class PageController extends Controller
     public function index()
     {
         $noticias = News::all();
+        $id_js = 0;
+        $id_image_js = 0;
+        $id_text_js = 0;
+        $id_date_js = 0;
 
-        return view('index', compact('noticias'));
+        return view('index', compact('noticias', 'id_js', 'id_image_js', 'id_text_js', 'id_date_js'));
     }
     public function login()
     {
@@ -159,7 +163,8 @@ class PageController extends Controller
         return view('noticia', compact('game'));
     }
 
-    public function contactos(){
+    public function contactos()
+    {
 
         return view('contactos');
     }
@@ -186,15 +191,13 @@ class PageController extends Controller
 
         // depois adicionar para queue
 
-        Mail::send('email.contact', compact('contact'), function($message) use($contact){
+        Mail::send('email.contact', compact('contact'), function ($message) use ($contact) {
             $message->to($contact->email);
             $message->subject('Obrigado pelo seu contacto!');
         });
 
 
-        Session::flash('success','A sua mensagem foi enviada. Obrigado!');
+        Session::flash('success', 'A sua mensagem foi enviada. Obrigado!');
         return back();
     }
-
-
 }
