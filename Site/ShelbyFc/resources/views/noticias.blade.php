@@ -26,21 +26,11 @@
             @endforeach
         </div>
         <div class="container_news_pages">
-
             @if ($noticias->hasPages())
                 <div class="pagination-wrapper">
-                    {{ $noticias->links() }}
+                    {{ $noticias->links("pagination::bootstrap-4") }}
                 </div>
             @endif
-
-            <p class="arrows">&#x3c;</p>
-            <div class="news_pages">
-                <p class="pages" id="page_selected">1</p>
-                <p class="pages">2</p>
-                <p class="pages">3</p>
-                <p class="pages">4</p>
-            </div>
-            <p class="arrows">&#x3e;</p>
         </div>
     </div>
 @endsection
