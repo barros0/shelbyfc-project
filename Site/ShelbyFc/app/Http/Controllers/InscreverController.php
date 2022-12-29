@@ -75,7 +75,7 @@ class InscreverController extends Controller
      * @param \App\Models\socio_price $inscrever
      * @return \Illuminate\Http\Response
      */
-    public function edit(socio_price $item, Request $request)
+    public function edit(socio_price $inscrever, Request $request)
     {
         return view('admin.inscrever.edit', compact('inscrever'));
     }
@@ -88,20 +88,20 @@ class InscreverController extends Controller
      * @return \Illuminate\Http\Response 
      */
 
-    public function update(Request $request, socio_price $item)
+    public function update(Request $request, socio_price $inscrever)
     {
 
         $this->validate($request, [
-            'name' => 'required',
-            'idade' => 'required',
-            'preco' => 'required',
+            'name_new' => 'required',
+            'idade_new' => 'required',
+            'preco_new' => 'required',
         ]);
 
-        $item->name = $request->name;
-        $item->idade = $request->idade;
-        $item->preco = $request->preco;
+        $inscrever->name = $request->name_new;
+        $inscrever->idade = $request->idade_new;
+        $inscrever->preco = $request->preco_new;
 
-        $item->save();
+        $inscrever->save();
 
         Session::flash('success', 'Pacote Atualizado!');
         return back();
@@ -113,10 +113,10 @@ class InscreverController extends Controller
      * @param \App\Models\socio_price $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(socio_price $item)
+    public function destroy(socio_price $inscrever)
     {
-        $item->delete();
-        Session::flash('success', 'Noticia Apagada!');
+        $inscrever->delete();
+        Session::flash('success', 'Pacote Apagado!');
         return back();
     }
 
