@@ -63,6 +63,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 
 
+    Route::get('/apostar', [PageController::class, 'tobet'])->name('tobet');
+
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');

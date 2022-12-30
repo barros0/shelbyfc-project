@@ -1736,7 +1736,7 @@ span {
     align-items: flex-end;
     justify-content: flex-start;
     font-size: 20px;
-    
+
 }
 
 .what-section .down-side{
@@ -1809,4 +1809,19 @@ span {
     background-size: cover;
     width: 100%;
     height: 75%;
+}
+
+/*bets*/
+
+.gametable_bet{
+    max-width: 450px;
+}
+
+.team-img{
+    padding: 14px;
+    width: 250px;
+}
+
+.game-bet-option{
+    border: 2px solid black;
 }

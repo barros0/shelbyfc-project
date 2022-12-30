@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bets;
+use App\Models\Game;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
@@ -13,6 +14,26 @@ class BetsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function getbets_values(Request $request){
+
+        $game_id = $request->game;
+
+        $game = Game::findorfail($game_id);
+
+
+        $value = $request->value_bet;
+
+
+        return response()->json([
+            'win' => $win,
+            'lose' => $lose,
+            'd' => $d,
+            'value' => $value_win,
+        ]);
+
+    }
 
     public function newbet(Request $request){
 

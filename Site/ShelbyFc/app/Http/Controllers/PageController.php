@@ -172,6 +172,12 @@ class PageController extends Controller
         return view('noticia', compact('game'));
     }
 
+    public function tobet(){
+
+        return view('tobet');
+    }
+
+
     public function contactos()
     {
 
