@@ -15,7 +15,7 @@ use App\Http\Controllers\BetsController;
 |
 */
 
-Route::post('/get_bet', [BetsController::class, 'inscrever'])->name('get.bet');
+Route::post('/get_bet', [BetsController::class, 'getbets_values'])->name('get.bet');
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -79,6 +79,8 @@ class GamesController extends Controller
             'date_game' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
+        //  generate odds
+
 
 
         $game = New Game();
