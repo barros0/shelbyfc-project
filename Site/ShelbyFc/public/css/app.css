@@ -1825,3 +1825,12 @@ span {
 .game-bet-option{
     border: 2px solid black;
 }
+
+.vs{
+    color: var(--vermelho);
+}
+
+.btn-aposta{
+    width: 40%;
+    margin: auto;
+}
