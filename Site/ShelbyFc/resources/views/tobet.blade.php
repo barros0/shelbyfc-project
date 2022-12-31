@@ -5,11 +5,11 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container my-4">
 
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap justify-content-center">
 
-            <div>
+            <div class="sidebar-apostas w-30">
 
                 <div class="row text-center">
                     <h2>Próximos jogos</h2>
@@ -24,9 +24,9 @@
                         </div>
 
                         <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                            <p>Amigável</p>
-                            <span class="vs text-center">VS</span>
-                            <p>15 jan 2023</p>
+                            <p class="text-center fw-bolder">Amigável</p>
+                            <h4 class="vs text-center">VS</h4>
+                            <p class="text-center">15 jan 2023</p>
                         </div>
 
                         <div class="team-img">
@@ -42,9 +42,9 @@
                         </div>
 
                         <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                            <p>Amigável</p>
-                            <span class="vs text-center">VS</span>
-                            <p>15 jan 2023</p>
+                            <p class="text-center fw-bolder">Amigável</p>
+                            <h4 class="vs text-center">VS</h4>
+                            <p class="text-center">15 jan 2023</p>
                         </div>
 
                         <div class="team-img">
@@ -60,9 +60,9 @@
                         </div>
 
                         <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                            <p>Amigável</p>
-                            <span class="vs text-center">VS</span>
-                            <p>15 jan 2023</p>
+                            <p class="text-center fw-bolder">Amigável</p>
+                            <h4 class="vs text-center">VS</h4>
+                            <p class="text-center">15 jan 2023</p>
                         </div>
 
                         <div class="team-img">
@@ -78,9 +78,9 @@
                         </div>
 
                         <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                            <p>Amigável</p>
-                            <span class="vs text-center">VS</span>
-                            <p>15 jan 2023</p>
+                            <p class="text-center fw-bolder">Amigável</p>
+                            <h4 class="vs text-center">VS</h4>
+                            <p class="text-center">15 jan 2023</p>
                         </div>
 
                         <div class="team-img">
@@ -91,19 +91,19 @@
             </div>
             </div>
 
-            <div class="row">
+            <div class="row text-center mx-0 w-70">
                 <h2>Selecione um jogo...</h2>
 
-                <div class="game-selected">
+                <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-center">
 
 
-                    <div class="row">
+                    <div class="row g-0 m-0 p-0">
                         <h4>Apostar</h4>
                         <p>15 jan 2023</p>
                     </div>
 
 
-                    <div class="row">
+                    <div class="row g-0 m-0 p-0"">
 
                         <input type="text" placeholder="Montante">
                     </div>
@@ -112,8 +112,8 @@
                     </div>
 
 
-                    <div class="row">
-                        <button class="btn btn-primary">Apostar</button>
+                    <div class="row g-0 m-0 p-0 " >
+                        <button class="btn btn-primary text-uppercase btn-aposta ">Apostar</button>
                     </div>
                 </div>
 
