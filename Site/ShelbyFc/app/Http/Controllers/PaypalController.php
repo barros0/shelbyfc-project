@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 class PayPalController extends Controller
 {
@@ -20,6 +21,10 @@ class PayPalController extends Controller
      */
     public function processTransaction(Request $request)
     {
+
+        //$total= Auth::user()->cart;
+        $total = 2;
+
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
@@ -32,8 +37,8 @@ class PayPalController extends Controller
             "purchase_units" => [
                 0 => [
                     "amount" => [
-                        "currency_code" => "USD",
-                        "value" => "1000.00"
+                        "currency_code" => "EUR",
+                        "value" => $total
                     ]
                 ]
             ]
@@ -47,20 +52,24 @@ class PayPalController extends Controller
             }
             return redirect()
                 ->route('createTransaction')
-                ->with('error', 'Something went wrong.');
+                ->with('error', 'Algo de errado aconteceu :( .');
         } else {
             return redirect()
                 ->route('createTransaction')
-                ->with('error', $response['message'] ?? 'Something went wrong.');
+                ->with('error', $response['message'] ?? 'Algo está errado :( .');
         }
     }
-    /**<<<<<< Updated upstream
-     * success transaction.
+
+    /**
+     * sucesso transacao.
      *
      * @return \Illuminate\Http\Response
-     */
+     **/
     public function successTransaction(Request $request)
     {
+
+        return 'transacao sucesso';
+
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->getAccessToken();
@@ -75,13 +84,15 @@ class PayPalController extends Controller
                 ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
+
     /**
-     * cancel transaction.
+     * cancelar transacao.
      *
      * @return \Illuminate\Http\Response
      */
     public function cancelTransaction(Request $request)
     {
+        return 'transacao cancelada';
         return redirect()
             ->route('createTransaction')
             ->with('error', $response['message'] ?? 'You have canceled the transaction.');
