@@ -92,16 +92,53 @@
             </div>
 
             <div class="row text-center mx-0 g-0 p-0 w-70">
-                <h2>Selecione um jogo...</h2>
+               <!-- <h2 class="mb-3">Selecione um jogo...</h2> -->
 
                 <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
 
+                    <div class="row g-0 m-0 p-0">
+                            <div class="d-flex flex-row justify-content-evenly">
+                                <div class="team-img">
+                                    <img src="{{asset('images/logo.svg')}}" alt="">
+                                </div>
+        
+                                <div class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
+                                    <p class="text-center fw-bolder">Amigável</p>
+                                    <h1 class="vs text-center">VS</h1>
+                                    <p class="text-center">15 Jan 2023</p>
+                                </div>
+        
+                                <div class="team-img">
+                                    <img src="{{asset('images/liga/sl_benfica.png')}}" alt="">
+                                </div>
+                        </div>
+
+                    </div>
+   
+
 
                     <div class="row g-0 m-0 p-0">
-                        <h4>Apostar</h4>
-                        <p>15 jan 2023</p>
-                    </div>
+                        <h4 class="mb-3">Apostar</h4>
 
+                        <div class="select-bet">
+                            <div class="bet-to-select">
+                                <h3>W</h3>
+                                <span class="odd fw-bolder" id="win-odd">1.52</span>
+
+                            </div>
+                            <div class="bet-to-select">
+                                <h3>D</h3>
+                                <span class="odd fw-bolder" id="draw-odd">0.87</span>
+
+                            </div>
+                            <div class="bet-to-select">
+                                <h3>L</h3>
+                                <span class="odd fw-bolder" id="lose-odd">3.36</span>
+
+                            </div>
+                        </div>
+
+                    </div>
 
                     <div class="row g-0 m-0 p-0">
 
@@ -117,7 +154,7 @@
                     </div>
                     </div>
                     <div class="row g-0 m-0 p-0">
-                        <h3>Ganhos possiveis  <span class="ganhos-bg"><span class="ganhos">200€</span></span></h3>
+                        <h3>Ganhos possíveis  <span class="ganhos-bg"><span class="ganhos">200€</span></span></h3>
                     </div>
 
 
