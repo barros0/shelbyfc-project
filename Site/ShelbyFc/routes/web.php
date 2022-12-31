@@ -34,7 +34,7 @@ Auth::routes(['verify' => true]);
 
 /*--------------------tests--------------------*/
 
-Route::get('testepaypal', [PageController::class, 'testepaypal'])->name('testepaypal');
+Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
 
 Route::get("/email", function(){
     return View("email.forgetpassword");
