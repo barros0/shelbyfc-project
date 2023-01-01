@@ -15,7 +15,7 @@ use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-
+use App\Http\Controllers\CartController;
 
 
 /*
@@ -59,6 +59,9 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
+
     Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
 

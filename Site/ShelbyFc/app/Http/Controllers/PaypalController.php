@@ -68,12 +68,14 @@ class PayPalController extends Controller
     public function successTransaction(Request $request)
     {
 
-        return 'transacao sucesso';
+        //return 'transacao sucesso';
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
+
+        return $response;
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
             return redirect()
                 ->route('createTransaction')

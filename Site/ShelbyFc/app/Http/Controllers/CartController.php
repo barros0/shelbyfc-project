@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Game;
 use Illuminate\Http\Request;
 use Session;
 
@@ -15,7 +16,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('cart');
     }
 
     /**
@@ -37,12 +39,12 @@ class CartController extends Controller
     public function store(Request $request)
     {
 
-
+        $game = Game::findorfail($game_id);
 
         $cart = new Cart();
         $cart->user_id = Auth::id();
         $cart->quanty = $request->quantidade;
-
+        $cart->game_id = $game_id;
         $cart->save();
 
         return back();
