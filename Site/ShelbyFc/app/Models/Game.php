@@ -17,4 +17,10 @@ class Game extends Model
     {
         return $this->hasMany(Bets::class, 'game_id', 'id');
     }
+
+
+    public function opponent()
+    {
+        return $this->hasMany(Team::class, 'team_id', 'id');
+    }
 }

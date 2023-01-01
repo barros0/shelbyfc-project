@@ -32,10 +32,10 @@ class BetsController extends Controller
             'win' => $game->win,
             'draw' => $game->draw,
             'lose' => $game->lose,
-            'team1_img' => $win,
-            'team1' => $win,
-            'team2_img' => $lose,
-            'team2' => $d,
+            'team1_img' => asset('images/liga/shelby_fc.png'),
+            'team1' => 'Shelby FC',
+            'team2_img' => asset('images/liga/'.$game->opponent->images),
+            'team2' => $game->opponent->name,
            // 'value' => $value_win,
         ]);
 

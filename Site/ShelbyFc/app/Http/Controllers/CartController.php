@@ -105,4 +105,5 @@ class CartController extends Controller
         Session::flash('success', 'Removido do carrinho!');
         return back();
     }
+
 }
