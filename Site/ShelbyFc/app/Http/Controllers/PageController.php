@@ -174,7 +174,9 @@ class PageController extends Controller
 
     public function tobet(){
 
-        return view('tobet');
+        $next_games = Game::get();
+
+        return view('tobet', compact('next_games'));
     }
 
 

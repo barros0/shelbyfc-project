@@ -27,10 +27,16 @@ class BetsController extends Controller
 
 
         return response()->json([
-            'win' => $win,
-            'lose' => $lose,
-            'd' => $d,
-            'value' => $value_win,
+            'date_game' => date('Y-m-d',$game->datetime_game),
+            'game_id' => $game->id,
+            'win' => $game->win,
+            'draw' => $game->draw,
+            'lose' => $game->lose,
+            'team1_img' => $win,
+            'team1' => $win,
+            'team2_img' => $lose,
+            'team2' => $d,
+           // 'value' => $value_win,
         ]);
 
     }

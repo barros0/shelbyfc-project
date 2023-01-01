@@ -239,6 +239,34 @@ button:hover {
 nav
  */
 
+.alerts {
+    z-index: 50;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
