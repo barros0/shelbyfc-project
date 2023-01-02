@@ -65,37 +65,35 @@ class GamesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title' => 'required',
-            'small_description' => 'required',
-            'description' => 'required',
-            'ticket_avaliable' => 'boolean',
-            'ticket_price' => 'nullable|numeric',
-            'ticket_price_partner' => 'nullable|numeric',
-            'location' => 'required',
-            'team' => 'required',
-            'limit_bet' => 'required',
-            'limit_buy_ticket' => 'required',
-            'stock_tickets' => 'required',
-            'date_game' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'titulo' => 'required',
+            'small_description' => 'nullable',
+
+            'stock_bilhetes' => 'required|numeric',
+            'data_limite_bilhetes' => 'required|date',
+            'preco_bilhete' => 'required|numeric|min:0',
+            'preco_bilhete_socio' => 'required|numeric|min:0',
+            'bilhetes_disponiveis' => 'required|numeric',
+            'local' => 'required',
+            'equipa' => 'required|exists:teams,id',
+            'data_jogo' => 'required|date',
         ]);
 
         //  generate odds
 
-
-
         $game = New Game();
-        $game->title = $request->title;
-        $game->small_description = $request->title;
-        $game->description = $request->title;
-        $game->ticket_avaliable = $request->title;
-        $game->ticket_price = $request->title;
-        $game->ticket_price_partner = $request->title;
-        $game->location = $request->title;
-        $game->team_id = $request->team;
-        $game->limit_bet = $request->limit_bet;
-        $game->limit_buy_ticket = $request->limit_buy_ticket;
-        $game->stock_tickets = $request->stock_tickets;
-        $game->datetime_game = $request->date_game;
+        $game->title = $request->titulo;
+        $game->description = $request->description;
+        $game->small_description = $request->small_description;
+        $game->ticket_available = 1;
+        $game->ticket_price = $request->preco_bilhete;
+        $game->ticket_price_partner = $request->preco_bilhete_socio;
+        $game->location = $request->local;
+        $game->team_id = $request->equipa;
+        $game->limit_bet = $request->data_jogo;
+        $game->limit_buy_ticket = $request->data_limite_bilhetes;
+        $game->stock_tickets = $request->bilhetes_disponiveis;
+        $game->stock_ticket_available = $request->bilhetes_disponiveis;
+        $game->datetime_game = $request->data_jogo;
         $game->save();
 
         Session::flash('success', 'Jogo publicado!');

@@ -18,19 +18,25 @@
         <tbody>
             <tr class="header">
                 <th>ID</th>
-                <th>Title</th>
-                <th>IMG</th>
-                <th>Category</th>
-                <th>Views</th>
+                <th>Adversário</th>
+                <th>Preço</th>
+                <th>Preço sócio</th>
+                <th>Local</th>
+                <th>Bilhetes disponiveis</th>
+                <th>Data</th>
+                <th>Publicado</th>
                 <th>Actions</th>
             </tr>
             @foreach ($games as $game)
                 <tr>
                     <td>{{ $game->id }}</td>
-                    <td>{{ $game->title }}</td>
-                    <td>{{ $game->image }}</td>
-                    <td>{{ $game->categorie->name }}</td>
-                    <td>{{ $game->views }}</td>
+                    <td>{{ $game->opponent->name }}</td>
+                    <td>{{ $game->ticket_price }}€</td>
+                    <td>{{ $game->ticket_price_partner }}€</td>
+                    <td>{{ $game->location }}</td>
+                    <td>{{ $game->stock_ticket_available}}</td>
+                    <td>{{ $game->datetime_game }}</td>
+                    <td>{{ $game->created_at }}</td>
                     <td>
                         <a href="{{ route('admin.games.edit', $game) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
                         <form action="{{ route('admin.games.destroy', $game) }}" method="post">

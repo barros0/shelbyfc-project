@@ -11,6 +11,24 @@ class Game extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'title',
+        'small_description',
+        'description',
+        'ticket_available',
+        'ticket_price',
+        'ticket_price_partner',
+        'result_home',
+        'result_opponent',
+        'location',
+        'image',
+        'team_id',
+        'limit_bet',
+        'limit_buy_ticket',
+        'stock_tickets',
+        'stock_ticket_available',
+        'datetime_game',
+    ];
 
 
     public function bets()
@@ -21,6 +39,6 @@ class Game extends Model
 
     public function opponent()
     {
-        return $this->hasMany(Team::class, 'team_id', 'id');
+        return $this->hasone(Team::class, 'id', 'team_id');
     }
 }
