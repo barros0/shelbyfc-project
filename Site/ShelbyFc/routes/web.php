@@ -17,7 +17,7 @@ use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
-
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
-    Route::get('/', [PageController::class, 'forum'])->name('home');
+    Route::get('/', [ForumController::class, 'index'])->name('home');
 });
 
 

@@ -13,13 +13,28 @@ class ForumController extends Controller
 
     public function index(){
 
-        return view('forum.index');
+        $posts = Posts::get();
+
+        return view('forum.index', compact('posts'));
     }
 
 
     public function post(Posts $post){
 
         return view('forum.post', compact('post'));
+    }
+
+    public function delete_post(Posts $post){
+
+        if($post->user_id <> Auth::id()){
+            Session::flash('success', 'Publicação impossivel apagar esta publicação.');
+            return back();
+        }
+
+        $post->delete();
+
+        Session::flash('success', 'Publicação apagada.');
+        return back();
     }
 
 
