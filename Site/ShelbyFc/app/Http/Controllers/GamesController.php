@@ -80,6 +80,14 @@ class GamesController extends Controller
 
         //  generate odds
 
+        //temporario
+        function gerar_prob_random(){
+            $min = 0.5;
+            $max = 3;
+            return mt_rand ($min*10, $max*10) / 10;
+        }
+
+
         $game = New Game();
         $game->title = $request->titulo;
         $game->description = $request->description;
@@ -94,6 +102,9 @@ class GamesController extends Controller
         $game->stock_tickets = $request->bilhetes_disponiveis;
         $game->stock_ticket_available = $request->bilhetes_disponiveis;
         $game->datetime_game = $request->data_jogo;
+        $game->draw = gerar_prob_random();
+        $game->win = gerar_prob_random();
+        $game->lose = gerar_prob_random();
         $game->save();
 
         Session::flash('success', 'Jogo publicado!');

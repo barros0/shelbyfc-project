@@ -12,6 +12,7 @@ class PayPalController extends Controller
      */
     public function createTransaction()
     {
+
         return view('transaction');
     }
     /**

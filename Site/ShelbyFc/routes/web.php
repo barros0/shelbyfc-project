@@ -16,6 +16,7 @@ use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\BetsController;
 
 
 /*
@@ -67,6 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('/apostar', [PageController::class, 'tobet'])->name('tobet');
+    Route::post('/apostar', [BetsController::class, 'dobet'])->name('tobet.post');
 
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');

@@ -32,6 +32,9 @@ return new class extends Migration
             $table->integer('stock_tickets')->nullable();
             $table->integer('stock_ticket_available')->nullable();
             $table->dateTime('datetime_game');
+            $table->float('win');
+            $table->float('draw');
+            $table->float('lose');
             $table->timestamps();
             $table->softDeletes();
         });
