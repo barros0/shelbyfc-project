@@ -337,6 +337,7 @@ main h1 {
     position: absolute;
     right: 0;
     bottom: 0;
+    margin: 0;
 }
 
 .copyright span {
@@ -419,6 +420,27 @@ nav:hover .shrink-btn,
 
 .search input::placeholder {
     color: var(--text-color);
+}
+
+.sidebar-links::-webkit-scrollbar {
+    width: 3px;
+}
+
+.sidebar-links::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar-links::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.sidebar-links::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.sidebar-links {
+    overflow-y: scroll;
+    padding-right:10px;
 }
 
 .sidebar-links ul {

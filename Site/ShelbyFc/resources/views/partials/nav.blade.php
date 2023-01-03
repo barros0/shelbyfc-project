@@ -30,12 +30,6 @@
             <div class="navbar-third-container d-flex align-items-center justify-content-center">
                 <ul>
                     <li>
-                        <a class="d-flex align-items-center justify-content-center"
-                           href="{{route('index')}}">
-                           Inicio
-                        </a>
-                    </li>
-                    <li>
                         <a class="d-flex align-items-center justify-content-center" target="_blank"
                             href="https://teste.social-bubble.pt">
                             Loja Online

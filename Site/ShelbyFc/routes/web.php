@@ -36,7 +36,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
 
-Route::get("/email", function(){
+Route::get("/email", function () {
     return View("email.forgetpassword");
 });
 
@@ -83,7 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/categoria/{category}', [PageController::class, 'news_categories'])->name('news.categorie');
-Route::get('/noticia/{id}', [PageController::class, 'noticia'])->name('noticia');
+Route::get('/noticia/{id}', [PageController::class, 'NoticiaModal'])->name('NoticiaModal');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
@@ -96,7 +96,6 @@ Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos'
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [PageController::class, 'forum'])->name('home');
-
 });
 
 
@@ -111,8 +110,8 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
-        Route::get('/', [AdminController::class,'contacts'])->name('index');
-        Route::get('/{contact}', [AdminController::class,'contact'])->name('show');
+        Route::get('/', [AdminController::class, 'contacts'])->name('index');
+        Route::get('/{contact}', [AdminController::class, 'contact'])->name('show');
     });
 });
 
@@ -121,6 +120,3 @@ Route::get('create-transaction', [PayPalController::class, 'createTransaction'])
 Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
 Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
-
-
-

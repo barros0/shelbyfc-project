@@ -42,12 +42,12 @@ class PageController extends Controller
         return view('noticias', compact('noticias', 'categories'));
     }
 
-    public function noticia($id)
+    public function NoticiaModal($id)
     {
         $noticia = News::findOrFail($id);
         $categories = Categorie::all();
 
-        return view('noticia', compact('noticia', 'categories'));
+        return view('NoticiaModal', compact('noticia', 'categories'));
     }
 
     public function news_categories($category)
