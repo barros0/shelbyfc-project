@@ -290,41 +290,6 @@
                                                                                 style="height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
 
 
-                                                                                <table
-                                                                                    style="font-family:'Lato',sans-serif;"
-                                                                                    role="presentation" cellpadding="0"
-                                                                                    cellspacing="0" width="100%"
-                                                                                    border="0">
-                                                                                    <tbody>
-                                                                                    <tr>
-                                                                                        <td style="overflow-wrap:break-word;word-break:break-word;padding:35px 10px 10px;font-family:'Lato',sans-serif;"
-                                                                                            align="left">
-
-                                                                                            <table width="100%"
-                                                                                                   cellpadding="0"
-                                                                                                   cellspacing="0"
-                                                                                                   border="0">
-                                                                                                <tr>
-                                                                                                    <td style="padding-right: 0px;padding-left: 0px;"
-                                                                                                        align="center">
-
-                                                                                                        <img
-                                                                                                            align="center"
-                                                                                                            border="0"
-                                                                                                            src="images/image-1.png"
-                                                                                                            alt="Image"
-                                                                                                            title="Image"
-                                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 10%;max-width: 58px;"
-                                                                                                            width="58"/>
-
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </table>
-
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    </tbody>
-                                                                                </table>
 
                                                                                 <table
                                                                                     style="font-family:'Lato',sans-serif;"
@@ -333,14 +298,14 @@
                                                                                     border="0">
                                                                                     <tbody>
                                                                                     <tr>
-                                                                                        <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 30px;font-family:'Lato',sans-serif;"
+                                                                                        <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 20px;font-family:'Lato',sans-serif;"
                                                                                             align="left">
 
                                                                                             <div
-                                                                                                style="line-height: 140%; text-align: left; word-wrap: break-word;">
+                                                                                                style="padding:25px 10px 10px; line-height: 140%; text-align: left; word-wrap: break-word;">
                                                                                                 <p style="font-size: 14px; line-height: 140%; text-align: center;">
                                                         <span
-                                                            style="font-size: 28px; line-height: 39.2px; color: #ffffff; font-family: Lato, sans-serif;">Repor Password</span>
+                                                            style="font-size: 28px; line-height: 39.2px; color: #ffffff; font-family: Lato, sans-serif;">@yield('title')</span>
                                                                                                 </p>
                                                                                             </div>
 

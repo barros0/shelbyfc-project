@@ -1,20 +1,19 @@
 @extends('layouts.email')
 
+@section('title','Repor Password')
+
 
 @section('content')
-
-
 
     <div class="u-row-container" style="padding: 0px;background-color: transparent">
         <div class="u-row"
              style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #ffffff;">
             <div
                 style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
-
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <table >
                     <tr>
                         <td style="padding: 0px;background-color: transparent;" align="center">
-                            <table cellpadding="0" cellspacing="0" border="0" style="width:600px;">
+                            <table style="width:600px;">
                                 <tr style="background-color: #ffffff;">
 
 
@@ -29,9 +28,7 @@
                                                     style="height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;">
 
 
-                                                    <table style="font-family:'Lato',sans-serif;" role="presentation"
-                                                           cellpadding="0"
-                                                           cellspacing="0" width="100%" border="0">
+                                                    <table style="font-family:'Lato',sans-serif;" role="presentation">
                                                         <tbody>
                                                         <tr>
                                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:40px 40px 30px;font-family:'Lato',sans-serif;"
@@ -59,9 +56,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <table style="font-family:'Lato',sans-serif;" role="presentation"
-                                                           cellpadding="0"
-                                                           cellspacing="0" width="100%" border="0">
+                                                    <table style="font-family:'Lato',sans-serif;" role="presentation">
                                                         <tbody>
                                                         <tr>
                                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 40px;font-family:'Lato',sans-serif;"
@@ -79,9 +74,7 @@
                                                         </tbody>
                                                     </table>
 
-                                                    <table style="font-family:'Lato',sans-serif;" role="presentation"
-                                                           cellpadding="0"
-                                                           cellspacing="0" width="100%" border="0">
+                                                    <table style="font-family:'Lato',sans-serif;" role="presentation">
                                                         <tbody>
                                                         <tr>
                                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:40px 40px 30px;font-family:'Lato',sans-serif;"
@@ -114,6 +107,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection
