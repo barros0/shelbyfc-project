@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('Games', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            /*$table->string('title');
             $table->string('small_description')->nullable();
-            $table->text('description')->nullable();
+            $table->text('description')->nullable();*/
             $table->boolean('ticket_available');
             $table->float('ticket_price')->nullable();
             $table->float('ticket_price_partner')->nullable();

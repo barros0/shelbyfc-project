@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('image')->default('noimage.png')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->float('balance')->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

@@ -234,6 +234,10 @@ button:hover {
     border-bottom: 1px solid #fc3131;
 }
 
+.form-control{
+    height: 40px;
+}
+
 
 /*
 nav
