@@ -179,31 +179,37 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $id)
+    public function update(Request $request, User $user)
     {
         $this->validate($request,[
             'name' => 'required',
-            'subname' => 'required',
             'email' => 'required|email',
-            // 'phone' => 'required|required|regex:/(01)[0-9]{9}/',
-            'password' => 'required|min:8',
-            'password_confirmation' => 'required|same:password',
+            'password' => 'nullable|min:8',
+            'password_confirmation' => 'nullable|same:password',
         ]);
 
 
+        $user->name = $request->nome;
+        $user->email = $request->email;
+        $user->save();
 
-
+        Session::flash('success', 'Dados atualizado!');
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param int $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+
+        $user->delete();
+
+        Session::flash('success', 'Utilizador eliminado!');
+        return back();
     }
 
 
