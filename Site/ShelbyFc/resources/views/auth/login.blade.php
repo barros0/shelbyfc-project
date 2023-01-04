@@ -42,7 +42,15 @@
                         <i class="fas fa-eye" id="eye" onclick="showPass()"></i>
                         <a href="#" class="frgt">Esqueceu-se da Password?</a>
                     </div>
-                    @error('password')
+                    @if($errors->all())
+                        @foreach($errors->all() as $error)
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $error }}</strong>
+                    </span>
+                        @endforeach
+                    @endif
+
+                    @error('error')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
