@@ -96,6 +96,9 @@
             color: #FF5559;
             text-decoration: underline;
         }
+        i.fa{
+            color: white;
+        }
     </style>
 </head>
 <body>
