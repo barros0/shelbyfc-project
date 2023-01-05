@@ -20,6 +20,7 @@
                 <th>Pergunta</th>
                 <th>Resposta</th>
                 <th>Categoria</th>
+                <th>Actions</th>
             </tr>
             @foreach ($faqs as $faq)
                 <tr>
