@@ -25,9 +25,11 @@
                 <div class="form-group">
                     <label for="categoria_faq">Categoria</label>
                     <select name="categoria_id">
-                        @foreach ($faqs as $faq)
-                            <option value="{{ $faq->categoria }}">{{ $faq->categoria }}</option>
-                        @endforeach
+                            <option value="">informacoes</option>
+                            <option value="">informacoes</option>
+                            <option value="">informacoes</option>
+                            <option value="">informacoes</option>
+                            
                     </select>
                 </div>
                 
