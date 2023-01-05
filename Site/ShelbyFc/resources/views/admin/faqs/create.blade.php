@@ -24,12 +24,11 @@
                 
                 <div class="form-group">
                     <label for="categoria_faq">Categoria</label>
-                    <select name="categoria_id">
-                            <option value="">informacoes</option>
-                            <option value="">informacoes</option>
-                            <option value="">informacoes</option>
-                            <option value="">informacoes</option>
-                            
+                    <select name="categoria">
+                            <option value="informacoes">Informações</option>
+                            <option value="jogos_apostas">Jogos e Apostas</option>
+                            <option value="depositos_levantamentos">Depósitos e Levantamentos</option>
+                            <option value="criar_conta">Criar Conta</option>
                     </select>
                 </div>
                 

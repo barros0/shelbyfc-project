@@ -59,8 +59,6 @@ class CategoriesController extends Controller
      */
     public function show(Categorie $categories)
     {
-
-
         return view('admin.categories.index', compact('categories'));
     }
 

@@ -44,13 +44,13 @@ class FaqsController extends Controller
 
        
 
-        $faq = new Faqs();
-        $faq->pergunta = $request->pergunta;
-        $faq->resposta = $request->resposta;
-        $faq->categoria = $request->categoria;
+        $faqs = new Faqs();
+        $faqs->pergunta = $request->pergunta;
+        $faqs->resposta = $request->resposta;
+        $faqs->categoria = $request->categoria;
     
         
-        $faq->save();
+        $faqs->save();
 
         Session::flash('success', 'FaQ inserida!');
         return back();
@@ -65,29 +65,28 @@ class FaqsController extends Controller
     public function show(Faqs $faqs)
     {
 
-        return view('admin.faqs.index');
+        return view('admin.faqs.index',compact('faqs'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Faqs $faqs
+     * @param \App\Models\Faqs $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faqs $faqs)
+    public function edit(Faqs $faq)
     {
-        $faqs = Faqs::all();
-        return view('admin.faqs.edit', compact('faqs', 'faqs'));
+        return view('admin.faqs.edit', compact('faq'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Faqs $faqs
+     * @param \App\Models\Faqs $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faqs $faqs)
+    public function update(Request $request, Faqs $faq)
     {
 
         $this->validate($request, [
@@ -98,14 +97,14 @@ class FaqsController extends Controller
         ]);
 
 
-        $faqs->pergunta = $request->pergunta;
-        $faqs->resposta = $request->resposta;
-        $faqs->categoria = $request->categoria;
+        $faq->pergunta = $request->pergunta;
+        $faq->resposta = $request->resposta;
+        $faq->categoria = $request->categoria;
         
 
 
 
-        $faqs->save();
+        $faq->save();
 
 
         Session::flash('success', 'Noticia atualizada!');
@@ -115,12 +114,12 @@ class FaqsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Faqs $faqs
+     * @param \App\Models\Faqs $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faqs $faqs)
+    public function destroy(Faqs $faq)
     {
-        $faqs->delete();
+        $faq->delete();
         Session::flash('success', 'FaQ Apagada!');
         return back();
     }

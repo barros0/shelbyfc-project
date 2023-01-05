@@ -18,6 +18,8 @@ return new class extends Migration
             $table->text('pergunta')->nullable();
             $table->text('resposta')->nullable();
             $table->enum('categoria', ['informacoes','criar_conta','jogos_apostas','depositos_levantamentos']);
+            $table->timestamps();
+            $table->softDeletes();
 
         });
     }
