@@ -813,12 +813,10 @@ footer {
 @media only screen and (max-width: 650px) {
     .row-vant {
         flex-direction: column;
-
     }
 
     .fullpage-row {
         flex-direction: column;
-
     }
 }
 
@@ -856,7 +854,6 @@ span.texto-vant {
 }
 
 .fullpage-row {
-    /*height: 100vh;*/
     width: 100%;
     display: flex;
 }
@@ -876,8 +873,6 @@ span.texto-vant {
     font-weight: bolder;
     display: flex;
     align-content: flex-start;
-
-
 }
 
 .titulo-sec-3 {
@@ -893,8 +888,6 @@ span.texto-vant {
 #prevBtn {
     background-color: #bbbbbb;
 }
-
-
 
 .btn-registo {
     padding: 10px !important;
@@ -1218,10 +1211,7 @@ span {
     width: 100%;
     height: 470px;
     background-color: transparent;
-    padding-left: 180px;
-    padding-right: 180px;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 90px 180px;
 }
 
 .imagem-fale-conosco {
@@ -1477,7 +1467,20 @@ span {
         font-size: 21px;
     }
 }
+.content_noticia{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
 
+.single_noticia{
+    border: 2px solid red;
+    width: max-content;
+    margin-top: 10px;
+    padding: 3px;
+}
 /*NOVA NAVBAR*/
 
 .navbar-logo-container {
@@ -1579,7 +1582,7 @@ span {
 .navbar-third-container ul li ul li:last-child {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    border-bottom: 0;
+    border-bottom: 2px solid var(--preto);
 }
 
 .navbar-third-container ul li ul li:last-child:hover {

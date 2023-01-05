@@ -6,7 +6,7 @@
     <div class="container_all_news">
         <div class="nav_categories">
             <div class="news_from_category">
-                <a href="" class="selected_category">Geral</a>
+                <a href="{{ route('noticias') }}" class="selected_category">Geral</a>
                 @foreach ($categories as $category)
                     <a href="{{ route('news.categorie', $category->name) }}">{{ $category->name }}</a>
                 @endforeach
