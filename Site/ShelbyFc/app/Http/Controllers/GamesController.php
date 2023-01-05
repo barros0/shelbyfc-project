@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GameRequest;
 use App\Models\Categorie;
 use App\Models\Game;
 use App\Models\Team;
@@ -62,17 +63,10 @@ class GamesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GameRequest $request)
     {
-        $this->validate($request,[
-            'stock_bilhetes' => 'required|numeric',
-            'data_limite_bilhetes' => 'required|date',
-            'preco_bilhete' => 'required|numeric|min:0',
-            'preco_bilhete_socio' => 'required|numeric|min:0',
-            'local' => 'required',
-            'equipa' => 'required|exists:teams,id',
-            'data_jogo' => 'required|date',
-        ]);
+
+
 
         //  generate odds
 
@@ -83,8 +77,10 @@ class GamesController extends Controller
             return mt_rand ($min*10, $max*10) / 10;
         }
 
+        $fields=$request->validated();
 
         $game = New Game();
+        //$game->fill($fields);
         $game->ticket_available = 1;
         $game->ticket_price = $request->preco_bilhete;
         $game->ticket_price_partner = $request->preco_bilhete_socio;

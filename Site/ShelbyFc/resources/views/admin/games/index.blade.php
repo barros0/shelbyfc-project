@@ -34,7 +34,7 @@
                     <td>{{ $game->ticket_price }}€</td>
                     <td>{{ $game->ticket_price_partner }}€</td>
                     <td>{{ $game->location }}</td>
-                    <td>{{ $game->stock_ticket_available}}</td>
+                    <td>{{ $game->stock_tickets}}</td>
                     <td>{{ $game->datetime_game }}</td>
                     <td>{{ $game->created_at }}</td>
                     <td>
@@ -44,7 +44,6 @@
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
-
                     </td>
                 </tr>
             @endforeach

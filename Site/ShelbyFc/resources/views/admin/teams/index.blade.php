@@ -16,12 +16,14 @@
         <tbody>
             <tr class="header">
                 <th>ID</th>
+                <th></th>
                 <th>name</th>
                 <th>Actions</th>
             </tr>
             @foreach ($teams as $team)
                 <tr>
                     <td>{{ $team->id }}</td>
+                    <td><img style="width: 60px" src="{{asset('images/liga/'.$team->image)}}" alt=""></td>
                     <td>{{ $team->name }}</td>
                     <td>
                         <a href="{{ route('admin.teams.edit', $team) }}" class="btn"><i

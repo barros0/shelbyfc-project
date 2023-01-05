@@ -39,7 +39,7 @@
                         game_id: gameid,
                     },
                     success: function (data) {
-                        $('#date_game').val(data.date)
+                        $('#date_game').text(data.date_game)
                         $('#game_id').val(data.game_id)
                         $('#win-odd').text(data.win)
                         $('#draw-odd').text(data.draw)
@@ -124,7 +124,7 @@
                                 </div>
 
                                 <div class="team-img">
-                                    <img src="{{asset('images/liga/'.$game->opponent->images)}}" alt="{{$game->opponent->name}}">
+                                    <img src="{{asset('images/liga/'.$game->opponent->image)}}" alt="{{$game->opponent->name}}">
                                 <p class="text center">{{$game->opponent->name}}</p>
                                 </div>
                             </div>

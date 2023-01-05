@@ -47,7 +47,7 @@ class TeamsController extends Controller
         $image = $request->imagem;
         $extension = $image->getClientOriginalExtension();
         $image_name = $request->nome . '.' . $extension;
-        $image->move(public_path('images/ligas'), $image_name);
+        $image->move(public_path('images/liga'), $image_name);
 
 
         $team = new Team();
@@ -57,7 +57,7 @@ class TeamsController extends Controller
 
 
         Session::flash('success', 'Equipa adicionada!');
-        return back();
+        return redirect()->route('admin.teams.index');
 
     }
 
@@ -96,16 +96,17 @@ class TeamsController extends Controller
         //
 
         $this->validate($request, [
-            'nome' => 'required|unique:teams,name',
+            'nome' => 'required|unique:teams,name,'.$team->id,
             'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
         $image = $request->imagem;
 
+        // se imagem update imagem
         if ($image) {
             $extension = $image->getClientOriginalExtension();
             $image_name = $request->nome . '.' . $extension;
-            $image->move(public_path('images/ligas'), $image_name);
+            $image->move(public_path('images/liga'), $image_name);
             $team->image = $image_name;
         }
 
@@ -114,7 +115,7 @@ class TeamsController extends Controller
 
 
         Session::flash('success', 'Equipa atualizada!');
-        return back();
+        return redirect()->route('admin.teams.index');
     }
 
     /**

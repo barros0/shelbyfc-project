@@ -42,7 +42,7 @@ class BetsController extends Controller
             'lose' => $game->lose,
             'team1_img' => asset('images/liga/shelby_fc.png'),
             'team1' => 'Shelby FC',
-            'team2_img' => asset('images/liga/' . $game->opponent->images),
+            'team2_img' => asset('images/liga/' . $game->opponent->image),
             'team2' => $game->opponent->name,
             // 'value' => $value_win,
         ]);
@@ -51,7 +51,6 @@ class BetsController extends Controller
 
     public function dobet(Request $request)
     {
-
         $request->validate([
             'montante' => 'required|numeric|min:1|max:500',
             'jogo' => 'required|exists:games,id',
@@ -66,7 +65,7 @@ class BetsController extends Controller
         $game = Game::find($request->jogo)->where()->firstorfail();
 
         if (Carbon::now() > $game->limit_bet) {
-            Session::flash('alert', 'Ultrupassou a data limit de aposta! Data limkite: ' . $game->limit_bet);
+            Session::flash('alert', 'Ultrapassou a data limit de aposta! Data limkite: ' . $game->limit_bet);
             return back();
         }
 
