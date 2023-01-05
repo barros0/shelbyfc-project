@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Carbon\Carbon;
 use Auth;
+use Session;
 
 class BetsController extends Controller
 {
@@ -51,6 +52,35 @@ class BetsController extends Controller
     public function dobet(Request $request)
     {
 
+        $request->validate([
+            'montante' => 'required|min:1|max:500',
+            'quantidade' => 'required|numeric',
+            'jogo' => 'required|exists:games,id',
+        ]);
+
+        $fator = $request->fator;
+        $quantiade = $request->montante;
+
+
+        // verifica se não passou da data limit de jogo
+        $game = Game::find($request->jogo)->where()->firstorfail();
+
+        if (Carbon::now() > $game->limit_bet) {
+            Session::flash('alert', 'Ultrupassou a data limit de aposta! Data limkite: ' . $game->limit_bet);
+            return back();
+        }
+
+        if ($fator = 'win') {
+
+        } else if ($fator = 'draw') {
+
+        } else if ($fator = 'lose') {
+
+        } else {
+
+        }
+
+        $ganhospossiveis = $valor_fator * $quantiade;
 
         $provider = new PayPalClient;
         //$provider = \PayPal::setProvider();
@@ -100,8 +130,8 @@ class BetsController extends Controller
                     ],
                 ],
 
-    ]
-            ]);
+            ]
+        ]);
 
         if (isset($response['id']) && $response['id'] != null) {
             // redirect to approve href
