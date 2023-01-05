@@ -19,7 +19,8 @@ return new class extends Migration {
             $table->bigInteger('game_id')->unsigned();
             $table->foreign('game_id')->references('id')->on('games');
             $table->float('value');
-            $table->enum('result', ['Vitorio', 'Derrota'])->nullable();
+            $table->enum('result', ['Aguardando', 'Concluido'])->default('Aguardando');
+            $table->enum('factor', ['win','draw', 'lose']);
             $table->timestamps();
         });
     }

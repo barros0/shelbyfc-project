@@ -139,6 +139,7 @@
 
                 <form action="{{route('tobet.post')}}" method="post">
                     @csrf
+                    <input name="jogo" id="game_id" type="number" hidden>
                     <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
 
                         <div class="row g-0 m-0 p-0">
@@ -188,7 +189,7 @@
                         <div class="montante">
                                 <span class="details-montante text-end"> <span
                                         class="cinza-montante">Min:</span> 1€ <span class="cinza-montante">Máx:</span> 500€</span>
-                            <input id="montante" type="number" placeholder="Montante" min="1" max="500">
+                            <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="500">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1€</button>
                                 <button type="button" class="bt_add_value btn-secondary" value="10">10€</button>

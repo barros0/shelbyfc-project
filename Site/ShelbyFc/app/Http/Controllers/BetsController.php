@@ -53,9 +53,9 @@ class BetsController extends Controller
     {
 
         $request->validate([
-            'montante' => 'required|min:1|max:500',
-            'quantidade' => 'required|numeric',
+            'montante' => 'required|numeric|min:1|max:500',
             'jogo' => 'required|exists:games,id',
+            'fator' => 'in:draw,win,lose'
         ]);
 
         $fator = $request->fator;
@@ -70,29 +70,14 @@ class BetsController extends Controller
             return back();
         }
 
-        if ($fator = 'win') {
+       // $ganhospossiveis = $valor_fator * $quantiade;
 
-        } else if ($fator = 'draw') {
-
-        } else if ($fator = 'lose') {
-
-        } else {
-
-        }
-
-        $ganhospossiveis = $valor_fator * $quantiade;
-
-        $provider = new PayPalClient;
-        //$provider = \PayPal::setProvider();
-// check if payment is recurring
-
-        //$recurring = $request->input('recurring', false) ? true : false;
 
         $bet = new Bets();
         $bet->user_id = Auth::id();
         $bet->game_id = 1;
         $bet->value = 3;
-        // $bet->fator = $fator;
+        $bet->fator = $fator;
         $bet->save();
 
 
@@ -108,51 +93,8 @@ class BetsController extends Controller
         $invoice->price = $cart['total'];
         $invoice->save();*/
 
-        // send a request to paypal
-        // paypal should respond with an array of data
-        // the array should contain a link to paypal's payment system
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $paypalToken = $provider->getAccessToken();
-        // $provider->setExpressCheckout($product);
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "application_context" => [
-                "return_url" => route('successTransaction'),
-                "cancel_url" => route('cancelTransaction'),
-            ],
-            "bet_id" => $bet_id,
-            "purchase_units" => [
-                0 => [
-                    "amount" => [
-                        "currency_code" => "EUR",
-                        "value" => 5
-                    ],
-                ],
 
-            ]
-        ]);
-
-        if (isset($response['id']) && $response['id'] != null) {
-            // redirect to approve href
-            foreach ($response['links'] as $links) {
-                if ($links['rel'] == 'approve') {
-                    return redirect()->away($links['href']);
-                }
-            }
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', 'Algo de errado aconteceu :( .');
-        } else {
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', $response['message'] ?? 'Algo está errado :( .');
-        }
-
-
-        /*
-         *
-         * $product = [];
+        $product = [];
         $product['items'] = [
             [
                 'name' => 'Nike Joyride 2',
@@ -164,14 +106,17 @@ class BetsController extends Controller
 
         $product['invoice_id'] = 1;
         $product['invoice_description'] = "Order #{$product['invoice_id']} Bill";
-        $product['return_url'] = route('successTransaction');
-        $product['cancel_url'] = route('cancelTransaction');
+        $product['return_url'] = route('success.payment');
+        $product['cancel_url'] = route('cancel.payment');
         $product['total'] = 224;
 
         $paypalModule = new ExpressCheckout;
 
         $res = $paypalModule->setExpressCheckout($product);
-        $res = $paypalModule->setExpressCheckout($product, true);*/
+        $res = $paypalModule->setExpressCheckout($product, true);
+
+        return redirect($res['paypal_link']);
+
     }
 
     public function index()
