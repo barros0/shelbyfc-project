@@ -8,6 +8,20 @@
     <script>
         /*temporario*/
         $(document).ready(function () {
+
+            // cada vez que se muda o fator faz update e mete active o bt/div
+            $('.bet-to-select').on('click', function () {
+                $('.bet-to-select').removeClass('active');
+                $(this).addClass('active');
+                setTimeout(
+                    function()
+                    {
+                        update_values();
+                    }, 100);
+
+            });
+
+            // ao clicar em cada jogo faz select e faz o get das infos
             $('.game-bet-option').on('click', function () {
                 $('.game-bet-option').removeClass('active');
                 $(this).addClass('active');
@@ -15,7 +29,6 @@
                 gameid = $(this).attr('itemid');
                 url = './api/get_game_bet'
 
-                console.log(gameid)
 
                 $.ajax({
                     url: url,
@@ -26,12 +39,11 @@
                         game_id: gameid,
                     },
                     success: function (data) {
-                        console.log(data)
                         $('#date_game').val(data.date)
                         $('#game_id').val(data.game_id)
-                        $('#win').val(data.win)
-                        $('#draw').val(data.draw)
-                        $('#lose').val(data.loose)
+                        $('#win-odd').text(data.win)
+                        $('#draw-odd').text(data.draw)
+                        $('#lose-odd').text(data.lose)
                         $('#team1_img').attr('src', data.team1_img)
                         $('#team1').val(data.team1)
                         $('#team2_img').attr('src', data.team2_img)
@@ -57,19 +69,28 @@
 
                     }
                 });
+                update_values();
             });
 
+            function update_values(){
+                $('#montante').val();
+                fator = $('input[name="fator"]:checked').val()
+                val_fator = $('#'+fator+'-odd').text()
 
-            // quando valor muda muda ganhos posssiveis
-            $('#montante').change(function () {
-                $(this).val();
-                ganhos_possiveis = $(this).val() * opcaoselecionada;
+                ganhos_possiveis =  $('#montante').val() * val_fator+'€';
 
                 $('#ganhos_possiveis').text(ganhos_possiveis);
+            }
+            // quando valor muda muda ganhos posssiveis
+            $('#montante').on('keyup', function() {
+                update_values();
             });
+
+
 
             $('.bt_add_value').click(function () {
                 $('#montante').val($(this).val())
+                update_values();
             });
         });
 
@@ -78,9 +99,9 @@
 
     <div class="container my-4">
 
-        <div class="d-flex flex-wrap justify-content-center">
+        <div class="row">
 
-            <div class="sidebar-apostas w-30">
+            <div class="sidebar-apostas col-lg-4">
 
                 <div class="row text-center">
                     <h2 class="text-center">Próximos jogos</h2>
@@ -92,83 +113,33 @@
                             <div class="d-flex flex-row justify-content-between">
                                 <div class="team-img">
                                     <img src="{{asset('images/logo.svg')}}" alt="">
+                                    <p class="text center">Shelby FC</p>
                                 </div>
 
                                 <div
                                     class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
                                     <p class="text-center fw-bolder">Amigável</p>
                                     <h4 class="vs text-center">VS</h4>
-                                    <p class="text-center">15 Jan 2023</p>
+                                    <p class="text-center">{{$game->date}}</p>
                                 </div>
 
                                 <div class="team-img">
-                                    <img src="{{asset('images/liga/sl_benfica.png')}}" alt="">
+                                    <img src="{{asset('images/liga/'.$game->opponent->images)}}" alt="{{$game->opponent->name}}">
+                                <p class="text center">{{$game->opponent->name}}</p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
 
-                    <div class="game-bet-option">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div class="team-img">
-                                <img src="{{asset('images/liga/UD_Oliveirense.png')}}" alt="">
-                            </div>
-
-                            <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                                <p class="text-center fw-bolder">Amigável</p>
-                                <h4 class="vs text-center">VS</h4>
-                                <p class="text-center">15 Jan 2023</p>
-                            </div>
-
-                            <div class="team-img">
-                                <img src="{{asset('images/logo.svg')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="game-bet-option">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div class="team-img">
-                                <img src="{{asset('images/logo.svg')}}" alt="">
-                            </div>
-
-                            <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                                <p class="text-center fw-bolder">Amigável</p>
-                                <h4 class="vs text-center">VS</h4>
-                                <p class="text-center">15 Jan 2023</p>
-                            </div>
-
-                            <div class="team-img">
-                                <img src="{{asset('images/liga/trofense.png')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="game-bet-option">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div class="team-img">
-                                <img src="{{asset('images/logo.svg')}}" alt="">
-                            </div>
-
-                            <div class="info-game d-flex justify-content-center flex-column align-content-between">
-                                <p class="text-center fw-bolder">Amigável</p>
-                                <h4 class="vs text-center">VS</h4>
-                                <p class="text-center">15 Jan 2023</p>
-                            </div>
-
-                            <div class="team-img">
-                                <img src="{{asset('images/liga/fc_penafiel.png')}}" alt="">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="row text-center mx-0 g-0 p-0 w-70">
+            <div class="row text-center mx-0 g-0 p-0 col-lg-8">
                 <!-- <h2 class="mb-3">Selecione um jogo...</h2> -->
 
                 <form action="{{route('tobet.post')}}" method="post">
                     @csrf
+                    <input name="jogo" id="game_id" type="number" hidden>
                     <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
 
                         <div class="row g-0 m-0 p-0">
@@ -181,11 +152,11 @@
                                     class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
                                     <p class="text-center fw-bolder">Amigável</p>
                                     <h1 class="vs text-center">VS</h1>
-                                    <p class="text-center">15 Jan 2023</p>
+                                    <p class="text-center" id="date_game">Selecione um jogo no menu de jogos</p>
                                 </div>
 
                                 <div class="team-img">
-                                    <img id="team2_img" src="{{asset('images/liga/sl_benfica.png')}}" alt="">
+                                    <img id="team2_img" src="{{asset('images/logo.svg')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -194,18 +165,22 @@
                         <div class="row g-0 m-0 p-0">
                             <h4 class="mb-3">Apostar</h4>
                             <div class="select-bet">
-                                <button type="button" class="bet-to-select">
+                                <input hidden type="radio" id="win" name="fator" value="win">
+                                <input hidden type="radio" id="lose" name="fator" value="lose">
+                                <input hidden type="radio" id="draw" name="fator" value="draw">
+
+                                <label for="win" type="radio" class="bet-to-select">
                                     <h3>W</h3>
-                                    <span class="odd fw-bolder" id="win-odd">1.52</span>
-                                </button>
-                                <button type="button" class="bet-to-select">
+                                    <span class="odd fw-bolder" id="win-odd">0.0</span>
+                                </label>
+                                <label for="draw" type="button" class="bet-to-select">
                                     <h3>D</h3>
-                                    <span class="odd fw-bolder" id="draw-odd">0.87</span>
-                                </button>
-                                <button type="button" class="bet-to-select">
+                                    <span class="odd fw-bolder" id="draw-odd">0.00</span>
+                                </label>
+                                <label for="lose" type="button" class="bet-to-select">
                                     <h3>L</h3>
-                                    <span class="odd fw-bolder" id="lose-odd">3.36</span>
-                                </button>
+                                    <span class="odd fw-bolder" id="lose-odd">0.00</span>
+                                </label>
                             </div>
                     </div>
 
@@ -214,7 +189,7 @@
                         <div class="montante">
                                 <span class="details-montante text-end"> <span
                                         class="cinza-montante">Min:</span> 1€ <span class="cinza-montante">Máx:</span> 500€</span>
-                            <input id="montante" type="number" placeholder="Montante" min="1" max="500">
+                            <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="500">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1€</button>
                                 <button type="button" class="bt_add_value btn-secondary" value="10">10€</button>
@@ -225,7 +200,7 @@
                     </div>
 
                     <div class="row g-0 m-0 p-0">
-                        <h3>Ganhos possíveis <span class="ganhos-bg"><span class="ganhos">200€</span></span></h3>
+                        <h3>Ganhos possíveis <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
                     </div>
 
 

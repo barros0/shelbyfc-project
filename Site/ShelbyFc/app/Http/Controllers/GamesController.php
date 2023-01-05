@@ -65,14 +65,10 @@ class GamesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'titulo' => 'required',
-            'small_description' => 'nullable',
-
             'stock_bilhetes' => 'required|numeric',
             'data_limite_bilhetes' => 'required|date',
             'preco_bilhete' => 'required|numeric|min:0',
             'preco_bilhete_socio' => 'required|numeric|min:0',
-            'bilhetes_disponiveis' => 'required|numeric',
             'local' => 'required',
             'equipa' => 'required|exists:teams,id',
             'data_jogo' => 'required|date',
@@ -89,9 +85,6 @@ class GamesController extends Controller
 
 
         $game = New Game();
-        $game->title = $request->titulo;
-        $game->description = $request->description;
-        $game->small_description = $request->small_description;
         $game->ticket_available = 1;
         $game->ticket_price = $request->preco_bilhete;
         $game->ticket_price_partner = $request->preco_bilhete_socio;
@@ -99,8 +92,7 @@ class GamesController extends Controller
         $game->team_id = $request->equipa;
         $game->limit_bet = $request->data_jogo;
         $game->limit_buy_ticket = $request->data_limite_bilhetes;
-        $game->stock_tickets = $request->bilhetes_disponiveis;
-        $game->stock_ticket_available = $request->bilhetes_disponiveis;
+        $game->stock_tickets = $request->stock_bilhetes;
         $game->datetime_game = $request->data_jogo;
         $game->draw = gerar_prob_random();
         $game->win = gerar_prob_random();

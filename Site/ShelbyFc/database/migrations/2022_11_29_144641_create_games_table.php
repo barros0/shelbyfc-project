@@ -30,7 +30,6 @@ return new class extends Migration
             $table->dateTime('limit_bet');
             $table->dateTime('limit_buy_ticket')->nullable();
             $table->integer('stock_tickets')->nullable();
-            $table->integer('stock_ticket_available')->nullable();
             $table->dateTime('datetime_game');
             $table->float('win');
             $table->float('draw');
