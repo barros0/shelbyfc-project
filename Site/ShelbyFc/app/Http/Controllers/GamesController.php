@@ -96,6 +96,47 @@ class GamesController extends Controller
         return back();
     }
 
+    public function resultados(Game $game, Request $request)
+    {
+
+        $result_opponent = $request->result_opponent;
+        $result_home = $request->result_home;
+
+        //empate
+        if($result_home == $result_opponent){
+            $fator_resultado = 'draw';
+        }
+        //if casa win
+        else if($result_home > $result_opponent){
+            $fator_resultado = 'win';
+        }
+        //if casa lose
+        else if($result_home < $result_opponent){
+            $fator_resultado = 'lose';
+        }
+        else{
+            abort(500);
+        }
+
+        $game->result = $fator_resultado;
+        $game->save();
+
+        $game->result_opponent = $request->result_opponent;
+        $game->result_home = $request->result_home;
+
+        $bets = $game->bets();
+
+        foreach ($bets as $bet) {
+            // if win/acertou palpite adiciona esse valor a conta
+            if ($bet->fator == $game->result){
+                $bet->user->balance += $game->$fator_resultado * $bet->value;
+            }
+        }
+
+        Session::flash('success', 'Resultados publicados!');
+        return back();
+    }
+
     /**
      * Display the specified resource.
      *

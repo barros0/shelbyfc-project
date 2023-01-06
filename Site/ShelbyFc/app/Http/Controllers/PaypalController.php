@@ -18,57 +18,7 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createTransaction()
-    {
 
-        return view('transaction');
-    }
-
-    /**
-     * process transaction.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function processTransaction(Request $request)
-    {
-
-        //$total= Auth::user()->cart;
-       // $total = 2;
-
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $paypalToken = $provider->getAccessToken();
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "application_context" => [
-                "return_url" => route('successTransaction'),
-                "cancel_url" => route('cancelTransaction'),
-            ],
-            "purchase_units" => [
-                0 => [
-                    "amount" => [
-                        "currency_code" => "EUR",
-                        "value" => $total
-                    ]
-                ]
-            ]
-        ]);
-        if (isset($response['id']) && $response['id'] != null) {
-            // redirect to approve href
-            foreach ($response['links'] as $links) {
-                if ($links['rel'] == 'approve') {
-                    return redirect()->away($links['href']);
-                }
-            }
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', 'Algo de errado aconteceu :( .');
-        } else {
-            return redirect()
-                ->route('createTransaction')
-                ->with('error', $response['message'] ?? 'Algo está errado :( .');
-        }
-    }
 
     /**
      * sucesso transacao.
@@ -89,23 +39,27 @@ class PayPalController extends Controller
 
             $bet_id = $response['id'];
 
+            //find bet by id paypal
             $betpaid = BetsPayment::where('paypal_id', $bet_id)->firstOrFail();
+            // update bet
             $betpaid->date =
                 date('d-m-y H:i:s',
                     strtotime($response['purchase_units'][0]['payments']['captures'][0]['create_time']));
             $betpaid->response = $response;
             $betpaid->save();
 
+            // mete bet como paga
             $bet = Bets::find($betpaid->bet_id);
             $bet->is_paid = true;
             $bet->save();
 
+            // find game
             $game = Game::find($bet->game_id);
 
-
+// cria historico de transacao
             $transaction = new Transactions();
             $transaction->user_id = Auth::id();
-            $transaction->description = 'Aposta no jogo nº'.$game->id.' | Shelby FC VS '.$game->opponent->name;
+            $transaction->description = 'Aposta no jogo nº' . $game->id . ' | Shelby FC VS ' . $game->opponent->name;
             $transaction->value = $bet->value;
             $transaction->save();
 
@@ -127,9 +81,9 @@ class PayPalController extends Controller
      */
     public function cancelTransaction(Request $request)
     {
-        return 'transacao cancelada';
+        // return 'transacao cancelada';
         return redirect()
-            ->route('createTransaction')
-            ->with('error', $response['message'] ?? 'You have canceled the transaction.');
+            ->route('tobet')
+            ->with('error', $response['message'] ?? 'Você cancelou esta transação.');
     }
 }

@@ -34,6 +34,7 @@ return new class extends Migration
             $table->float('win');
             $table->float('draw');
             $table->float('lose');
+            $table->enum('result', ['win','draw', 'lose'])->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
