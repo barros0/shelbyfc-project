@@ -104,8 +104,8 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
-    Route::get('/publicar-resultados', GamesController::class['post_results'])->name('games.publicar.resultados');
-    Route::post('/publicar-resultados', GamesController::class['dopost_results'])->name('games.publicar.doresultados');
+    Route::get('/publicar-resultados', [GamesController::class, 'post_results'])->name('games.publicar.resultados');
+    Route::post('/publicar-resultados', [GamesController::class,'dopost_results'])->name('games.publicar.doresultados');
 
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
