@@ -4,7 +4,7 @@
 @section('content.forum')
     <div class="create_forum d-flex flex-row">
         <img src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
-        <form action="###################">
+        <form action="{{route('forum.')}}">
             <input placeholder="Escreva um titutlo" type="text" name="title" id="title">
             <textarea placeholder="Escreva algo..." name="body" id="body"></textarea>
             <input type="file" name="image" id="image">

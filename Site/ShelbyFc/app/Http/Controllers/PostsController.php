@@ -35,7 +35,19 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            /*'image' => 'required',*/
+        ]);
+
+        $forum_posts = new Posts();
+        $forum_posts->title = $request->title;
+        $forum_posts->body = $request->body;
+        $forum_posts->save();
+
+        Session::flash('success', 'Publicação adicionada!');
+        return back();
     }
 
     /**

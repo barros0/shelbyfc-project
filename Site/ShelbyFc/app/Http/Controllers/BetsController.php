@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bets;
+use App\Models\BetsPayment;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
@@ -58,18 +59,20 @@ class BetsController extends Controller
         ]);
 
         $fator = $request->fator;
-        $quantiade = $request->montante;
+        $montante = $request->montante;
 
 
         // verifica se não passou da data limit de jogo
-        $game = Game::find($request->jogo)->where()->firstorfail();
+        $game = Game::find($request->jogo)->where('limit_bet', '>', Carbon::now())->firstorfail();
+
+        $total = $game->$fator * $montante;
 
         if (Carbon::now() > $game->limit_bet) {
             Session::flash('alert', 'Ultrapassou a data limit de aposta! Data limkite: ' . $game->limit_bet);
             return back();
         }
 
-       // $ganhospossiveis = $valor_fator * $quantiade;
+        // $ganhospossiveis = $valor_fator * $quantiade;
 
 
         $bet = new Bets();
@@ -78,10 +81,10 @@ class BetsController extends Controller
         $bet->value = 3;
         $bet->fator = $fator;
         $bet->save();
-
+        $bet_id = $bet->id;
 
         // get new invoice id
-        $bet_id = $bet->id;
+
 
         // Get the cart data
         //$cart = $this->getCart(true, $bet_id);
@@ -92,29 +95,48 @@ class BetsController extends Controller
         $invoice->price = $cart['total'];
         $invoice->save();*/
 
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+        // $provider->setExpressCheckout($product);
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('successTransaction'),
+                "cancel_url" => route('cancelTransaction'),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "EUR",
+                        "value" => $total
+                    ],
+                ],
 
-        $product = [];
-        $product['items'] = [
-            [
-                'name' => 'Nike Joyride 2',
-                'price' => 112,
-                'desc'  => 'Running shoes for Men',
-                'qty' => 2
             ]
-        ];
+        ]);
 
-        $product['invoice_id'] = 1;
-        $product['invoice_description'] = "Order #{$product['invoice_id']} Bill";
-        $product['return_url'] = route('success.payment');
-        $product['cancel_url'] = route('cancel.payment');
-        $product['total'] = 224;
+        if (isset($response['id']) && $response['id'] != null) {
 
-        $paypalModule = new ExpressCheckout;
+            $payment = new BetsPayment();
+            $payment->bet_id = $bet_id;
+            $payment->paypal_id = $response['id'];
+            $payment->save();
 
-        $res = $paypalModule->setExpressCheckout($product);
-        $res = $paypalModule->setExpressCheckout($product, true);
-
-        return redirect($res['paypal_link']);
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', 'Algo de errado aconteceu :( .');
+        } else {
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', $response['message'] ?? 'Algo está errado :( .');
+        }
 
     }
 

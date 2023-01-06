@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->float('value');
             $table->enum('result', ['Aguardando', 'Concluido'])->default('Aguardando');
             $table->enum('factor', ['win','draw', 'lose']);
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }

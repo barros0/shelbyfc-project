@@ -65,15 +65,12 @@ class GamesController extends Controller
      */
     public function store(GameRequest $request)
     {
-
-
-
         //  generate odds
 
         //temporario
         function gerar_prob_random(){
-            $min = 0.5;
-            $max = 3;
+            $min = 1;
+            $max = 4;
             return mt_rand ($min*10, $max*10) / 10;
         }
 

@@ -22,7 +22,7 @@ class ForumController extends Controller
     public function create(Request $request)
     {
         $posts = Posts::all();
-        return view('forum.index', compact('Posts'));
+        return view('forum.index', compact('posts'));
     }
 
     public function store(Request $request)
