@@ -62,8 +62,8 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('forum.home') }}">
-                                    Apostas
+                                    href="{{ route('tobet') }}">
+                                    Apostar
                                 </a>
                             </li>
                         </ul>
@@ -96,6 +96,11 @@
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center justify-content-center" href="{{ route('inscrever') }}">
+                            Sócio
+                        </a>
                     </li>
                 </ul>
             </div>

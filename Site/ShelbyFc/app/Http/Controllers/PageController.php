@@ -53,7 +53,7 @@ class PageController extends Controller
     public function news_categories($category)
     {
 
-        $category = Categorie::where('name',$category)->firstOrFail();
+        $category = Categorie::where('name', $category)->firstOrFail();
 
         $noticias = $category->news()->paginate(6);
         $categories = Categorie::all();
@@ -134,14 +134,12 @@ class PageController extends Controller
 
     public function minha_conta()
     {
-
         $countrys = Country::all();
         return view('perfil.perfil', compact('countrys'));
     }
 
     public function subscricoes()
     {
-
         $subscriptions = Auth::user()->subscriptions;
         return view('perfil.subscricoes', compact('subscriptions'));
     }
@@ -172,7 +170,8 @@ class PageController extends Controller
         return view('noticia', compact('game'));
     }
 
-    public function tobet(){
+    public function tobet()
+    {
 
         $next_games = Game::get();
 

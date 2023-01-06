@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
 use App\Models\Posts;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -11,22 +12,47 @@ use Session;
 class ForumController extends Controller
 {
 
-    public function index(){
-
+    public function index()
+    {
         $posts = Posts::get();
-
+        $user = User::get();
         return view('forum.index', compact('posts'));
     }
 
+    public function create(Request $request)
+    {
+        $posts = Posts::all();
+        return view('forum.index', compact('Posts'));
+    }
 
-    public function post(Posts $post){
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            /*'image' => 'required',*/
+        ]);
+
+        $forum_posts = new Posts();
+        $forum_posts->title = $request->title;
+        $forum_posts->body = $request->body;
+        $forum_posts->save();
+
+        Session::flash('success', 'Publicação adicionada!');
+        return back();
+    }
+
+
+    public function post(Posts $post)
+    {
 
         return view('forum.post', compact('post'));
     }
 
-    public function delete_post(Posts $post){
+    public function delete_post(Posts $post)
+    {
 
-        if($post->user_id <> Auth::id()){
+        if ($post->user_id <> Auth::id()) {
             Session::flash('success', 'Publicação impossivel apagar esta publicação.');
             return back();
         }
@@ -38,7 +64,8 @@ class ForumController extends Controller
     }
 
 
-    public function addcomment(Request $request, $postid){
+    public function addcomment(Request $request, $postid)
+    {
 
         Posts::findorfail($postid);
 
@@ -51,7 +78,8 @@ class ForumController extends Controller
         return back();
     }
 
-    public function reply(Request $request,$postid,$commentid){
+    public function reply(Request $request, $postid, $commentid)
+    {
 
         Posts::findorfail($postid);
         forum_posts_comment::findorfail($commentid);
@@ -66,13 +94,14 @@ class ForumController extends Controller
         return back();
     }
 
-    public function delete_comment(Request $request,$commentid){
+    public function delete_comment(Request $request, $commentid)
+    {
 
         $comment = forum_posts_comment::findorfail($commentid);
 
         // se o coment nao for desse user
-        if($comment->user_id <> Auth::id()){
-            Session::flash('error','Este comentário não lhe pertence!');
+        if ($comment->user_id <> Auth::id()) {
+            Session::flash('error', 'Este comentário não lhe pertence!');
             return back();
         }
 

@@ -93,7 +93,7 @@ Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
-
+Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
