@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->foreign('game_id')->references('id')->on('games');
             $table->float('value');
             $table->enum('result', ['Aguardando', 'Concluido'])->default('Aguardando');
-            $table->enum('factor', ['win','draw', 'lose']);
+            $table->enum('fator', ['win','draw', 'lose']);
             $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });

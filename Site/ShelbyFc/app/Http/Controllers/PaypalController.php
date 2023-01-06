@@ -1,5 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Bets;
+use App\Models\BetsPayment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
@@ -76,14 +79,25 @@ class PayPalController extends Controller
         $provider->getAccessToken();
         $response = $provider->capturePaymentOrder($request['token']);
 
-        return $response;
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-            return redirect()
-                ->route('createTransaction')
+
+            $bet_id = $response['id'];
+
+            $betpaid = BetsPayment::where('paypal_id',$bet_id)->firstOrFail();
+            $betpaid->date = Carbon::now();
+                $betpaid->save();
+
+            $bet = Bets::find($betpaid->bet_id);
+            $bet->is_paid = true;
+            $bet->save();
+
+            return back()
+                /*redirect()*/
+               /* ->route('createTransaction')*/
                 ->with('success', 'Transaction complete.');
         } else {
-            return redirect()
-                ->route('createTransaction')
+            return  back()/*redirect()
+                ->route('createTransaction')*/
                 ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }

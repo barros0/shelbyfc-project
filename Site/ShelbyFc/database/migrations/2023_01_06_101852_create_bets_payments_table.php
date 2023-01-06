@@ -18,8 +18,8 @@ return new class extends Migration
             $table->bigInteger('bet_id')->unsigned();
             $table->foreign('bet_id')->references('id')->on('bets');
             $table->string('paypal_id');
-            $table->string('date');
-            $table->text('response');
+            $table->dateTime('date')->nullable();
+            $table->text('response')->nullable();
             $table->timestamps();
         });
     }
