@@ -1,11 +1,16 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Bets;
 use App\Models\BetsPayment;
+use App\Models\Game;
+use App\Models\Transactions;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
+
 class PayPalController extends Controller
 {
     /**
@@ -18,6 +23,7 @@ class PayPalController extends Controller
 
         return view('transaction');
     }
+
     /**
      * process transaction.
      *
@@ -27,7 +33,7 @@ class PayPalController extends Controller
     {
 
         //$total= Auth::user()->cart;
-        $total = 2;
+       // $total = 2;
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
@@ -69,7 +75,7 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      **/
-    public function successTransaction(Request $request)
+    public function success_transaction_bet(Request $request)
     {
 
         //return 'transacao sucesso';
@@ -83,22 +89,34 @@ class PayPalController extends Controller
 
             $bet_id = $response['id'];
 
-            $betpaid = BetsPayment::where('paypal_id',$bet_id)->firstOrFail();
-            $betpaid->date = Carbon::now();
-                $betpaid->save();
+            $betpaid = BetsPayment::where('paypal_id', $bet_id)->firstOrFail();
+            $betpaid->date =
+                date('d-m-y H:i:s',
+                    strtotime($response['purchase_units'][0]['payments']['captures'][0]['create_time']));
+            $betpaid->response = $response;
+            $betpaid->save();
 
             $bet = Bets::find($betpaid->bet_id);
             $bet->is_paid = true;
             $bet->save();
 
+            $game = Game::find($bet->game_id);
+
+
+            $transaction = new Transactions();
+            $transaction->user_id = Auth::id();
+            $transaction->description = 'Aposta no jogo nº'.$game->id.' | Shelby FC VS '.$game->opponent->name;
+            $transaction->value = $bet->value;
+            $transaction->save();
+
             return back()
                 /*redirect()*/
-               /* ->route('createTransaction')*/
+                /* ->route('createTransaction')*/
                 ->with('success', 'Transaction complete.');
         } else {
-            return  back()/*redirect()
+            return back()/*redirect()
                 ->route('createTransaction')*/
-                ->with('error', $response['message'] ?? 'Something went wrong.');
+            ->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
 

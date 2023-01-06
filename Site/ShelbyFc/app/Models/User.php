@@ -72,7 +72,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     function transactions()
     {
-        return $this->hasOne(Transactions::class,);
+        return $this->hasMany(Transactions::class,'user_id','id');
     }
 
     function country(){

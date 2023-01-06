@@ -2,7 +2,7 @@
 
 @section('content-perfil')
 
-@if(empty($transacoes))
+@if(empty(Auth::user()->transactions))
 
     <div class="alert-profile">
     <h4>Você ainda não fez nenhuma transação</h4>
@@ -19,11 +19,11 @@
             <th>Valor</th>
             <th>Data</th>
         </tr>
-        @foreach($transacoes as $transacao)
+        @foreach(Auth::user()->transactions as $transacao)
         <tr>
             <td>{{$transacao->id}}</td>
             <td>{{$transacao->description}}</td>
-            <td>{{$transacao->value}}</td>
+            <td>{{$transacao->value}}€</td>
             <td>{{$transacao->created_at}}</td>
         </tr>
         @endforeach

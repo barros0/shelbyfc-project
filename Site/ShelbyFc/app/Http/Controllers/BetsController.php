@@ -77,33 +77,22 @@ class BetsController extends Controller
 
         $bet = new Bets();
         $bet->user_id = Auth::id();
-        $bet->game_id = 1;
-        $bet->value = 3;
+        $bet->game_id = $game->id;
+        $bet->value = $total;
         $bet->fator = $fator;
         $bet->save();
         $bet_id = $bet->id;
 
-        // get new invoice id
 
-
-        // Get the cart data
-        //$cart = $this->getCart(true, $bet_id);
-
-        // create new invoice
-        /*$invoice = new Invoice();
-        $invoice->title = $cart['invoice_description'];
-        $invoice->price = $cart['total'];
-        $invoice->save();*/
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
-        // $provider->setExpressCheckout($product);
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
-                "return_url" => route('successTransaction'),
-                "cancel_url" => route('cancelTransaction'),
+                "return_url" => route('paypal.success.transaction.bet'),
+                "cancel_url" => route('paypal.cancel.transaction'),
             ],
             "purchase_units" => [
                 0 => [
