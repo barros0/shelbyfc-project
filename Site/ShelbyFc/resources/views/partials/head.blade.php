@@ -11,7 +11,7 @@
     <link rel="icon" type="{{ asset('images/logo.ico') }}" href="{{ asset('images/logo.ico') }}">
 
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!--<link rel="stylesheet" href="{{ asset('css/styles.css') }}">-->
 
