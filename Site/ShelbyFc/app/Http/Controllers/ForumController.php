@@ -25,7 +25,7 @@ class ForumController extends Controller
         return view('forum.index', compact('posts'));
     }
 
-    public function store(Request $request)
+    public function store_post(Request $request)
     {
         $this->validate($request, [
             'title' => 'required',
