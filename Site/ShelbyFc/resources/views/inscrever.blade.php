@@ -1,5 +1,3 @@
-@include('partials.head')
-
 @extends("layouts.master")
 
 @section('title','Inscrever - Shelby FC')
@@ -36,7 +34,7 @@
 
 <div id="inscrever" class="fullpage-row">
     <div class="metade">
-        
+
         <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
 
         <div class="login-regular">
@@ -53,7 +51,7 @@
                 <div class="tab">
                 <label for="cc">Cartão de Cidadão (Ou outro documento de identificação)</label>
                     <input type="file" name="cc" placeholder="cc" required>
-                    
+
                 </div>
 
                 <div class="tab">
