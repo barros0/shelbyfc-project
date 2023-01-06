@@ -21,13 +21,68 @@
             <div class="vantagem">
                 <i class='bx bxs-trophy icon-vant'></i>
                 <span class="texto-vant">PRÉMIOS E PASSATEMPOS</span>
-
             </div>
             <div class="vantagem">
                 <i class='bx bx-dumbbell icon-vant'></i>
                 <span class="texto-vant">UTILIZAÇÃO DAS INSTALAÇÕES</span>
 
             </div>
+<div id="inscrever" class="fullpage-row">
+    <div class="metade">
+
+        <h1 class="titulo-sec-3">INSCRIÇÃO PARA SÓCIO</h1>
+
+        <div class="login-regular">
+            <form class="form-login" id="inscrever-socio" method="post" enctype="multipart/form-data" action="{{route('inscrever.post')}}">
+            @csrf
+
+                <div class="tab">
+                    <label for="nif">NIF</label>
+                    <input type="number" name="nif" placeholder="NIF" required value="{{ Auth::user()->nif }}">
+                    <label for="birthdate">Data de Nascimento</label>
+                    <input type="date" name="birthdate" placeholder="Data de Nascimento" required value="{{ Auth::user()->birthdate }}">
+                </div>
+
+                <div class="tab">
+                <label for="cc">Cartão de Cidadão (Ou outro documento de identificação)</label>
+                    <input type="file" name="cc" placeholder="cc" required>
+
+                </div>
+
+                <div class="tab">
+                    <label for="morada">Morada</label>
+                    <input type="text" name="morada" placeholder="Morada" required value="{{ Auth::user()->address }}">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" placeholder="Cidade" required value="{{ Auth::user()->city }}">
+                    <label for="zipcode">Código Postal</label>
+                    <input type="text" name="zipcode" placeholder="Código Postal" required value="{{ Auth::user()->postal_code }}">
+                    <label for="pais">País</label>
+                    <select class="" name="pais" id="pais">
+                    <option value="">Selecione o seu país</option>
+                    @foreach($nacionalidades as $country)
+                        <option
+                            @if($country->id == Auth::user()->country_id)
+                            selected
+                            @endif
+                            value="{{$country->id}}">{{$country->name}}</option>
+                    @endforeach
+                </select>
+                </div>
+
+
+                <div class="botoes">
+                    <button type="button" id="prevBtn" class="btn-registo"
+                        onclick="nextPrev(-1)">VOLTAR</button>
+                    <button type="button" id="nextBtn" class="btn-registo"
+                        onclick="nextPrev(1)">SEGUINTE</button>
+
+                </div>
+                <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
+            </form>
         </div>
         <h1 class="tit-vant">...CENTENAS DE VANTAGENS</h1>
 
