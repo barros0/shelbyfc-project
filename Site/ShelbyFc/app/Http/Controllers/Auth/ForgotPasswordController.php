@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use http\Env\Request;
+use App\Models\Password_Reset;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Session;
+use Str;
 
 class ForgotPasswordController extends Controller
 {
@@ -41,13 +44,15 @@ class ForgotPasswordController extends Controller
 
         $token = Str::random(64);
 
-        DB::table('password_resets')->insert([
+        Password_Reset::insert([
             'email' => $request->email,
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
 
-        Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
+        $url = route('password.reset', $token);
+
+        Mail::send('email.forgetPassword', compact('url'), function($message) use($request){
             $message->to($request->email);
             $message->subject('Repor password');
         });
