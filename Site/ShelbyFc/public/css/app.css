@@ -1127,7 +1127,7 @@ span {
 
 .active {
     background-color: transparent;
-    color: #fc3131;
+    color: var(--vermelho);
     border-color: transparent;
 }
 
@@ -1487,6 +1487,12 @@ span {
 }
 
 /*FORUM*/
+.btn_form_activate {
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid #777;
+    color: #777;
+}
 
 .posts_forum {
     padding: 30px 0;
@@ -1536,6 +1542,10 @@ span {
 
 .create_forum button {
     float: right;
+}
+
+.create_forum #close {
+    color: #777;
 }
 
 /*NOVA NAVBAR*/
@@ -1918,6 +1928,10 @@ span {
 .btn-aposta {
     width: 40%;
     margin: auto;
+}
+
+.bet_active {
+    background-color: var(--vermelho) !important;
 }
 
 .ganhos {

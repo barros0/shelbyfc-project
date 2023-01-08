@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'ShelbyFC')
+@section('title', 'Fórum | ShelbyFC')
 
 
 @section('content')
