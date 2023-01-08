@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
 use App\Models\Posts;
+use App\Models\Forum;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -15,8 +16,16 @@ class ForumController extends Controller
     public function index()
     {
         $posts = Posts::get();
-        $user = User::get();
-        return view('forum.index', compact('posts'));
+        $user_post = User::with('user_post')->get();
+
+        return view('forum.index', compact('posts','user_post'));
+    }
+
+    public function posts_user($user_id)
+    {
+        $user_id = Forum::where('name', $user_id)->firstOrFail();
+
+        return view('forum.index', compact('user_id'));
     }
 
     public function create(Request $request)
@@ -33,7 +42,10 @@ class ForumController extends Controller
             /*'image' => 'required',*/
         ]);
 
+
         $forum_posts = new Posts();
+        $user_id = Auth::user()->id;
+        $forum_posts->user_id = $user_id;
         $forum_posts->title = $request->title;
         $forum_posts->body = $request->body;
         $forum_posts->save();
@@ -45,7 +57,6 @@ class ForumController extends Controller
 
     public function post(Posts $post)
     {
-
         return view('forum.post', compact('post'));
     }
 

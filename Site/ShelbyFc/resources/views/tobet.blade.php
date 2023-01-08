@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'ShelbyFC')
+@section('title', 'Apostar | ShelbyFC')
 
 
 @section('content')
@@ -11,8 +11,8 @@
 
             // cada vez que se muda o fator faz update e mete active o bt/div
             $('.bet-to-select').on('click', function () {
-                $('.bet-to-select').removeClass('active');
-                $(this).addClass('active');
+                $('.bet-to-select').removeClass('bet_active');
+                $(this).addClass('bet_active');
                 setTimeout(
                     function()
                     {
@@ -23,8 +23,8 @@
 
             // ao clicar em cada jogo faz select e faz o get das infos
             $('.game-bet-option').on('click', function () {
-                $('.game-bet-option').removeClass('active');
-                $(this).addClass('active');
+                $('.game-bet-option').removeClass('bet_active');
+                $(this).addClass('bet_active');
 
                 gameid = $(this).attr('itemid');
                 url = './api/get_game_bet'
@@ -169,17 +169,17 @@
                                 <input hidden type="radio" id="lose" name="fator" value="lose">
                                 <input hidden type="radio" id="draw" name="fator" value="draw">
 
-                                <label for="win" type="radio" class="bet-to-select">
+                                <label for="win" type="radio" class="bet-to-select d-flex flex-column">
                                     <h3>W</h3>
-                                    <span class="odd fw-bolder" id="win-odd">0.0</span>
+                                    <span class="odd fw-bolder" id="win-odd">1.00</span>
                                 </label>
-                                <label for="draw" type="button" class="bet-to-select">
+                                <label for="draw" type="button" class="bet-to-select d-flex flex-column">
                                     <h3>D</h3>
-                                    <span class="odd fw-bolder" id="draw-odd">0.00</span>
+                                    <span class="odd fw-bolder" id="draw-odd">1.00</span>
                                 </label>
-                                <label for="lose" type="button" class="bet-to-select">
+                                <label for="lose" type="button" class="bet-to-select d-flex flex-column">
                                     <h3>L</h3>
-                                    <span class="odd fw-bolder" id="lose-odd">0.00</span>
+                                    <span class="odd fw-bolder" id="lose-odd">1.00</span>
                                 </label>
                             </div>
                     </div>

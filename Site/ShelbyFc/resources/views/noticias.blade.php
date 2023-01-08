@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Notícias - Shelby FC')
+@section('title', 'Notícias | Shelby FC')
 
 @section('content')
     <div class="container_all_news">

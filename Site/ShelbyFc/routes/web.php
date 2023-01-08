@@ -97,6 +97,7 @@ Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
+    Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
 });
 
 
