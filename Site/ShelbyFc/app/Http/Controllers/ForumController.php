@@ -23,11 +23,9 @@ class ForumController extends Controller
 
     public function posts_user($user_id)
     {
-        $user_id = User::where('name', $user_id)->firstOrFail();
+        $user_id = Forum::where('name', $user_id)->firstOrFail();
 
-        $user = User::all();
-
-        return view('forum.index', compact('posts','user'));
+        return view('forum.index', compact('user_id'));
     }
 
     public function create(Request $request)
