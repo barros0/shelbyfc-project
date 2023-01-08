@@ -79,8 +79,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Country::class, 'id', 'country_id');
     }
 
-    function posts(){
-        return $this->hasMany(Posts::class, 'user_id', 'id');
+    function user_post(){
+        return $this->hasMany(Posts::class);
     }
 
     function cart(){

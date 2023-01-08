@@ -26,7 +26,7 @@
                     <img src="" alt="user">
                     <div class="content_forum">
                         <p>{{ $post->title }}</p>
-                        <p>{{ $post->forum->name }}, {{ $post->created_at }}</p>
+                        <p>{{ $post->user_post->name }}, {{ $post->created_at }}</p>
                     </div>
                 </div>
                 <div class="">

@@ -16,9 +16,9 @@ class ForumController extends Controller
     public function index()
     {
         $posts = Posts::get();
-        $user = User::get();
+        $user_post = User::with('user_post')->get();
 
-        return view('forum.index', compact('posts'));
+        return view('forum.index', compact('posts','user_post'));
     }
 
     public function posts_user($user_id)
