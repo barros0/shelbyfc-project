@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
-class Posts extends Model
+class Forum_post extends Model
 {
     use HasFactory;
-    protected $table = 'forum_posts';
 
-
-    public function user(){
-        return $this->hasOne(User::class,'id');
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
-use App\Models\Posts;
-use App\Models\Forum;
+use App\Models\Forum_post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -15,15 +14,13 @@ class ForumController extends Controller
 
     public function index()
     {
-        $posts = Posts::get();
-        $user_post = User::with('user_post')->get();
-
-        return view('forum.index', compact('posts','user_post'));
+        $posts = Forum_post::get();
+        return view('forum.index', compact('posts'));
     }
 
     public function posts_user($user_id)
     {
-        $user_id = Forum::where('name', $user_id)->firstOrFail();
+        $user_id = Forum_post::where('name', $user_id)->firstOrFail();
 
         return view('forum.index', compact('user_id'));
     }

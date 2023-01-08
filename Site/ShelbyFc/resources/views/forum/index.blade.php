@@ -6,7 +6,7 @@
         <div style="width:80%;" class="d-flex flex-column">
             <form action="{{ route('forum.store_post') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input placeholder="Assunto" type="text" name="title" id="title">
+                <input placeholder="O que estás a pensar?" type="text" name="title" id="title">
                 <div id="open_forum" style="display: none">
                     <textarea placeholder="Escreva algo..." name="body" id="body"></textarea>
                     <input type="file" name="image" id="image">
@@ -23,10 +23,10 @@
         @foreach ($posts as $post)
             <div class="posts_forum d-flex justify-content-around align-items-center">
                 <div class="user_info_forum">
-                    <img src="" alt="user">
+                    <img src="{{ $post->user->image }}" alt="user">
                     <div class="content_forum">
                         <p>{{ $post->title }}</p>
-                        <p>{{ $post->user_post->name }}, {{ $post->created_at }}</p>
+                        <p>{{ $post->user->name }}, {{ $post->created_at }}</p>
                     </div>
                 </div>
                 <div class="">
