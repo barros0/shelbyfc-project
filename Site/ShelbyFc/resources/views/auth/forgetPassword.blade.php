@@ -63,3 +63,17 @@
 
 
 <script src="{{asset('js/login.js')}}"></script>
+
+@foreach($posts as $post)
+    erere
+
+    @foreach($post->comments as $comment)
+        {{$comment->comentario}}
+
+        @foreach($comment->replys as $reply)
+            {{$reply->comentario}}
+        @endforeach
+
+    @endforeach
+
+@endforeach
