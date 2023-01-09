@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bets;
 use App\Models\BetsPayment;
 use App\Models\Game;
+use App\Models\Subscription;
 use App\Models\Transactions;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -86,4 +87,47 @@ class PayPalController extends Controller
             ->route('tobet')
             ->with('error', $response['message'] ?? 'Você cancelou esta transação.');
     }
+
+
+    public function pay_subscription(Subscription $subscription){
+
+
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('paypal.success.transaction.bet'),
+                "cancel_url" => route('paypal.cancel.transaction'),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "EUR",
+                        "value" => $subscription->value
+                    ],
+                ],
+
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', 'Algo de errado aconteceu :( .');
+        } else {
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', $response['message'] ?? 'Algo está errado :( .');
+        }
+    }
+
 }

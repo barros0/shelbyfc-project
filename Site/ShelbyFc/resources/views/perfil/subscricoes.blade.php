@@ -24,7 +24,15 @@
                     <td>{{$subscription->id}}</td>
                     <td>{{$subscription->state}}</td>
                     <td>{{$subscription->value}}€</td>
-                    <td>{{$subscription->created_at}}</td>
+                    <td>
+@if($subscription->state == 'Pendente')
+                            <a href="{{route('paypal.pay.subscription', $subscription)}}" class="btn btn-primary"></a>
+                        @else
+                            {{$subscription->created_at}}
+    @endif
+
+
+                    </td>
                     <td>{{$subscription->expires_at}}</td>
                 </tr>
             @endforeach

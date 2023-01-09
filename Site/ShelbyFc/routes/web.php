@@ -125,7 +125,11 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
 Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
 Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
 
-Route::group(['prefix' => 'admin/', 'as' => 'paypal.'], function () {
+Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
 Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
+
+
+Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
+
 });
