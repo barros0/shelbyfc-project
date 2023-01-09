@@ -26,6 +26,7 @@
                 <th>Data</th>
                 <th>Publicado</th>
                 <th>Actions</th>
+                <th>Resultados</th>
             </tr>
             @foreach ($games as $game)
                 <tr>
@@ -44,6 +45,9 @@
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
+                    </td>
+                    <td>
+                        <a href="{{route('admin.games.publish.results', $game) }}" class="btn">Publicar resultados</a>
                     </td>
                 </tr>
             @endforeach

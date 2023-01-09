@@ -24,27 +24,6 @@ class GamesController extends Controller
     }
 
 
-    public function publicar_resultados(Game $game,Request $request)
-    {
-
-        $request->validate([
-            'home_result' => 'required|numeric',
-            'visit_result' => 'required|numeric',
-        ]);
-
-
-        $bets = $game->bets;
-
-        foreach ($bets as $bet){
-
-
-
-        }
-
-
-        return back();
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -96,11 +75,25 @@ class GamesController extends Controller
         return back();
     }
 
-    public function resultados(Game $game, Request $request)
+
+    public function post_results($game)
+    {
+        $game = Game::findorfail($game);
+        return view('admin.games.results', compact('game'));
+    }
+
+
+    public function dopost_results(Game $game, Request $request)
     {
 
-        $result_opponent = $request->result_opponent;
-        $result_home = $request->result_home;
+        $request->validate([
+            'resultado_adversario' => 'required|numeric',
+            'resultado_shelby' => 'required|numeric',
+        ]);
+
+
+        $result_opponent = $request->resultado_adversario;
+        $result_home = $request->resultado_shelby;
 
         //empate
         if($result_home == $result_opponent){
@@ -118,18 +111,21 @@ class GamesController extends Controller
             abort(500);
         }
 
-        $game->result = $fator_resultado;
+       // $game->result = $fator_resultado;
+        $game->result_opponent = $request->resultado_adversario;
+        $game->result_home = $request->resultado_shelby;
         $game->save();
 
-        $game->result_opponent = $request->result_opponent;
-        $game->result_home = $request->result_home;
 
-        $bets = $game->bets();
+
+        $bets = $game->bets;
+
 
         foreach ($bets as $bet) {
             // if win/acertou palpite adiciona esse valor a conta
-            if ($bet->fator == $game->result){
+            if ($bet->fator == $fator_resultado){
                 $bet->user->balance += $game->$fator_resultado * $bet->value;
+                $bet->user->save();
             }
         }
 
