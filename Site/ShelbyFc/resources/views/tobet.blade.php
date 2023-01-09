@@ -143,7 +143,7 @@
                     <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
 
                         <div class="row g-0 m-0 p-0">
-                            <div class="d-flex flex-row justify-content-evenly">
+                            <div class="d-flex flex-row justify-content-evenly align-items-center">
                                 <div class="team-img">
                                     <img id="team1_img" src="{{asset('images/logo.svg')}}" alt="">
                                 </div>

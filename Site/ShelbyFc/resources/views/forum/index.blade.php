@@ -2,14 +2,18 @@
 
 @section('content.forum')
     <div class="create_forum d-flex flex-row justify-content-around">
-        <img src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
+        <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
         <div style="width:80%;" class="d-flex flex-column">
             <form action="{{ route('forum.store_post') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input placeholder="O que estás a pensar?" type="text" name="title" id="title">
-                <div id="open_forum" style="display: none">
+                <div id="open_forum" style="">
                     <textarea placeholder="Escreva algo..." name="body" id="body"></textarea>
-                    <input type="file" name="image" id="image">
+                    <div class="d-flex flex-row">
+                        <img id="img1" class="img_preview" src="" alt="">
+                        <input hidden type="file" name="image" id="image">
+                        <label for="image" class="custom-file-upload"><i class='bx bx-plus'></i></label>
+                    </div>
                     <button type="submit" id="submit">Publicar</button>
                 </div>
             </form>

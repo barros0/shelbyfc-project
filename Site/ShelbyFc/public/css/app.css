@@ -1245,12 +1245,10 @@ span {
     height: 100%;
 }
 
-
 .titulo-fale-conosco {
     color: white;
     font-size: 40px;
     font-family: 'Bebas Neue', cursive;
-
 }
 
 .titulo-fale-conosco p {
@@ -1487,11 +1485,36 @@ span {
 }
 
 /*FORUM*/
+
 .btn_form_activate {
     padding: 10px;
     width: 100%;
     border-bottom: 1px solid #777;
     color: #777;
+}
+
+.img_preview {
+    border: 1px solid #777;
+    border-style: dashed;
+    border-radius: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto 10px auto 0;
+}
+
+.preview {
+    border: 1px solid #777;
+    border-style: dashed;
+}
+
+label.custom-file-upload {
+    background: var(--vermelho);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .posts_forum {
@@ -1517,7 +1540,7 @@ span {
     padding: 30px;
 }
 
-.create_forum img {
+.create_forum img.user_forum_img {
     margin: 0 10px 10px;
     height: 50px;
     width: 50px;
@@ -1887,29 +1910,27 @@ span {
 
 /*bets*/
 
-.gametable_bet {
-    /*max-width: 450px;*/
-}
-
-/*
-.team-img{
-    padding: 14px;
-    width: 250px;
-}
-*/
 .team-img {
-    padding: 15px;
     width: 180px;
     display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 .team-img img {
-    width: 100%;
+    width: 65px;
+    height: 65px;
+}
+
+.team-img p {
+    margin: 0;
+    text-align: center;
 }
 
 .game-bet-option {
     border: 2px solid black;
     border-bottom: 0;
+    padding: 5px;
 }
 
 .game-bet-option:last-child {
