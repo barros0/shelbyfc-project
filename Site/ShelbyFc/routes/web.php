@@ -18,6 +18,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\SobreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,7 @@ Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
+Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
@@ -114,6 +116,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
     Route::resource('/faqs', FaqsController::class);
+    Route::resource('/sobre', SobreController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
         Route::get('/', [AdminController::class, 'contacts'])->name('index');

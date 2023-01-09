@@ -74,7 +74,7 @@
                         <ul>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('forum.home') }}">
+                                    href="{{ route('sobre') }}">
                                     Quem Somos
                                 </a>
                             </li>

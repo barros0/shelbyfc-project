@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\sobre;
 use App\Models\socio_price;
 use App\Models\Subscription;
 use App\Models\Categorie;
@@ -126,6 +127,7 @@ class PageController extends Controller
         return view('faqs')->with('faqs', $faqs);
     }
 
+
     public function styles()
     {
 
@@ -155,6 +157,13 @@ class PageController extends Controller
 
         return view('perfil.transacoes');
     }
+
+    public function sobre()
+    {
+
+        return view('sobre');
+    }
+
 
     public function preferencias()
     {

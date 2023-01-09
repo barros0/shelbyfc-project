@@ -1797,7 +1797,7 @@ label.custom-file-upload {
     width: 350px;
     height: 170px;
     margin: 70px;
-    box-shadow: 0px 0px 2px #000000ad;
+    box-shadow: 0px 0px 50px #757575ad;
     display: flex;
     flex-direction: row;
 }
@@ -1883,32 +1883,78 @@ label.custom-file-upload {
     flex-direction: column;
 }
 
+
+
 .team-section #ret1 {
-    background-image: url(../images/sobre/bart.JPG);
+    background-image: url(../images/sobre/joao.jpg);
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 75%;
 }
 
 .team-section #ret2 {
-    background-image: url(../images/sobre/bart.JPG);
+    background-image: url(../images/sobre/barros.jpg);
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 75%;
 }
 
 .team-section #ret3 {
-    background-image: url(../images/sobre/bart.JPG);
+    background-image: url(../images/sobre/acores.jpg);
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 75%;
 }
 
 .team-section #ret4 {
-    background-image: url(../images/sobre/bart.JPG);
+    background-image: url(../images/sobre/mica.jpg);
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 75%;
+}
+
+.team-section .up-side{
+    width: 100%;
+    height: 50%;
+}
+
+.team-section .down-side i{
+    margin: 10px;
+}
+
+.team-section .down-side{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+    /* letter-spacing: 20px; */
+    /* margin: 10px; */
+    justify-content: center;
+    color: #000;
+}
+
+.team-section #ret-info{
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    width: 100%;
+ 
+}
+
+.team-section .ret .up-side p{
+    font-size: 25px;
+    color: var(--preto);
+}
+
+.team-section .ret .up-side span{
+    font-size: 20px;
+    color: var(--vermelho);
 }
 
 /*bets*/
