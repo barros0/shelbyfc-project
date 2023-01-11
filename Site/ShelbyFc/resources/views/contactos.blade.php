@@ -14,7 +14,11 @@
     </div>
 
     <div class="contact-section">
-            <div class="left-side"></div>
+            <div class="left-side">
+              <div class="ret"><i class='bx bxs-phone-call'></i><p>+351 986 457 210</p></div>
+              <div class="ret"><i class='bx bxs-envelope' ></i><p>support@shelbyfc.com</p></div>
+              <div class="ret"><i class='bx bxs-home' ></i><p>R. Gen. Norton de Matos Apartado 4133</p><br><p> 2411-901 Leiria</p></div>
+            </div>
             <div class="right-side"></div>
     </div>
 
