@@ -1119,8 +1119,6 @@ span {
     font-size: 23px;
     border-bottom: 1px solid rgba(203, 203, 203, 0.499);
     font-family: 'Bebas Neue', cursive;
-    align-items: center;
-    display: flex;
 }
 
 .accordion:hover {
@@ -1159,7 +1157,7 @@ span {
     font-size: 13px;
     color: #777;
     float: right;
-   
+   margin-top: 10px;
 }
 
 .accordion .active:after {
