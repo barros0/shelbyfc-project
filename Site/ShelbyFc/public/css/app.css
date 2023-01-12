@@ -1984,7 +1984,7 @@ label.custom-file-upload {
 
 .contact-section{
     width: 100%;
-    height: 500px;
+    height: 650px;
     display: flex;
     flex-direction: row;
     padding: 30px;
@@ -2003,36 +2003,123 @@ label.custom-file-upload {
     height: 33%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: left;
     margin-left: 30px;
     
 }
 
-.contact-section i{
+.contact-section #ret1{
+    display: flex;
+    align-items: flex-end;
+}
+
+.contact-section #ret2{
+    display: flex;
+    align-items: center;
+}
+
+.contact-section #ret3{
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-section .left-side i{
     margin-right: 30px;
-    font-size: 50px;
+    font-size: 35px;
     color: var(--vermelho);
 }
 
 .contact-section .left-side p{
-    font-size: 22px;
+    font-size: 18px;
 }
 
 
 .contact-section .right-side{
     width: 60%;
     height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-section form{
+    width: 600px;
+}
+
+.contact-section input{
+    border: 1px solid var(--vermelho);
+    height: 45px;
+    border-radius: 5px;
+    font-size: 14px;
     
 }
 
 
 
+.contact-section #button{
+    opacity: 100%;
+}
+
+.contact-section #mensagem{
+    height: 150px;
+}
+
+.contact-section #nome{
+    margin-right: 15px;
+}
+
+
+.contact-section .top-form{
+    display: flex;
+    flex-direction: row;
+}
 
 
 
+.contact-section .top-form .input-icons{
+    width: 350px;
+    
+}
 
+.contact-section .input-icons i {
+    position: absolute;
+}
+  
+.contact-section .input-icons {
+    align-items: center;
+    display: flex;
+    
+}
+  
+.contact-section i{
+    margin-left: 10px;
+    margin-bottom: 18px;
+    font-size: 25px;
+    color: #262626;
+}
+  
+.contact-section input::placeholder{
+    color: #262626;
+    font-weight: bold;
+}
+.contact-section .input-field {
+    text-align: center;
+}
+  
+.contact-section .up-side{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+   text-align: justify;
+}
 
+.contact-section .down-side{
+    width: 100%;
+    height: 400px;
+}
 
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
