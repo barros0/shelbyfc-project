@@ -2054,15 +2054,23 @@ label.custom-file-upload {
     
 }
 
+.contact-section textarea{
+    border: 1px solid var(--vermelho);
+    height: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 600px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
 
 
 .contact-section #button{
     opacity: 100%;
 }
 
-.contact-section #mensagem{
-    height: 150px;
-}
+
 
 .contact-section #nome{
     margin-right: 15px;
@@ -2099,6 +2107,10 @@ label.custom-file-upload {
 }
   
 .contact-section input::placeholder{
+    color: #262626;
+    font-weight: bold;
+}
+.contact-section textarea::placeholder{
     color: #262626;
     font-weight: bold;
 }

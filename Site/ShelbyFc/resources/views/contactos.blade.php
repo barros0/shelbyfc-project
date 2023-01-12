@@ -50,7 +50,7 @@
                <i class='bx bx-captions' ></i>
                 <input class="input-field" type="text" id="assunto" name="assunto" placeholder="Assunto" require>
             </div>
-                <input class="input-field" type="text" id="mensagem" name="mensagem" placeholder="Mensagem" require>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="  Em que podemos ajudar?" require></textarea>
             <input type="submit" class="btn" value="Enviar Mensagem">
         </form>
 
