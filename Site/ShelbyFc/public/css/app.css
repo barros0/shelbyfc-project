@@ -2108,11 +2108,11 @@ label.custom-file-upload {
   
 .contact-section input::placeholder{
     color: #262626;
-    font-weight: bold;
+    
 }
 .contact-section textarea::placeholder{
     color: #262626;
-    font-weight: bold;
+    
 }
 .contact-section .input-field {
     text-align: center;
