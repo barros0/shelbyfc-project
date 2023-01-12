@@ -35,22 +35,22 @@
               <div class="top-form">
               <div class="input-icons" >
               <i class='bx bx-user'></i>
-                <input class="input-field" type="text"id="nome" name="nome" placeholder="Nome" require>
+                <input class="input-field" type="text"id="nome" name="nome" placeholder="Nome" required>
             </div>
             <div class="input-icons" >
             <i class='bx bx-phone' ></i>
-                <input class="input-field" type="text"id="telefone" name="telefone" placeholder="Telefone" require>
+                <input class="input-field" type="text"id="telefone" name="telefone" placeholder="Telefone" required>
             </div>
               </div>
             <div class="input-icons">
             <i class='bx bx-envelope' ></i>
-                <input class="input-field" type="text"id="email" name="email"  placeholder="E-mail" require>
+                <input class="input-field" type="text"id="email" name="email"  placeholder="E-mail" required>
             </div>
             <div class="input-icons">
                <i class='bx bx-captions' ></i>
-                <input class="input-field" type="text" id="assunto" name="assunto" placeholder="Assunto" require>
+                <input class="input-field" type="text" id="assunto" name="assunto" placeholder="Assunto" required>
             </div>
-            <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="  Em que podemos ajudar?" require></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" cols="50" placeholder="  Em que podemos ajudar?" required></textarea>
             <input type="submit" class="btn" value="Enviar Mensagem">
         </form>
 
