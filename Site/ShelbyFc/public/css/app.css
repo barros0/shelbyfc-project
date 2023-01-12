@@ -1157,7 +1157,7 @@ span {
     font-size: 13px;
     color: #777;
     float: right;
-   margin-top: 10px;
+    margin-top: 10px;
 }
 
 .accordion .active:after {
@@ -1493,13 +1493,13 @@ span {
     color: #777;
 }
 
-.img_preview {
+.preview_images img{
     border: 1px solid #777;
     border-style: dashed;
     border-radius: 0;
     width: 40px;
     height: 40px;
-    margin: auto 10px auto 0;
+    margin: 10px;
 }
 
 .preview {
@@ -1749,7 +1749,7 @@ label.custom-file-upload {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 
 
 }
@@ -1803,7 +1803,7 @@ label.custom-file-upload {
 }
 
 .what-section #ret1 {
-    background-color:white;
+    background-color: white;
 }
 
 .what-section #ret2 {
@@ -1834,8 +1834,8 @@ label.custom-file-upload {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    font-size:25px;
-    font-family: 'Bebas Neue', cursive ; 
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
 }
 
@@ -1917,16 +1917,16 @@ label.custom-file-upload {
     height: 75%;
 }
 
-.team-section .up-side{
+.team-section .up-side {
     width: 100%;
     height: 50%;
 }
 
-.team-section .down-side i{
+.team-section .down-side i {
     margin: 10px;
 }
 
-.team-section .down-side{
+.team-section .down-side {
     width: 100%;
     height: 50%;
     display: flex;
@@ -1939,20 +1939,20 @@ label.custom-file-upload {
     color: #000;
 }
 
-.team-section #ret-info{
+.team-section #ret-info {
     display: flex;
     flex-direction: column;
     height: 25%;
     width: 100%;
- 
+
 }
 
-.team-section .ret .up-side p{
+.team-section .ret .up-side p {
     font-size: 25px;
     color: var(--preto);
 }
 
-.team-section .ret .up-side span{
+.team-section .ret .up-side span {
     font-size: 20px;
     color: var(--vermelho);
 }
@@ -1982,7 +1982,7 @@ label.custom-file-upload {
     z-index: 0;
 }
 
-.contact-section{
+.contact-section {
     width: 100%;
     height: 650px;
     display: flex;
@@ -1990,51 +1990,51 @@ label.custom-file-upload {
     padding: 30px;
 }
 
-.contact-section .left-side{
+.contact-section .left-side {
     width: 40%;
     height: 100%;
     border-right: 1px solid rgba(39, 39, 39, 0.151);
     display: flex;
     flex-direction: column;
-    
+
 }
 
-.contact-section .ret{
+.contact-section .ret {
     height: 33%;
     width: 100%;
     display: flex;
     justify-content: left;
     margin-left: 30px;
-    
+
 }
 
-.contact-section #ret1{
+.contact-section #ret1 {
     display: flex;
     align-items: flex-end;
 }
 
-.contact-section #ret2{
+.contact-section #ret2 {
     display: flex;
     align-items: center;
 }
 
-.contact-section #ret3{
+.contact-section #ret3 {
     display: flex;
     align-items: flex-start;
 }
 
-.contact-section .left-side i{
+.contact-section .left-side i {
     margin-right: 30px;
     font-size: 35px;
     color: var(--vermelho);
 }
 
-.contact-section .left-side p{
+.contact-section .left-side p {
     font-size: 18px;
 }
 
 
-.contact-section .right-side{
+.contact-section .right-side {
     width: 60%;
     height: 100%;
     align-items: center;
@@ -2042,19 +2042,19 @@ label.custom-file-upload {
     justify-content: center;
 }
 
-.contact-section form{
+.contact-section form {
     width: 600px;
 }
 
-.contact-section input{
+.contact-section input {
     border: 1px solid var(--vermelho);
     height: 45px;
     border-radius: 5px;
     font-size: 14px;
-    
+
 }
 
-.contact-section textarea{
+.contact-section textarea {
     border: 1px solid var(--vermelho);
     height: 150px;
     border-radius: 5px;
@@ -2066,69 +2066,71 @@ label.custom-file-upload {
 
 
 
-.contact-section #button{
+.contact-section #button {
     opacity: 100%;
 }
 
 
 
-.contact-section #nome{
+.contact-section #nome {
     margin-right: 15px;
 }
 
 
-.contact-section .top-form{
+.contact-section .top-form {
     display: flex;
     flex-direction: row;
 }
 
 
 
-.contact-section .top-form .input-icons{
+.contact-section .top-form .input-icons {
     width: 350px;
-    
+
 }
 
 .contact-section .input-icons i {
     position: absolute;
 }
-  
+
 .contact-section .input-icons {
     align-items: center;
     display: flex;
-    
+
 }
-  
-.contact-section i{
+
+.contact-section i {
     margin-left: 10px;
     margin-bottom: 18px;
     font-size: 25px;
     color: #262626;
 }
-  
-.contact-section input::placeholder{
+
+.contact-section input::placeholder {
     color: #262626;
-    
+
 }
-.contact-section textarea::placeholder{
+
+.contact-section textarea::placeholder {
     color: #262626;
-    
+
 }
+
 .contact-section .input-field {
     text-align: center;
 }
-  
-.contact-section .up-side{
+
+.contact-section .up-side {
     width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-   text-align: justify;
+    text-align: justify;
 }
 
-.contact-section .down-side{
+.contact-section .down-side {
     width: 100%;
     height: 400px;
 }
