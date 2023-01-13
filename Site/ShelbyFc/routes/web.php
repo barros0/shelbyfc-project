@@ -14,6 +14,7 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
@@ -116,6 +117,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
     Route::resource('/faqs', FaqsController::class);
+    Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
