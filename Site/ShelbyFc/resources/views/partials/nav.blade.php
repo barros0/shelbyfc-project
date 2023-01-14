@@ -91,7 +91,7 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('contactos') }}">
+                                    href="{{ route('contacts') }}">
                                     Contactos
                                 </a>
                             </li>

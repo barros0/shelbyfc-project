@@ -23,7 +23,6 @@ class ContactsController extends Controller
     }
     public function show(Contacts $contacts)
     {
-
         return view('admin.contacts.index',compact('contacts'));
     }
 }

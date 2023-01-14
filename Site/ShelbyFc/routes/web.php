@@ -90,11 +90,20 @@ Route::get('/noticia/{id}', [PageController::class, 'NoticiaModal'])->name('Noti
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
+
+Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [PageController::class, 'contacts_post'])->name('contacts.post');
+
+
+
+
+
+
+
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
-Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
