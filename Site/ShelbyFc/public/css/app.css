@@ -1920,6 +1920,13 @@ label.custom-file-upload {
 .team-section .up-side {
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.team-section .up-side p{
+   font-size: 18px;
 }
 
 .team-section .down-side i {
@@ -1948,12 +1955,14 @@ label.custom-file-upload {
 }
 
 .team-section .ret .up-side p {
-    font-size: 25px;
-    color: var(--preto);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
 }
 
+
 .team-section .ret .up-side span {
-    font-size: 20px;
+    font-size: 15px;
     color: var(--vermelho);
 }
 
