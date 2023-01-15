@@ -14,6 +14,7 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
@@ -89,11 +90,20 @@ Route::get('/noticia/{id}', [PageController::class, 'NoticiaModal'])->name('Noti
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
+
+Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [PageController::class, 'contacts_post'])->name('contacts.post');
+
+
+
+
+
+
+
 Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
-Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
@@ -116,6 +126,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
     Route::resource('/faqs', FaqsController::class);
+    Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {

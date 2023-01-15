@@ -1157,7 +1157,7 @@ span {
     font-size: 13px;
     color: #777;
     float: right;
-    margin-left: 5px;
+    margin-top: 10px;
 }
 
 .accordion .active:after {
@@ -1493,13 +1493,13 @@ span {
     color: #777;
 }
 
-.img_preview {
+.preview_images img {
     border: 1px solid #777;
     border-style: dashed;
     border-radius: 0;
     width: 40px;
     height: 40px;
-    margin: auto 10px auto 0;
+    margin: 10px;
 }
 
 .preview {
@@ -1540,7 +1540,7 @@ label.custom-file-upload {
     padding: 30px;
 }
 
-.create_forum img.user_forum_img {
+.user_forum_img {
     margin: 0 10px 10px;
     height: 50px;
     width: 50px;
@@ -1749,7 +1749,7 @@ label.custom-file-upload {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 
 
 }
@@ -1803,7 +1803,7 @@ label.custom-file-upload {
 }
 
 .what-section #ret1 {
-    background-color:white;
+    background-color: white;
 }
 
 .what-section #ret2 {
@@ -1834,8 +1834,8 @@ label.custom-file-upload {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    font-size:25px;
-    font-family: 'Bebas Neue', cursive ; 
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
 }
 
@@ -1917,16 +1917,23 @@ label.custom-file-upload {
     height: 75%;
 }
 
-.team-section .up-side{
+.team-section .up-side {
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.team-section .down-side i{
+.team-section .up-side p{
+   font-size: 18px;
+}
+
+.team-section .down-side i {
     margin: 10px;
 }
 
-.team-section .down-side{
+.team-section .down-side {
     width: 100%;
     height: 50%;
     display: flex;
@@ -1939,25 +1946,205 @@ label.custom-file-upload {
     color: #000;
 }
 
-.team-section #ret-info{
+.team-section #ret-info {
     display: flex;
     flex-direction: column;
     height: 25%;
     width: 100%;
- 
+
 }
 
-.team-section .ret .up-side p{
-    font-size: 25px;
-    color: var(--preto);
+.team-section .ret .up-side p {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
 }
 
-.team-section .ret .up-side span{
-    font-size: 20px;
+
+.team-section .ret .up-side span {
+    font-size: 15px;
     color: var(--vermelho);
 }
 
-/*bets*/
+/*------------------------------------------------------------------------ CONTACTOS -----------------------------------------------------------------------------------*/
+
+.conteudo-contactos .imagem-inicio {
+    background-image: url(../images/contactos/fundo-contactos.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.conteudo-contactos {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.contact-section {
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.contact-section .left-side {
+    width: 40%;
+    height: 100%;
+    border-right: 1px solid rgba(39, 39, 39, 0.151);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-section .ret {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-left: 30px;
+
+}
+
+.contact-section #ret1 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.contact-section #ret2 {
+    display: flex;
+    align-items: center;
+}
+
+.contact-section #ret3 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-section .left-side i {
+    margin-right: 30px;
+    font-size: 35px;
+    color: var(--vermelho);
+}
+
+.contact-section .left-side p {
+    font-size: 18px;
+}
+
+
+.contact-section .right-side {
+    width: 60%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-section form {
+    width: 600px;
+}
+
+.contact-section input {
+    border: 1px solid var(--vermelho);
+    height: 45px;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+
+.contact-section textarea {
+    border: 1px solid var(--vermelho);
+    height: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 600px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+
+
+.contact-section #button {
+    opacity: 100%;
+}
+
+
+
+.contact-section #nome {
+    margin-right: 15px;
+}
+
+
+.contact-section .top-form {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.contact-section .top-form .input-icons {
+    width: 350px;
+
+}
+
+.contact-section .input-icons i {
+    position: absolute;
+}
+
+.contact-section .input-icons {
+    align-items: center;
+    display: flex;
+
+}
+
+.contact-section i {
+    margin-left: 10px;
+    margin-bottom: 18px;
+    font-size: 25px;
+    color: #262626;
+}
+
+.contact-section input::placeholder {
+    color: #262626;
+
+}
+
+.contact-section textarea::placeholder {
+    color: #262626;
+
+}
+
+.contact-section .input-field {
+    text-align: center;
+}
+
+.contact-section .up-side {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: justify;
+}
+
+.contact-section .down-side {
+    width: 100%;
+    height: 400px;
+}
+
+/*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
 .team-img {
     width: 180px;

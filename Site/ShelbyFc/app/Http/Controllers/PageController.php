@@ -188,41 +188,41 @@ class PageController extends Controller
     }
 
 
-    public function contactos()
+    public function contacts()
     {
+        $contacts = Contacts::all();
 
-        return view('contactos');
+        return view('contacts')->with('contacts', $contacts);
+      
     }
 
-
-    public function sendcontact(Request $request)
+    public function contacts_post(Request $request)
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'telefone' => 'nullable',
-            'email' => 'required|email',
-            'assunto' => 'required',
-            'mensagem' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
         ]);
 
-        $contact = new Contacts();
-        $contact->name = $request->nome;
-        $contact->phone = $request->telefone;
-        $contact->subject = $request->assunto;
-        $contact->email = $request->email;
-        $contact->message = $request->mensagem;
-        $contact->save();
+       
 
-
-        // depois adicionar para queue
-
+        $contacts = new Contacts();
+        $contacts->name = $request->name;
+        $contacts->email = $request->email;
+        $contacts->phone = $request->phone;
+        $contacts->subject = $request->subject;
+        $contacts->message = $request->message;
+    
         Mail::send('email.contact', compact('contact'), function ($message) use ($contact) {
             $message->to($contact->email);
             $message->subject('Obrigado pelo seu contacto!');
         });
+        
+        $contacts->save();
 
-
-        Session::flash('success', 'A sua mensagem foi enviada. Obrigado!');
+        Session::flash('success', 'Mensagem Enviada!');
         return back();
     }
 }
