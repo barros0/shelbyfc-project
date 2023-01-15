@@ -27,20 +27,20 @@ class ForumController extends Controller
 
     public function create(Request $request)
     {
-        $posts = Posts::all();
+        $posts = Forum_post::all();
         return view('forum.index', compact('posts'));
     }
 
     public function store_post(Request $request)
     {
+        return $request;
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            /*'image' => 'required',*/
+            'gallery-photo-add' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
         ]);
 
-
-        $forum_posts = new Posts();
+        $forum_posts = new Forum_post();
         $user_id = Auth::user()->id;
         $forum_posts->user_id = $user_id;
         $forum_posts->title = $request->title;
@@ -52,12 +52,12 @@ class ForumController extends Controller
     }
 
 
-    public function post(Posts $post)
+    public function post(Forum_post $post)
     {
         return view('forum.post', compact('post'));
     }
 
-    public function delete_post(Posts $post)
+    public function delete_post(Forum_post $post)
     {
 
         if ($post->user_id <> Auth::id()) {
@@ -75,7 +75,7 @@ class ForumController extends Controller
     public function addcomment(Request $request, $postid)
     {
 
-        Posts::findorfail($postid);
+        Forum_post::findorfail($postid);
 
         $comment = new forum_posts_comment();
         $comment->user_id = Auth::id();
@@ -89,7 +89,7 @@ class ForumController extends Controller
     public function reply(Request $request, $postid, $commentid)
     {
 
-        Posts::findorfail($postid);
+        Forum_post::findorfail($postid);
         forum_posts_comment::findorfail($commentid);
 
         $comment = new forum_posts_comment();

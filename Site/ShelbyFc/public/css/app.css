@@ -1493,7 +1493,7 @@ span {
     color: #777;
 }
 
-.preview_images img{
+.preview_images img {
     border: 1px solid #777;
     border-style: dashed;
     border-radius: 0;
@@ -1540,7 +1540,7 @@ label.custom-file-upload {
     padding: 30px;
 }
 
-.create_forum img.user_forum_img {
+.user_forum_img {
     margin: 0 10px 10px;
     height: 50px;
     width: 50px;
