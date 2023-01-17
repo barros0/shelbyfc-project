@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bets;
 use App\Models\BetsPayment;
 use App\Models\Game;
+use App\Models\Transactions;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Carbon\Carbon;
@@ -65,7 +66,7 @@ class BetsController extends Controller
         // verifica se não passou da data limit de jogo
         $game = Game::find($request->jogo)->where('limit_bet', '>', Carbon::now())->firstorfail();
 
-        $total = $game->$fator * $montante;
+        $total = $montante;//$game->$fator * $montante;
 
         if (Carbon::now() > $game->limit_bet) {
             Session::flash('alert', 'Ultrapassou a data limit de aposta! Data limkite: ' . $game->limit_bet);
@@ -81,7 +82,33 @@ class BetsController extends Controller
         $bet->value = $total;
         $bet->fator = $fator;
         $bet->save();
+
         $bet_id = $bet->id;
+
+        // se o user tiver saldo suf par paar paga logo
+        if(Auth::user()->balance > $total){
+
+            // mete bet como paga
+            $bet = Bets::find($bet_id);
+            $bet->is_paid = true;
+            $bet->save();
+
+            // find game
+            $game = Game::find($bet->game_id);
+
+            // cria historico de transacao
+            $transaction = new Transactions();
+            $transaction->user_id = Auth::id();
+            $transaction->description = 'Aposta no jogo nº' . $game->id . ' | Shelby FC VS ' . $game->opponent->name;
+            $transaction->value = $bet->value;
+            $transaction->save();
+
+            Auth::user()->balance -= $total;
+            Auth::user()->save();
+
+            Session::flash('success', 'Aposta realizada!!');
+            return back();
+        }
 
 
 

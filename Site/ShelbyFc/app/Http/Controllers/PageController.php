@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contacts;
+use App\Models\Contact;
 use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
@@ -152,10 +152,10 @@ class PageController extends Controller
         return view('perfil.seguranca');
     }
 
-    public function transacoes()
+    public function tickets()
     {
 
-        return view('perfil.transacoes');
+        return view('perfil.tickets');
     }
 
     public function sobre()
@@ -165,10 +165,10 @@ class PageController extends Controller
     }
 
 
-    public function preferencias()
+    public function bets()
     {
 
-        return view('perfil.preferencias');
+        return view('perfil.bets');
     }
 
 
@@ -190,41 +190,13 @@ class PageController extends Controller
 
     public function contacts()
     {
-        $contacts = Contacts::all();
+        $contacts = Contact::all();
 
         return view('contacts')->with('contacts', $contacts);
 
     }
 
-    public function contacts_post(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
 
-
-
-        $contacts = new Contacts();
-        $contacts->name = $request->name;
-        $contacts->email = $request->email;
-        $contacts->phone = $request->phone;
-        $contacts->subject = $request->subject;
-        $contacts->message = $request->message;
-
-        Mail::send('email.contact', compact('contact'), function ($message) use ($contact) {
-            $message->to($contact->email);
-            $message->subject('Obrigado pelo seu contacto!');
-        });
-
-        $contacts->save();
-
-        Session::flash('success', 'Mensagem Enviada!');
-        return back();
-    }
 
     public function withdraw(){
 
