@@ -13,7 +13,6 @@ class Forum_posts_images extends Model
 
     public function post()
     {
-
         return $this->hasOne(Forum_post::class, 'post_id', 'id');
     }
 }

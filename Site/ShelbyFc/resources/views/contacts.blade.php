@@ -15,13 +15,16 @@
         </div>
     </div>
 
-    <div class="contact-section">
-        <div class="left-side">
+
+    <div class="contact-section container">
+        <div class="row">
+        <div class="left-side col-md-6">
             <div class="up-side">
                 <h2>Vamos entrar em contacto?</h2>
                 <p>Estamos disponiveis para o ajudar da melhor maneira.</p>
             </div>
 
+            <div class="row">
             <div class="down-side">
 
                 <div class="ret" id="ret1"><i class='bx bxs-phone-call'></i>
@@ -36,11 +39,10 @@
                 </div>
 
             </div>
-
         </div>
-        <div class="right-side">
-
-            <form action="{{ route('contacts.post') }}" method="post" enctype="multipart/form-data">
+        </div>
+        <div class="right-side col-md-6">
+            <form action="{{ route('contacts.create') }}" method="post" enctype="multipart/form-data">
               @method('post')
                 @csrf
                 <div class="top-form">
@@ -62,11 +64,11 @@
                     <i class='bx bx-captions'></i>
                     <input class="input-field" type="text" id="assunto" name="subject" placeholder="Assunto" required>
                 </div>
-                <textarea id="mensagem" name="message" rows="4" cols="50" placeholder="  Em que podemos ajudar?"
+                <textarea id="mensagem" name="message" rows="4" cols="50" placeholder="Em que podemos ajudar?"
                     required></textarea>
                 <input type="submit" class="btn" value="Enviar Mensagem">
             </form>
-
+        </div>
         </div>
     </div>
 

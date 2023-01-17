@@ -39,15 +39,15 @@
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">
-                                <a href="{{route('transacoes')}}" @if(Route::currentRouteName() == 'transacoes')class="active"@endif>
+                                <a href="{{route('tickets')}}" @if(Route::currentRouteName() == 'tickets')class="active"@endif>
                                     <i class="fa fa-coins"></i>
-                                    Transações
+                                    Bilhetes
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">
-                                <a href="{{route('preferencias')}}" @if(Route::currentRouteName() == 'preferencias')class="active"@endif>
+                                <a href="{{route('bets')}}" @if(Route::currentRouteName() == 'bets')class="active"@endif>
                                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                    Preferências
+                                    Minhas apostas
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">

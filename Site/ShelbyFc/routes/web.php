@@ -75,8 +75,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
-        Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
-        Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+        Route::get('/bilhetes', [PageController::class, 'tickets'])->name('tickets');
+        Route::get('/apostas', [PageController::class, 'bets'])->name('bets');
 
         Route::get('/retirar-saldo', [PageController::class, 'withdraw'])->name('withdraw');
         Route::post('/retirar-saldo', [UserController::class, 'dowithdraw'])->name('dowithdraw');
@@ -94,7 +94,7 @@ Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 
 
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
-Route::post('/contacts', [PageController::class, 'contacts_post'])->name('contacts.post');
+Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.create');
 
 
 
@@ -132,10 +132,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
 
-    Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
-        Route::get('/', [AdminController::class, 'contacts'])->name('index');
-        Route::get('/{contact}', [AdminController::class, 'contact'])->name('show');
-    });
+
 });
 
 

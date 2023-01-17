@@ -24,7 +24,7 @@
             <td>{{ $withdraw->user->name }}</td>
             <td>{{ $withdraw->value }}€</td>
             <td>
-                @if($withdraw->status)
+                @if($withdraw->complete)
                     <p class="btn-success">
                         Completo
                     </p>

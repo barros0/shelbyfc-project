@@ -241,6 +241,11 @@ class UserController extends Controller
         return back();
     }
 
+    public function apostas(){
+
+        return view('perfil.bets');
+    }
+
 
 
 
