@@ -15,7 +15,9 @@ class ForumController extends Controller
     public function index()
     {
         $posts = Forum_post::get();
-        return view('forum.index', compact('posts'));
+        $posts_images = Forum_posts_images::get();
+
+        return view('forum.index', compact('posts', 'posts_images'));
     }
 
     public function posts_user($user_id)
