@@ -56,7 +56,7 @@ class BetsController extends Controller
         $request->validate([
             'montante' => 'required|numeric|min:1|max:500',
             'jogo' => 'required|exists:games,id',
-            'fator' => 'in:draw,win,lose'
+            'fator' => 'required|in:draw,win,lose'
         ]);
 
         $fator = $request->fator;
@@ -86,7 +86,7 @@ class BetsController extends Controller
         $bet_id = $bet->id;
 
         // se o user tiver saldo suf par paar paga logo
-        if(Auth::user()->balance > $total){
+        if(Auth::user()->balance >= $total){
 
             // mete bet como paga
             $bet = Bets::find($bet_id);
@@ -109,6 +109,10 @@ class BetsController extends Controller
             Session::flash('success', 'Aposta realizada!!');
             return back();
         }
+        else{
+            $total -= Auth::user()->balance;
+        }
+
 
 
 
