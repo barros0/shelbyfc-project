@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
+use App\Models\Forum_posts_images;
 use App\Models\Forum_post;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -33,11 +33,10 @@ class ForumController extends Controller
 
     public function store_post(Request $request)
     {
-        return $request;
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'gallery-photo-add' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $forum_posts = new Forum_post();
@@ -46,6 +45,20 @@ class ForumController extends Controller
         $forum_posts->title = $request->title;
         $forum_posts->body = $request->body;
         $forum_posts->save();
+
+        $images = $request->file('images');
+        foreach ($images as $image) {
+            if ($image->isValid()) {
+                $extension = $image->getClientOriginalExtension();
+                $image_name = uniqid() . '.' . $extension;
+                $image->move(public_path('images/noticias'), $image_name);
+            }
+            $forum_images = new Forum_posts_images();
+            $post_id = $forum_posts->id;
+            $forum_images->post_id = $post_id;
+            $forum_images->image = $image_name;
+            $forum_images->save();
+        }
 
         Session::flash('success', 'Publicação adicionada!');
         return back();

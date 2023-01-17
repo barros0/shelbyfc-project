@@ -13,6 +13,8 @@
             </div>
             <div class="d-flex justify-content-around align-items-center">
                 @if (Auth::check())
+                    <a href="{{ route('withdraw') }}">{{Auth::user()->balance}}€</a>
+
                     <a href="{{ route('perfil') }}">Minha conta</a>
 
                     @if (Auth::user()->is_admin)

@@ -22,6 +22,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/phpunit/phpunit" />
@@ -115,7 +123,6 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-php81" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/symfony/polyfill-intl-idn" />
@@ -137,6 +144,8 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/srmklive/paypal" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/intervention/validation" />
+      <path value="$PROJECT_DIR$/ShelbyFc/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Hb9iZ1RgjZS4Q8nRSnP0vBDj3v" />
@@ -149,18 +158,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/admin/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin" />
+      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\perfil" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\users" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views" />
-      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin" />
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\games" />
-      <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\resources\views\admin\news" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\submi\OneDrive\Ambiente de Trabalho\shelbyfc-project\Site\ShelbyFc\public\fonts" />
@@ -202,6 +211,7 @@
       <workItem from="1672770200027" duration="7186000" />
       <workItem from="1673058913066" duration="331000" />
       <workItem from="1673189080433" duration="2024000" />
+      <workItem from="1673954952119" duration="7941000" />
     </task>
     <servers />
   </component>

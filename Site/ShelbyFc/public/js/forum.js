@@ -24,26 +24,26 @@ $(function () {
                     };
                     reader.readAsDataURL(input.files[i]);
                 }
-                $("#clear").css("display","block");
+                $("#clear").css("display", "block");
             } else {
                 alert("too much my nigga");
             }
         }
     };
 
-    $("#gallery-photo-add").on("change", function () {
+    $("#images").on("change", function () {
         imagesPreview(this, "div.preview_images");
     });
 });
 
-$("#gallery-photo-add").click(function () {
-    $("#gallery-photo-add").val("");
+$("#images").click(function () {
+    $("#images").val("");
     $(".preview_images").empty();
-    $("#clear").css("display","none");
+    $("#clear").css("display", "none");
 });
 
 $("#clear").click(function () {
-    $("#clear").css("display","none");
-    $("#gallery-photo-add").val("");
+    $("#clear").css("display", "none");
+    $("#images").val("");
     $(".preview_images").empty();
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Ticket;
+use App\Models\withdraw;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -209,6 +210,34 @@ class UserController extends Controller
         $user->delete();
 
         Session::flash('success', 'Utilizador eliminado!');
+        return back();
+    }
+
+    public function dowithdraw(Request $request){
+        $request->validate(['iban' => 'required|iban'  ],
+            ['iban.iban' => 'O IBAN deve ser um Número de Conta Bancária Internacional (IBAN) válido.'
+         ]);
+
+
+
+        $user = Auth::user();
+
+        if($user->balance < 10){
+            Session::flash('alert', 'Necessita de pelo menos 10€ na sua conta para fazer um levantamento.');
+            return back();
+        }
+
+        $withdraw = new withdraw();
+        $withdraw->user_id = Auth::id();
+        $withdraw->iban = $request->iban;
+        $withdraw->value = $user->balance;
+        $withdraw->save();
+
+        $user->balance = 0;
+        $user->save();
+
+
+        Session::flash('alert','Tranferência registada, deverá receber o valor na sua conta bancaria dentro de alguns dias.');
         return back();
     }
 

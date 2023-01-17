@@ -141,7 +141,7 @@ class GamesController extends Controller
      */
     public function show(Game $game)
     {
-        return view('admin.games.show');
+        return view('admin.games.show', compact('game'));
     }
 
     /**

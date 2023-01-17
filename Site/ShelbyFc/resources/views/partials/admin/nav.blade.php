@@ -156,9 +156,19 @@
                     <span class="link hide">Utilizadores</span>
                 </a>
             </li>
+            <li class="tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.withdraw.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-money'></i>
+                        <i class='bx bxs-money'></i>
+                    </div>
+                    <span class="link hide">Tranferências</span>
+                </a>
+            </li>
 
             <div class="tooltip">
                 <span class="show">Utilizadores</span>
+                <span>Tranferências</span>
             </div>
         </ul>
 

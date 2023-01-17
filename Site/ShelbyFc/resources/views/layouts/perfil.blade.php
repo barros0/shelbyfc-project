@@ -51,6 +51,14 @@
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">
+                                <a href="{{route('withdraw')}}" @if(Route::currentRouteName() == 'withdraw')class="active"@endif>
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                    Retirar Saldo
+                                </a>
+                            </li>
+
+
+                            <li class="col-6 col-md-12">
 
                                 <a class="logoutbt" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" id="v-preferencias-tab" data-bs-toggle="pill"
                                    data-bs-target="#v-preferencias" type="button" role="tab"

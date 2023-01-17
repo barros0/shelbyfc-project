@@ -6,14 +6,13 @@
             <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
             <div style="width:80%;" class="d-flex flex-column">
                 <form action="{{ route('forum.store_post') }}" method="post" enctype="multipart/form-data">
-                    @method('post')
                     @csrf
                     <input placeholder="O que estás a pensar?" type="text" name="title" id="title" required>
                     <div id="open_forum" style="display:none;">
                         <textarea placeholder="Escreva algo..." name="body" id="body" required></textarea>
                         <div class="d-flex flex-row align-items-center">
-                            <input multiple hidden type="file" name="gallery-photo-add" id="gallery-photo-add">
-                            <label for="gallery-photo-add" class="custom-file-upload"><i class='bx bx-plus'></i></label>
+                            <input multiple hidden type="file" name="images[]" id="images">
+                            <label for="images" class="custom-file-upload"><i class='bx bx-plus'></i></label>
                             <div class="preview_images"></div>
                             <i id="clear" style="display:none;" class='bx bx-x'></i>
                         </div>

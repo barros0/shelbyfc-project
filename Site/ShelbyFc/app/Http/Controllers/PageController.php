@@ -193,7 +193,7 @@ class PageController extends Controller
         $contacts = Contacts::all();
 
         return view('contacts')->with('contacts', $contacts);
-      
+
     }
 
     public function contacts_post(Request $request)
@@ -206,7 +206,7 @@ class PageController extends Controller
             'message' => 'required',
         ]);
 
-       
+
 
         $contacts = new Contacts();
         $contacts->name = $request->name;
@@ -214,15 +214,20 @@ class PageController extends Controller
         $contacts->phone = $request->phone;
         $contacts->subject = $request->subject;
         $contacts->message = $request->message;
-    
+
         Mail::send('email.contact', compact('contact'), function ($message) use ($contact) {
             $message->to($contact->email);
             $message->subject('Obrigado pelo seu contacto!');
         });
-        
+
         $contacts->save();
 
         Session::flash('success', 'Mensagem Enviada!');
         return back();
+    }
+
+    public function withdraw(){
+
+        return view('perfil.withdraw');
     }
 }

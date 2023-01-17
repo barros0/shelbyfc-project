@@ -20,7 +20,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
-
+use \App\Http\Controllers\WithdrawController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +59,6 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
-
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
@@ -78,6 +77,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
         Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
         Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+
+        Route::get('/retirar-saldo', [PageController::class, 'withdraw'])->name('withdraw');
+        Route::post('/retirar-saldo', [UserController::class, 'dowithdraw'])->name('dowithdraw');
 
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
@@ -128,6 +130,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
     Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
+    Route::resource('/withdraw', WithdrawController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
         Route::get('/', [AdminController::class, 'contacts'])->name('index');
