@@ -14,7 +14,9 @@ class WithdrawController extends Controller
      */
     public function index()
     {
-        //
+        $withdraws = withdraw::all();
+
+        return view('admin.withdraw.index', compact('withdraws'));
     }
 
     /**
@@ -46,7 +48,8 @@ class WithdrawController extends Controller
      */
     public function show(withdraw $withdraw)
     {
-        //
+
+        return view('admin.withdraw.show', compact('withdraw'));
     }
 
     /**
@@ -69,7 +72,10 @@ class WithdrawController extends Controller
      */
     public function update(Request $request, withdraw $withdraw)
     {
-        //
+        $withdraw->complete = 1;
+        $withdraw->save();
+
+        return back();
     }
 
     /**

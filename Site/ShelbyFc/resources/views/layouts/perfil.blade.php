@@ -53,7 +53,7 @@
                             <li class="col-6 col-md-12">
                                 <a href="{{route('withdraw')}}" @if(Route::currentRouteName() == 'withdraw')class="active"@endif>
                                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                                    Saldo
+                                    Retirar Saldo
                                 </a>
                             </li>
 

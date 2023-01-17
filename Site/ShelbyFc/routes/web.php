@@ -20,7 +20,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
-
+use \App\Http\Controllers\WithdrawController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -130,6 +130,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
     Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
+    Route::resource('/withdraw', WithdrawController::class);
 
     Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
         Route::get('/', [AdminController::class, 'contacts'])->name('index');
