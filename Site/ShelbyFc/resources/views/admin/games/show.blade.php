@@ -11,35 +11,22 @@
 
     <div class="row">
         <div class="col-sm-6">
-            <span class="bold">Stock de bilhetes:</span>
-            <span> {{$game->stock_tickets}}</span>
+            <span class="bold">Data:</span>
+            <span> {{ $data = date('d M y',strtotime($game->datetime_game)) }}</span>
         </div>
+        <div class="col-sm-6">
+
+            <span class="bold">Hora:</span>
+            <span> {{ $hora = date('H:i',strtotime($game->datetime_game)) }}</span>
+        </div>
+
+            <div class="col-sm-6">
+
+            <span class="bold">Local:</span>
+            <span> {{$game->location}}</span>
+        </div>
+
     </div>
-
-
-
-
-
-
-
-    {{$game->location}}
-
-    {{$game->ticket_price}}
-
-    {{$game->ticket_price_partner}}
-
-    {{$game->opponent->name}}
-
-
-    {{$game->limit_buy_ticket}}
-
-    {{$game->stock_tickets}}
-
-    {{$game->datetime_game}}
-
-
-
-
 
     @if(!$game->result_home || !$game->result_opponent)
     <form action="{{ route('admin.games.publish.doresults', $game) }}" method="post" enctype="multipart/form-data">

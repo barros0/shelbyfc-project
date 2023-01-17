@@ -1,6 +1,5 @@
 @extends('layouts.admin.master')
 
-
 @section('title', 'Novo jogo | Shelby FC')
 
 @section('content')

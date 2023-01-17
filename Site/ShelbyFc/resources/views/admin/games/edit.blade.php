@@ -5,7 +5,7 @@
 @section('content')
 
     <a style="font-size:25px;" href="{{ route('admin.games.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
-    <h1>Novo jogo</h1>
+    <h1>Editar Jogo</h1>
 
     <form action="{{ route('admin.games.update', $game->id) }}" method="post" enctype="multipart/form-data">
         @method('put')
@@ -21,29 +21,29 @@
 
             <div class="form-group col-md-6">
                 <label for="data_jogo">Data limite de compra de bilhetes</label>
-                <input class="form-control" name="data_limite_bilhetes" type="datetime-local" id="data_limite_bilhetes" required value="{{ $game->limit_buy_ticket }}>
+                <input class="form-control" name="data_limite_bilhetes" type="datetime-local" id="data_limite_bilhetes" required value="{{ $game->limit_buy_ticket }}">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="image">Preço bilhete</label>
-                <input class="form-control" name="preco_bilhete" type="number" step="0.01" required value="{{ $game->ticket_price }}>
+                <input class="form-control" name="preco_bilhete" type="number" step="0.01" required value="{{ $game->ticket_price }}">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="image">Preço bilhete sócio</label>
-                <input class="form-control" name="preco_bilhete_socio" type="number" step="0.01" required value="{{ $game->ticket_price_partner }}>
+                <input class="form-control" name="preco_bilhete_socio" type="number" step="0.01" required value="{{ $game->ticket_price_partner }}">
             </div>
 
 
             <div class="form-group col-md-6">
                 <label for="local">Local</label>
-                <input type="text" class="form-control" name="local" id="local" placeholder="Enter Title" required value="{{ $game->location }}>
+                <input type="text" class="form-control" name="local" id="local" placeholder="Enter Title" required value="{{ $game->location }}">
             </div>
 
 
             <div class="form-group col-md-6">
                 <label for="data_jogo">Data do jogo</label>
-                <input class="form-control" name="data_jogo" type="datetime-local" id="data_jogo" required value="{{ $game->datetime_game }}>
+                <input class="form-control" name="data_jogo" type="datetime-local" id="data_jogo" required value="{{ $game->datetime_game }}">
             </div>
 
 
@@ -51,7 +51,7 @@
                 <label>Equipa adverária</label>
                 <div class="form-group">
                     <select required name="equipa">
-                        <option value="value="{{ $game->name }}">Selecione...</option>
+                        <option value="">{{ $game->opponent->name}}</option>
                         @foreach ($teams as $team)
                             <option value="{{ $team->id }}">{{ $team->name }}</option>
                         @endforeach

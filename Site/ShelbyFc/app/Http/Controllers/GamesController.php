@@ -169,6 +169,32 @@ class GamesController extends Controller
     public function update(Request $request, Game $game)
     {
         //
+
+        $this->validate($request, [
+            'preco_bilhete' => 'required',
+            'preco_bilhete_socio' => 'required',
+            'local' => 'required',
+            'equipa' => 'required',
+            'data_jogo' => 'required',
+            'data_limite_bilhetes' => 'required',
+            'stock_bilhetes' => 'required',
+            'data_jogo' => 'required',
+        ]);
+
+        $game->ticket_price = $request->preco_bilhete;
+        $game->ticket_price_partner = $request->preco_bilhete_socio;
+        $game->location = $request->local;
+        $game->team_id = $request->equipa;
+        $game->limit_bet = $request->data_jogo;
+        $game->limit_buy_ticket = $request->data_limite_bilhetes;
+        $game->stock_tickets = $request->stock_bilhetes;
+        $game->datetime_game = $request->data_jogo;
+        $game->save();
+
+        Session::flash('success', 'Jogo Atualizado!');
+        return back();
+
+
     }
 
     /**
