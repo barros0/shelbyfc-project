@@ -49,6 +49,13 @@ a {
     cursor: pointer;
 }
 
+.alerts{
+    position: absolute;
+    z-index: 50;
+    top: 20px;
+    left: 20px;
+}
+
 a:hover {
     color: var(--vermelho) !important;
 }

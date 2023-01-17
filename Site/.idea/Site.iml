@@ -99,7 +99,6 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-php80" />
-      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-php81" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/symfony/polyfill-intl-idn" />
@@ -121,6 +120,8 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/srmklive/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/intervention/validation" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/doctrine/deprecations" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -78,6 +78,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
         Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
 
+        Route::get('/retirar-saldo', [PageController::class, 'withdraw'])->name('withdraw');
+        Route::post('/retirar-saldo', [UserController::class, 'dowithdraw'])->name('dowithdraw');
+
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
     });

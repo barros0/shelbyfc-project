@@ -47,7 +47,11 @@
                         </form>
                     </td>
                     <td>
-                        <a href="{{route('admin.games.publish.results', $game) }}" class="btn">Publicar resultados</a>
+                        @if($game->result_home || $game->result_opponent)
+                        <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar resultados</a>
+                        @else
+
+                        @endif
                     </td>
                 </tr>
             @endforeach
