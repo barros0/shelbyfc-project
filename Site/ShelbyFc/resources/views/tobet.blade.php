@@ -39,6 +39,7 @@
                         game_id: gameid,
                     },
                     success: function (data) {
+                        $('#bet_screen').show()
                         $('#date_game').text(data.date_game)
                         $('#game_id').val(data.game_id)
                         $('#win-odd').text(data.win)
@@ -48,6 +49,11 @@
                         $('#team1').val(data.team1)
                         $('#team2_img').attr('src', data.team2_img)
                         $('#team2').val(data.team2)
+
+                        // scroll para o screen de apostas
+                        $('html, body').animate({
+                            scrollTop: $("#bet_screen").offset().top
+                        });
                     },
                     error: function (xhr, exception) {
                         var msg = "";
@@ -105,6 +111,7 @@
 
                 <div class="row text-center">
                     <h2 class="text-center">Próximos jogos</h2>
+                    <p>(Selecione um jogo para apostar)</p>
                 </div>
 
                 <div class="gametable_bet">
@@ -120,7 +127,7 @@
                                     class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
                                     <p class="text-center fw-bolder">Amigável</p>
                                     <h4 class="vs text-center">VS</h4>
-                                    <p class="text-center">{{$game->date}}</p>
+                                    <p class="text-center">{{$game->datetime_game}}</p>
                                 </div>
 
                                 <div class="team-img">
@@ -137,7 +144,7 @@
             <div class="row text-center mx-0 g-0 p-0 col-lg-8">
                 <!-- <h2 class="mb-3">Selecione um jogo...</h2> -->
 
-                <form action="{{route('tobet.post')}}" method="post">
+                <form action="{{route('tobet.post')}}" method="post" id="bet_screen" style="display: none">
                     @csrf
                     <input name="jogo" id="game_id" type="number" hidden>
                     <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">

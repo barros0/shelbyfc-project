@@ -2144,11 +2144,16 @@ label.custom-file-upload {
 
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
+#bet_screen{
+    padding-top: 40px;
+}
+
 .team-img {
     width: 180px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
 }
 
 .team-img img {
@@ -2173,7 +2178,6 @@ label.custom-file-upload {
 
 .info-game {
     width: 30%;
-
 }
 
 .vs {
@@ -2187,6 +2191,10 @@ label.custom-file-upload {
 
 .bet_active {
     background-color: var(--vermelho) !important;
+}
+
+.bet_active .vs,.bet_active p{
+    color: white;
 }
 
 .ganhos {

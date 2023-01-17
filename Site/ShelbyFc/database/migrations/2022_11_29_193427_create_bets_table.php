@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->enum('fator', ['win','draw', 'lose']);
             $table->boolean('is_paid')->default(false);
             $table->timestamps();
+           // $table->softDeletes();
         });
     }
 
