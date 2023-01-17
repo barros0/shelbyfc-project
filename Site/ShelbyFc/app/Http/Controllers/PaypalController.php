@@ -83,6 +83,7 @@ class PayPalController extends Controller
     public function cancelTransaction(Request $request)
     {
         // return 'transacao cancelada';
+
         return redirect()
             ->route('tobet')
             ->with('error', $response['message'] ?? 'Você cancelou esta transação.');

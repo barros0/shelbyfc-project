@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('bets_payments', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('bet_id')->unsigned();
-            $table->foreign('bet_id')->references('id')->on('bets');
+            $table->foreign('bet_id')->references('id')->on('bets')->onDelete('cascade');
             $table->string('paypal_id');
             $table->dateTime('date')->nullable();
             $table->text('response')->nullable();

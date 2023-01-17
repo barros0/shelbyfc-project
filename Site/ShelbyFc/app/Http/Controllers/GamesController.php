@@ -19,7 +19,7 @@ class GamesController extends Controller
     public function index()
     {
 
-        $games = Game::orderby('datetime_game','desc')->get();
+        $games = Game::orderby('datetime_game', 'desc')->get();
         return view('admin.games.index', compact('games'));
     }
 
@@ -39,7 +39,7 @@ class GamesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(GameRequest $request)
@@ -47,15 +47,16 @@ class GamesController extends Controller
         //  generate odds
 
         //temporario
-        function gerar_prob_random(){
+        function gerar_prob_random()
+        {
             $min = 1;
             $max = 4;
-            return mt_rand ($min*10, $max*10) / 10;
+            return mt_rand($min * 10, $max * 10) / 10;
         }
 
-        $fields=$request->validated();
+        $fields = $request->validated();
 
-        $game = New Game();
+        $game = new Game();
         //$game->fill($fields);
         $game->ticket_available = 1;
         $game->ticket_price = $request->preco_bilhete;
@@ -96,36 +97,38 @@ class GamesController extends Controller
         $result_home = $request->resultado_shelby;
 
         //empate
-        if($result_home == $result_opponent){
+        if ($result_home == $result_opponent) {
             $fator_resultado = 'draw';
-        }
-        //if casa win
-        else if($result_home > $result_opponent){
+        } //if casa win
+        else if ($result_home > $result_opponent) {
             $fator_resultado = 'win';
-        }
-        //if casa lose
-        else if($result_home < $result_opponent){
+        } //if casa lose
+        else if ($result_home < $result_opponent) {
             $fator_resultado = 'lose';
-        }
-        else{
+        } else {
             abort(500);
         }
 
-       // $game->result = $fator_resultado;
+        // $game->result = $fator_resultado;
         $game->result_opponent = $request->resultado_adversario;
         $game->result_home = $request->resultado_shelby;
+        $game->result = $fator_resultado;
         $game->save();
 
 
-
-        $bets = $game->bets;
-
-
-        foreach ($bets as $bet) {
-            // if win/acertou palpite adiciona esse valor a conta
-            if ($bet->fator == $fator_resultado){
-                $bet->user->balance += $game->$fator_resultado * $bet->value;
-                $bet->user->save();
+        foreach ($game->bets as $bet) {
+            // se estiver paga
+            if ($bet->is_paid == 1) {
+                // if win/acertou palpite adiciona esse valor a conta
+                if ($bet->fator == $fator_resultado) {
+                    $bet->user->balance += $game->$fator_resultado * $bet->value;
+                    $bet->user->save();
+                    $bet->result = 2;
+                    $bet->save();
+                }
+            } //senao apaga
+            else {
+                $bet->delete();
             }
         }
 
@@ -136,7 +139,7 @@ class GamesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Game  $game
+     * @param \App\Models\Game $game
      * @return \Illuminate\Http\Response
      */
     public function show(Game $game)
@@ -147,7 +150,7 @@ class GamesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Game  $game
+     * @param \App\Models\Game $game
      * @return \Illuminate\Http\Response
      */
     public function edit(Game $game)
@@ -159,8 +162,8 @@ class GamesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Game  $game
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Game $game
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Game $game)
@@ -171,7 +174,7 @@ class GamesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Game  $game
+     * @param \App\Models\Game $game
      * @return \Illuminate\Http\Response
      */
     public function destroy(Game $game)

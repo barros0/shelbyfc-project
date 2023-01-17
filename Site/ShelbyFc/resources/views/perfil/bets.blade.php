@@ -4,6 +4,8 @@
 
     <h2>Minhas apostas</h2>
 
+
+    @if(Auth::user()->bets->count() > 0)
     <table>
         <tbody>
         <tr class="header">
@@ -34,4 +36,13 @@
         @endforeach
         </tbody>
     </table>
+    @else
+        <div class="alert-profile">
+            <h4>Você ainda não fez nenhuma aposta.</h4>
+
+            <div class="d-flex justify-content-center">
+                <a href="{{route('tobet')}}" class="btn-primary btn">Ver jogos e apostar</a>
+            </div>
+        </div>
+    @endif
 @endsection
