@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contacts;
+use App\Models\Contact;
 use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
@@ -190,7 +190,7 @@ class PageController extends Controller
 
     public function contacts()
     {
-        $contacts = Contacts::all();
+        $contacts = Contact::all();
 
         return view('contacts')->with('contacts', $contacts);
 

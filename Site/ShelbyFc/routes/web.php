@@ -132,10 +132,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
 
-    Route::group(['prefix' => 'contacts/', 'as' => 'contacts.'], function () {
-        Route::get('/', [AdminController::class, 'contacts'])->name('index');
-        Route::get('/{contact}', [AdminController::class, 'contact'])->name('show');
-    });
+
 });
 
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contacts;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
 use Session;
@@ -12,19 +12,20 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        $contacts = Contacts::all();
+        $contacts = Contact::all();
         return view('admin.contacts.index', compact('contacts'));
     }
 
-    public function destroy(Contacts $contact)
+    public function destroy(Contact $contact)
     {
         $contact->delete();
         Session::flash('success', 'Report Apagado!');
         return back();
     }
-    public function show(Contacts $contacts)
+    public function show(Contact $contact)
     {
-        return view('admin.contacts.index',compact('contacts'));
+
+        return view('admin.contacts.show',compact('contact'));
     }
 
     public function create(Request $request)
@@ -38,7 +39,7 @@ class ContactsController extends Controller
         ]);
 
 
-        $contact = new Contacts();
+        $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->phone = $request->phone;
