@@ -39,9 +39,9 @@
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">
-                                <a href="{{route('transacoes')}}" @if(Route::currentRouteName() == 'transacoes')class="active"@endif>
+                                <a href="{{route('tickets')}}" @if(Route::currentRouteName() == 'tickets')class="active"@endif>
                                     <i class="fa fa-coins"></i>
-                                    Transações
+                                    Bilhetes
                                 </a>
                             </li>
                             <li class="col-6 col-md-12">
