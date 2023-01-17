@@ -57,6 +57,15 @@ class PayPalController extends Controller
             // find game
             $game = Game::find($bet->game_id);
 
+            $valor_paypal_paid = $response['purchase_units'][0]['payments']['captures'][0]['amount']['value'];
+
+
+            // se o total do paypal for diferente do valor da bet significa que usou saldo da conta -- e entao removeos
+            if($bet->total != $valor_paypal_paid){
+                Auth::user()->balance -= ($bet->value - $valor_paypal_paid);
+                Auth::user()->save();
+            }
+
 // cria historico de transacao
             $transaction = new Transactions();
             $transaction->user_id = Auth::id();
@@ -121,12 +130,13 @@ class PayPalController extends Controller
                     return redirect()->away($links['href']);
                 }
             }
-            return redirect()
-                ->route('createTransaction')
+
+            return back()
+              //  ->route('createTransaction')
                 ->with('error', 'Algo de errado aconteceu :( .');
         } else {
-            return redirect()
-                ->route('createTransaction')
+            return back()
+                //->route('createTransaction')
                 ->with('error', $response['message'] ?? 'Algo está errado :( .');
         }
     }
