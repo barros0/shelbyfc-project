@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
-<title>Inscrever - Shelby FC</title>
-
 @include('partials.head')
 
 @section('title', 'Inscrever - Shelby FC')

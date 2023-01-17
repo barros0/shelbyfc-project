@@ -152,7 +152,8 @@ class GamesController extends Controller
      */
     public function edit(Game $game)
     {
-        return view('admin.games.edit', compact('game'));
+        $teams = Team::all();
+        return view('admin.games.edit', compact('game', 'teams'));
     }
 
     /**

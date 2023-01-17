@@ -84,8 +84,8 @@ class InscreverController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\socio_price $item
-     * @return \Illuminate\Http\Response 
+     * @param  \App\Models\socio_price $item
+     * @return  \Illuminate\Http\Response 
      */
 
     public function update(Request $request, socio_price $inscrever)
