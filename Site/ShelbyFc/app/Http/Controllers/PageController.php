@@ -165,10 +165,10 @@ class PageController extends Controller
     }
 
 
-    public function preferencias()
+    public function bets()
     {
 
-        return view('perfil.preferencias');
+        return view('perfil.bets');
     }
 
 

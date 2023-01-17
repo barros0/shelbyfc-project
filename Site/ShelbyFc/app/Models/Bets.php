@@ -13,4 +13,8 @@ class Bets extends Model
         return $this->hasOne(User::class, 'id', 'user_id');
     }
 
+    public function game(){
+        return $this->hasOne(Game::class, 'id', 'game_id');
+    }
+
 }

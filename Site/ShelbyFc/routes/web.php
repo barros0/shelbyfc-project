@@ -76,7 +76,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
         Route::get('/transacoes', [PageController::class, 'transacoes'])->name('transacoes');
-        Route::get('/preferencias', [PageController::class, 'preferencias'])->name('preferencias');
+        Route::get('/apostas', [PageController::class, 'bets'])->name('bets');
 
         Route::get('/retirar-saldo', [PageController::class, 'withdraw'])->name('withdraw');
         Route::post('/retirar-saldo', [UserController::class, 'dowithdraw'])->name('dowithdraw');
