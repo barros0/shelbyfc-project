@@ -47,6 +47,7 @@ class ForumController extends Controller
         $forum_posts->save();
 
         $images = $request->file('images');
+        if(!empty($images)){
         foreach ($images as $image) {
             if ($image->isValid()) {
                 $extension = $image->getClientOriginalExtension();
@@ -58,6 +59,7 @@ class ForumController extends Controller
             $forum_images->post_id = $post_id;
             $forum_images->image = $image_name;
             $forum_images->save();
+        }
         }
 
         Session::flash('success', 'Publicação adicionada!');
