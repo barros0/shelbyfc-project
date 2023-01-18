@@ -22,7 +22,7 @@ class GamesTableSeeder extends Seeder
 
         $games = [
             [
-                'ticket_available' => '1500',
+                'ticket_available' => '1',
                 'ticket_price' => '25',
                 'ticket_price_partner' => '15',
                 'location' => 'Estadio Municipal de Leiria',
@@ -35,7 +35,7 @@ class GamesTableSeeder extends Seeder
                 'lose' => '2.00',
             ],
             [
-                'ticket_available' => '1500',
+                'ticket_available' => '1',
                 'ticket_price' => '25',
                 'ticket_price_partner' => '15',
                 'location' => 'Estadio da Luz',
@@ -48,7 +48,7 @@ class GamesTableSeeder extends Seeder
                 'lose' => '2.00',
             ],
             [
-                'ticket_available' => '1500',
+                'ticket_available' => '1',
                 'ticket_price' => '25',
                 'ticket_price_partner' => '15',
                 'location' => 'Estadio do Dragao',
@@ -61,7 +61,7 @@ class GamesTableSeeder extends Seeder
                 'lose' => '4.00',
             ],
             [
-                'ticket_available' => '1500',
+                'ticket_available' => '1',
                 'ticket_price' => '25',
                 'ticket_price_partner' => '15',
                 'location' => 'Estadio do Leixoes',
