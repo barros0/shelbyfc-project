@@ -11,7 +11,6 @@
         @csrf
         <div class="row">
 
-
             <div class="form-group col-md-6">
                 <label for="">Stock bilhetes</label>
                 <input class="form-control" name="stock_bilhetes" type="number" required>
@@ -32,19 +31,16 @@
                 <input class="form-control" name="preco_bilhete_socio" type="number" step="0.01" required>
             </div>
 
-
             <div class="form-group col-md-6">
                 <label for="local">Local</label>
                 <input type="text" class="form-control" name="local" id="local" placeholder="Enter Title"
                        required>
             </div>
 
-
             <div class="form-group col-md-6">
                 <label for="data_jogo">Data do jogo</label>
                 <input class="form-control" name="data_jogo" type="datetime-local" id="data_jogo" required>
             </div>
-
 
             <div class="form-group col-md-6">
                 <label>Equipa adverária</label>
@@ -60,7 +56,6 @@
 
             <button type="submit" class="btn btn-primary">Inserir</button>
         </div>
-
 
     </form>
 @endsection
