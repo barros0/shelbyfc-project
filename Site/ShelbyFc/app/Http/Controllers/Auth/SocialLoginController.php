@@ -44,8 +44,13 @@ class SocialLoginController extends Controller
                     $url = $social_user->getavatar();
                     $contents = file_get_contents($url);
                     $name = substr($url, strrpos($url, '/') + 1).'.png';
-                    $contents->move(public_path('/images/users'),$name);
+                    //$contents->move(public_path('images/users'),$name);
                     $avatar = $name;
+
+                    $path = public_path('images/users/'.$name);
+                    file_put_contents($path, $contents);
+
+                    $avatar = null;
                 }
                 else{
                     $avatar = null;
