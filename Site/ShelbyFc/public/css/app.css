@@ -2050,8 +2050,19 @@ label.custom-file-upload {
 
 .contact-section .right-side {
     height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
+.form-contact{
+        width: 100%;
+}
+
+#mensagem{
+    width: 100%;
+}
 
 .contact-section input {
     border: 1px solid var(--vermelho);

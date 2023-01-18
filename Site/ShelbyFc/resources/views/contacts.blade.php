@@ -42,7 +42,7 @@
         </div>
         </div>
         <div class="right-side col-md-6">
-            <form action="{{ route('contacts.create') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('contacts.create') }}" method="post" enctype="multipart/form-data" class="form-contact">
               @method('post')
                 @csrf
                 <div class="top-form">
