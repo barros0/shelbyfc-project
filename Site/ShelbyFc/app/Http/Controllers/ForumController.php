@@ -54,7 +54,7 @@ class ForumController extends Controller
             if ($image->isValid()) {
                 $extension = $image->getClientOriginalExtension();
                 $image_name = uniqid() . '.' . $extension;
-                $image->move(public_path('images/noticias'), $image_name);
+                $image->move(public_path('images/forum_posts_images'), $image_name);
             }
             $forum_images = new Forum_posts_images();
             $post_id = $forum_posts->id;

@@ -1328,6 +1328,8 @@ span {
 }
 
 .news_body {
+    min-width: 30%;
+    max-width: 30%;
     margin: 20px;
     display: flex;
     flex-direction: column;

@@ -27,8 +27,9 @@
             </div>
         </div>
     </div>
-    <a class="see_more" href="">Ver mais &#x2192;</a>
+    <a class="see_more" href="{{ route('jogos') }}">Ver mais &#x2192;</a>
     <div class="container_last_matches">
+        
         <div class="match">
             <div class="match_home d-flex flex-column justify-content-between align-items-center">
                 <img src="{{ asset('images/liga/estrela_da_amadora.png') }}" alt="logo-estrela_da_amadora">

@@ -21,7 +21,8 @@ class PageController extends Controller
 {
     public function index()
     {
-        $noticias = News::all();
+        $noticias = News::orderBy('created_at', 'desc')->take(3)->get();
+        $jogos = Game::orderBy('created_at', 'desc')->take(2)->get();
         $id_js = 0;
         $id_image_js = 0;
         $id_text_js = 0;
@@ -29,6 +30,7 @@ class PageController extends Controller
 
         return view('index', compact('noticias', 'id_js', 'id_image_js', 'id_text_js', 'id_date_js'));
     }
+
     public function login()
     {
         return view('login');
@@ -74,7 +76,6 @@ class PageController extends Controller
 
     public function inscrever_post(Request $request)
     {
-
         $this->validate($request, [
             'nif' => 'required|numeric|digits:9',
             'birthdate' => 'required|date',
@@ -84,8 +85,6 @@ class PageController extends Controller
             'zipcode' => 'required|regex:/^\d{4}-\d{3}?$/',
             'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
         ]);
-
-        //return 1;
         $user = Auth::user()->id;
         $email = Auth::user()->email;
 
@@ -130,58 +129,53 @@ class PageController extends Controller
 
     public function styles()
     {
-
         return view('styles');
     }
 
     public function minha_conta()
     {
         $countrys = Country::all();
+
         return view('perfil.perfil', compact('countrys'));
     }
 
     public function subscricoes()
     {
         $subscriptions = Auth::user()->subscriptions;
+
         return view('perfil.subscricoes', compact('subscriptions'));
     }
 
     public function seguranca()
     {
-
         return view('perfil.seguranca');
     }
 
     public function tickets()
     {
-
         return view('perfil.tickets');
     }
 
     public function sobre()
     {
-
         return view('sobre');
     }
 
 
     public function bets()
     {
-
         return view('perfil.bets');
     }
 
 
     public function jogo($id)
     {
-
         $game = Game::findOrFail($id);
         return view('noticia', compact('game'));
     }
 
     public function tobet()
     {
-
         $next_games = Game::get();
 
         return view('tobet', compact('next_games'));
@@ -190,7 +184,6 @@ class PageController extends Controller
 
     public function jogos()
     {
-
         $proximos_jogos = Game::get();
 
         return view('jogos', compact('proximos_jogos'));
@@ -202,12 +195,12 @@ class PageController extends Controller
         $contacts = Contact::all();
 
         return view('contacts')->with('contacts', $contacts);
-
     }
 
 
 
-    public function withdraw(){
+    public function withdraw()
+    {
 
         return view('perfil.withdraw');
     }
