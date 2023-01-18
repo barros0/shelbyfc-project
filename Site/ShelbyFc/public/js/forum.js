@@ -26,7 +26,7 @@ $(function () {
                 }
                 $("#clear").css("display", "block");
             } else {
-                alert("too much my nigga");
+                alert("DING DONG U CANNOT UPLOAD MORE THAN 4 IMAGES");
             }
         }
     };

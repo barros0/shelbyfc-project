@@ -910,7 +910,23 @@ span.texto-vant {
 }
 
 /*HOMEPAGE*/
+#button_href {
+    outline: 0;
+    border: 0;
+    background-color: var(--vermelho);
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    border-radius: 17px;
+    transition: 0.5s;
+}
 
+#button_href:hover {
+    background-color: var(--vermelho);
+    color: white;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
 .container_main_new {
     margin: 40px auto;
     width: 80%;
