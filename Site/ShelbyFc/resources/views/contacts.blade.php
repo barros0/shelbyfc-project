@@ -16,15 +16,14 @@
     </div>
 
 
-    <div class="contact-section container">
-        <div class="row">
-        <div class="left-side col-md-6">
+    <div class="contact-section">
+        <div class="left-side">
             <div class="up-side">
                 <h2>Vamos entrar em contacto?</h2>
                 <p>Estamos disponiveis para o ajudar da melhor maneira.</p>
             </div>
 
-            <div class="row">
+
             <div class="down-side">
 
                 <div class="ret" id="ret1"><i class='bx bxs-phone-call'></i>
@@ -39,11 +38,11 @@
                 </div>
 
             </div>
+
         </div>
-        </div>
-        <div class="right-side col-md-6">
+        <div class="right-side">
             <form action="{{ route('contacts.create') }}" method="post" enctype="multipart/form-data">
-              @method('post')
+                @method('post')
                 @csrf
                 <div class="top-form">
                     <div class="input-icons">
@@ -69,9 +68,9 @@
                 <input type="submit" class="btn" value="Enviar Mensagem">
             </form>
         </div>
-        </div>
     </div>
-
 </div>
+
+
 
 @endsection

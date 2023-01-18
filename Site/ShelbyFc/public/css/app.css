@@ -1736,15 +1736,33 @@ label.custom-file-upload {
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-section .texto-banner{
+    color: rgb(32, 32, 32);
+    font-size: 50px;
 }
 
 .about-text {
     height: 100%;
     width: 700px;
-    background-color: white;
-    box-shadow: 0px 0px 52px #000000ad;
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    font-size: 20px;
+    text-align: center;
+}
+
+.about-text p{
+    margin-top: 30px;
+    font-weight: bold;
 }
 
 .about-text .left-side {
@@ -1775,6 +1793,7 @@ label.custom-file-upload {
     width: 40%;
     background-image: url(../images/sobre/fundo-about.svg);
     background-size: cover;
+    
 }
 
 
@@ -1911,7 +1930,7 @@ label.custom-file-upload {
 }
 
 .team-section #ret3 {
-    background-image: url(../images/sobre/acores.jpg);
+    background-image: url(../images/sobre/acores.jpeg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -1919,7 +1938,7 @@ label.custom-file-upload {
 }
 
 .team-section #ret4 {
-    background-image: url(../images/sobre/mica.jpg);
+    background-image: url(../images/sobre/fundo-about.svg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -1929,13 +1948,12 @@ label.custom-file-upload {
 .team-section .up-side {
     width: 100%;
     height: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  
 }
 
 .team-section .up-side p {
     font-size: 18px;
+    margin-top: 20px;
 }
 
 .team-section .down-side i {
@@ -2010,6 +2028,7 @@ label.custom-file-upload {
 .contact-section .left-side {
     height: 100%;
     border-right: 1px solid rgba(39, 39, 39, 0.151);
+    width: 50%;
 
 }
 
@@ -2045,11 +2064,16 @@ label.custom-file-upload {
 
 .contact-section .left-side p {
     font-size: 18px;
+    
 }
 
 
 .contact-section .right-side {
     height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -2058,6 +2082,7 @@ label.custom-file-upload {
     height: 45px;
     border-radius: 5px;
     font-size: 14px;
+    width: 600px;
 
 }
 
@@ -2087,12 +2112,13 @@ label.custom-file-upload {
 .contact-section .top-form {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 
 
 .contact-section .top-form .input-icons {
-    width: 350px;
+    width: 300px;
 
 }
 
