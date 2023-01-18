@@ -2070,6 +2070,10 @@ label.custom-file-upload {
 
 .contact-section .right-side {
     height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -2078,10 +2082,6 @@ label.custom-file-upload {
 
 .form-contact{
         width: 100%;
-}
-
-#mensagem{
-    width: 100%;
 }
 
 .contact-section input {
