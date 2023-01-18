@@ -4,6 +4,10 @@ $(document).ready(function () {
     $image = "http://shelbyfc.test/images/noticias/" + $image;
     $("#image").attr("src", $image);
 
+    $href = $("#href_link2").text();
+    $href = "http://shelbyfc.test/noticia/" + $href;
+    $("#button_href").attr("href", $href)
+
     $date = $("#date2").text();
     $("#news_date").text($date);
     
@@ -18,6 +22,10 @@ $(document).ready(function () {
         $image = $("#image1").text();
         $image = "http://shelbyfc.test/images/noticias/" + $image;
         $("#image").attr("src", $image);
+
+        $href = $("#href_link1").text();
+        $href = "http://shelbyfc.test/noticia/" + $href;
+        $("#button_href").attr("href", $href)
 
         $date = $("#date1").text();
         $("#news_date").text($date);
@@ -35,6 +43,10 @@ $(document).ready(function () {
         $image = "http://shelbyfc.test/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
+        $href = $("#href_link2").text();
+        $href = "http://shelbyfc.test/noticia/" + $href;
+        $("#button_href").attr("href", $href)
+
         $date = $("#date2").text();
         $("#news_date").text($date);
 
@@ -50,6 +62,10 @@ $(document).ready(function () {
         $image = $("#image3").text();
         $image = "http://shelbyfc.test/images/noticias/" + $image;
         $("#image").attr("src", $image);
+
+        $href = $("#href_link3").text();
+        $href = "http://shelbyfc.test/noticia/" + $href;
+        $("#button_href").attr("href", $href)
 
         $date = $("#date3").text();
         $("#news_date").text($date);

@@ -76,7 +76,7 @@ class PayPalController extends Controller
             return back()
                 /*redirect()*/
                 /* ->route('createTransaction')*/
-                ->with('success', 'Transaction complete.');
+                ->with('success', 'Aposta realizada. Boa sorte!');
         } else {
             return back()/*redirect()
                 ->route('createTransaction')*/

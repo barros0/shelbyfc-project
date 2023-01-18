@@ -12,7 +12,7 @@
             <div class="news_details">
                 <h1 id="news_title"></h1>
                 <div class="news_btn_date">
-                    <button>Ler Mais</button>
+                    <a href="" id="button_href">Ler Mais</a>
                     <p id="news_date"></p>
                 </div>
             </div>
@@ -20,6 +20,7 @@
                 @foreach ($noticias->take(3) as $noticia)
                     <div class="option" id="option{{ $id_js = $id_js + 1 }}">
                         <p id="image{{ $id_image_js = $id_image_js + 1 }}" style="display:none;">{{ $noticia->image }}</p>
+                        <p id="href_link{{ $id_href_js = $id_href_js + 1}}" style="display:none;">{{ $noticia->id }}</p>
                         <p id="date{{ $id_date_js = $id_date_js + 1 }}">{{ $noticia->created_at->format('Y-m-d') }}</p>
                         <h3 id="text{{ $id_text_js = $id_text_js + 1 }}">{{ $noticia->title }}</h3>
                     </div>
@@ -27,8 +28,9 @@
             </div>
         </div>
     </div>
-    <a class="see_more" href="">Ver mais &#x2192;</a>
+    <a class="see_more" href="{{ route('jogos') }}">Ver mais &#x2192;</a>
     <div class="container_last_matches">
+        
         <div class="match">
             <div class="match_home d-flex flex-column justify-content-between align-items-center">
                 <img src="{{ asset('images/liga/estrela_da_amadora.png') }}" alt="logo-estrela_da_amadora">

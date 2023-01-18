@@ -22,11 +22,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
+            NewsTableDataSeeder::class,
             UsersTableDataSeeder::class,
             CategoriesTableDataSeeder::class,
             TeamsTableSeeder::class,
             SocioPriceTableSeeder::class,
             FaqsTableSeeder::class,
+            ContactsTableSeeder::class,
+            GamesTableSeeder::class,
             CountriesTableSeeder::class,
             SubscricoesTableDataSeeder::class,
 
