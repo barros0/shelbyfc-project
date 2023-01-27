@@ -176,15 +176,15 @@
                                 <input hidden type="radio" id="lose" name="fator" value="lose">
                                 <input hidden type="radio" id="draw" name="fator" value="draw">
 
-                                <label for="win" type="radio" class="bet-to-select d-flex flex-column">
+                                <label for="win" type="radio" class="bet-to-select d-flex flex-column win">
                                     <h3>W</h3>
                                     <span class="odd fw-bolder" id="win-odd">1.00</span>
                                 </label>
-                                <label for="draw" type="button" class="bet-to-select d-flex flex-column">
+                                <label for="draw" type="button" class="bet-to-select d-flex flex-column draw">
                                     <h3>D</h3>
                                     <span class="odd fw-bolder" id="draw-odd">1.00</span>
                                 </label>
-                                <label for="lose" type="button" class="bet-to-select d-flex flex-column">
+                                <label for="lose" type="button" class="bet-to-select d-flex flex-column lose">
                                     <h3>L</h3>
                                     <span class="odd fw-bolder" id="lose-odd">1.00</span>
                                 </label>

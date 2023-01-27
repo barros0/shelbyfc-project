@@ -939,6 +939,7 @@ span.texto-vant {
     position: relative;
     height: 100%;
     width: 100%;
+    object-fit: cover;
     z-index: -1;
 }
 
@@ -1344,8 +1345,7 @@ span {
 }
 
 .news_body {
-    min-width: 30%;
-    max-width: 30%;
+    width: 330px;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -1357,7 +1357,8 @@ span {
     display: block;
     transition: transform 1s;
     width: 100%;
-    height: 200px;
+    min-height: 200px;
+    object-fit: cover;
 }
 
 .news_body:hover img {
@@ -1773,7 +1774,7 @@ label.custom-file-upload {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
     font-size: 20px;
     text-align: center;
 }
@@ -1811,7 +1812,7 @@ label.custom-file-upload {
     width: 40%;
     background-image: url(../images/sobre/fundo-about.svg);
     background-size: cover;
-    
+
 }
 
 
@@ -1966,7 +1967,7 @@ label.custom-file-upload {
 .team-section .up-side {
     width: 100%;
     height: 50%;
-  
+
 }
 
 .team-section .up-side p {
@@ -2044,10 +2045,7 @@ label.custom-file-upload {
 }
 
 .contact-section .left-side {
-    height: 100%;
     border-right: 1px solid rgba(39, 39, 39, 0.151);
-    width: 50%;
-
 }
 
 .contact-section .ret {
@@ -2082,12 +2080,11 @@ label.custom-file-upload {
 
 .contact-section .left-side p {
     font-size: 18px;
-    
+
 }
 
 
 .contact-section .right-side {
-    height: 100%;
     display: flex;
     align-content: center;
     align-items: center;
@@ -2306,7 +2303,18 @@ label.custom-file-upload {
     border-radius: 10px;
     width: 20%;
     transition: 0.5s;
+}
 
+.bet-to-select.win{
+    border-bottom: 2px solid green;
+}
+
+.bet-to-select.draw{
+    border-bottom: 2px solid yellow;
+}
+
+.bet-to-select.lose{
+    border-bottom: 2px solid red;
 }
 
 .bet-to-select:hover {

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -40,5 +41,16 @@ class Game extends Model
     public function opponent()
     {
         return $this->hasone(Team::class, 'id', 'team_id');
+    }
+
+    public function scopeAvaliableBet($query)
+    {
+        return $query->where('limit_bet','>', Carbon::now())->whereNull('result');
+    }
+
+
+    public function scopeAvaliableTicket($query)
+    {
+        return $query->where('limit_buy_ticket','>', Carbon::now());
     }
 }

@@ -48,7 +48,7 @@
                 <div class="top-form">
                     <div class="input-icons">
                         <i class='bx bx-user'></i>
-                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required>
+                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required value="">
                     </div>
                     <div class="input-icons">
                         <i class='bx bx-phone'></i>

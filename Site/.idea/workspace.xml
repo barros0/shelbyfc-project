@@ -145,7 +145,6 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/srmklive/paypal" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/intervention/validation" />
-      <path value="$PROJECT_DIR$/ShelbyFc/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="ProjectId" id="2Hb9iZ1RgjZS4Q8nRSnP0vBDj3v" />
@@ -212,6 +211,8 @@
       <workItem from="1673058913066" duration="331000" />
       <workItem from="1673189080433" duration="2024000" />
       <workItem from="1673954952119" duration="25994000" />
+      <workItem from="1674518882241" duration="705000" />
+      <workItem from="1674854475766" duration="6354000" />
     </task>
     <servers />
   </component>

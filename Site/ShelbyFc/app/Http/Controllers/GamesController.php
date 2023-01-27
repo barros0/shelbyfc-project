@@ -88,8 +88,8 @@ class GamesController extends Controller
     {
 
         $request->validate([
-            'resultado_adversario' => 'required|numeric',
-            'resultado_shelby' => 'required|numeric',
+            'resultado_adversario' => 'required|numeric|min:0',
+            'resultado_shelby' => 'required|numeric|min:0',
         ]);
 
 
