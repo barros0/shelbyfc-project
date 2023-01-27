@@ -927,6 +927,7 @@ span.texto-vant {
     transform: scale(1.05);
     transition: 0.5s;
 }
+
 .container_main_new {
     margin: 40px auto;
     width: 80%;
@@ -1578,6 +1579,12 @@ label.custom-file-upload {
     border-radius: 100%;
 }
 
+.forum_posts_img {
+    margin: 0 10px 10px;
+    height: 50px;
+    width: 50px;
+}
+
 .create_forum input[type=text] {
     background: white;
     border-bottom: 1px solid #777;
@@ -1761,7 +1768,7 @@ label.custom-file-upload {
     align-items: center;
 }
 
-.about-section .texto-banner{
+.about-section .texto-banner {
     color: rgb(32, 32, 32);
     font-size: 50px;
 }
@@ -1779,7 +1786,7 @@ label.custom-file-upload {
     text-align: center;
 }
 
-.about-text p{
+.about-text p {
     margin-top: 30px;
     font-weight: bold;
 }
@@ -2095,8 +2102,8 @@ label.custom-file-upload {
     align-items: center;
 }
 
-.form-contact{
-        width: 100%;
+.form-contact {
+    width: 100%;
 }
 
 .contact-section input {
@@ -2192,7 +2199,7 @@ label.custom-file-upload {
 
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
-#bet_screen{
+#bet_screen {
     padding-top: 40px;
 }
 
@@ -2241,7 +2248,7 @@ label.custom-file-upload {
     background-color: var(--vermelho) !important;
 }
 
-.bet_active .vs,.bet_active p{
+.bet_active .vs, .bet_active p {
     color: white;
 }
 
@@ -2342,7 +2349,7 @@ label.custom-file-upload {
     align-items: center;
 }
 
-.match-team{
+.match-team {
     width: 200px;
 }
 
@@ -2393,7 +2400,7 @@ span.match-location {
     color: #000;
 }
 
-.match-vs-half{
+.match-vs-half {
     width: 20%;
     display: flex;
     align-content: center;
@@ -2407,16 +2414,19 @@ span.match-location {
     display: flex;
     width: 40%;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+}
 
 .match-away-team {
     display: flex;
     width: 40%;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+}
 
-.match-day-vs{
-    color: var(--vermelho);;
+.match-day-vs {
+    color: var(--vermelho);
+    ;
 }
 
 span.match-type {

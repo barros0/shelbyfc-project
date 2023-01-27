@@ -34,7 +34,7 @@
                             <p style="font-size: 20px">{{ $post->title }}</p>
                             @foreach ($posts_images as $image)
                                 @if ($image->post_id === $post->id)
-                                    <img class="user_forum_img"
+                                    <img class="forum_posts_img"
                                         src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
                                 @endif
                             @endforeach
