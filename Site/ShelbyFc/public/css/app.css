@@ -1292,7 +1292,59 @@ span {
     margin-top: 30px;
 }
 
-/*NOTICIAS*/
+@media only screen and (max-width: 1000px) {
+    .titulo-fale-conosco{
+        font-size: 30px;
+    }
+    .texto-fale-conosco p{
+        font-size: 11px;
+    }
+    .btn-section button{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .fale-conosco {
+        width: 100%;
+        height: 470px;
+        background-color: transparent;
+        padding: 90px 40px;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .titulo-fale-conosco{
+        font-size: 15px;
+    }
+    .texto-fale-conosco p{
+        font-size: 10px;
+    }
+    .fale-conosco {
+        width: 100%;
+        height: 470px;
+        background-color: transparent;
+        padding: 90px 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .section-faqs h1{
+        font-size: 30px;
+    }
+    .fale-conosco {
+        width: 100%;
+        height: 470px;
+        background-color: transparent;
+        padding: 90px 40px;
+    }
+    .titulo-fale-conosco {
+        font-size: 25px;
+    }
+}
+
+
+
+/*==========================================================================NOTICIAS================================================================================*/
 
 .container_all_news {
     display: flex;
