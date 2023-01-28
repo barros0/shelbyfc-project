@@ -48,21 +48,21 @@
                 <div class="top-form">
                     <div class="input-icons">
                         <i class='bx bx-user'></i>
-                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required value="">
+                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required value="{{ Auth::user()->name }}">
                     </div>
                     <div class="input-icons">
                         <i class='bx bx-phone'></i>
-                        <input class="input-field" type="text" id="telefone" name="phone" placeholder="Telefone"
+                        <input class="input-field" type="text" id="telefone" name="phone" placeholder="Telefone" value="{{ Auth::user()->phone }}"
                             required>
                     </div>
                 </div>
                 <div class="input-icons">
                     <i class='bx bx-envelope'></i>
-                    <input class="input-field" type="text" id="email" name="email" placeholder="E-mail" required>
+                    <input class="input-field" type="text" id="email" name="email" placeholder="E-mail" value="{{ Auth::user()->email }}" required >
                 </div>
                 <div class="input-icons">
                     <i class='bx bx-captions'></i>
-                    <input class="input-field" type="text" id="assunto" name="subject" placeholder="Assunto" required>
+                    <input class="input-field" type="text" id="assunto" name="subject" placeholder="Assunto"  required>
                 </div>
                 <textarea id="mensagem" name="message" rows="4" cols="50" placeholder="Em que podemos ajudar?"
                     required></textarea>

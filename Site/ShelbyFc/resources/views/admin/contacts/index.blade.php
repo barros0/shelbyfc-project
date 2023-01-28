@@ -16,8 +16,6 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
-                <th>Assunto</th>
-                <th>Mensagem</th>
                 <th>Data</th>
                 <th>Eliminar</th>
                 <th>Ver</th>
@@ -28,8 +26,6 @@
                     <td>{{ $contact->name }}</td>
                     <td>{{ $contact->email }}</td>
                     <td>{{ $contact->phone }}</td>
-                    <td>{{ $contact->subject }}</td>
-                    <td>{{ $contact->message }}</td>
                     <td>{{ $contact->created_at }}</td>
                     <td>
 
