@@ -1847,12 +1847,14 @@ label.custom-file-upload {
 
 .what-section {
     width: 100%;
-    height: 450px;
+    height: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-top: 70px;
+    text-transform: uppercase;
 }
+
 
 .what-section .texto-banner {
     color: rgb(32, 32, 32);
@@ -1923,11 +1925,47 @@ label.custom-file-upload {
 }
 
 .what-section i {
-    font-size: 40px;
-    color: red;
+    font-size: 80px;
+    color: var(--vermelho);
     display: flex;
     justify-content: center;
     margin-top: 30px;
+   
+}
+
+.texto-caixa-sobre{
+    color: var(--preto);
+}
+
+.what-section .ret-section span{
+    color: var(--preto);
+    margin-top: 10px;
+ 
+}
+
+
+
+.ret-what {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    align-content: center;
+    margin: 50px;
+}
+
+.row-what {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    max-width: 60%;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
