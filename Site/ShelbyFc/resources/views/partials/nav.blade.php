@@ -3,6 +3,7 @@
         <a class="" href="{{ route('index') }}">
             <img src="{{ asset('images/logo.svg') }}" alt="Logo">
         </a>
+        <i class='bx bx-menu'></i>
     </div>
     <div class="navbar-menu-container">
         <div class="navbar-info-container d-flex flex-row justify-content-around">

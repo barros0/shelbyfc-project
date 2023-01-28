@@ -941,6 +941,7 @@ span.texto-vant {
     height: 100%;
     width: 100%;
     z-index: -1;
+    object-fit: cover;
 }
 
 .mask-gradient {
@@ -1049,6 +1050,7 @@ button:hover {
     margin: auto;
     text-align: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .match img {
@@ -1435,7 +1437,7 @@ span {
 
     .option {
         height: 140px;
-        width: 33%;
+        width: 33.4%;
     }
 
     .container_new {
@@ -1616,6 +1618,10 @@ label.custom-file-upload {
     background-color: var(--preto);
 }
 
+.navbar-logo-container i {
+    display: none;
+}
+
 .navbar-logo-container img {
     width: 100px;
     height: 100px;
@@ -1729,10 +1735,26 @@ label.custom-file-upload {
     color: var(--vermelho);
 }
 
+@media only screen and (max-width: 900px) {
+    .navbar-menu-container {
+        display: none;
+    }
+
+    .navbar-logo-container {
+        clip-path: none;
+        width: 100%;
+        justify-content: space-around !important;
+        align-items: center;
+    }
+
+    .navbar-logo-container i {
+        display: block;
+        color: white;
+        font-size: 50px;
+    }
+}
 
 /*-----------------------------------------------------------------------------SOBRE NOS----------------------------------------------------------------------------*/
-
-
 
 .conteudo-sobre {
     height: auto;

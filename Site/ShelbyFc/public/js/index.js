@@ -74,3 +74,7 @@ $(document).ready(function () {
         $("#news_title").text($text);
     });
 });
+
+$(document).ready(function () {
+    
+});
