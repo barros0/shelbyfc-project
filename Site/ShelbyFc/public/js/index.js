@@ -6,11 +6,11 @@ $(document).ready(function () {
 
     $href = $("#href_link2").text();
     $href = "http://shelbyfc.test/noticia/" + $href;
-    $("#button_href").attr("href", $href)
+    $("#button_href").attr("href", $href);
 
     $date = $("#date2").text();
     $("#news_date").text($date);
-    
+
     $text = $("#text2").text();
     $("#news_title").text($text);
 
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
         $href = $("#href_link1").text();
         $href = "http://shelbyfc.test/noticia/" + $href;
-        $("#button_href").attr("href", $href)
+        $("#button_href").attr("href", $href);
 
         $date = $("#date1").text();
         $("#news_date").text($date);
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
         $href = $("#href_link2").text();
         $href = "http://shelbyfc.test/noticia/" + $href;
-        $("#button_href").attr("href", $href)
+        $("#button_href").attr("href", $href);
 
         $date = $("#date2").text();
         $("#news_date").text($date);
@@ -65,7 +65,7 @@ $(document).ready(function () {
 
         $href = $("#href_link3").text();
         $href = "http://shelbyfc.test/noticia/" + $href;
-        $("#button_href").attr("href", $href)
+        $("#button_href").attr("href", $href);
 
         $date = $("#date3").text();
         $("#news_date").text($date);
@@ -75,6 +75,10 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    
-});
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}

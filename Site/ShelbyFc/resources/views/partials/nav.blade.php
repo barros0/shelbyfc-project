@@ -3,7 +3,7 @@
         <a class="" href="{{ route('index') }}">
             <img src="{{ asset('images/logo.svg') }}" alt="Logo">
         </a>
-        <i class='bx bx-menu'></i>
+        <i onclick="openNav()" id="menu_hamburguer"class='bx bx-menu'></i>
     </div>
     <div class="navbar-menu-container">
         <div class="navbar-info-container d-flex flex-row justify-content-around">
@@ -113,6 +113,22 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div id="myNav" class="overlay">
+        <div class="contactos_responsive d-flex align-items-center justify-content-center">
+            <p class="d-flex align-items-center"><i class='bx bxs-phone'></i> 244 144 102</p>
+            <div class="line"></div>
+            <p class="d-flex align-items-center"><i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
+        </div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Loja Online</a>
+            <a href="#">Forum</a>
+            <a href="#">Notícias</a>
+            <a href="#">Jogos</a>
+            <a href="#">Suporte</a>
+            <a href="#">Socio</a>
         </div>
     </div>
 </nav>
