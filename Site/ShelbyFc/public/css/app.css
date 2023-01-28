@@ -1340,6 +1340,15 @@ span {
     .titulo-fale-conosco {
         font-size: 25px;
     }
+    .texto-banner {
+        color: white;
+        font-size: 50px;
+        font-family: 'Bebas Neue', cursive;
+    }
+    .imagem-inicio p {
+        color: white;
+        font-size: 12px;
+    }
 }
 
 
