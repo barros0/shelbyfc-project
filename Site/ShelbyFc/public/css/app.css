@@ -2456,3 +2456,25 @@ span.match-type {
     font-weight: 700;
     color: #000;
 }
+
+.match-result-container {
+    width: 10%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.match-result {
+    color: #fff;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.result-bg{
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-color: var(--vermelho);
+    padding: 5px 30px 5px 30px;
+}

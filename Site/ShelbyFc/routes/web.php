@@ -106,6 +106,7 @@ Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
+Route::get('/resultados', [PageController::class, 'resultados'])->name('resultados');
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 

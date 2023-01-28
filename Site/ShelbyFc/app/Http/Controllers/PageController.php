@@ -190,7 +190,14 @@ class PageController extends Controller
 
         return view('jogos', compact('proximos_jogos'));
     }
+    
 
+    public function resultados()
+    {
+        $proximos_jogos = Game::get();
+
+        return view('results', compact('proximos_jogos'));
+    }
 
     public function contacts()
     {
