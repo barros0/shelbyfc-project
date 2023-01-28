@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('forum_posts');
-            $table->bigInteger('reply_id')->unsigned();
+            $table->bigInteger('reply_id')->unsigned()->nullable();
             $table->foreign('reply_id')->references('id')->on('forum_posts_comments');
             $table->text('comment');
             $table->timestamps();

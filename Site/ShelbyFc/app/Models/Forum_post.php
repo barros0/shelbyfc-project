@@ -14,4 +14,9 @@ class Forum_post extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(forum_posts_comment::class, 'id', 'post_id');
+    }
 }

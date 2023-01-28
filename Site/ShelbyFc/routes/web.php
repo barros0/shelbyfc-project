@@ -102,7 +102,7 @@ Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.
 
 
 
-Route::get('/comprar-bilhete', [PageController::class, 'comprar_bilhete'])->name('comprar.bilhete');
+Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('buy.ticket');
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
@@ -112,6 +112,9 @@ Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
+
+
+    Route::post('/comentar/{post}', [ForumController::class, 'docomment'])->name('do.comment');
 });
 
 
