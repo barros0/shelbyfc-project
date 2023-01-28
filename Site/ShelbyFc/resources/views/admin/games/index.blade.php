@@ -48,9 +48,9 @@
                     </td>
                     <td>
                         @if(!$game->result_home || !$game->result_opponent)
-                        <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar resultados</a>
+                        <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar Resultado</a>
                         @else
-
+                        <a href="{{route('admin.games.show', $game) }}" class="btn">Ver Resultado</a>
                         @endif
                     </td>
                 </tr>
