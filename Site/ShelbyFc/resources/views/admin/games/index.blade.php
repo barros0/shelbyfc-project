@@ -14,6 +14,9 @@
         </div>
         <a href="{{ route('admin.games.create') }}" class="btn">Adicionar</a>
     </div>
+
+    <div class="table-responsive">
+
     <table>
         <tbody>
             <tr class="header">
@@ -57,6 +60,9 @@
             @endforeach
         </tbody>
     </table>
+
+</div>
+
 
 
 
