@@ -26,7 +26,7 @@ class BetsController extends Controller
 
         $game_id = $request->game_id;
 
-        $game = Game::findorfail($game_id);
+        $game = Game::AvaliableBet()->findorfail($game_id);
 
         // se a data limite de aposta estiver ultrapassada
         if (Carbon::now() > $game->limit_bet) {

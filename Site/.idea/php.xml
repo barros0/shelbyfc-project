@@ -115,7 +115,6 @@
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/srmklive/paypal" />
       <path value="$PROJECT_DIR$/ShelbyFc/vendor/intervention/validation" />
-      <path value="$PROJECT_DIR$/ShelbyFc/vendor/doctrine/deprecations" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

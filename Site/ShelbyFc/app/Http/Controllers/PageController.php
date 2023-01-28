@@ -12,6 +12,7 @@ use App\Models\socio_price;
 use App\Models\Subscription;
 use App\Models\Categorie;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -177,7 +178,7 @@ class PageController extends Controller
 
     public function tobet()
     {
-        $next_games = Game::get();
+        $next_games = Game::AvaliableBet()->get();
 
         return view('tobet', compact('next_games'));
     }
