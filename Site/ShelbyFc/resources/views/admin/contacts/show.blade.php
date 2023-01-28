@@ -5,7 +5,7 @@
 
 @section('content')
 
-
+    <a style="font-size:25px;" href="{{ route('admin.contacts.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
     <h1>Contacto de {{$contact->name}} </h1>
     <p>ás {{$contact->created_at}}</p>
 
