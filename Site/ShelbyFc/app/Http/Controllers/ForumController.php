@@ -16,7 +16,7 @@ class ForumController extends Controller
     {
         $posts = Forum_post::orderBy('created_at', 'desc')->get();
         $posts_images = Forum_posts_images::get();
-        
+
         return view('forum.index', compact('posts', 'posts_images'));
     }
 
@@ -89,14 +89,14 @@ class ForumController extends Controller
     }
 
 
-    public function addcomment(Request $request, $postid)
+    public function docomment(Request $request, Forum_post $post)
     {
 
-        Forum_post::findorfail($postid);
+        //Forum_post::findorfail($postid);
 
         $comment = new forum_posts_comment();
         $comment->user_id = Auth::id();
-        $comment->post_id = $postid;
+        $comment->post_id = $post->id;
         $comment->comment = $request->comment;
         $comment->save();
 
