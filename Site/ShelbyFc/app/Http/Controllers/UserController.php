@@ -71,14 +71,14 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function comprar_bilhete($gameid, Request $request)
+    public function buy_ticket($gameid, Request $request)
     {
 
         $this->validate($request, [
             'quantity' => 'required|numeric|min:1',
         ]);
 
-        $game = Game::findOrFail($gameid);
+        $game = Game::AvaliableTicket()->findOrFail($gameid);
 
         $quantidade = $request->quantity;
 
@@ -90,8 +90,8 @@ class UserController extends Controller
             $ticket->save();
         }
 
-
-        return;
+        Session::flash('success','Bilhete aquirido, Bom Jogo!');
+        return redirect('tickets');
     }
 
 

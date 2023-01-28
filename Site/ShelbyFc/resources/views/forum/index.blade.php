@@ -35,7 +35,7 @@
                             @foreach ($posts_images as $image)
                                 @if ($image->post_id === $post->id)
                                     <img class="forum_posts_img"
-                                        src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
+                                         src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
                                 @endif
                             @endforeach
                             <p>{{ $post->user->name }},
@@ -44,11 +44,41 @@
                         </div>
                     </div>
                     <div class="">
-                        (XX)
+                        ({{$post->comments->count()}})
                         Replies
                     </div>
                 </div>
+
+
+                <h3>Comentar</h3>
+                <div class="create_forum d-flex flex-row justify-content-around">
+                    <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
+                    <div style="width:80%;" class="d-flex flex-column">
+                        <form action="{{ route('forum.do.comment', $post) }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input placeholder="Comentário" type="text" name="comment" id="comment" required>
+                                <button type="submit" id="submit">Comentar</button>
+                        </form>
+                    </div>
+                </div>
+
+            {{-- cometarios --}}
+            Comentarios
+                @foreach($post->comments as $comment)
+                    by: {{$comment->user->name}}
+                    {{$comment->comment}}
+
+                    {{-- repostas de comentarios --}}
+                    @foreach($comment->replies as $reply)
+                        {{$reply->comment}}
+
+                        {{-- end repostas de comentarios --}}
+                    @endforeach
+
+                    {{-- end cometarios --}}
+                @endforeach
             @endforeach
+
         </div>
 
         <div id="myModal" class="modal">

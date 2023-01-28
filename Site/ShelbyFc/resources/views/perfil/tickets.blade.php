@@ -30,7 +30,7 @@
         <h4>Você ainda não fez comprou nenhum bilhete.</h4>
 
         <div class="d-flex justify-content-center">
-        <a href="{{'games'}}" class="btn-primary btn">Ver próximo jogos</a>
+        <a href="{{'jogos'}}" class="btn-primary btn">Ver próximo jogos</a>
         </div>
     </div>
 
