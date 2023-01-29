@@ -14,7 +14,7 @@
             </div>
             <div class="d-flex justify-content-around align-items-center">
                 @if (Auth::check())
-                    <a href="{{ route('withdraw') }}">{{Auth::user()->balance}}€</a>
+                    <a href="{{ route('withdraw') }}">{{ Auth::user()->balance }}€</a>
 
                     <a href="{{ route('perfil') }}">Minha conta</a>
 
@@ -116,19 +116,35 @@
         </div>
     </div>
     <div id="myNav" class="overlay">
-        <div class="contactos_responsive d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center">
+            @if (Auth::check())
+                <a href="{{ route('withdraw') }}">{{ Auth::user()->balance }}€</a>
+
+                <a href="{{ route('perfil') }}">Minha conta</a>
+
+                @if (Auth::user()->is_admin)
+                    <div class="line"></div>
+                    <a href="{{ route('admin.dashboard') }}">Administração</a>
+                @endif
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <div class="line"></div>
+                <a href="{{ route('register') }}">Register</a>
+            @endif
+        </div>
+        <div class="contactos_responsive">
             <p class="d-flex align-items-center"><i class='bx bxs-phone'></i> 244 144 102</p>
             <div class="line"></div>
             <p class="d-flex align-items-center"><i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
         </div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <a href="#">Loja Online</a>
-            <a href="#">Forum</a>
-            <a href="#">Notícias</a>
-            <a href="#">Jogos</a>
-            <a href="#">Suporte</a>
-            <a href="#">Socio</a>
+            <a href="https://teste.social-bubble.pt">Loja Online</a>
+            <a href="{{ route('forum.home') }}">Forum</a>
+            <a href="{{ route('noticias') }}">Notícias</a>
+            <p>Jogos<i class='bx bxs-down-arrow'></i></p>
+            <p>Suporte<i class='bx bxs-down-arrow'></i></p>
+            <a href="{{ route('inscrever') }}">Sócio</a>
         </div>
     </div>
 </nav>

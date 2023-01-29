@@ -37,7 +37,7 @@
                 <div class="match">
                     <div class="match_home d-flex flex-column justify-content-between align-items-center">
                         <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="logo-shelby_fc.png">
-                        <p class="team_name">shelby FC</p>
+                        <p class="team_name">Shelby FC</p>
                     </div>
                     <div class="match_info">
                         <p>{{ $proximo_jogo->location }}</p>
@@ -58,7 +58,5 @@
         @endforeach
 
     </div>
-
-    <script src="{{ asset('js/index.js') }}"></script>
 
 @endsection

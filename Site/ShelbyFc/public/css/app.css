@@ -1080,6 +1080,7 @@ button:hover {
     border-radius: 11px;
     color: white;
     padding: 5px 10px;
+    width: 40px;
 }
 
 .team_name {
@@ -1821,15 +1822,22 @@ label.custom-file-upload {
     text-align: center;
 }
 
-.overlay a {
+.overlay-content a i, .overlay-content p i {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.overlay a, .overlay-content p {
     padding: 8px;
-    text-decoration: none;
+    margin: 0;
     font-size: 36px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
-
+.overlay-content p:hover{
+    color: var(--vermelho);
+}
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
@@ -1839,6 +1847,10 @@ label.custom-file-upload {
     top: 20px;
     right: 45px;
     font-size: 60px;
+}
+
+.contactos_responsive {
+    display: none;
 }
 
 @media only screen and (max-width: 900px) {
@@ -1861,6 +1873,9 @@ label.custom-file-upload {
     }
 
     .contactos_responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         bottom: 0;
         margin: auto;
@@ -1875,7 +1890,7 @@ label.custom-file-upload {
         padding: 10px;
     }
 
-    .contactos_responsive .line {
+    .overlay .line {
         background-color: #818181;
         width: 2px;
         height: 20px;
@@ -3078,7 +3093,9 @@ address a:hover {
     .ct-footer-list>li {
         width: 50%;
     }
+}
 
+@media (max-width:480px) {
     .ct-footer-meta {
         text-align: center;
     }

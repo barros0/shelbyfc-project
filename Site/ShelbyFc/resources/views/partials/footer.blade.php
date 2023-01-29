@@ -2,16 +2,17 @@
     <div class="container">
         <ul class="ct-footer-list text-center-sm">
             <li>
-                <a href="https://teste.social-bubble.pt" id="loja_online_footer" class="ct-footer-list-header">Loja Online</a>
+                <a href="https://teste.social-bubble.pt" id="loja_online_footer" class="ct-footer-list-header">Loja
+                    Online</a>
             </li>
             <li>
                 <h2 class="ct-footer-list-header">Geral</h2>
                 <ul>
                     <li>
-                        <a href="{{ route('forum.home') }}">Forum</a>
+                        <a href="{{ route('forum.home') }}">Forúm</a>
                     </li>
                     <li>
-                        <a href="{{ route('noticias') }}">Noticias</a>
+                        <a href="{{ route('noticias') }}">Notícias</a>
                     </li>
                     <li>
                         <a href="{{ route('inscrever') }}">Sócio</a>
@@ -22,7 +23,7 @@
                 <h2 class="ct-footer-list-header">Jogos</h2>
                 <ul>
                     <li>
-                        <a href="{{ route('jogos') }}">Calendario</a>
+                        <a href="{{ route('jogos') }}">Calendário</a>
                     </li>
                     <li>
                         <a href="{{ route('resultados') }}">Resultados</a>
@@ -78,6 +79,7 @@
         </div>
     </div>
 </footer>
+<script src="{{ asset('js/index.js') }}"></script>
 </body>
 
 </html>

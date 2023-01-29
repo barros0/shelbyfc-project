@@ -9,15 +9,13 @@
     <div class="background-foto-calendario">
         <h1 class="tit-principal">Resultados</h1>
     </div>
-    
+
     <div class="container my-4">
 
-    <div class="row">
+        <div class="row">
 
-    <div class="calendar">
-
-
-
+            <div class="calendar">
+  
         @foreach ($proximos_jogos as $proximo_jogo)
 
         @if($proximo_jogo->result_home !== null || $proximo_jogo->result_opponent !== null)
@@ -50,10 +48,8 @@
         @endif
 
         @endforeach
+    </div>
+</div>
+</div>
 
-    </div>
-   
-    </div>
-
-    </div>
 @endsection
