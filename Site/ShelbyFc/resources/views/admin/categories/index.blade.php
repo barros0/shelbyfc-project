@@ -13,13 +13,13 @@
         <a href="{{ route('admin.categories.create') }}" class="btn">Adicionar</a>
     </div>
     <div class="table-responsive">
-    <table>
-        <tbody>
+    <table class="datatable">
+       <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>name</th>
                 <th>Actions</th>
-            </tr>
+            </tr></thead> <tbody>
             @foreach ($categories as $category)
                 <tr>
                     <td>{{ $category->id }}</td>

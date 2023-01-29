@@ -13,17 +13,18 @@
         </div>
         <a href="{{ route('admin.terms.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
-    <table>
-        <tbody>
+    <table  class="datatable">
+        <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Titulo</th>
                 <th>Texto</th>
                 <th>Categoria</th>
                 <th>Actions</th>
-            </tr>
+            </tr></thead>
+        <tbody>
             @foreach ($terms as $term)
                 <tr>
                     <td>{!! $term->id !!}</td>
