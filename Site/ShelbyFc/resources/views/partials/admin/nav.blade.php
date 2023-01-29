@@ -78,9 +78,19 @@
                     <span class="link hide">Contactos</span>
                 </a>
             </li>
+            <li class="tooltip-element" data-tooltip="1">
+                <a href="{{route('admin.terms.index')}}" data-active="1">
+                    <div class="icon">
+                        <i class='bx bx-terminal' ></i>
+                        <i class='bx bxs-terminal' ></i>
+                    </div>
+                    <span class="link hide">Terms & Conditions</span>
+                </a>
+            </li>
             <div class="tooltip">
                 <span class="show">FaQs</span>
                 <span>Contactos</span>
+                <span>Terms</span>
             </div>
         </ul>
 

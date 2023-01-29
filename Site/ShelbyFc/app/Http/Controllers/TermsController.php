@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Terms;
 use Illuminate\Http\Request;
+use Psy\Util\Str;
+use Session;
 
 class TermsController extends Controller
 {

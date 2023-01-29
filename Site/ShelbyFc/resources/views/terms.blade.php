@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Contactos | ShelbyFC')
+@section('title','Terms & Conditions | ShelbyFC')
 
 @include('partials.head')
 
