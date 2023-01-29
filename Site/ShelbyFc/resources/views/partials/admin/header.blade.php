@@ -39,6 +39,9 @@
     <!--DataTable-->
     <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.13.1/i18n/pt-BR.json"></script>
+
+
 </head>
 <body>
 

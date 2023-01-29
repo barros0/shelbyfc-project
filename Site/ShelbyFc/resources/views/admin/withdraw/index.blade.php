@@ -40,7 +40,8 @@
                     <td>
                         <a href="{{route('admin.withdraw.show',$withdraw->id)}}">
                             <i class="fa fa-eye"></i>
-                        </a></td>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
