@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\Terms;
 use App\Models\sobre;
 use App\Models\socio_price;
 use App\Models\Subscription;
@@ -128,6 +129,13 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
+    public function terms()
+    {
+        $terms = terms::all();
+
+        return view('terms')->with('terms', $terms);
+    }
+
 
 
     public function styles()

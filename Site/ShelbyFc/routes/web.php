@@ -15,6 +15,7 @@ use App\Http\Controllers\InscreverController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\FaqsController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\TermsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
@@ -90,6 +91,7 @@ Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
 Route::get('/noticias/categoria/{category}', [PageController::class, 'news_categories'])->name('news.categorie');
 Route::get('/noticia/{id}', [PageController::class, 'NoticiaModal'])->name('NoticiaModal');
 Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
+Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
 
 
@@ -131,6 +133,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/inscrever', InscreverController::class);
     Route::resource('/teams', TeamsController::class);
     Route::resource('/faqs', FaqsController::class);
+    Route::resource('/terms', TermsController::class);
     Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);

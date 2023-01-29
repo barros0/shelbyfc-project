@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             SocioPriceTableSeeder::class,
             FaqsTableSeeder::class,
             ContactsTableSeeder::class,
+            TermsTableSeeder::class,
             GamesTableSeeder::class,
             CountriesTableSeeder::class,
             SubscricoesTableDataSeeder::class,
