@@ -13,7 +13,7 @@
         </div>
         <a href="{{ route('admin.terms.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
     <table>
         <tbody>

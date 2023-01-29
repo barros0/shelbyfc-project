@@ -7,4 +7,8 @@
         .catch( error => {
             console.error( error );
         } );
+
+    $(document).ready( function () {
+        $('.datatable').dataTable();
+    } );
 </script>
