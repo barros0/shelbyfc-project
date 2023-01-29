@@ -72,9 +72,20 @@ class GamesController extends Controller
      */
     public function store(GameRequest $request)
     {
-        //  generate odds
 
-        //temporario
+        $request->validate([
+            'preco_bilhete' => 'required|numeric|min:0',
+            'preco_bilhete_socio' => 'required|numeric|min:0',
+            'local' => 'required',
+            'equipa' => 'required|exists:teams,id',
+            'data_jogo' => 'required|date|after_or_equal:today',
+            'data_limite_bilhetes' => 'required|date|after_or_equal:today',
+            'stock_bilhetes' => 'required|numeric|min:0',
+        ]);
+
+
+
+        //  generate odds
         function gerar_prob_random()
         {
             $min = 1;
@@ -101,7 +112,7 @@ class GamesController extends Controller
         $game->save();
 
         Session::flash('success', 'Jogo publicado!');
-        return back();
+        return redirect()->route('admin.games.index');
     }
 
 
@@ -206,7 +217,6 @@ class GamesController extends Controller
             'data_jogo' => 'required',
             'data_limite_bilhetes' => 'required',
             'stock_bilhetes' => 'required',
-            'data_jogo' => 'required',
         ]);
 
         $game->ticket_price = $request->preco_bilhete;

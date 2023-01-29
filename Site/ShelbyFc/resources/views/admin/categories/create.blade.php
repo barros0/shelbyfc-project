@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="name">Nome Da Categoria</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"
-                        required>
+                           value="{{old('name')}}" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>

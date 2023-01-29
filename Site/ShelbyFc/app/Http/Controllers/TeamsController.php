@@ -41,7 +41,7 @@ class TeamsController extends Controller
         //
         $this->validate($request, [
             'nome' => 'required|unique:teams,name',
-            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
         ]);
 
         $image = $request->imagem;
@@ -97,7 +97,7 @@ class TeamsController extends Controller
 
         $this->validate($request, [
             'nome' => 'required|unique:teams,name,'.$team->id,
-            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
         ]);
 
         $image = $request->imagem;

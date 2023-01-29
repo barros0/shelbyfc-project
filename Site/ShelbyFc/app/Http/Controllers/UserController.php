@@ -35,7 +35,10 @@ class UserController extends Controller
             'codigo_postal' => 'nullable|regex:/^\d{4}-\d{3}?$/',
             'nif' => 'nullable|numeric|digits:9',
             'nascimento' => 'nullable|date',
-            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+        ],
+        [
+            'codigo_postal.regex' => 'O formato do código de postal é inválido.',
         ]);
 
         $user = Auth::user();

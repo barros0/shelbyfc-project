@@ -87,7 +87,7 @@ class PageController extends Controller
             'cidade' => 'required',
             'pais' => 'required|exists:countries,id',
             'zipcode' => 'required|regex:/^\d{4}-\d{3}?$/',
-            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
+            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:4048',
         ]);
         $user = Auth::user()->id;
         $email = Auth::user()->email;
