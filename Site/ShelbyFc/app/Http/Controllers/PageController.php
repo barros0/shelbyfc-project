@@ -24,13 +24,14 @@ class PageController extends Controller
     {
         $noticias = News::orderBy('created_at', 'desc')->take(3)->get();
         $jogos = Game::orderBy('created_at', 'desc')->take(2)->get();
+        $proximos_jogos = Game::orderBy('datetime_game','desc')->take(2)->get();
         $id_js = 0;
         $id_href_js = 0;
         $id_image_js = 0;
         $id_text_js = 0;
         $id_date_js = 0;
 
-        return view('index', compact('noticias', 'id_js', 'id_image_js', 'id_text_js', 'id_date_js','id_href_js'));
+        return view('index', compact('noticias', 'id_js', 'id_image_js', 'id_text_js', 'id_date_js','id_href_js','proximos_jogos'));
     }
 
     public function login()
