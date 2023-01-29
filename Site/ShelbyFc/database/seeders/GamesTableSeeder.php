@@ -25,7 +25,7 @@ class GamesTableSeeder extends Seeder
                 'ticket_available' => '1',
                 'ticket_price' => '25',
                 'ticket_price_partner' => '15',
-                'location' => 'Estadio Municipal de Leiria',
+                'location' => 'Estadio de Leiria',
                 'team_id' => '3',
                 'limit_bet' => '2023-01-21 19:45:00',
                 'limit_buy_ticket' => '2023-01-20 00:00:00',
