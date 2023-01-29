@@ -15,6 +15,7 @@
         </div>
     </div>
 
+
     <div class="term-section">
         <div class="term-box">
             <div class="box-title">
@@ -26,12 +27,74 @@
                 @foreach ($terms as $term)
                 @if ($term->categoria == 'property')
                      <h6>{!! $term->titulo !!}</h6>
-                @endif
                     <p>{!! $term->texto !!}</p>
+                    @endif
             @endforeach
 
 
+              @foreach ($terms as $term)
+                @if ($term->categoria == 'privacy')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
 
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'intellectual')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+           
+
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'responsability')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'registration')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'user')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'sale')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'member')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'ticket')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'purchase_sale')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
+            @foreach ($terms as $term)
+                @if ($term->categoria == 'final_consideration')
+                     <h6>{!! $term->titulo !!}</h6>             
+                      <p>{!! $term->texto !!}</p>
+                    @endif
+            @endforeach
             </div>
         </div>
     </div>
