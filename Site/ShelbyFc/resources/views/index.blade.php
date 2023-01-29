@@ -36,27 +36,29 @@
             @if ($proximo_jogo->result_home || $proximo_jogo->result_opponent)
                 <div class="match">
                     <div class="match_home d-flex flex-column justify-content-between align-items-center">
-                        <img src="{{ asset('images/liga/estrela_da_amadora.png') }}" alt="logo-estrela_da_amadora">
-                        <p class="team_name">Estrela da Amadora</p>
+                        <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="logo-shelby_fc.png">
+                        <p class="team_name">shelby FC</p>
                     </div>
                     <div class="match_info">
-                        <p>{{$proximo_jogo->location}}</p>
+                        <p>{{ $proximo_jogo->location }}</p>
                         <div class="score">
-                            <p class="score_home">2</p>
-                            <p class="score_away">2</p>
+                            <p class="score_home">{{ $proximo_jogo->result_home }}</p>
+                            <p class="score_away">{{ $proximo_jogo->result_opponent }}</p>
                         </div>
-                        <p>{{ $data = date('d M y',strtotime($proximo_jogo->datetime_game)) }}</p>
+                        <p>{{ $data = date('d M y', strtotime($proximo_jogo->datetime_game)) }}</p>
                     </div>
                     <div class="match_away d-flex flex-column justify-content-between align-items-center">
-                        <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="logo-shelby">
-                        <p class="team_name">Shelby FC</p>
+                        <img src="{{ asset('images/liga/' . $proximo_jogo->opponent->image) }}"
+                            alt="{{ $proximo_jogo->opponent->name }}">
+                        <p class="team_name">{{ $proximo_jogo->opponent->name }}</p>
                     </div>
                 </div>
-                
+                <div class="separador"></div>
             @endif
         @endforeach
+
     </div>
 
     <script src="{{ asset('js/index.js') }}"></script>
-<div class="separador"></div>
+
 @endsection
