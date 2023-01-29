@@ -61,10 +61,10 @@ class TermsController extends Controller
      * @param \App\Models\Terms $terms
      * @return \Illuminate\Http\Response
      */
-    public function show(Terms $terms)
+    public function show(Terms $term)
     {
 
-        return view('admin.terms.index',compact('terms'));
+        return view('admin.terms.show',compact('term'));
     }
 
     /**

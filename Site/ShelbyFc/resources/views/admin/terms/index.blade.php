@@ -13,37 +13,39 @@
         </div>
         <a href="{{ route('admin.terms.create') }}" class="btn">Adicionar</a>
     </div>
-
     <div class="table-responsive">
-    <table  class="datatable">
-        <thead>
+        <table class="datatable">
+            <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Titulo</th>
-                <th>Texto</th>
                 <th>Categoria</th>
-                <th>Actions</th>
-            </tr></thead>
-        <tbody>
+                <th>Eliminar</th>
+                <th>Ver</th>
+            </tr>
+            </thead>
+            <tbody>
             @foreach ($terms as $term)
                 <tr>
                     <td>{!! $term->id !!}</td>
                     <td>{!! $term->titulo !!}</td>
-                    <td>{!! $term->texto !!}</td>
-                    <td>{{ $term->categoria }}</td>
+                    <td>{!! $term->categoria !!}</td>
                     <td>
-                        <a href="{{ route('admin.terms.edit', $term) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
-                        <form action="{{ route('admin.terms.destroy', $term) }}" method="post">
+                    <a href="{{ route('admin.terms.edit', $term) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
+                        <form action="{{ route('admin.terms.show', $term) }}" method="post">
                             @method('delete')
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
+                    </td>
+                    <td>
 
+                        <a href="{{ route('admin.terms.show', $term) }}"> <i class="fa fa-eye"></i></a>
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
     </div>
 
