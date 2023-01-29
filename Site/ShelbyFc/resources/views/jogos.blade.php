@@ -49,10 +49,12 @@
                             <div>
                                 <p>Preço</p>
                                 <p>
-                                    @if(Auth::check() || Auth::subscribed())
-
+                                @if(Auth::check() || !empty(Auth::user()->subscribed))
+                                    <p>{{$game->ticket_price_partner}}</p>
+                                @else
+                                    <p>{{$game->ticket_price}}</p>
                                     @endif
-                                </p>
+                                    </p>
                             </div>
                         @else
                             <p>Bilhetes esgotados</p>
