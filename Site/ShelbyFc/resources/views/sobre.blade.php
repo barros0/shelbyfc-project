@@ -16,10 +16,10 @@
     </div>
 
     <div class="about-section">
+    <div class="texto-banner"><span>|</span> MAIS ACERCA DO SHELBY FC <span>|</span></div>
         <div class="about-text">
-            <div class="texto-banner"><span>|</span> MAIS ACERCA DO SHELBY FC <span>|</span></div>
-            <p>O Shelby Football Club consiste num clube desportivo amador local que visa promover o desporto rei tendo
-                um maior foco em jovens desfavorecidos cuja vida é praticamente passada em instituições (7-18 anos).</p>
+            O Shelby Football Club consiste num clube desportivo amador local que visa promover o desporto rei tendo
+                um maior foco em jovens desfavorecidos cuja vida é praticamente passada em instituições (7-18 anos).
 
         </div>
 
@@ -39,6 +39,10 @@
                 <div class="ret-what">
                     <i class='bx bx-buildings'></i>
                     <span class="texto-caixa-sobre">2 567 321€ angariados <br> 4.500 Alunos</span>
+                </div>
+                <div class="ret-what">
+                <i class='bx bxs-user'></i>
+                    <span class="texto-caixa-sobre">2340 Sócios</span>
                 </div>
                 <div class="ret-what">
                     <i class='bx bx-user'></i>

@@ -48,17 +48,17 @@
                 <div class="top-form">
                     <div class="input-icons">
                         <i class='bx bx-user'></i>
-                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required value="{{ Auth::user()->name }}">
+                        <input class="input-field" type="text" id="nome" name="name" placeholder="Nome" required value="{{ Auth::check() ? Auth::user()->name : '' }}">
                     </div>
                     <div class="input-icons">
                         <i class='bx bx-phone'></i>
-                        <input class="input-field" type="text" id="telefone" name="phone" placeholder="Telefone" value="{{ Auth::user()->phone }}"
+                        <input class="input-field" type="text" id="telefone" name="phone" placeholder="Telefone" value="{{ Auth::check() ? Auth::user()->phone : '' }}"
                             required>
                     </div>
                 </div>
                 <div class="input-icons">
                     <i class='bx bx-envelope'></i>
-                    <input class="input-field" type="text" id="email" name="email" placeholder="E-mail" value="{{ Auth::user()->email }}" required >
+                    <input class="input-field" type="text" id="email" name="email" placeholder="E-mail" value="{{ Auth::check() ? Auth::user()->email : '' }}" required >
                 </div>
                 <div class="input-icons">
                     <i class='bx bx-captions'></i>
