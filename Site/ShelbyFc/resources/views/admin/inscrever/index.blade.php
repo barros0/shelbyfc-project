@@ -12,10 +12,10 @@
         </div>
         <a href="{{ route('admin.inscrever.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
-    <table>
-        <tbody>
+        <table class="datatable">
+            <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Nome</th>
@@ -23,6 +23,8 @@
                 <th>Preço</th>
                 <th>Actions</th>
             </tr>
+            </thead>
+            <tbody>
             @foreach ($inscrever as $item_db)
                 <tr>
                     <td>{{ $item_db->id }}</td>
@@ -30,19 +32,20 @@
                     <td>{{ $item_db->idade }}</td>
                     <td>{{ $item_db->preco }}</td>
                     <td>
-                        <a href="{{ route('admin.inscrever.edit', $item_db) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
+                        <a href="{{ route('admin.inscrever.edit', $item_db) }}" class="btn"><i
+                                class='bx bx-edit-alt'></i></a>
                         <form action="{{ route('admin.inscrever.destroy', $item_db) }}" method="post">
                             @method('delete')
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
-                        
+
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
-    
+            </tbody>
+        </table>
+
     </div>
 
 

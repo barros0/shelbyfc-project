@@ -17,8 +17,8 @@
 
     <div class="table-responsive">
 
-        <table>
-            <tbody>
+        <table  class="datatable">
+          <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Adversário</th>
@@ -29,7 +29,7 @@
                 <th>Data</th>
                 <th>Actions</th>
                 <th>Resultados</th>
-            </tr>
+            </tr> </thead> <tbody>
             @foreach ($games as $game)
                 <tr>
                     <td>{{ $game->id }}</td>
