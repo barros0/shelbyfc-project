@@ -50,7 +50,7 @@
                                 <p>Preço</p>
                                 <p>
                                     @if(Auth::check() || Auth::subscribed())
-                                            {{%}}
+
                                     @endif
                                 </p>
                             </div>
