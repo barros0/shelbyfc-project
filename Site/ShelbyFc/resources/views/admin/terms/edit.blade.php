@@ -6,7 +6,7 @@
 @section('content')
 
     <a style="font-size:25px;" href="{{ route('admin.terms.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
-    <h1>Editar Term</h1>
+    <h1>Editar Termos e condições</h1>
 
     <form action="{{ route('admin.terms.update', $term->id) }}" method="post" enctype="multipart/form-data">
         @method('put')
@@ -21,7 +21,10 @@
                 </div>
                 <div class="form-group">
                     <label for="texto_term">Texto</label>
-                    <input type="text" class="form-control" name="texto" value="{!! $term->texto !!}" required>
+                    <textarea name="texto" class="editor" required>
+                {{$term->texto}}
+                </textarea>
+
                 </div>
                 <div class="form-group">
                     <select name="categoria">
