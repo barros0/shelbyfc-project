@@ -53,7 +53,7 @@
                         @if($game->result_home !== null || $game->result_opponent !== null)
                         <a href="{{route('admin.games.show', $game) }}" class="btn">Ver Resultado</a>
                         @else
-                        <span></span>
+                        <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar Resultado</a>
                         @endif
                     </td>
                 </tr>
