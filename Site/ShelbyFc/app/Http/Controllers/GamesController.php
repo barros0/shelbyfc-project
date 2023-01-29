@@ -29,7 +29,7 @@ class GamesController extends Controller
 
         $game_id = $request->game_id;
 
-        $game = Game::all()->findorfail($game_id);
+        $game = Game::findorfail($game_id);
 
         // se a data limite de compra de bilhete estiver ultrapassada
         if (Carbon::now() > $game->limit_buy_ticket	) {

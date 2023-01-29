@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 
-@section('title', 'Jogo Shelby vs'. $game->opponent->name .' | Shelby FC')
+@section('title', 'Jogo Shelby vs '. $game->opponent->name .' | Shelby FC')
 
 @section('content')
 
@@ -10,9 +10,9 @@
     <div class="container my-4">
 
         <div class="row">
-    
-        <div class="calendar">    
-    
+
+        <div class="calendar">
+
             <div class="match-day">
                 <div class="match-details">
                     <span class="match-date">{{ $data = date('d M y',strtotime($game->datetime_game)) }}</span>
@@ -28,11 +28,11 @@
                     <div class="match-result-container">
                         <div class="result-bg"><span class="match-result">{{$game->result_home}}</span></div>
                     </div>
-                    @endif  
+                    @endif
                     <div class="match-vs-half"><span class="match-type">Amigável</span><h3 class="match-day-vs">VS</h3></div>
                     @if($game->result_opponent !== null)
-                    <div class="match-result-container">    
-                        <div class="result-bg"><span class="match-result">{{$game->result_opponent}}</span></div>          
+                    <div class="match-result-container">
+                        <div class="result-bg"><span class="match-result">{{$game->result_opponent}}</span></div>
                     </div>
                     @endif
                     <div class="match-away-team">
@@ -41,11 +41,11 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
-       
+
         </div>
-    
+
         </div>
 
     @if($game->result_home !== null || $game->result_opponent !== null)

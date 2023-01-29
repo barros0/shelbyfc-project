@@ -17,8 +17,8 @@
 
     <div class="table-responsive">
 
-    <table>
-        <tbody>
+        <table>
+            <tbody>
             <tr class="header">
                 <th>ID</th>
                 <th>Adversário</th>
@@ -50,18 +50,18 @@
                         </form>
                     </td>
                     <td>
-                        @if($game->result_home !== null || $game->result_opponent !== null)
-                        <a href="{{route('admin.games.show', $game) }}" class="btn">Ver Resultado</a>
+                        @if($game->result_home == null || $game->result_opponent == null)
+                            <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar Resultado</a>
                         @else
-                        <a href="{{route('admin.games.show', $game) }}" class="btn">Publicar Resultado</a>
+                            <a href="{{route('admin.games.show', $game) }}" class="btn">Ver Resultado</a>
                         @endif
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-</div>
+    </div>
 
 
 

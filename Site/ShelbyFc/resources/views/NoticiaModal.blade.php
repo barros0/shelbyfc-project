@@ -3,7 +3,7 @@
 @section('title', 'Notícias - Shelby FC')
 
 @section('content')
-    <div class="content_noticia">
+    <div class="content_noticia container">
         <img src="{{ asset('images/noticias/' . $noticia->image) }}" alt="">
         <p class="single_noticia">{{ $noticia->categorie->name }}</p>
         <h1>{{ $noticia->title }}</h1>

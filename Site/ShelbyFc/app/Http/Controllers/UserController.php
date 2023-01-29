@@ -80,13 +80,22 @@ class UserController extends Controller
 
         $game = Game::AvaliableTicket()->findOrFail($gameid);
 
+        if(!empty(Auth::user()->subscribed)){
+            $price = $game->ticket_price_partner;
+        }
+        else{
+            $price =  $game->ticket_price;
+        }
+
         $quantidade = $request->quantity;
+
+        $total = $quantidade * $price;
 
         for ($i = 1; $i <= $quantidade; $i++) {
             $ticket = new Ticket();
             $ticket->user_id = Auth::id();
             $ticket->game_id = $gameid;
-            $ticket->price = $game->ticket_price;
+            $ticket->price = $price;
             $ticket->save();
         }
 

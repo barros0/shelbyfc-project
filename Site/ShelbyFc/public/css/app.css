@@ -237,6 +237,12 @@ input.invalid {
     width: 250px;
 }
 
+@media only screen and (max-width: 991px) {
+    .nav-conta-wrap {
+        width: 100%;
+    }
+}
+
 .nav-conta ul {
     margin-top: 40px;
     list-style-type: none;
@@ -1568,7 +1574,6 @@ span {
 .content_noticia {
     display: flex;
     flex-direction: column;
-    width: 60%;
     margin: 30px auto;
 }
 
@@ -2099,7 +2104,7 @@ label.custom-file-upload {
     align-content: center;
     margin-left: 50px;
     margin-right: 50px;
-    
+
 }
 
 .row-what {
@@ -2254,7 +2259,7 @@ label.custom-file-upload {
     .ret-what{
         margin: 0px;
     }
-   
+
 }
 
 @media(max-width:600px){

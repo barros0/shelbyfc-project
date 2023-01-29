@@ -73,7 +73,7 @@ class PayPalController extends Controller
             $transaction->value = $bet->value;
             $transaction->save();
 
-            return back()
+            return redirect()->route('bets')
                 /*redirect()*/
                 /* ->route('createTransaction')*/
                 ->with('success', 'Aposta realizada. Boa sorte!');
@@ -95,7 +95,7 @@ class PayPalController extends Controller
 
         return redirect()
             ->route('tobet')
-            ->with('error', $response['message'] ?? 'Você cancelou esta transação.');
+            ->with('error', $response['message'] ?? 'Você cancelou o pagamento!');
     }
 
 
