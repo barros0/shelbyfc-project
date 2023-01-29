@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GameRequest;
-use App\Models\Categorie;
 use App\Models\Game;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Session;
 
 class GamesController extends Controller
@@ -21,6 +21,34 @@ class GamesController extends Controller
 
         $games = Game::orderby('datetime_game', 'desc')->get();
         return view('admin.games.index', compact('games'));
+    }
+
+
+    public function getgames_values(Request $request)
+    {
+
+        $game_id = $request->game_id;
+
+        $game = Game::all()->findorfail($game_id);
+
+        // se a data limite de compra de bilhete estiver ultrapassada
+        if (Carbon::now() > $game->limit_buy_ticket	) {
+            abort(404);
+        }
+
+        //$value = $request->value_bet;
+
+
+        return response()->json([
+            'date_game' => $game->datetime_game,
+            'game_id' => $game->id,
+            'team1_img' => asset('images/liga/shelby_fc.png'),
+            'team1' => 'Shelby FC',
+            'team2_img' => asset('images/liga/' . $game->opponent->image),
+            'team2' => $game->opponent->name,
+            // 'value' => $value_win,
+        ]);
+
     }
 
 

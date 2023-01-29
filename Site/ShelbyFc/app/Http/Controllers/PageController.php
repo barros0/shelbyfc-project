@@ -159,6 +159,13 @@ class PageController extends Controller
         return view('perfil.tickets');
     }
 
+    public function buy_ticket()
+    {
+        $proximos_jogos = Game::get();
+
+        return view('tickets', compact('proximos_jogos'));
+    }
+
     public function sobre()
     {
         return view('sobre');

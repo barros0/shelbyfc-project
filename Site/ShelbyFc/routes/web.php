@@ -102,8 +102,7 @@ Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.
 
 
 
-Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('buy.ticket');
-
+Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('tickets');
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/resultados', [PageController::class, 'resultados'])->name('resultados');
