@@ -19,9 +19,9 @@
                 </div>
                 <div class="form-group">
                     <label for="texto_term">Texto</label>
-                    <input type="text" class="form-control" name="texto" placeholder="texto" required>
-                </div>
-                
+                    <textarea name="texto" class="editor" required>
+                </textarea>
+
                 <div class="form-group">
                     <label for="categoria_term">Categoria</label>
                     <select name="categoria">
@@ -38,10 +38,10 @@
                             <option value="final_consideration">Final Considerations</option>
                     </select>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
-                   
+
                 </div>
             </div>
     </form>
