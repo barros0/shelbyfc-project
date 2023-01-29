@@ -34,19 +34,19 @@
         <div class="row-what">
                 <div class="ret-what">
                     <i class='bx bx-football'></i>
-                    <span class="texto-caixa-sobre">7x Campeão Nacional <br> 2x Taça de Portugal</span>
+                    <span class="texto-caixa-sobre">2x Taça de Portugal <br> 7x Campeão Nacional</span>
                 </div>
                 <div class="ret-what">
-                    <i class='bx bx-buildings'></i>
-                    <span class="texto-caixa-sobre">2 567 321€ angariados <br> 4.500 Alunos</span>
+                <i class='bx bxs-building' ></i>
+                    <span class="texto-caixa-sobre">3 Centro de Treinos<br> 2 567 321€ angariados</span>
                 </div>
                 <div class="ret-what">
                 <i class='bx bxs-user'></i>
-                    <span class="texto-caixa-sobre">2340 Sócios</span>
+                    <span class="texto-caixa-sobre">2340 Sócios <br>3230 Adeptos Habituais</span>
                 </div>
                 <div class="ret-what">
-                    <i class='bx bx-user'></i>
-                    <span class="texto-caixa-sobre">2340 Sócios</span>
+                <i class='bx bxs-help-circle' ></i>
+                <span class="texto-caixa-sobre"> 4.500 Alunos <br> 10 300 Criancas Ajudadas</span>
                 </div>
             </div>
 
