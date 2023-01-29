@@ -9,6 +9,7 @@
     <h1>Utilizadores</h1>
 
 
+    <div class="table-responsive">
     <table>
         <tbody>
         <tr class="header">
@@ -34,6 +35,6 @@
         </tbody>
     </table>
 
-
+    </div>
 
 @endsection

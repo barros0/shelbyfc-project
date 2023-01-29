@@ -20,8 +20,7 @@
 
         @foreach ($proximos_jogos as $proximo_jogo)
 
-        @if($proximo_jogo->result_home || $proximo_jogo->result_opponent)
-
+        @if($proximo_jogo->result_home !== null || $proximo_jogo->result_opponent !== null)
     
         <div class="match-day">
             <div class="match-details">
@@ -49,6 +48,7 @@
             </div>
         </div>
         @endif
+
         @endforeach
 
     </div>

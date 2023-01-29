@@ -9,6 +9,7 @@
     <h1>Transferências de saldo</h1>
 
 
+    <div class="table-responsive">
     <table>
         <tbody>
         <tr class="header">
@@ -42,7 +43,6 @@
         @endforeach
         </tbody>
     </table>
-
-
+    </div>
 
 @endsection

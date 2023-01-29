@@ -24,13 +24,13 @@
                         <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="Shelby FC" class="match-team">
                         <span class="match-type">Shelby F.C</span>
                     </div>
-                    @if($game->result_home || $game->result_opponent)
+                    @if($game->result_home !== null)
                     <div class="match-result-container">
                         <div class="result-bg"><span class="match-result">{{$game->result_home}}</span></div>
                     </div>
                     @endif  
                     <div class="match-vs-half"><span class="match-type">Amigável</span><h3 class="match-day-vs">VS</h3></div>
-                    @if($game->result_home || $game->result_opponent)
+                    @if($game->result_opponent !== null)
                     <div class="match-result-container">    
                         <div class="result-bg"><span class="match-result">{{$game->result_opponent}}</span></div>          
                     </div>
@@ -48,7 +48,8 @@
     
         </div>
 
-    @if(!$game->result_home || !$game->result_opponent)
+    @if($game->result_home !== null || $game->result_opponent !== null)
+    @else
     <form action="{{ route('admin.games.publish.doresults', $game) }}" method="post" enctype="multipart/form-data">
         @csrf
         <h2>Publicar Resultado</h2>
