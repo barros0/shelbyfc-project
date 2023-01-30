@@ -68,6 +68,9 @@ h6 {
     font-family: 'Bebas Neue', cursive;
 }
 
+.text-primary{
+    color: var(--vermelho) !important;
+}
 
 button, input[type=button], input[type=submit], .btn {
     outline: 0;
@@ -1178,7 +1181,7 @@ button:hover {
 
 .conteudo-pagina button{
     width: 200px;
-   
+
     border-radius: 5px;
     border: 2px solid var(--vermelho);
     background-color: transparent;
@@ -1187,7 +1190,7 @@ button:hover {
 
 .conteudo-pagina button:hover{
     width: 40%;
-    
+
     border: 2px solid var(--vermelho);
     background-color: var(--vermelho);
     color: white;
@@ -1200,7 +1203,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+
 }
 
 .conteudo-pagina .left-side{
@@ -1212,7 +1215,7 @@ button:hover {
     justify-content: center;
     align-content: center;
     align-items: center;
-   
+
 }
 
 .conteudo-pagina .right{
@@ -1229,15 +1232,15 @@ button:hover {
 
 .conteudo-pagina .right h6{
     font-size: 50px;
-    
+
     color: white;
 }
 
 .conteudo-pagina .right p{
     font-size: 20px;
-    
+
     color: white;
-    
+
 }
 
 .conteudo-pagina .left-side p{
@@ -1273,7 +1276,7 @@ button:hover {
         background-color: transparent;
         color: var(--vermelho);
     }
-    
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -1281,7 +1284,7 @@ button:hover {
         text-align: center;
         align-items: center;
     }
-    
+
 }
 
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
@@ -2774,7 +2777,7 @@ label.custom-file-upload {
     margin: 40px auto 0px auto;
     width: 100%;
     max-width: 1100px;
-    height: 200px;
+   padding: 30px;
     background-color: white;
     justify-content: space-between;
     box-shadow: 0px 0px 52px #0000005c;
@@ -2782,9 +2785,7 @@ label.custom-file-upload {
 
 }
 
-.details-half {
-    width: 50%;
-}
+
 
 .montante-bilhetes {
     width: 100%;

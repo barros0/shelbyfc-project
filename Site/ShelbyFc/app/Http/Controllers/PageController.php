@@ -203,7 +203,7 @@ class PageController extends Controller
 
     public function jogos()
     {
-        $proximos_jogos = Game::get();
+        $proximos_jogos = Game::NextGames()->get();
 
         return view('jogos', compact('proximos_jogos'));
     }

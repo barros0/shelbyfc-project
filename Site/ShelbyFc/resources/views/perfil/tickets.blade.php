@@ -17,9 +17,9 @@
         @foreach(Auth::user()->tickets as $ticket)
             <tr>
                 <td>{{$ticket->id}}</td>
-                <td>Shelby FC vs {{$ticket->opponent}}</td>
-                <td>{{$ticket->value}}€</td>
-                <td>{{$ticket->game->datime_game}}</td>
+                <td>Shelby FC vs {{$ticket->game->opponent->name}}</td>
+                <td>{{$ticket->price}}€</td>
+                <td>{{$ticket->game->datetime_game}}</td>
                 <td>{{$ticket->created_at}}</td>
             </tr>
         @endforeach

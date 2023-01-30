@@ -46,7 +46,7 @@
 
         <div class="row text-center mx-0 g-0 py-0 px-3 col-lg-8">
             <!-- <h2 class="mb-3">Selecione um jogo...</h2> -->
-        <div id="details_screen" style="display: none"> 
+        <div id="details_screen" style="display: none">
             <div class="match-day">
                 <div class="match-details">
                     <span id="date_game" class="match-date"></span>
@@ -65,25 +65,25 @@
                         <span id="team2" class="match-type"></span>
                     </div>
                 </div>
-            
+
             </div>
 
 
-                <form action="{{route('tobet.post')}}" method="post" >
+                <form action="{{route('tickets.buy')}}" method="post" >
                     @csrf
-                <div class="container_details_tickets">
+                <div class="container_details_tickets flex-wrap row">
 
-                    <div class="details-half">
+                    <div class="details-half  col-sm-12  col-lg-6">
 
                     <input name="jogo" id="game_id" type="number" hidden>
                     <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
-    
-    
+
+
                     <div class="row g-0 m-0 p-0">
-    
+
                         <div class="montante-bilhetes">
                                 <span class="details-montante-ticket"><span class="text-start" style="color:#000">BILHETES</span> <span class="text-end" style="color:#000"><span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
-                            <input name="montante" id="montante" type="number" placeholder="Quantidade" min="1" max="5">
+                            <input name="quantidade" id="montante" type="number" placeholder="Quantidade" min="1" max="5">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
                                 <button type="button" class="bt_add_value btn-secondary" value="3">3</button>
@@ -93,23 +93,27 @@
                     </div>
                     </div>
                 </div>
-                    <div class="separador"></div>
-                    <div class="details-half">
-                        
-                        <input name="jogo" id="game_id" type="number" hidden>
-                        <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
-        
-        
-                        <div class="row g-0 m-0 p-0">
-        
-                            <div class="montante-bilhetes">
-                                <span class="details-montante-ticket"><span class="text-start" style="color:#000">BANCADA</span> <span class="text-end">Mapa de Bancadas / Preçários</span></span>
-                                <select id="bancada" name="bancada" placeholder="Bancada">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
 
-                                  </select>
+                    <div class="details-half  col-sm-12 col-lg-6">
+
+                        <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
+
+
+                        <div class="row g-0 m-0 p-0">
+
+                            <div class="montante-bilhetes">
+                                <h3>
+                                @if(Auth::user()->subscribed)
+                                        Preço de sócio:
+                                @else
+                                        Preço:
+                                @endif
+                                </h3>
+
+
+                                <h2 class="text-primary" @if(Auth::user()->subscribed) hidden @endif id="gameprice"></h2>
+
+                                <h2 class="text-primary" @if(!Auth::user()->subscribed) hidden @endif id="gameprice_partner"></h2>
 
                             </div>
                         </div>
@@ -120,20 +124,20 @@
 
                 <div class="pay-tickets">
 
-    
+
                     <div class="row g-0 mb-3 p-0">
                         <h3>TOTAL <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
                     </div>
-    
-    
+
+
                     <div class="row g-0 m-0 p-0 ">
                         <button type="submit" class="text-uppercase btn-registo">Prosseguir Para Pagamento</button>
                     </div>
             </div>
 
             </form>
-    
-        
+
+
 
     </div>
 
@@ -193,8 +197,8 @@
                     $('#team2').text(data.team2)
                     $('#limite').text(data.limit_buy)
                     $('#quantidade').text(data.quantidade)
-                    $('#preco_normal').text(data.preco)
-                    $('#preco_socio').text(data.preco_socio)
+                    $('#gameprice').text(data.preco+'€')
+                    $('#gameprice_partner').text(data.preco_socio+'€')
                     $('#location').text(data.location)
 
                     // scroll para o screen de apostas
