@@ -13,6 +13,7 @@
             <th>Valor</th>
             <th>Data do jogo</th>
             <th>Data</th>
+            <th>Imprimir</th>
         </tr>
         @foreach(Auth::user()->tickets as $ticket)
             <tr>
@@ -21,6 +22,12 @@
                 <td>{{$ticket->price}}€</td>
                 <td>{{$ticket->game->datetime_game}}</td>
                 <td>{{$ticket->created_at}}</td>
+                <td>
+                    <a target="_blank" href="{{route('print.ticket',$ticket)}}">
+                        <i class="fa fa-print"></i>
+                    </a>
+                </td>
+
             </tr>
         @endforeach
         </tbody>

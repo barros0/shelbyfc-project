@@ -21,6 +21,11 @@ class TicketsController extends Controller
         return view('admin.tickets.index', compact('ticket_list'));
     }
 
+    public function print(Ticket $ticket){
+
+        return view('tickets.print', compact('ticket'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

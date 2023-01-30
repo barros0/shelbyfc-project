@@ -75,6 +75,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('tickets');
     Route::post('/comprar-bilhete', [UserController::class, 'buy_ticket'])->name('tickets.buy');
 
+    Route::get('/imprimir-bilhete/{ticket}', [TicketsController::class, 'print'])->name('print.ticket');
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');

@@ -25,14 +25,14 @@
                 <th>Email</th>
                 <th>Preço</th>
                 <th>Data de Compra</th>
-            </tr> 
-        </thead> 
+            </tr>
+        </thead>
         <tbody>
             @foreach ($ticket_list as $ticket)
                 <tr>
                     <td>{{ $ticket->id }}</td>
                     <td>{{ $ticket->user_id }}</td>
-                    <td>{{ $ticket->mailUser->email }}€</td>
+                    <td>{{ $ticket->user->email }}€</td>
                     <td>{{ $ticket->price }}€</td>
                     <td>{{ $ticket->created_at }}</td>
                     <td>
@@ -43,7 +43,7 @@
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
                     </td>
-     
+
                 </tr>
             @endforeach
             </tbody>
