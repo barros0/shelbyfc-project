@@ -1160,6 +1160,92 @@ button:hover {
     }
 }
 
+/*========================================================Pagins 404=====================================================================*/
+
+.conteudo-pagina{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/404/fundo-404.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+.conteudo-pagina button{
+    width: 40%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--vermelho);
+    background-color: transparent;
+    color: var(--vermelho);
+}
+
+.conteudo-pagina button:hover{
+    width: 40%;
+    margin-top: 20px;
+    border: 2px solid var(--vermelho);
+    background-color: var(--vermelho);
+    color: white;
+}
+
+.caixa-erro{
+    width: 40%;
+    height: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.conteudo-pagina .left-side{
+    height: auto;
+    width: 30%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-end;
+   
+}
+
+.conteudo-pagina .right{
+    height: auto;
+    width: 70%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border-left: 2px solid var(--vermelho);
+}
+
+.conteudo-pagina .right h6{
+    font-size: 50px;
+    margin-left: 20px;
+    color: white;
+}
+
+.conteudo-pagina .right p{
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+    
+}
+
+.conteudo-pagina .left-side p{
+    font-size: 80px;
+    margin-right: 20px;
+    color: var(--vermelho);
+}
+
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
 span {
