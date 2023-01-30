@@ -7,6 +7,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
 use Session;
+
 class NewsController extends Controller
 {
     /**
@@ -44,7 +45,7 @@ class NewsController extends Controller
             'small_description' => 'required',
             'body' => 'required',
             'categorie_id' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $image = $request->image;
@@ -105,7 +106,7 @@ class NewsController extends Controller
             'small_description' => 'required',
             'body' => 'required',
             'categories' => 'nullable',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $image = $request->image;
