@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-sm-6 col-md-2 ct-u-paddingTop10">
                     <address>
-                        <span>SHELBY FC<br></span><span>Email: </span>support@shelbyfc.com<br> <span>Morada:</span> R. Gen. Norton de Matos Apartado 4133<br>
+                        <span>SHELBY FC<br></span><span>Morada:</span> R. Gen. Norton de Matos Apartado 4133<br>
                         <span>Phone: <a href="tel:244144102">244 144 102</a></span>
                     </address>
                 </div>

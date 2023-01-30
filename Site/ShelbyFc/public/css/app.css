@@ -2070,6 +2070,7 @@ label.custom-file-upload {
 /*-----------------------------------------------------------------------------SOBRE NOS----------------------------------------------------------------------------*/
 
 .conteudo-sobre {
+    margin-top: 40px;
     height: auto;
     width: 100%;
     display: flex;
@@ -2464,6 +2465,7 @@ label.custom-file-upload {
 
 
 .conteudo-terms {
+    margin-top: 40px;
     height: auto;
     width: 100%;
     display: flex;
@@ -2561,6 +2563,7 @@ label.custom-file-upload {
 
 
 .conteudo-contactos {
+    margin-top: 40px;
     height: auto;
     width: 100%;
     display: flex;
