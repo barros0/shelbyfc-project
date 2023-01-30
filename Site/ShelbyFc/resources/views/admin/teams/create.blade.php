@@ -13,12 +13,12 @@
             <div class="col-lg-9">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="name" placeholder="Nome" required>
+                    <input type="text" class="form-control" name="nome" id="name" placeholder="Nome" required  value="{{old('nome')}}" >
                 </div>
 
                 <div class="form-group">
                     <label for="name">Imagem</label>
-                    <input type="file" class="form-control" name="imagem" id="name" placeholder="Imagem" required  accept="image/*" >
+                    <input type="file" class="form-control" name="imagem" id="name" placeholder="Imagem" required  accept="image/*"  value="{{old('imagem')}}" >
                 </div>
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>

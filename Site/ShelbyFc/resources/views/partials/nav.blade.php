@@ -65,7 +65,7 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('forum.home') }}">
+                                    href="{{ route('tickets') }}">
                                     Bilheteira
                                 </a>
                             </li>
@@ -94,7 +94,7 @@
                             </li>
                             <li>
                                 <a class="d-flex align-items-center justify-content-center"
-                                    href="{{ route('forum.home') }}">
+                                    href="{{ route('terms') }}">
                                     Termos e Condições
                                 </a>
                             </li>

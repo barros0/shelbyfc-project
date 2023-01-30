@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BetsController;
+use App\Http\Controllers\GamesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use App\Http\Controllers\BetsController;
 */
 
 Route::post('/get_game_bet', [BetsController::class, 'getbets_values'])->name('get.bet');
+Route::post('/get_game', [GamesController::class, 'getgames_values'])->name('get.game');
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

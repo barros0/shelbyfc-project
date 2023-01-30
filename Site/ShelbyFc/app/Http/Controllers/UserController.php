@@ -35,7 +35,10 @@ class UserController extends Controller
             'codigo_postal' => 'nullable|regex:/^\d{4}-\d{3}?$/',
             'nif' => 'nullable|numeric|digits:9',
             'nascimento' => 'nullable|date',
-            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1048',
+            'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+        ],
+        [
+            'codigo_postal.regex' => 'O formato do código de postal é inválido.',
         ]);
 
         $user = Auth::user();
@@ -80,13 +83,22 @@ class UserController extends Controller
 
         $game = Game::AvaliableTicket()->findOrFail($gameid);
 
+        if(!empty(Auth::user()->subscribed)){
+            $price = $game->ticket_price_partner;
+        }
+        else{
+            $price =  $game->ticket_price;
+        }
+
         $quantidade = $request->quantity;
+
+        $total = $quantidade * $price;
 
         for ($i = 1; $i <= $quantidade; $i++) {
             $ticket = new Ticket();
             $ticket->user_id = Auth::id();
             $ticket->game_id = $gameid;
-            $ticket->price = $game->ticket_price;
+            $ticket->price = $price;
             $ticket->save();
         }
 

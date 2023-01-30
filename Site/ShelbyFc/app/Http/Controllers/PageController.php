@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\Terms;
 use App\Models\sobre;
 use App\Models\socio_price;
 use App\Models\Subscription;
@@ -87,7 +88,7 @@ class PageController extends Controller
             'cidade' => 'required',
             'pais' => 'required|exists:countries,id',
             'zipcode' => 'required|regex:/^\d{4}-\d{3}?$/',
-            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
+            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:4048',
         ]);
         $user = Auth::user()->id;
         $email = Auth::user()->email;
@@ -129,6 +130,13 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
+    public function terms()
+    {
+        $terms = terms::all();
+
+        return view('terms')->with('terms', $terms);
+    }
+
 
 
     public function styles()
@@ -158,6 +166,13 @@ class PageController extends Controller
     public function tickets()
     {
         return view('perfil.tickets');
+    }
+
+    public function buy_ticket()
+    {
+        $proximos_jogos = Game::get();
+
+        return view('tickets', compact('proximos_jogos'));
     }
 
     public function sobre()

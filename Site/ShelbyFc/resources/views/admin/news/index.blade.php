@@ -13,10 +13,10 @@
         </div>
         <a href="{{ route('admin.news.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
-    <table>
-        <tbody>
+    <table  class="datatable">
+        <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Title</th>
@@ -25,6 +25,8 @@
                 <th>Views</th>
                 <th>Actions</th>
             </tr>
+        </thead>
+        <tbody>
             @foreach ($news as $new)
                 <tr>
                     <td>{{ $new->id }}</td>

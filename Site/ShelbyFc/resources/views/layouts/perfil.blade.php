@@ -20,37 +20,37 @@
                         </div>
 
                         <ul class="row nav flex-wrap nav-pills me-3">
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('perfil')}}" @if(Route::currentRouteName() == 'perfil')class="active"@endif>
                                     <i class="fa fa-user"></i>
                                     Perfil
                                 </a>
                             </li>
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('subscricoes')}}" @if(Route::currentRouteName() == 'subscricoes')class="active"@endif>
                                     <i class="fa-sharp fa-solid fa-handshake"></i>
                                     Subscrições
                                 </a>
                             </li>
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('seguranca')}}" @if(Route::currentRouteName() == 'seguranca')class="active"@endif>
                                     <i class="fa fa-lock"></i>
                                     Segurança
                                 </a>
                             </li>
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('tickets')}}" @if(Route::currentRouteName() == 'tickets')class="active"@endif>
                                     <i class="fa fa-coins"></i>
                                     Bilhetes
                                 </a>
                             </li>
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('bets')}}" @if(Route::currentRouteName() == 'bets')class="active"@endif>
                                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
                                     Minhas apostas
                                 </a>
                             </li>
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
                                 <a href="{{route('withdraw')}}" @if(Route::currentRouteName() == 'withdraw')class="active"@endif>
                                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
                                     Retirar Saldo
@@ -58,7 +58,7 @@
                             </li>
 
 
-                            <li class="col-6 col-md-12">
+                            <li class="col-4 col-md-12">
 
                                 <a class="logoutbt" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" id="v-preferencias-tab" data-bs-toggle="pill"
                                    data-bs-target="#v-preferencias" type="button" role="tab"

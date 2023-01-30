@@ -60,9 +60,14 @@ a:hover {
     color: var(--vermelho) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
     font-family: 'stable';
 }
+
+h6{
+font-family: 'Bebas Neue', cursive;
+}
+
 
 button, input[type=button], input[type=submit], .btn {
     outline: 0;
@@ -235,6 +240,12 @@ input.invalid {
 
 .nav-conta-wrap {
     width: 250px;
+}
+
+@media only screen and (max-width: 991px) {
+    .nav-conta-wrap {
+        width: 100%;
+    }
 }
 
 .nav-conta ul {
@@ -1614,7 +1625,6 @@ span {
 .content_noticia {
     display: flex;
     flex-direction: column;
-    width: 60%;
     margin: 30px auto;
 }
 
@@ -2324,6 +2334,102 @@ label.custom-file-upload {
         font-size: 10px;
     }
 }
+
+/*====================================================================Terms and Contions================================================================================*/
+.conteudo-terms .imagem-inicio {
+    background-image: url(../images/terms/fundo-terms.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.conteudo-terms {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    background-color: transparent;
+    
+}
+
+.term-section  {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url(../images/terms/background-terms.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    
+}
+
+.term-box{
+    width: 60%;
+    height: 800px;
+    min-height: 300px;
+    box-shadow: 0px 0px 52px #0000005c;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    overflow: auto ;
+    background-color: white;
+    z-index: 99;
+    
+}
+
+.term-box::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+
+  .term-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  .term-box::-webkit-scrollbar-thumb {
+    background: var(--vermelho); 
+    border-radius: 10px;
+  }
+  
+  .term-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(253, 147, 147); 
+  }
+
+.box-title{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content h6{
+    font-size: 25px;
+}
+
+.box-content p span{
+    color: var(--preto);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
 
 /*------------------------------------------------------------------------ CONTACTOS -----------------------------------------------------------------------------------*/
 
