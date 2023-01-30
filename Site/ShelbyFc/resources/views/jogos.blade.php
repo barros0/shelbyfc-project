@@ -18,6 +18,8 @@
 
                 @foreach ($proximos_jogos as $game)
 
+                @if($game->result_home !== null || $game->result_opponent !== null)
+                @else
 
                     <div class="match-day">
                         <div class="match-details">
@@ -58,6 +60,7 @@
                             </div>
                         @else
                             <p>Bilhetes esgotados</p>
+                        @endif
                         @endif
 
 

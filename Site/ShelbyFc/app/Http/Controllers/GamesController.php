@@ -24,7 +24,7 @@ class GamesController extends Controller
     }
 
 
-    public function getgames_values(Request $request)
+    public function game_tickets_value(Request $request)
     {
 
         $game_id = $request->game_id;
@@ -46,6 +46,13 @@ class GamesController extends Controller
             'team1' => 'Shelby FC',
             'team2_img' => asset('images/liga/' . $game->opponent->image),
             'team2' => $game->opponent->name,
+            'limit_buy' => $game->limit_buy_ticket,
+            'quantidade' => $game->stock_tickets,
+            'preco' => $game->ticket_price,
+            'preco_socio' => $game->ticket_price_partner,
+            'location' => $game->location,
+
+
             // 'value' => $value_win,
         ]);
 

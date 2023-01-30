@@ -44,86 +44,102 @@
             </div>
         </div>
 
-        <div class="row text-center mx-0 g-0 p-0 col-lg-8">
+        <div class="row text-center mx-0 g-0 py-0 px-3 col-lg-8">
             <!-- <h2 class="mb-3">Selecione um jogo...</h2> -->
+        <div id="details_screen" style="display: none"> 
+            <div class="match-day">
+                <div class="match-details">
+                    <span id="date_game" class="match-date"></span>
+                    <span id="hours_game" class="match-hours"></span>
+                    <span id="location" class="match-location"></span>
+                </div>
+                <div class="teams">
+                    <div class="match-home-team">
+                        <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="Shelby FC" class="match-team-bilheteira">
+                        <span class="match-type">Shelby F.C</span>
+                    </div>
+                    <div class="match-vs-half"><span class="match-type">Amigável</span>
+                        <h3 class="match-day-vs">VS</h3></div>
+                    <div class="match-away-team">
+                        <img id="team2_img" src="" alt="oponente" class="match-team-bilheteira">
+                        <span id="team2" class="match-type"></span>
+                    </div>
+                </div>
+            
+            </div>
 
-            <form action="{{route('tobet.post')}}" method="post" id="bet_screen" style="display: none">
-                @csrf
-                <input name="jogo" id="game_id" type="number" hidden>
-                <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
 
+                <form action="{{route('tobet.post')}}" method="post" >
+                    @csrf
+                <div class="container_details_tickets">
+
+                    <div class="details-half">
+
+                    <input name="jogo" id="game_id" type="number" hidden>
+                    <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
+    
+    
                     <div class="row g-0 m-0 p-0">
-                        <div class="d-flex flex-row justify-content-evenly align-items-center">
-                            <div class="team-img">
-                                <img id="team1_img" src="{{asset('images/logo.svg')}}" alt="">
-                            </div>
-
-                            <div
-                                class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
-                                <p class="text-center fw-bolder">Amigável</p>
-                                <h1 class="vs text-center">VS</h1>
-                                <p class="text-center" id="date_game">Selecione um jogo no menu de jogos</p>
-                            </div>
-
-                            <div class="team-img">
-                                <img id="team2_img" src="{{asset('images/logo.svg')}}" alt="">
+    
+                        <div class="montante-bilhetes">
+                                <span class="details-montante text-end"> <span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
+                            <input name="montante" id="montante" type="number" placeholder="Quantidade" min="1" max="5">
+                            <div class="montantes-rapidos">
+                                <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
+                                <button type="button" class="bt_add_value btn-secondary" value="3">3</button>
+                                <button type="button" class="bt_add_value btn-secondary" value="5">5</button>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="row g-0 m-0 p-0">
-                        <h4 class="mb-3">Apostar</h4>
-                        <div class="select-bet">
-                            <input hidden type="radio" id="win" name="fator" value="win">
-                            <input hidden type="radio" id="lose" name="fator" value="lose">
-                            <input hidden type="radio" id="draw" name="fator" value="draw">
-
-                            <label for="win" type="radio" class="bet-to-select d-flex flex-column win">
-                                <h3>W</h3>
-                                <span class="odd fw-bolder" id="win-odd">1.00</span>
-                            </label>
-                            <label for="draw" type="button" class="bet-to-select d-flex flex-column draw">
-                                <h3>D</h3>
-                                <span class="odd fw-bolder" id="draw-odd">1.00</span>
-                            </label>
-                            <label for="lose" type="button" class="bet-to-select d-flex flex-column lose">
-                                <h3>L</h3>
-                                <span class="odd fw-bolder" id="lose-odd">1.00</span>
-                            </label>
-                        </div>
-                </div>
-
-                <div class="row g-0 m-0 p-0">
-
-                    <div class="montante">
-                            <span class="details-montante text-end"> <span
-                                    class="cinza-montante">Min:</span> 1€ <span class="cinza-montante">Máx:</span> 500€</span>
-                        <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="500">
-                        <div class="montantes-rapidos">
-                            <button type="button" class="bt_add_value btn-secondary" value="1">1€</button>
-                            <button type="button" class="bt_add_value btn-secondary" value="10">10€</button>
-                            <button type="button" class="bt_add_value btn-secondary" value="25">25€</button>
-                            <button type="button" class="bt_add_value btn-secondary" value="50">50€</button>
-                        </div>
                     </div>
                 </div>
+                    <div class="separador"></div>
+                    <div class="details-half">
+                        
+                        <input name="jogo" id="game_id" type="number" hidden>
+                        <div class="game-selected px-3 d-flex flex-column flex-wrap justify-content-evenly">
+        
+        
+                        <div class="row g-0 m-0 p-0">
+        
+                            <div class="montante-bilhetes">
+                                    <span class="details-montante text-end"> <span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
+                                <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="5">
+                                <div class="montantes-rapidos">
+                                    <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
+                                    <button type="button" class="bt_add_value btn-secondary" value="3">3</button>
+                                    <button type="button" class="bt_add_value btn-secondary" value="5">5</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
-                <div class="row g-0 m-0 p-0">
-                    <h3>Ganhos possíveis <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
                 </div>
 
+                <div class="pay-tickets">
 
-                <div class="row g-0 m-0 p-0 ">
-                    <button type="submit" class="btn btn-primary text-uppercase btn-aposta">Apostar</button>
-                </div>
-        </div>
-        </form>
+    
+                    <div class="row g-0 mb-3 p-0">
+                        <h3>TOTAL <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
+                    </div>
+    
+    
+                    <div class="row g-0 m-0 p-0 ">
+                        <button type="submit" class="text-uppercase btn-registo">Prosseguir Para Pagamento</button>
+                    </div>
+            </div>
+
+            </form>
+    
+        
+
     </div>
 
 
 </div>
 
+</div>
 </div>
 
 <script>
@@ -160,20 +176,29 @@
                     game_id: gameid,
                 },
                 success: function (data) {
-                    $('#bet_screen').show()
-                    $('#date_game').text(data.date_game)
+                    let datetime = data.date_game.split(" ");
+                    let date = new Date(datetime[0]);
+                    let hours = datetime[1].split(":").slice(0, 2).join(":");
+                    date = date.toLocaleDateString("default", { day: "numeric", month: "short", year: "numeric" });
+                    date = date.split("/").join("-");
+
+                    $('#details_screen').show()
+                    $('#date_game').text(date)
+                    $('#hours_game').text(hours)
                     $('#game_id').val(data.game_id)
-                    $('#win-odd').text(data.win)
-                    $('#draw-odd').text(data.draw)
-                    $('#lose-odd').text(data.lose)
                     $('#team1_img').attr('src', data.team1_img)
-                    $('#team1').val(data.team1)
+                    $('#team1').text(data.team1)
                     $('#team2_img').attr('src', data.team2_img)
-                    $('#team2').val(data.team2)
+                    $('#team2').text(data.team2)
+                    $('#limite').text(data.limit_buy)
+                    $('#quantidade').text(data.quantidade)
+                    $('#preco_normal').text(data.preco)
+                    $('#preco_socio').text(data.preco_socio)
+                    $('#location').text(data.location)
 
                     // scroll para o screen de apostas
                     $('html, body').animate({
-                        scrollTop: $("#bet_screen").offset().top
+                        scrollTop: $("#details_screen").offset().top
                     });
                 },
                 error: function (xhr, exception) {

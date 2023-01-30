@@ -2458,6 +2458,37 @@ label.custom-file-upload {
     height: 400px;
 }
 
+
+/*----bilheteira---*/
+.match-team-bilheteira{
+    width: 150px;
+
+}
+
+.container_details_tickets{
+        display: flex;
+        margin: 40px auto 0px auto;
+        width: 100%;
+        max-width: 1100px;
+        height: 200px;
+        background-color: white;
+        justify-content: space-between;
+        box-shadow: 0px 0px 52px #0000005c;
+        align-items: center;
+    
+}
+
+.details-half{
+    width: 50%;
+}
+
+.montante-bilhetes{
+    width: 100%;
+}
+
+.pay-tickets{
+    margin-top: 50px;
+}
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
 #bet_screen {

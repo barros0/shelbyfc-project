@@ -17,7 +17,7 @@ use App\Http\Controllers\GamesController;
 */
 
 Route::post('/get_game_bet', [BetsController::class, 'getbets_values'])->name('get.bet');
-Route::post('/get_game', [GamesController::class, 'getgames_values'])->name('get.game');
+Route::post('/get_game', [GamesController::class, 'game_tickets_value'])->name('get.game');
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
