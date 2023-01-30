@@ -17,8 +17,8 @@
 
     <div class="table-responsive">
 
-        <table>
-            <tbody>
+        <table  class="datatable">
+          <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Adversário</th>
@@ -27,10 +27,9 @@
                 <th>Local</th>
                 <th>Bilhetes disponiveis</th>
                 <th>Data</th>
-                <th>Publicado</th>
                 <th>Actions</th>
                 <th>Resultados</th>
-            </tr>
+            </tr> </thead> <tbody>
             @foreach ($games as $game)
                 <tr>
                     <td>{{ $game->id }}</td>
@@ -40,7 +39,6 @@
                     <td>{{ $game->location }}</td>
                     <td>{{ $game->stock_tickets}}</td>
                     <td>{{ $game->datetime_game }}</td>
-                    <td>{{ $game->created_at }}</td>
                     <td>
                         <a href="{{ route('admin.games.edit', $game) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
                         <form action="{{ route('admin.games.destroy', $game) }}" method="post">

@@ -14,8 +14,7 @@
                 $('.bet-to-select').removeClass('bet_active');
                 $(this).addClass('bet_active');
                 setTimeout(
-                    function()
-                    {
+                    function () {
                         update_values();
                     }, 100);
 
@@ -78,20 +77,20 @@
                 update_values();
             });
 
-            function update_values(){
+            function update_values() {
                 $('#montante').val();
                 fator = $('input[name="fator"]:checked').val()
-                val_fator = $('#'+fator+'-odd').text()
+                val_fator = $('#' + fator + '-odd').text()
 
-                ganhos_possiveis =  $('#montante').val() * val_fator+'€';
+                ganhos_possiveis = $('#montante').val() * val_fator + '€';
 
                 $('#ganhos_possiveis').text(ganhos_possiveis);
             }
+
             // quando valor muda muda ganhos posssiveis
-            $('#montante').on('keyup', function() {
+            $('#montante').on('keyup', function () {
                 update_values();
             });
-
 
 
             $('.bt_add_value').click(function () {
@@ -123,21 +122,20 @@
                                     <p class="text center">Shelby FC</p>
                                 </div>
 
-                                <div
-                                    class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
+                                <div class="info-game d-flex justify-content-center flex-column align-content-between g-0 m-0 p-0">
                                     <p class="text-center fw-bolder">Amigável</p>
                                     <h4 class="vs text-center">VS</h4>
                                     <p class="text-center">{{$game->datetime_game}}</p>
                                 </div>
 
                                 <div class="team-img">
-                                    <img src="{{asset('images/liga/'.$game->opponent->image)}}" alt="{{$game->opponent->name}}">
-                                <p class="text center">{{$game->opponent->name}}</p>
+                                    <img src="{{asset('images/liga/'.$game->opponent->image)}}"
+                                         alt="{{$game->opponent->name}}">
+                                    <p class="text center">{{$game->opponent->name}}</p>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
 
@@ -189,37 +187,39 @@
                                     <span class="odd fw-bolder" id="lose-odd">1.00</span>
                                 </label>
                             </div>
-                    </div>
+                        </div>
 
-                    <div class="row g-0 m-0 p-0">
+                        <div class="row g-0 m-0 p-0">
 
-                        <div class="montante">
+                            <div class="montante">
                                 <span class="details-montante text-end"> <span
                                         class="cinza-montante">Min:</span> 1€ <span class="cinza-montante">Máx:</span> 500€</span>
-                            <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="500">
-                            <div class="montantes-rapidos">
-                                <button type="button" class="bt_add_value btn-secondary" value="1">1€</button>
-                                <button type="button" class="bt_add_value btn-secondary" value="10">10€</button>
-                                <button type="button" class="bt_add_value btn-secondary" value="25">25€</button>
-                                <button type="button" class="bt_add_value btn-secondary" value="50">50€</button>
+                                <input name="montante" id="montante" type="number" placeholder="Montante" min="1"
+                                       max="500">
+                                <div class="montantes-rapidos">
+                                    <button type="button" class="bt_add_value btn-secondary" value="1">1€</button>
+                                    <button type="button" class="bt_add_value btn-secondary" value="10">10€</button>
+                                    <button type="button" class="bt_add_value btn-secondary" value="25">25€</button>
+                                    <button type="button" class="bt_add_value btn-secondary" value="50">50€</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row g-0 m-0 p-0">
-                        <h3>Ganhos possíveis <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
-                    </div>
+                        <div class="row g-0 m-0 p-0">
+                            <h3>Ganhos possíveis <span class="ganhos-bg"><span id="ganhos_possiveis"
+                                                                               class="ganhos">0€</span></span></h3>
+                        </div>
 
 
-                    <div class="row g-0 m-0 p-0 ">
-                        <button type="submit" class="btn btn-primary text-uppercase btn-aposta">Apostar</button>
+                        <div class="row g-0 m-0 p-0 ">
+                            <button type="submit" class="btn btn-primary text-uppercase btn-aposta">Apostar</button>
+                        </div>
                     </div>
+                </form>
             </div>
-            </form>
+
+
         </div>
-
-
-    </div>
 
 
     </div>

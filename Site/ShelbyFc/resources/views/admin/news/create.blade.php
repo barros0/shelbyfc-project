@@ -15,17 +15,19 @@
                 <div class="form-group">
                     <label for="title_new">Title</label>
                     <input type="text" class="form-control" name="title" id="title_new" placeholder="Enter Title"
-                        required>
+                        required  value="{{old('title')}}">
                 </div>
                 <div class="form-group">
                     <label for="small_description_new">Small Description</label>
                     <input type="text" class="form-control" name="small_description"
-                        placeholder="Enter Small Description" required>
+                        placeholder="Enter Small Description" required  value="{{old('small_description')}}">
                 </div>
-                <textarea name="body" class="editor"></textarea>
+                <textarea name="body" class="editor">
+                    {{old('body')}}
+                </textarea>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input class="form-control" name="image" type="file" id="image" required>
+                    <input class="form-control" name="image" type="file" id="image" required  value="{{old('image')}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
@@ -34,7 +36,11 @@
                 <div class="form-group">
                     <select name="categorie_id">
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option
+                                @if(old('categorie_id') == $category->id)
+                                    selected
+                                @endif
+                                value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>

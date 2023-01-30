@@ -12,16 +12,18 @@
         </div>
         <a href="{{ route('admin.teams.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
-    <table>
-        <tbody>
+    <table class="datatable">
+        <thead>
             <tr class="header">
                 <th>ID</th>
-                <th></th>
+                <th>Imagem</th>
                 <th>name</th>
                 <th>Actions</th>
             </tr>
+        </thead>
+        <tbody>
             @foreach ($teams as $team)
                 <tr>
                     <td>{{ $team->id }}</td>
@@ -40,7 +42,6 @@
             @endforeach
         </tbody>
     </table>
-    
-    </div>
 
+    </div>
 @endsection

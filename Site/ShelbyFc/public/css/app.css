@@ -60,9 +60,14 @@ a:hover {
     color: var(--vermelho) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
     font-family: 'stable';
 }
+
+h6{
+font-family: 'Bebas Neue', cursive;
+}
+
 
 button, input[type=button], input[type=submit], .btn {
     outline: 0;
@@ -1502,7 +1507,53 @@ span {
     color: var(--preto);
 }
 
+#filtros_news {
+    display: none;
+    color: white;
+}
+
+.no_news {
+    text-align: center;
+    margin: 35px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container_all_news {
+        max-width: inherit;
+    }
+}
+
 @media only screen and (max-width: 900px) {
+
+    .news_from_category a:nth-child(n+2) {
+        display: none;
+    }
+
+    .news_categories_options {
+        display: block !important;
+    }
+
+    #filtros_news {
+        display: flex;
+        font-size: 18px;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #filtros_news a i {
+        margin-left: 10px;
+        font-size: 27px;
+    }
+
+    .news_from_category {
+        display: block;
+    }
+
+    .nav_categories {
+        height: auto;
+    }
+
     .container_main_new {
         display: flex;
         align-items: flex-end;
@@ -1840,9 +1891,11 @@ label.custom-file-upload {
     display: block;
     transition: 0.3s;
 }
-.overlay-content p:hover{
+
+.overlay-content p:hover {
     color: var(--vermelho);
 }
+
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
@@ -2231,18 +2284,18 @@ label.custom-file-upload {
 
 
 @media (max-width:800px) {
-    .texto-banner{
+    .texto-banner {
         color: white;
         font-size: 40px;
         font-family: 'Bebas Neue', cursive;
     }
 
-    .imagem-inicio p{
+    .imagem-inicio p {
         color: white;
         font-size: 15px;
     }
 
-    .about-text{
+    .about-text {
         height: 100%;
         width: 700px;
         background-color: transparent;
@@ -2256,29 +2309,127 @@ label.custom-file-upload {
         padding-left: 160px;
     }
 
-    .ret-what{
+    .ret-what {
         margin: 0px;
     }
 
 }
 
-@media(max-width:600px){
-    .about-section .texto-banner{
-        font-size: 35px;
-    }
-    .what-section .texto-banner{
+@media(max-width:600px) {
+    .about-section .texto-banner {
         font-size: 35px;
     }
 
-    .texto-banner{
+    .what-section .texto-banner {
+        font-size: 35px;
+    }
+
+    .texto-banner {
         color: white;
         font-size: 40px;
         font-family: 'Bebas Neue', cursive;
     }
-    .imagem-inicio p{
+
+    .imagem-inicio p {
         font-size: 10px;
     }
 }
+
+/*====================================================================Terms and Contions================================================================================*/
+.conteudo-terms .imagem-inicio {
+    background-image: url(../images/terms/fundo-terms.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.conteudo-terms {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    background-color: transparent;
+    
+}
+
+.term-section  {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url(../images/terms/background-terms.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    
+}
+
+.term-box{
+    width: 60%;
+    height: 800px;
+    min-height: 300px;
+    box-shadow: 0px 0px 52px #0000005c;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    overflow: auto ;
+    background-color: white;
+    z-index: 99;
+    
+}
+
+.term-box::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+
+  .term-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  .term-box::-webkit-scrollbar-thumb {
+    background: var(--vermelho); 
+    border-radius: 10px;
+  }
+  
+  .term-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(253, 147, 147); 
+  }
+
+.box-title{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content h6{
+    font-size: 25px;
+}
+
+.box-content p span{
+    color: var(--preto);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
 
 /*------------------------------------------------------------------------ CONTACTOS -----------------------------------------------------------------------------------*/
 

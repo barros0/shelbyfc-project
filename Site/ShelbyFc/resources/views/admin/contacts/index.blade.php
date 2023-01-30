@@ -9,8 +9,8 @@
     <h1>Contactos</h1>
 
     <div class="table-responsive">
-    <table>
-        <tbody>
+        <table class="datatable">
+            <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Nome</th>
@@ -20,6 +20,8 @@
                 <th>Eliminar</th>
                 <th>Ver</th>
             </tr>
+            </thead>
+            <tbody>
             @foreach ($contacts as $contact)
                 <tr>
                     <td>{{ $contact->id }}</td>
@@ -36,14 +38,14 @@
                         </form>
                     </td>
                     <td>
-                        <a href="{{ route('admin.contacts.show', $contact) }}">   <i class="fa fa-eye"></i></a>
+                        <a href="{{ route('admin.contacts.show', $contact) }}"> <i class="fa fa-eye"></i></a>
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-</div>
+    </div>
 
 
 @endsection

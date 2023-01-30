@@ -13,10 +13,10 @@
         </div>
         <a href="{{ route('admin.faqs.create') }}" class="btn">Adicionar</a>
     </div>
-    
+
     <div class="table-responsive">
-    <table>
-        <tbody>
+    <table  class="datatable">
+      <thead>
             <tr class="header">
                 <th>ID</th>
                 <th>Pergunta</th>
@@ -24,6 +24,7 @@
                 <th>Categoria</th>
                 <th>Actions</th>
             </tr>
+      </thead> <tbody>
             @foreach ($faqs as $faq)
                 <tr>
                     <td>{{ $faq->id }}</td>

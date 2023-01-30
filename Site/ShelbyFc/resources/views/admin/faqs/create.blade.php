@@ -15,13 +15,13 @@
                 <div class="form-group">
                     <label for="pergunta_faq">Pergunta</label>
                     <input type="text" class="form-control" name="pergunta" id="pergunta_faq" placeholder="Pergunta"
-                        required>
+                        required value="{{old('pergunta')}}">
                 </div>
                 <div class="form-group">
                     <label for="resposta_faq">Resposta</label>
-                    <input type="text" class="form-control" name="resposta" placeholder="Resposta" required>
+                    <input type="text" class="form-control" name="resposta" placeholder="Resposta" required value="{{old('resposta')}}">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="categoria_faq">Categoria</label>
                     <select name="categoria">
@@ -31,10 +31,10 @@
                             <option value="criar_conta">Criar Conta</option>
                     </select>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Inserir</button>
             </div>
-                   
+
                 </div>
             </div>
     </form>

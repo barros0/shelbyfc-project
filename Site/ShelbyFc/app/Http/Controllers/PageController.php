@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\faqs;
+use App\Models\Terms;
 use App\Models\sobre;
 use App\Models\socio_price;
 use App\Models\Subscription;
@@ -24,7 +25,8 @@ class PageController extends Controller
     {
         $noticias = News::orderBy('created_at', 'desc')->take(3)->get();
         $jogos = Game::orderBy('created_at', 'desc')->take(2)->get();
-        $proximos_jogos = Game::orderBy('datetime_game', 'desc')->take(2)->get();
+        $proximos_jogos = Game::whereNotNull('result_home')->orderBy('datetime_game', 'desc')->take(2)->get();
+
         $id_js = 0;
         $id_href_js = 0;
         $id_image_js = 0;
@@ -59,7 +61,7 @@ class PageController extends Controller
     public function news_categories($category)
     {
 
-        $category = Categorie::where('name', $category)->firstOrFail();
+        $category = Categorie::where('id', $category)->firstOrFail();
 
         $noticias = $category->news()->paginate(6);
         $categories = Categorie::all();
@@ -86,7 +88,7 @@ class PageController extends Controller
             'cidade' => 'required',
             'pais' => 'required|exists:countries,id',
             'zipcode' => 'required|regex:/^\d{4}-\d{3}?$/',
-            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:1048',
+            'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:4048',
         ]);
         $user = Auth::user()->id;
         $email = Auth::user()->email;
@@ -128,6 +130,13 @@ class PageController extends Controller
 
         return view('faqs')->with('faqs', $faqs);
     }
+    public function terms()
+    {
+        $terms = terms::all();
+
+        return view('terms')->with('terms', $terms);
+    }
+
 
 
     public function styles()
