@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TeamRequest;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Session;
@@ -36,12 +37,10 @@ class TeamsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
-        //
         $this->validate($request, [
-            'nome' => 'required|unique:teams,name',
-            'imagem' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
+            'imagem' => 'required',
         ]);
 
         $image = $request->imagem;
@@ -91,14 +90,8 @@ class TeamsController extends Controller
      * @param \App\Models\Team $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(TeamRequest $request, Team $team)
     {
-        //
-
-        $this->validate($request, [
-            'nome' => 'required|unique:teams,name,'.$team->id,
-            'imagem' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
-        ]);
 
         $image = $request->imagem;
 

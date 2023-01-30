@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewRequest;
 use App\Models\Categorie;
 use App\Models\News;
 use Illuminate\Http\Request;
@@ -38,14 +39,10 @@ class NewsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewRequest $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'small_description' => 'required',
-            'body' => 'required',
-            'categorie_id' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required',
         ]);
 
         $image = $request->image;
@@ -98,16 +95,8 @@ class NewsController extends Controller
      * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(NewRequest $request, News $news)
     {
-
-        $this->validate($request, [
-            'title' => 'required',
-            'small_description' => 'required',
-            'body' => 'required',
-            'categories' => 'nullable',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-        ]);
 
         $image = $request->image;
 
