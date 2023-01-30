@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Ticket extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     protected $fillable = [
         'user_id',
         'game_id',
