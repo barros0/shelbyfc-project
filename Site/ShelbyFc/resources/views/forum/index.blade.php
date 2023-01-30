@@ -27,6 +27,7 @@
 
         <div class="container_forum d-flex flex-column">
             @foreach ($posts as $post)
+            <div class="container_post">
                 <div class="posts_forum d-flex justify-content-around align-items-center">
                     <div class="user_info_forum">
                         <img class="user_forum_img" src="{{ asset('images/users/' . $post->user->image) }}" alt="user">
@@ -48,10 +49,7 @@
                         Replies
                     </div>
                 </div>
-
-
-                <h3>Comentar</h3>
-                <div class="create_forum d-flex flex-row justify-content-around">
+                <div class="create_forum flex-row justify-content-around">
                     <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
                     <div style="width:80%;" class="d-flex flex-column">
                         <form action="{{ route('forum.do.comment', $post) }}" method="post" enctype="multipart/form-data">
@@ -61,9 +59,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
             {{-- cometarios --}}
-            Comentarios
                 @foreach($post->comments as $comment)
                     by: {{$comment->user->name}}
                     {{$comment->comment}}

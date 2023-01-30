@@ -1153,11 +1153,13 @@ button:hover {
     font-size: 18px;
     font-weight: 500;
 }
+
 @media only screen and (max-width: 900px) {
-    .row-vant-index{
+    .row-vant-index {
         flex-direction: column;
     }
 }
+
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
 span {
@@ -1669,6 +1671,10 @@ span {
 }
 
 /*FORUM*/
+.container_post {
+    background-color: white;
+    margin-bottom: 10px;
+}
 
 .btn_form_activate {
     padding: 10px;
@@ -1716,6 +1722,16 @@ label.custom-file-upload {
     background-color: white;
 }
 
+.container_post .create_forum {
+    display: none;
+    width: 70%;
+    padding: 30px 0 0;
+}
+
+.container_forum {
+    background-color: transparent;
+}
+
 .content_forum p {
     margin: 0;
 }
@@ -1737,7 +1753,7 @@ label.custom-file-upload {
 }
 
 .forum_posts_img {
-    margin: 0 10px 10px;
+    margin: 0 10px 0 0;
     height: 50px;
     width: 50px;
 }
