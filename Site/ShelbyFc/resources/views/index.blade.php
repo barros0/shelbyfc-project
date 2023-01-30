@@ -6,7 +6,7 @@
 @section('content')
     <div class="container_main_new">
         <div class="mask-gradient">
-            <img id="image" src="{{ asset('images/noticias/') }}" alt="image">
+            <img id="image" src="" alt="image">
         </div>
         <div class="container_new">
             <div class="news_details">
@@ -33,7 +33,7 @@
     </div>
     <div class="container_last_matches">
         @foreach ($proximos_jogos as $proximo_jogo)
-            @if ($proximo_jogo->result_home || $proximo_jogo->result_opponent)
+        @if($proximo_jogo->result_home !== null || $proximo_jogo->result_opponent !== null)
                 <div class="match">
                     <div class="match_home d-flex flex-column justify-content-between align-items-center">
                         <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="logo-shelby_fc.png">
@@ -56,7 +56,24 @@
                 <div class="separador"></div>
             @endif
         @endforeach
-
+    </div>
+    <div class="vantagens_index">
+        <h1 class="tit-vant">ASSINA PELO SHELBY</h1>
+        <div class="row-vant-index">
+            <div class="vantagem">
+                <i class="bx bxs-discount icon-vant"></i>
+                <span class="texto-vant">DESCONTOS NA LOJA</span>
+            </div>
+            <div class="vantagem">
+                <i class="bx bxs-trophy icon-vant"></i>
+                <span class="texto-vant">PRÉMIOS E PASSATEMPOS</span>
+            </div>
+            <div class="vantagem">
+                <i class="bx bx-dumbbell icon-vant"></i>
+                <span class="texto-vant">UTILIZAÇÃO DAS INSTALAÇÕES</span>
+            </div>
+        </div>
+        <a class="button_socio_index" href="">Adere Já</a>
     </div>
 
 @endsection

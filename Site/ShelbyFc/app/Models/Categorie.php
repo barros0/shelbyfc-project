@@ -20,6 +20,6 @@ class Categorie extends Model
 
     public function news()
     {
-        return $this->hasMany(News::class, 'categorie_id', 'id');
+        return $this->hasMany(News::class, 'categorie_id', 'id')->withTrashed();
     }
 }

@@ -22,6 +22,6 @@ class News extends Model
 
     public function categorie()
     {
-        return $this->hasOne(Categorie::class, 'id', 'categorie_id');
+        return $this->hasOne(Categorie::class, 'id', 'categorie_id')->withTrashed();
     }
 }

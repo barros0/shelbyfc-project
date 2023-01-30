@@ -64,8 +64,8 @@ h1, h2, h3, h4, h5 {
     font-family: 'stable';
 }
 
-h6{
-font-family: 'Bebas Neue', cursive;
+h6 {
+    font-family: 'Bebas Neue', cursive;
 }
 
 
@@ -922,7 +922,36 @@ span.texto-vant {
 
 /*HOMEPAGE*/
 
-#button_href {
+.vantagens_index {
+    display: flex;
+    box-shadow: 0px 0px 52px #0000005c;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px auto 40px auto;
+    max-width: 1100px;
+    width: 80%;
+}
+
+.row-vant-index {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.row-vant-index .vantagem {
+    width: 190px;
+    margin: 20px;
+    padding: 0;
+}
+
+.button_socio_index {
+    margin: 10px;
+}
+
+#button_href, .button_socio_index {
     outline: 0;
     border: 0;
     background-color: var(--vermelho);
@@ -952,7 +981,6 @@ span.texto-vant {
     position: relative;
     height: 100%;
     width: 100%;
-    object-fit: cover;
     z-index: -1;
     object-fit: cover;
 }
@@ -1069,6 +1097,7 @@ button:hover {
 .match img {
     width: 110px;
     height: 110px;
+    object-fit: scale-down;
 }
 
 .match_info {
@@ -2358,10 +2387,10 @@ label.custom-file-upload {
     flex-direction: column;
     z-index: 0;
     background-color: transparent;
-    
+
 }
 
-.term-section  {
+.term-section {
     width: 100%;
     height: auto;
     display: flex;
@@ -2374,10 +2403,10 @@ label.custom-file-upload {
     background-position: center;
     background-size: cover;
 
-    
+
 }
 
-.term-box{
+.term-box {
     width: 60%;
     height: 800px;
     min-height: 300px;
@@ -2385,32 +2414,32 @@ label.custom-file-upload {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    overflow: auto ;
+    overflow: auto;
     background-color: white;
     z-index: 99;
-    
+
 }
 
 .term-box::-webkit-scrollbar {
     width: 10px;
-  }
-  
+}
 
-  .term-box::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-  }
-   
-  .term-box::-webkit-scrollbar-thumb {
-    background: var(--vermelho); 
-    border-radius: 10px;
-  }
-  
-  .term-box::-webkit-scrollbar-thumb:hover {
-    background: rgb(253, 147, 147); 
-  }
 
-.box-title{
+.term-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.term-box::-webkit-scrollbar-thumb {
+    background: var(--vermelho);
+    border-radius: 10px;
+}
+
+.term-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(253, 147, 147);
+}
+
+.box-title {
     text-align: center;
     width: 100%;
     display: flex;
@@ -2419,11 +2448,11 @@ label.custom-file-upload {
     align-items: center;
 }
 
-.box-content h6{
+.box-content h6 {
     font-size: 25px;
 }
 
-.box-content p span{
+.box-content p span {
     color: var(--preto);
     font-weight: bold;
     font-size: 18px;
@@ -2611,33 +2640,33 @@ label.custom-file-upload {
 
 
 /*----bilheteira---*/
-.match-team-bilheteira{
+.match-team-bilheteira {
     width: 150px;
 
 }
 
-.container_details_tickets{
-        display: flex;
-        margin: 40px auto 0px auto;
-        width: 100%;
-        max-width: 1100px;
-        height: 200px;
-        background-color: white;
-        justify-content: space-between;
-        box-shadow: 0px 0px 52px #0000005c;
-        align-items: center;
-    
+.container_details_tickets {
+    display: flex;
+    margin: 40px auto 0px auto;
+    width: 100%;
+    max-width: 1100px;
+    height: 200px;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0px 0px 52px #0000005c;
+    align-items: center;
+
 }
 
-.details-half{
+.details-half {
     width: 50%;
 }
 
-.montante-bilhetes{
+.montante-bilhetes {
     width: 100%;
 }
 
-.pay-tickets{
+.pay-tickets {
     margin-top: 50px;
 }
 
@@ -2653,9 +2682,10 @@ label.custom-file-upload {
 }
 
 
-#bancada{
+#bancada {
     width: 100%;
 }
+
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
 #bet_screen {
