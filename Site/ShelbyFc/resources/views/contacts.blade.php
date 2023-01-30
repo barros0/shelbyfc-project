@@ -31,7 +31,7 @@
                     <p>244 144 102</p>
                 </div>
                 <div class="ret" id="ret2"><i class='bx bxs-envelope'></i>
-                    <p>support@shelbyfc.com</p>
+                    <p>shelbyfc@gmail.com</p>
                 </div>
                 <div class="ret" id="ret3"><i class='bx bxs-home'></i>
                     <p>R. Gen. Norton de Matos Apartado 4133</p><br>
