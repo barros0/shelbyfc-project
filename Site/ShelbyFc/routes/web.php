@@ -22,6 +22,7 @@ use App\Http\Controllers\BetsController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;
+use App\Http\Controllers\TicketsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
