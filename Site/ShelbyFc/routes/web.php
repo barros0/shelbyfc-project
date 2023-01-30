@@ -127,7 +127,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::get('/publicar-resultados/{game}', [GamesController::class, 'post_results'])->name('games.publish.results');
     Route::post('/publicar-resultados/{game}', [GamesController::class,'dopost_results'])->name('games.publish.doresults');
 
-
+    Route::resource('/tickets', TicketsController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
     Route::resource('/inscrever', InscreverController::class);
