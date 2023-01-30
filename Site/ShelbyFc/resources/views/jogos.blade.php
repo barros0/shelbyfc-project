@@ -26,6 +26,12 @@
                             <span class="match-date">{{ $data = date('d M y',strtotime($game->datetime_game)) }}</span>
                             <span class="match-hours">{{ $hora = date('H:i',strtotime($game->datetime_game)) }}</span>
                             <span class="match-location">{{ $game->location }}</span>
+                            @if($game->stock_tickets > 0)
+                            <div class="mt-2 d-flex text-center">
+                                <a href="/comprar-bilhete" class="btn btn-registo" style="color:white; font-size:15px">Bilhetes</a>
+                            </div>
+            
+                        @endif
                         </div>
                         <div class="teams">
                             <div class="match-home-team">
@@ -40,31 +46,13 @@
                                 <span class="match-type">{{$game->opponent->name}}</span>
                             </div>
                         </div>
-                        <p>Bilhetes disponiveis: {{$game->stock_tickets}}</p>
 
-                        @if($game->stock_tickets > 0)
-                            <div>
-                                <input type="number"
-                                       name="quantidade" value="1">
-                                <a href="" class="btn btn-primary">Comprar</a>
-                            </div>
-                            <div>
-                                <p>Preço</p>
-                                <p>
-                                @if(Auth::check() || !empty(Auth::user()->subscribed))
-                                    <p>{{$game->ticket_price_partner}}</p>
-                                @else
-                                    <p>{{$game->ticket_price}}</p>
-                                    @endif
-                                    </p>
-                            </div>
-                        @else
-                            <p>Bilhetes esgotados</p>
-                        @endif
-                        @endif
+                
 
 
                     </div>
+                    @endif
+
                 @endforeach
 
             </div>

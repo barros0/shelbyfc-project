@@ -82,7 +82,7 @@
                     <div class="row g-0 m-0 p-0">
     
                         <div class="montante-bilhetes">
-                                <span class="details-montante text-end"> <span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
+                                <span class="details-montante-ticket"><span class="text-start" style="color:#000">BILHETES</span> <span class="text-end" style="color:#000"><span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
                             <input name="montante" id="montante" type="number" placeholder="Quantidade" min="1" max="5">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
@@ -103,13 +103,14 @@
                         <div class="row g-0 m-0 p-0">
         
                             <div class="montante-bilhetes">
-                                    <span class="details-montante text-end"> <span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
-                                <input name="montante" id="montante" type="number" placeholder="Montante" min="1" max="5">
-                                <div class="montantes-rapidos">
-                                    <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
-                                    <button type="button" class="bt_add_value btn-secondary" value="3">3</button>
-                                    <button type="button" class="bt_add_value btn-secondary" value="5">5</button>
-                                </div>
+                                <span class="details-montante-ticket"><span class="text-start" style="color:#000">BANCADA</span> <span class="text-end">Mapa de Bancadas / Preçários</span></span>
+                                <select id="bancada" name="bancada" placeholder="Bancada">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+
+                                  </select>
+
                             </div>
                         </div>
                         </div>

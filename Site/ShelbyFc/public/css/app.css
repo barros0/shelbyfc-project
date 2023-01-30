@@ -2640,6 +2640,22 @@ label.custom-file-upload {
 .pay-tickets{
     margin-top: 50px;
 }
+
+.details-montante-ticket {
+    font-size: 10px;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    font-weight: bold !important;
+    width: 100%;
+    float: right;
+    justify-content: space-between;
+}
+
+
+#bancada{
+    width: 100%;
+}
 /*------------------------------------------------------------------------ bets ----------------------------------------------------------------------------------------*/
 
 #bet_screen {
@@ -2793,7 +2809,7 @@ label.custom-file-upload {
 }
 
 .match-team {
-    width: 200px;
+    width: 120px;
 }
 
 .match-day {
@@ -2806,6 +2822,12 @@ label.custom-file-upload {
     padding: 20px;
     border-bottom: 3px solid;
 }
+
+.match-day:last-child {
+
+    border-bottom: none;
+}
+
 
 .teams {
     width: 75%;
