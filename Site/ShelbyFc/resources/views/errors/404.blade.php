@@ -9,10 +9,10 @@
             <p>404</p>
         </div>
         <div class="right">
-            <h6>DESCULPE!</h6><br>
-            <p>A página que está à procura não foi encontrada. </p>
+            <h6>Página não encontrada</h6><br>
+            <button onclick="location.href='{{ route('index') }}'" type="button">Voltar para o Estádio</button>
         </div>
     </div>
-    <button onclick="location.href='{{ route('index') }}'" type="button">Voltar para o Estádio</button>
+   
 </div>
 @endsection

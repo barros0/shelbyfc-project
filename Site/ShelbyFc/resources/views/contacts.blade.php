@@ -28,7 +28,7 @@
             <div class="down-side">
 
                 <div class="ret" id="ret1"><i class='bx bxs-phone-call'></i>
-                    <p>+351 986 457 210</p>
+                    <p>244 144 102</p>
                 </div>
                 <div class="ret" id="ret2"><i class='bx bxs-envelope'></i>
                     <p>support@shelbyfc.com</p>
