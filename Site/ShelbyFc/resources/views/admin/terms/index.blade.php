@@ -21,7 +21,7 @@
                 <th>Titulo</th>
                 <th>Categoria</th>
                 <th>Eliminar</th>
-                <th>Ver</th>
+            
             </tr>
             </thead>
             <tbody>
@@ -38,10 +38,7 @@
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
                     </td>
-                    <td>
-
-                        <a href="{{ route('admin.terms.show', $term) }}"> <i class="fa fa-eye"></i></a>
-                    </td>
+                   
                 </tr>
             @endforeach
             </tbody>
