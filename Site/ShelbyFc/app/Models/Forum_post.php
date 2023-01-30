@@ -17,6 +17,6 @@ class Forum_post extends Model
 
     public function comments()
     {
-        return $this->hasMany(forum_posts_comment::class, 'id', 'post_id');
+        return $this->hasMany(forum_posts_comment::class, 'post_id', 'id');
     }
 }

@@ -83,7 +83,7 @@
 
                         <div class="montante-bilhetes">
                                 <span class="details-montante-ticket"><span class="text-start" style="color:#000">BILHETES</span> <span class="text-end" style="color:#000"><span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
-                            <input name="quantidade" id="montante" type="number" placeholder="Quantidade" min="1" max="5">
+                            <input name="quantidade" id="quantidade" type="number" placeholder="Quantidade" min="1" max="5">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
                                 <button type="button" class="bt_add_value btn-secondary" value="3">3</button>
@@ -110,23 +110,21 @@
                                 @endif
                                 </h3>
 
+                                <h2 class="text-primary preco" @if(Auth::user()->subscribed) hidden @endif id="gameprice"></h2>
 
-                                <h2 class="text-primary" @if(Auth::user()->subscribed) hidden @endif id="gameprice"></h2>
-
-                                <h2 class="text-primary" @if(!Auth::user()->subscribed) hidden @endif id="gameprice_partner"></h2>
+                                <h2 class="text-primary preco" @if(!Auth::user()->subscribed) hidden @endif id="gameprice_partner"></h2>
 
                             </div>
                         </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="pay-tickets">
 
 
                     <div class="row g-0 mb-3 p-0">
-                        <h3>TOTAL <span class="ganhos-bg"><span id="ganhos_possiveis" class="ganhos">0€</span></span></h3>
+                        <h3>TOTAL <span class="ganhos-bg"><span id="total" class="ganhos">0€</span></span></h3>
                     </div>
 
 
@@ -195,7 +193,6 @@
                     $('#team1').text(data.team1)
                     $('#team2_img').attr('src', data.team2_img)
                     $('#team2').text(data.team2)
-                    $('#limite').text(data.limit_buy)
                     $('#quantidade').text(data.quantidade)
                     $('#gameprice').text(data.preco+'€')
                     $('#gameprice_partner').text(data.preco_socio+'€')
@@ -223,30 +220,26 @@
                     } else {
                         msg = "Error:" + xhr.status + " " + xhr.responseText;
                     }
-
                 }
             });
             update_values();
         });
 
         function update_values(){
-            $('#montante').val();
-            fator = $('input[name="fator"]:checked').val()
-            val_fator = $('#'+fator+'-odd').text()
 
-            ganhos_possiveis =  $('#montante').val() * val_fator+'€';
+            total =  ($('#quantidade').val() * 9999)+'€';
 
-            $('#ganhos_possiveis').text(ganhos_possiveis);
+            $('#total').text(total);
         }
         // quando valor muda muda ganhos posssiveis
-        $('#montante').on('keyup', function() {
+        $('#quantidade').on('keyup', function() {
             update_values();
         });
 
 
 
         $('.bt_add_value').click(function () {
-            $('#montante').val($(this).val())
+            $('#quantidade').val($(this).val())
             update_values();
         });
     });

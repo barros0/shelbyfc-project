@@ -27,41 +27,44 @@
 
         <div class="container_forum d-flex flex-column">
             @foreach ($posts as $post)
-            <div class="container_post">
-                <div class="posts_forum d-flex justify-content-around align-items-center">
-                    <div class="user_info_forum">
-                        <img class="user_forum_img" src="{{ asset('images/users/' . $post->user->image) }}" alt="user">
-                        <div class="content_forum">
-                            <p style="font-size: 20px">{{ $post->title }}</p>
-                            @foreach ($posts_images as $image)
-                                @if ($image->post_id === $post->id)
-                                    <img class="forum_posts_img"
-                                         src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
-                                @endif
-                            @endforeach
-                            <p>{{ $post->user->name }},
-                                <span style="color: rgb(0 0 0 / 60%);">{{ $post->created_at }}</span>
-                            </p>
+                <div class="container_post">
+                    <div class="posts_forum d-flex justify-content-around align-items-center">
+                        <div class="user_info_forum">
+                            <img class="user_forum_img" src="{{ asset('images/users/' . $post->user->image) }}"
+                                 alt="user">
+                            <div class="content_forum">
+                                <p style="font-size: 20px">{{ $post->title }}</p>
+                                @foreach ($posts_images as $image)
+                                    @if ($image->post_id === $post->id)
+                                        <img class="forum_posts_img"
+                                             src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
+                                    @endif
+                                @endforeach
+                                <p>{{ $post->user->name }},
+                                    <span style="color: rgb(0 0 0 / 60%);">{{ $post->created_at }}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            ({{$post->comments->count()}})
+                            Replies
                         </div>
                     </div>
-                    <div class="">
-                        ({{$post->comments->count()}})
-                        Replies
-                    </div>
-                </div>
-                <div class="create_forum flex-row justify-content-around">
-                    <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
-                    <div style="width:80%;" class="d-flex flex-column">
-                        <form action="{{ route('forum.do.comment', $post) }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <input placeholder="Comentário" type="text" name="comment" id="comment" required>
+                    <div class="create_forum flex-row justify-content-around">
+                        <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}"
+                             alt="user_img">
+                        <div style="width:80%;" class="d-flex flex-column">
+                            <form action="{{ route('forum.do.comment', $post) }}" method="post"
+                                  enctype="multipart/form-data">
+                                @csrf
+                                <input placeholder="Comentário" type="text" name="comment" id="comment" required>
                                 <button type="submit" id="submit">Comentar</button>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {{-- cometarios --}}
+                {{-- cometarios --}}
                 @foreach($post->comments as $comment)
                     by: {{$comment->user->name}}
                     {{$comment->comment}}

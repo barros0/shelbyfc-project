@@ -80,7 +80,7 @@ class UserController extends Controller
     {
 
         $this->validate($request, [
-            'quantidade' => 'required|numeric|min:1',
+            'quantidade' => 'required|numeric|min:1|max:5',
             'jogo' => 'required|exists:games,id',
         ]);
 

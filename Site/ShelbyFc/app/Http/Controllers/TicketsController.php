@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Session;
 
 
@@ -22,15 +23,23 @@ class TicketsController extends Controller
     }
 
     public function print(Ticket $ticket){
-        $title = 'Bilhete Shelby FC VS '.$ticket->game->opponent->name .'-'.$ticket->id;
+
+        if($ticket->user_id <> Auth::id()){
+
+            return abort('403');
+        }
+
+        $title = 'Bilhete Shelby FC VS '.$ticket->game->opponent->name .'-Nº'.$ticket->id;
+
+        //return View('tickets.print', compact('ticket','title'));
+
         $view = View('tickets.print', compact('ticket','title'));
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view->render());
-        return $pdf->stream(); // screenshot #2
+        return $pdf->stream($title);
 
-        $pdf = \PDF::loadView('tickets.print', compact('ticket','title'));
-        return $pdf->download($title.'.pdf');
-
+        /*$pdf = \PDF::loadView('tickets.print', compact('ticket','title'));
+        return $pdf->download($title.'.pdf');*/
     }
 
     /**
