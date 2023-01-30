@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Session;
 
 
+
 class TicketsController extends Controller
 {
     /**
@@ -16,14 +17,20 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        //
         $ticket_list = Ticket::all();
         return view('admin.tickets.index', compact('ticket_list'));
     }
 
     public function print(Ticket $ticket){
+        $title = 'Bilhete Shelby FC VS '.$ticket->game->opponent->name .'-'.$ticket->id;
+        $view = View('tickets.print', compact('ticket','title'));
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view->render());
+        return $pdf->stream(); // screenshot #2
 
-        return view('tickets.print', compact('ticket'));
+        $pdf = \PDF::loadView('tickets.print', compact('ticket','title'));
+        return $pdf->download($title.'.pdf');
+
     }
 
     /**
