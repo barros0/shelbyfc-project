@@ -116,7 +116,8 @@
         </div>
     </div>
     <div id="myNav" class="overlay">
-        <div class="d-flex align-items-center">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
             @if (Auth::check())
                 <a href="{{ route('withdraw') }}">{{ Auth::user()->balance }}€</a>
 
@@ -131,14 +132,6 @@
                 <div class="line"></div>
                 <a href="{{ route('register') }}">Register</a>
             @endif
-        </div>
-        <div class="contactos_responsive">
-            <p class="d-flex align-items-center"><i class='bx bxs-phone'></i> 244 144 102</p>
-            <div class="line"></div>
-            <p class="d-flex align-items-center"><i class='bx bxs-envelope'></i> shelbyfc@gmail.com</p>
-        </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
             <a href="https://teste.social-bubble.pt">Loja Online</a>
             <a href="{{ route('forum.home') }}">Forum</a>
             <a href="{{ route('noticias') }}">Notícias</a>

@@ -1153,7 +1153,11 @@ button:hover {
     font-size: 18px;
     font-weight: 500;
 }
-
+@media only screen and (max-width: 900px) {
+    .row-vant-index{
+        flex-direction: column;
+    }
+}
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
 span {
@@ -1902,7 +1906,7 @@ label.custom-file-upload {
 
 .overlay-content {
     position: relative;
-    top: 25%;
+    top: 10%;
     width: 100%;
     text-align: center;
 }
@@ -1934,10 +1938,7 @@ label.custom-file-upload {
     top: 20px;
     right: 45px;
     font-size: 60px;
-}
-
-.contactos_responsive {
-    display: none;
+    z-index: 999;
 }
 
 @media only screen and (max-width: 900px) {
@@ -1959,28 +1960,8 @@ label.custom-file-upload {
         cursor: pointer;
     }
 
-    .contactos_responsive {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        margin: auto;
-        width: 100%;
-        color: #818181;
-        padding: 8px;
-        font-size: 20px;
-    }
-
-    .contactos_responsive p {
-        margin: 0;
-        padding: 10px;
-    }
-
     .overlay .line {
-        background-color: #818181;
-        width: 2px;
-        height: 20px;
+        display: none;
     }
 }
 

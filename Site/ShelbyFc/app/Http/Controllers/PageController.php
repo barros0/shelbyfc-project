@@ -45,7 +45,7 @@ class PageController extends Controller
     {
         $noticias = News::paginate(6);
 
-        $categories = Categorie::all();
+        $categories = Categorie::withTrashed()->get();
 
         return view('noticias', compact('noticias', 'categories'));
     }
@@ -61,10 +61,10 @@ class PageController extends Controller
     public function news_categories($category)
     {
 
-        $category = Categorie::where('id', $category)->firstOrFail();
+        $category = Categorie::withTrashed()->where('id', $category)->firstOrFail();
 
         $noticias = $category->news()->paginate(6);
-        $categories = Categorie::all();
+        $categories = Categorie::withTrashed()->get();
 
         return view('noticias', compact('noticias', 'categories'));
     }

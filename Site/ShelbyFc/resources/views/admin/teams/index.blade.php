@@ -7,9 +7,6 @@
 
     <h1>Equipas</h1>
     <div class="form-menu d-flex justify-content-between">
-        <div class="form-search">
-            <input type="text" name="" class="form-control" placeholder="Search">
-        </div>
         <a href="{{ route('admin.teams.create') }}" class="btn">Adicionar</a>
     </div>
 
