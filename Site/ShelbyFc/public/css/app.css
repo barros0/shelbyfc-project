@@ -1496,7 +1496,53 @@ span {
     color: var(--preto);
 }
 
+#filtros_news {
+    display: none;
+    color: white;
+}
+
+.no_news {
+    text-align: center;
+    margin: 35px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container_all_news {
+        max-width: inherit;
+    }
+}
+
 @media only screen and (max-width: 900px) {
+
+    .news_from_category a:nth-child(n+2) {
+        display: none;
+    }
+
+    .news_categories_options {
+        display: block !important;
+    }
+
+    #filtros_news {
+        display: flex;
+        font-size: 18px;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #filtros_news a i {
+        margin-left: 10px;
+        font-size: 27px;
+    }
+
+    .news_from_category {
+        display: block;
+    }
+
+    .nav_categories {
+        height: auto;
+    }
+
     .container_main_new {
         display: flex;
         align-items: flex-end;
@@ -1835,9 +1881,11 @@ label.custom-file-upload {
     display: block;
     transition: 0.3s;
 }
-.overlay-content p:hover{
+
+.overlay-content p:hover {
     color: var(--vermelho);
 }
+
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
 }
@@ -2099,7 +2147,7 @@ label.custom-file-upload {
     align-content: center;
     margin-left: 50px;
     margin-right: 50px;
-    
+
 }
 
 .row-what {
@@ -2226,18 +2274,18 @@ label.custom-file-upload {
 
 
 @media (max-width:800px) {
-    .texto-banner{
+    .texto-banner {
         color: white;
         font-size: 40px;
         font-family: 'Bebas Neue', cursive;
     }
 
-    .imagem-inicio p{
+    .imagem-inicio p {
         color: white;
         font-size: 15px;
     }
 
-    .about-text{
+    .about-text {
         height: 100%;
         width: 700px;
         background-color: transparent;
@@ -2251,26 +2299,28 @@ label.custom-file-upload {
         padding-left: 160px;
     }
 
-    .ret-what{
+    .ret-what {
         margin: 0px;
     }
-   
+
 }
 
-@media(max-width:600px){
-    .about-section .texto-banner{
-        font-size: 35px;
-    }
-    .what-section .texto-banner{
+@media(max-width:600px) {
+    .about-section .texto-banner {
         font-size: 35px;
     }
 
-    .texto-banner{
+    .what-section .texto-banner {
+        font-size: 35px;
+    }
+
+    .texto-banner {
         color: white;
         font-size: 40px;
         font-family: 'Bebas Neue', cursive;
     }
-    .imagem-inicio p{
+
+    .imagem-inicio p {
         font-size: 10px;
     }
 }

@@ -24,7 +24,8 @@ class PageController extends Controller
     {
         $noticias = News::orderBy('created_at', 'desc')->take(3)->get();
         $jogos = Game::orderBy('created_at', 'desc')->take(2)->get();
-        $proximos_jogos = Game::orderBy('datetime_game', 'desc')->take(2)->get();
+        $proximos_jogos = Game::whereNotNull('result_home')->orderBy('datetime_game', 'desc')->take(2)->get();
+
         $id_js = 0;
         $id_href_js = 0;
         $id_image_js = 0;
@@ -59,7 +60,7 @@ class PageController extends Controller
     public function news_categories($category)
     {
 
-        $category = Categorie::where('name', $category)->firstOrFail();
+        $category = Categorie::where('id', $category)->firstOrFail();
 
         $noticias = $category->news()->paginate(6);
         $categories = Categorie::all();
