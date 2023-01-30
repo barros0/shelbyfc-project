@@ -1246,6 +1246,44 @@ button:hover {
     color: var(--vermelho);
 }
 
+@media only screen and (max-width: 1390px) {
+    .conteudo-pagina .right h6{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .conteudo-pagina .right h6{
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .conteudo-pagina .right h6{
+        font-size: 25px;
+    }
+    .conteudo-pagina .left-side p{
+        font-size: 80px;
+    }
+    .conteudo-pagina button{
+        width: 200px;
+       height: 50px;
+        border-radius: 5px;
+        border: 2px solid var(--vermelho);
+        background-color: transparent;
+        color: var(--vermelho);
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .conteudo-pagina .right{
+        text-align: center;
+        align-items: center;
+    }
+    
+}
+
 /*----------------------------------------------------------PAGINA FAQS----------------------------------------------------------------*/
 
 span {
