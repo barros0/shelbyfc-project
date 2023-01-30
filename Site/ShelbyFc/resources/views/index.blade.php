@@ -73,7 +73,7 @@
                 <span class="texto-vant">UTILIZAÇÃO DAS INSTALAÇÕES</span>
             </div>
         </div>
-        <a class="button_socio_index" href="">Adere Já</a>
+        <a class="button_socio_index" href="{{ route('inscrever') }}">Adere Já</a>
     </div>
 
 @endsection
