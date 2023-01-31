@@ -1181,7 +1181,6 @@ button:hover {
 
 .conteudo-pagina button {
     width: 200px;
-
     border-radius: 5px;
     border: 2px solid var(--vermelho);
     background-color: transparent;
@@ -1190,7 +1189,7 @@ button:hover {
 
 .conteudo-pagina button:hover {
     width: 40%;
-
+    width: 200px;
     border: 2px solid var(--vermelho);
     background-color: var(--vermelho);
     color: white;
