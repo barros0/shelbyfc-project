@@ -53,4 +53,11 @@ class Game extends Model
     {
         return $query->where('limit_buy_ticket','>', Carbon::now());
     }
+
+    
+    public function scopeGameDate($query)
+    {
+        return $query->where('datetime_game','>', Carbon::now());
+    }
+    
 }

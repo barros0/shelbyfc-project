@@ -697,6 +697,56 @@ nav:hover .shrink-btn,
     height: 100%;
 }
 
+/*adicionar bilhetes*/
+.team-img {
+    width: 180px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-img img {
+    width: 65px;
+    height: 65px;
+}
+
+.team-img p {
+    margin: 0;
+    text-align: center;
+}
+
+.game-bet-option {
+    border: 2px solid black;
+    border-bottom: 0;
+    padding: 5px;
+}
+
+.game-bet-option:last-child {
+    border-bottom: 2px solid black;
+}
+
+.info-game {
+    width: 30%;
+}
+
+.vs {
+    color: var(--vermelho);
+}
+
+.btn-aposta {
+    width: 40%;
+    margin: auto;
+}
+
+.bet_active {
+    background-color: var(--vermelho) !important;
+}
+
+.bet_active .vs, .bet_active p {
+    color: white;
+}
+
 /*nav f*/
 
 /*CALENDARIO JOGOS*/

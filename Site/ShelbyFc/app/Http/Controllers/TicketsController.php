@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use App\Models\Game;
 use Session;
 
 
@@ -29,6 +30,10 @@ class TicketsController extends Controller
     public function create()
     {
         //
+
+        $partidas = Game::AvaliableTicket();
+        return view('admin.tickets.create', compact('partidas'));
+        
     }
 
     /**
