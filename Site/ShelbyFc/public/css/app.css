@@ -965,7 +965,7 @@ span.texto-vant {
     transition: 0.5s;
 }
 
-#button_href:hover {
+#button_href:hover, .button_socio_index:hover {
     background-color: var(--vermelho);
     color: white !important;
     transform: scale(1.05);
@@ -1806,6 +1806,14 @@ span {
 
 /*FORUM*/
 
+.content_post {
+    max-width: 1100px;
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 10px;
+}
+
 .container_post {
     background-color: white;
     margin-bottom: 30px;
@@ -1849,6 +1857,11 @@ label.custom-file-upload {
 
 .posts_forum:hover {
     background-color: #FF5559;
+    color: white !important;
+}
+
+.posts_forum:hover span {
+    color: white !important;
 }
 
 .container_forum, .create_forum {
@@ -1878,6 +1891,7 @@ label.custom-file-upload {
 .create_forum {
     border-top: 3px solid var(--vermelho);
     padding: 30px;
+    box-shadow: 0px 20px 113px #00000029;
 }
 
 .user_forum_img {
@@ -2690,6 +2704,115 @@ label.custom-file-upload {
     width: 600px;
 
 }
+
+.contact-section form{
+    width: auto;
+}
+
+@media(max-width:1270px) {
+    .contact-section input {
+        width: 450px;
+    }
+    .contact-section textarea {
+        width: 450px !important;
+    }
+    .contact-section .top-form .input-icons {
+        width: 225px !important;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    .contact-section{
+        padding: 0px;
+    }
+    .contact-section .left-side p {
+        font-size: 15px;
+    }
+    .contact-section .left-side i {
+        margin-right: 10px;
+        font-size: 25px;
+        color: var(--vermelho);
+    }
+}
+
+@media(max-width:970px) {
+  .row{
+    flex-direction: column;
+  }
+  .contact-section .left-side {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid rgba(39, 39, 39, 0.151);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-section .right-side {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+}
+
+.contact-section form{
+    margin-top: 50px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+
+}
+
+
+}
+
+@media(max-width:500px) {
+    .contact-section input {
+        width: 250px;
+    }
+    .contact-section textarea {
+        width: 250px !important;
+    }
+    .contact-section .top-form .input-icons {
+        width: 220px !important;
+    }
+    .contact-section .top-form{
+        flex-direction: column !important;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .contact-section{
+        padding: 0px;
+    }
+    .contact-section .left-side p {
+        font-size: 10px;
+    }
+    .contact-section .left-side i {
+        margin-right: 10px;
+        font-size: 25px;
+        color: var(--vermelho);
+    }
+    .contact-section #ret1 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contact-section #ret2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contact-section #ret3 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+  
+}
+
 
 .contact-section textarea {
     border: 1px solid var(--vermelho);

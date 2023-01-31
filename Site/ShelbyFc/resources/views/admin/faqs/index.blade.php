@@ -20,7 +20,6 @@
             <tr class="header">
                 <th>ID</th>
                 <th>Pergunta</th>
-                <th>Resposta</th>
                 <th>Categoria</th>
                 <th>Actions</th>
             </tr>
@@ -29,7 +28,6 @@
                 <tr>
                     <td>{{ $faq->id }}</td>
                     <td>{{ $faq->pergunta }}</td>
-                    <td>{{ $faq->resposta }}</td>
                     <td>{{ $faq->categoria }}</td>
                     <td>
                         <a href="{{ route('admin.faqs.edit', $faq) }}" class="btn"><i class='bx bx-edit-alt'></i></a>
