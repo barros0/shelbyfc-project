@@ -68,7 +68,7 @@ h6 {
     font-family: 'Bebas Neue', cursive;
 }
 
-.text-primary{
+.text-primary {
     color: var(--vermelho) !important;
 }
 
@@ -1165,7 +1165,7 @@ button:hover {
 
 /*========================================================Pagins 404=====================================================================*/
 
-.conteudo-pagina{
+.conteudo-pagina {
     width: 100%;
     height: 100vh;
     background-image: url(../images/404/fundo-404.jpg);
@@ -1179,7 +1179,7 @@ button:hover {
     flex-direction: column;
 }
 
-.conteudo-pagina button{
+.conteudo-pagina button {
     width: 200px;
 
     border-radius: 5px;
@@ -1188,7 +1188,7 @@ button:hover {
     color: var(--vermelho);
 }
 
-.conteudo-pagina button:hover{
+.conteudo-pagina button:hover {
     width: 40%;
 
     border: 2px solid var(--vermelho);
@@ -1196,7 +1196,7 @@ button:hover {
     color: white;
 }
 
-.caixa-erro{
+.caixa-erro {
     width: 40%;
     height: auto;
     min-height: 300px;
@@ -1206,7 +1206,7 @@ button:hover {
 
 }
 
-.conteudo-pagina .left-side{
+.conteudo-pagina .left-side {
     height: auto;
     width: 30%;
     height: 200px;
@@ -1218,7 +1218,7 @@ button:hover {
 
 }
 
-.conteudo-pagina .right{
+.conteudo-pagina .right {
     height: auto;
     width: 70%;
     height: 200px;
@@ -1230,47 +1230,49 @@ button:hover {
     border-top: 2px solid var(--vermelho);
 }
 
-.conteudo-pagina .right h6{
+.conteudo-pagina .right h6 {
     font-size: 50px;
 
     color: white;
 }
 
-.conteudo-pagina .right p{
+.conteudo-pagina .right p {
     font-size: 20px;
 
     color: white;
 
 }
 
-.conteudo-pagina .left-side p{
+.conteudo-pagina .left-side p {
     font-size: 100px;
 
     color: var(--vermelho);
 }
 
 @media only screen and (max-width: 1390px) {
-    .conteudo-pagina .right h6{
+    .conteudo-pagina .right h6 {
         font-size: 40px;
     }
 }
 
 @media only screen and (max-width: 1100px) {
-    .conteudo-pagina .right h6{
+    .conteudo-pagina .right h6 {
         font-size: 30px;
     }
 }
 
 @media only screen and (max-width: 900px) {
-    .conteudo-pagina .right h6{
+    .conteudo-pagina .right h6 {
         font-size: 25px;
     }
-    .conteudo-pagina .left-side p{
+
+    .conteudo-pagina .left-side p {
         font-size: 80px;
     }
-    .conteudo-pagina button{
+
+    .conteudo-pagina button {
         width: 200px;
-       height: 50px;
+        height: 50px;
         border-radius: 5px;
         border: 2px solid var(--vermelho);
         background-color: transparent;
@@ -1280,7 +1282,7 @@ button:hover {
 }
 
 @media only screen and (max-width: 700px) {
-    .conteudo-pagina .right{
+    .conteudo-pagina .right {
         text-align: center;
         align-items: center;
     }
@@ -1789,9 +1791,9 @@ span {
     flex-direction: column;
     margin: 30px auto;
 }
-.content_noticia .img_thumb{
+
+.content_noticia .img_thumb {
     object-fit: cover;
-    /* object-fit: contain;*/
     max-width: 100%;
     max-height: 400px;
 }
@@ -1804,9 +1806,10 @@ span {
 }
 
 /*FORUM*/
+
 .container_post {
     background-color: white;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .btn_form_activate {
@@ -2783,7 +2786,7 @@ label.custom-file-upload {
     margin: 40px auto 0px auto;
     width: 100%;
     max-width: 1100px;
-   padding: 30px;
+    padding: 30px;
     background-color: white;
     justify-content: space-between;
     box-shadow: 0px 0px 52px #0000005c;

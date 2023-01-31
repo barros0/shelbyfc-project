@@ -31,13 +31,13 @@
                     <div class="posts_forum d-flex justify-content-around align-items-center">
                         <div class="user_info_forum">
                             <img class="user_forum_img" src="{{ asset('images/users/' . $post->user->image) }}"
-                                 alt="user">
+                                alt="user">
                             <div class="content_forum">
                                 <p style="font-size: 20px">{{ $post->title }}</p>
                                 @foreach ($posts_images as $image)
                                     @if ($image->post_id === $post->id)
                                         <img class="forum_posts_img"
-                                             src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
+                                            src="{{ asset('images/forum_posts_images/' . $image->image) }}" alt="user">
                                     @endif
                                 @endforeach
                                 <p>{{ $post->user->name }},
@@ -46,16 +46,15 @@
                             </div>
                         </div>
                         <div class="">
-                            ({{$post->comments->count()}})
+                            ({{ $post->comments->count() }})
                             Replies
                         </div>
                     </div>
                     <div class="create_forum flex-row justify-content-around">
-                        <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}"
-                             alt="user_img">
+                        <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
                         <div style="width:80%;" class="d-flex flex-column">
                             <form action="{{ route('forum.do.comment', $post) }}" method="post"
-                                  enctype="multipart/form-data">
+                                enctype="multipart/form-data">
                                 @csrf
                                 <input placeholder="Comentário" type="text" name="comment" id="comment" required>
                                 <button type="submit" id="submit">Comentar</button>
@@ -65,13 +64,13 @@
                 </div>
 
                 {{-- cometarios --}}
-                @foreach($post->comments as $comment)
-                    by: {{$comment->user->name}}
-                    {{$comment->comment}}
+                @foreach ($post->comments as $comment)
+                    by: {{ $comment->user->name }}
+                    {{ $comment->comment }}
 
                     {{-- repostas de comentarios --}}
-                    @foreach($comment->replies as $reply)
-                        {{$reply->comment}}
+                    @foreach ($comment->replies as $reply)
+                        {{ $reply->comment }}
 
                         {{-- end repostas de comentarios --}}
                     @endforeach
