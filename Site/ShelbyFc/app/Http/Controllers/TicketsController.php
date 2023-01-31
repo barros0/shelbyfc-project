@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
-use App\Models\Game;
 use Session;
+
 
 
 class TicketsController extends Controller
@@ -17,9 +17,28 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        //
         $ticket_list = Ticket::all();
         return view('admin.tickets.index', compact('ticket_list'));
+    }
+
+    public function print(Ticket $ticket){
+
+        if($ticket->user_id <> Auth::id()){
+
+            return abort('403');
+        }
+
+        $title = 'Bilhete Shelby FC VS '.$ticket->game->opponent->name .'-Nº'.$ticket->id;
+
+        //return View('tickets.print', compact('ticket','title'));
+
+        $view = View('tickets.print', compact('ticket','title'));
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view->render());
+        return $pdf->stream($title);
+
+        /*$pdf = \PDF::loadView('tickets.print', compact('ticket','title'));
+        return $pdf->download($title.'.pdf');*/
     }
 
     /**

@@ -121,6 +121,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/square-bit/laravel-pt-rules" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/srmklive/paypal" />
       <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/intervention/validation" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/sabberworm/php-css-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/ShelbyFc/vendor/phenx/php-svg-lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

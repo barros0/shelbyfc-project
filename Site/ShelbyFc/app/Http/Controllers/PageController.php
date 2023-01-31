@@ -45,7 +45,7 @@ class PageController extends Controller
     {
         $noticias = News::paginate(6);
 
-        $categories = Categorie::withTrashed()->get();
+        $categories = Categorie::get();
 
         return view('noticias', compact('noticias', 'categories'));
     }
@@ -61,10 +61,10 @@ class PageController extends Controller
     public function news_categories($category)
     {
 
-        $category = Categorie::withTrashed()->where('id', $category)->firstOrFail();
+        $category = Categorie::where('id', $category)->firstOrFail();
 
         $noticias = $category->news()->paginate(6);
-        $categories = Categorie::withTrashed()->get();
+        $categories = Categorie::get();
 
         return view('noticias', compact('noticias', 'categories'));
     }
@@ -203,7 +203,7 @@ class PageController extends Controller
 
     public function jogos()
     {
-        $proximos_jogos = Game::get();
+        $proximos_jogos = Game::NextGames()->get();
 
         return view('jogos', compact('proximos_jogos'));
     }

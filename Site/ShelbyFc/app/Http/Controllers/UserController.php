@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BetsPayment;
 use App\Models\Game;
 use App\Models\Ticket;
 use App\Models\withdraw;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Str;
 use Hash;
 use Storage;
@@ -74,12 +76,15 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function buy_ticket($gameid, Request $request)
+    public function buy_ticket(Request $request)
     {
 
         $this->validate($request, [
-            'quantity' => 'required|numeric|min:1',
+            'quantidade' => 'required|numeric|min:1|max:5',
+            'jogo' => 'required|exists:games,id',
         ]);
+
+        $gameid = $request->jogo;
 
         $game = Game::AvaliableTicket()->findOrFail($gameid);
 
@@ -90,20 +95,61 @@ class UserController extends Controller
             $price =  $game->ticket_price;
         }
 
-        $quantidade = $request->quantity;
+        $quantidade = $request->quantidade;
 
         $total = $quantidade * $price;
 
-        for ($i = 1; $i <= $quantidade; $i++) {
-            $ticket = new Ticket();
-            $ticket->user_id = Auth::id();
-            $ticket->game_id = $gameid;
-            $ticket->price = $price;
-            $ticket->save();
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('paypal.success.transaction.ticket',[$gameid,$quantidade,$price]),
+                "cancel_url" => route('paypal.cancel.transaction.ticket'),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "EUR",
+                        "value" => $total
+                    ],
+                ],
+
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+       /*     $payment = new BetsPayment();
+            $payment->bet_id = $bet_id;
+            $payment->paypal_id = $response['id'];
+            $payment->save();*/
+
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', 'Algo de errado aconteceu :( .');
+        } else {
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', $response['message'] ?? 'Algo está errado :( .');
         }
 
-        Session::flash('success','Bilhete aquirido, Bom Jogo!');
-        return redirect('tickets');
+
+
+    }
+
+
+    public function success_buy_ticket(Request $request,$gameid) {
+
+
+
     }
 
 

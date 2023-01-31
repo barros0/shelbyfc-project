@@ -39,7 +39,7 @@
                                 </a>
                             </li>
                             <li class="col-4 col-md-12">
-                                <a href="{{route('tickets')}}" @if(Route::currentRouteName() == 'tickets')class="active"@endif>
+                                <a href="{{route('my.tickets')}}" @if(Route::currentRouteName() == 'my.tickets')class="active"@endif>
                                     <i class="fa fa-coins"></i>
                                     Bilhetes
                                 </a>

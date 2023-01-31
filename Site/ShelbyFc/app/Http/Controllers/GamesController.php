@@ -7,6 +7,7 @@ use App\Models\Game;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Auth;
 use Session;
 
 class GamesController extends Controller
@@ -35,9 +36,6 @@ class GamesController extends Controller
         if (Carbon::now() > $game->limit_buy_ticket	) {
             abort(404);
         }
-
-        //$value = $request->value_bet;
-
 
         return response()->json([
             'date_game' => $game->datetime_game,

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\FaqRequest;
 use App\Models\Faqs;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
@@ -16,7 +17,7 @@ class FaqsController extends Controller
         return view('admin.faqs.index', compact('faqs'));
     }
 
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -34,22 +35,15 @@ class FaqsController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FaqRequest $request)
     {
-        $this->validate($request, [
-            'pergunta' => 'required',
-            'resposta' => 'required',
-            'categoria' => 'required',
-        ]);
-
-       
 
         $faqs = new Faqs();
         $faqs->pergunta = $request->pergunta;
         $faqs->resposta = $request->resposta;
         $faqs->categoria = $request->categoria;
-    
-        
+
+
         $faqs->save();
 
         Session::flash('success', 'FaQ inserida!');
@@ -86,23 +80,12 @@ class FaqsController extends Controller
      * @param \App\Models\Faqs $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faqs $faq)
+    public function update(FaqRequest $request, Faqs $faq)
     {
-
-        $this->validate($request, [
-            'pergunta' => 'required',
-            'resposta' => 'required',
-            'categoria' => 'required',
-         
-        ]);
-
 
         $faq->pergunta = $request->pergunta;
         $faq->resposta = $request->resposta;
         $faq->categoria = $request->categoria;
-        
-
-
 
         $faq->save();
 

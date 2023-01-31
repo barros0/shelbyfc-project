@@ -72,12 +72,16 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/apostar', [PageController::class, 'tobet'])->name('tobet');
     Route::post('/apostar', [BetsController::class, 'dobet'])->name('tobet.post');
 
+    Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('tickets');
+    Route::post('/comprar-bilhete', [UserController::class, 'buy_ticket'])->name('tickets.buy');
+
+    Route::get('/imprimir-bilhete/{ticket}', [TicketsController::class, 'print'])->name('print.ticket');
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
-        Route::get('/bilhetes', [PageController::class, 'tickets'])->name('tickets');
+        Route::get('/bilhetes', [PageController::class, 'tickets'])->name('my.tickets');
         Route::get('/apostas', [PageController::class, 'bets'])->name('bets');
 
         Route::get('/retirar-saldo', [PageController::class, 'withdraw'])->name('withdraw');
@@ -86,6 +90,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
     });
+
 });
 
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
@@ -103,9 +108,6 @@ Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.
 
 
 
-
-
-Route::get('/comprar-bilhete', [PageController::class, 'buy_ticket'])->name('tickets');
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/resultados', [PageController::class, 'resultados'])->name('resultados');
@@ -150,6 +152,8 @@ Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
 Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
 Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
 
+Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
+Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
 Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
 

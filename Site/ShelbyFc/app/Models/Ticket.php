@@ -15,8 +15,15 @@ class Ticket extends Model
         'price',
     ];
 
-    public function mailUser()
+    public function user()
     {
-        return $this->hasone(User::class, 'email', 'user_id');
+        return $this->hasone(User::class, 'id', 'user_id');
+    }
+
+
+
+    public function game()
+    {
+        return $this->hasone(Game::class, 'id', 'game_id');
     }
 }

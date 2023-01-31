@@ -6,11 +6,13 @@ use App\Models\Bets;
 use App\Models\BetsPayment;
 use App\Models\Game;
 use App\Models\Subscription;
+use App\Models\Ticket;
 use App\Models\Transactions;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
+use Session;
 
 class PayPalController extends Controller
 {
@@ -91,12 +93,20 @@ class PayPalController extends Controller
      */
     public function cancelTransaction(Request $request)
     {
-        // return 'transacao cancelada';
-
         return redirect()
             ->route('tobet')
             ->with('error', $response['message'] ?? 'Você cancelou o pagamento!');
     }
+
+    public function cancelTransactionTicket(Request $request)
+    {
+
+        return redirect()
+            ->route('tickets')
+            ->with('error', $response['message'] ?? 'Você cancelou o pagamento!');
+    }
+
+
 
 
     public function pay_subscription(Subscription $subscription){
@@ -138,6 +148,33 @@ class PayPalController extends Controller
             return back()
                 //->route('createTransaction')
                 ->with('error', $response['message'] ?? 'Algo está errado :( .');
+        }
+    }
+
+    public function success_transaction_ticket(Request $request,$gameid,$quantidade,$price){
+
+
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->getAccessToken();
+        $response = $provider->capturePaymentOrder($request['token']);
+
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            $game = Game::AvaliableTicket()->findOrFail($gameid);
+
+            for ($i = 1; $i <= $quantidade; $i++) {
+                $ticket = new Ticket();
+                $ticket->user_id = Auth::id();
+                $ticket->game_id = $gameid;
+                $ticket->price = $price;
+                $ticket->save();
+            }
+
+            Session::flash('success','Bilhete aquirido, Bom Jogo!');
+            return redirect()->route('tickets');
+
+        } else {
+            return back()->with('error', $response['message'] ?? 'Something went wrong.');
         }
     }
 
