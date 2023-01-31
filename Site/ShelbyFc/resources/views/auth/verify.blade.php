@@ -22,7 +22,7 @@
                             <br>
                             <p>Se você não recebeu o e-mail:</p>
                         <div class="row">
-                            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            <form class="d-inline" method="POST" action="{{ route('email.verify.resend') }} {{-- route('verification.resend') --}}">
                                 @csrf
                                 <button type="submit"
                                         class="btn btn-primary">Clique aqui para pedir outro</button>

@@ -23,6 +23,8 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;
 use App\Http\Controllers\TicketsController;
+use App\Http\Controllers\Auth\VerificationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +38,9 @@ use App\Http\Controllers\TicketsController;
 
 Auth::routes();
 Auth::routes(['verify' => true]);
+
+Route::get('/verify-email/{token}', [VerificationController::class, 'verify_email'])->name('email.verify');
+
 
 /*--------------------tests--------------------*/
 
@@ -61,7 +66,12 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/verify-email-resend', [VerificationController::class, 'resend_verify_email'])->name('email.verify.resend');
+});
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
+
 
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
 
@@ -100,13 +110,8 @@ Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
 
-
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.create');
-
-
-
-
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
@@ -128,7 +133,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
     Route::get('/publicar-resultados/{game}', [GamesController::class, 'post_results'])->name('games.publish.results');
-    Route::post('/publicar-resultados/{game}', [GamesController::class,'dopost_results'])->name('games.publish.doresults');
+    Route::post('/publicar-resultados/{game}', [GamesController::class, 'dopost_results'])->name('games.publish.doresults');
 
     Route::resource('/tickets', TicketsController::class);
     Route::resource('/users', UserController::class);
@@ -138,7 +143,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
     Route::resource('/terms', TermsController::class);
     Route::resource('/contacts', ContactsController::class);
-    Route::resource('/sobre', SobreController::class);
+    //Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
 
 
@@ -149,12 +154,12 @@ Route::get('create-transaction', [PayPalController::class, 'createTransaction'])
 Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
 
 Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
-Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
-Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
+    Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
+    Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
 
-Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
-Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
+    Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
+    Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
-Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
+    Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
 
 });
