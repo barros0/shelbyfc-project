@@ -6,8 +6,10 @@
     <div class="container_all_news">
         <div class="nav_categories">
             <div class="news_from_category">
-                <a id="filtros_news" class="{{ Route::is(route('noticias')) ? 'selected_category' : '' }}">Categorias<i class='bx bx-filter'></i></a>
-                <a href="{{ route('noticias') }}" class="{{ Route::currentRouteName() == 'noticias' ? 'selected_category' : '' }}">Geral</a>
+                <a id="filtros_news" class="{{ Route::is(route('noticias')) ? 'selected_category' : '' }}">Categorias<i
+                        class='bx bx-filter'></i></a>
+                <a href="{{ route('noticias') }}"
+                    class="{{ Route::currentRouteName() == 'noticias' ? 'selected_category' : '' }}">Geral</a>
                 @foreach ($categories as $category)
                     <a href="{{ route('news.categorie', [$category->id]) }}"
                         class="{{ url()->current() == route('news.categorie', $category->id) ? 'selected_category' : '' }}">

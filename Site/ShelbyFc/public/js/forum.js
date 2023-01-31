@@ -47,13 +47,3 @@ $("#clear").click(function () {
     $("#images").val("");
     $(".preview_images").empty();
 });
-
-$(".posts_forum").click(function () {
-    $display = $(this).siblings(".create_forum").css("display");
-
-    if ($display === "none") {
-        $(this).siblings(".create_forum").css("display",'flex');
-    } else {
-        $(this).siblings(".create_forum").css("display",'none');
-    }
-});

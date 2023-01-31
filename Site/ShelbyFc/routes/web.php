@@ -90,7 +90,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::post('/atualizar', [UserController::class, 'update_account'])->name('user.update');
         Route::post('/atualizar-password', [UserController::class, 'update_password'])->name('user.update.password');
     });
-
 });
 
 Route::get('/noticias', [PageController::class, 'noticias'])->name('noticias');
@@ -116,6 +115,7 @@ Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
 Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
+    Route::get('/{post}', [ForumController::class, 'post'])->name('post');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
 
 
@@ -128,7 +128,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
     Route::get('/publicar-resultados/{game}', [GamesController::class, 'post_results'])->name('games.publish.results');
-    Route::post('/publicar-resultados/{game}', [GamesController::class,'dopost_results'])->name('games.publish.doresults');
+    Route::post('/publicar-resultados/{game}', [GamesController::class, 'dopost_results'])->name('games.publish.doresults');
 
     Route::resource('/tickets', TicketsController::class);
     Route::resource('/users', UserController::class);
@@ -140,8 +140,6 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/contacts', ContactsController::class);
     Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
-
-
 });
 
 
@@ -149,12 +147,11 @@ Route::get('create-transaction', [PayPalController::class, 'createTransaction'])
 Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
 
 Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
-Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
-Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
+    Route::get('success-transaction', [PayPalController::class, 'success_transaction_bet'])->name('success.transaction.bet');
+    Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancel.transaction');
 
-Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
-Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
+    Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
+    Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
-Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
-
+    Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
 });

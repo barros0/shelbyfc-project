@@ -20,6 +20,12 @@ class ForumController extends Controller
         return view('forum.index', compact('posts', 'posts_images'));
     }
 
+    public function post(Forum_post $post)
+    {
+        $posts_images = Forum_posts_images::get();
+        return view('forum.post', compact('post', 'posts_images'));
+    }
+    
     public function posts_user($user_id)
     {
         $user_id = Forum_post::where('name', $user_id)->firstOrFail();
@@ -49,29 +55,23 @@ class ForumController extends Controller
         $forum_posts->save();
 
         $images = $request->file('images');
-        if(!empty($images)){
-        foreach ($images as $image) {
-            if ($image->isValid()) {
-                $extension = $image->getClientOriginalExtension();
-                $image_name = uniqid() . '.' . $extension;
-                $image->move(public_path('images/forum_posts_images'), $image_name);
+        if (!empty($images)) {
+            foreach ($images as $image) {
+                if ($image->isValid()) {
+                    $extension = $image->getClientOriginalExtension();
+                    $image_name = uniqid() . '.' . $extension;
+                    $image->move(public_path('images/forum_posts_images'), $image_name);
+                }
+                $forum_images = new Forum_posts_images();
+                $post_id = $forum_posts->id;
+                $forum_images->post_id = $post_id;
+                $forum_images->image = $image_name;
+                $forum_images->save();
             }
-            $forum_images = new Forum_posts_images();
-            $post_id = $forum_posts->id;
-            $forum_images->post_id = $post_id;
-            $forum_images->image = $image_name;
-            $forum_images->save();
-        }
         }
 
         Session::flash('success', 'Publicação adicionada!');
         return back();
-    }
-
-
-    public function post(Forum_post $post)
-    {
-        return view('forum.post', compact('post'));
     }
 
     public function delete_post(Forum_post $post)

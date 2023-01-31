@@ -2,7 +2,7 @@
 
 @section('content.forum')
     <div class="">
-        <div class="create_forum d-flex flex-row justify-content-around">
+        <a class="create_forum d-flex flex-row justify-content-around">
             <img class="user_forum_img" src="{{ asset('images/users/' . Auth::user()->image) }}" alt="user_img">
             <div style="width:80%;" class="d-flex flex-column">
                 <form action="{{ route('forum.store_post') }}" method="post" enctype="multipart/form-data">
@@ -23,11 +23,11 @@
             <div style="width: 4%">
                 <i id="close" style="display:none" class='bx bx-x'></i>
             </div>
-        </div>
+        </a>
 
         <div class="container_forum d-flex flex-column">
             @foreach ($posts as $post)
-                <div class="container_post">
+                <a href="{{ route('forum.post', $post->id) }}" class="container_post">
                     <div class="posts_forum d-flex justify-content-around align-items-center">
                         <div class="user_info_forum">
                             <img class="user_forum_img" src="{{ asset('images/users/' . $post->user->image) }}"
@@ -61,7 +61,7 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 {{-- cometarios --}}
                 @foreach ($post->comments as $comment)
