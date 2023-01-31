@@ -2733,6 +2733,10 @@ label.custom-file-upload {
         font-size: 25px;
         color: var(--vermelho);
     }
+    .contact-section .row{
+        width: 100%;
+    }
+  
 }
 
 @media(max-width:970px) {
@@ -2761,19 +2765,23 @@ label.custom-file-upload {
     align-items: center !important;
 
 }
+.contact-section .row{
+    width: 100%;
+}
+
 
 
 }
 
 @media(max-width:500px) {
     .contact-section input {
-        width: 250px;
+        width: 200px;
     }
     .contact-section textarea {
-        width: 250px !important;
+        width: 200px !important;
     }
     .contact-section .top-form .input-icons {
-        width: 220px !important;
+        width: 200px !important;
     }
     .contact-section .top-form{
         flex-direction: column !important;
@@ -2792,6 +2800,9 @@ label.custom-file-upload {
         font-size: 25px;
         color: var(--vermelho);
     }
+    .contact-section .ret{
+        width: auto;
+    }
     .contact-section #ret1 {
         display: flex;
         align-items: center;
@@ -2809,6 +2820,10 @@ label.custom-file-upload {
         align-items: center;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .contact-section .row{
+        width: 100%;
     }
   
 }
