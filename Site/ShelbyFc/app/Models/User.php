@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -95,5 +95,10 @@ class User extends Authenticatable implements MustVerifyEmail
     function tickets()
     {
         return $this->hasMany(Ticket::class,'user_id','id');
+    }
+
+    function user_verify()
+    {
+        return $this->hasOne(Users_Verify::class,'user_id','id');
     }
 }

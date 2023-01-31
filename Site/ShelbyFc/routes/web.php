@@ -23,6 +23,8 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;
 use App\Http\Controllers\TicketsController;
+use App\Http\Controllers\Auth\VerificationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,13 +39,24 @@ use App\Http\Controllers\TicketsController;
 Auth::routes();
 Auth::routes(['verify' => true]);
 
+Route::get('/verify-email/{token}', [VerificationController::class, 'verify_email'])->name('email.verify');
+
+
 /*--------------------tests--------------------*/
 
-Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
-
+//Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
+/*
 Route::get("/email", function () {
     return View("email.forgetpassword");
-});
+});*/
+
+/*
+ *
+ * user pendent
+ *
+ *
+ * */
+
 
 /*-----------------tests--------------------*/
 
@@ -61,6 +74,10 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/verify-email-resend', [VerificationController::class, 'resend_verify_email'])->name('email.verify.resend');
+});
+
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
@@ -76,6 +93,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/comprar-bilhete', [UserController::class, 'buy_ticket'])->name('tickets.buy');
 
     Route::get('/imprimir-bilhete/{ticket}', [TicketsController::class, 'print'])->name('print.ticket');
+
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
@@ -99,13 +117,8 @@ Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
 
-
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.create');
-
-
-
-
 
 
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
@@ -117,7 +130,6 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::get('/{post}', [ForumController::class, 'post'])->name('post');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
-
 
     Route::post('/comentar/{post}', [ForumController::class, 'docomment'])->name('do.comment');
 });
@@ -138,7 +150,6 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
     Route::resource('/terms', TermsController::class);
     Route::resource('/contacts', ContactsController::class);
-    Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
 });
 
@@ -153,5 +164,6 @@ Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
     Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
     Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
-    Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
+Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
+
 });

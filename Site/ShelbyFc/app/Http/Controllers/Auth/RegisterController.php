@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Str;
 use Mail;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -67,23 +68,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+       $user = User::create([
             'name' => $data['name'] .' '.$data['subname'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
-        $id=$user->id;
+
 
         $token = Str::random(64);
 
-        Users_Verify::create([
-            'user_id' => $id,
+        $verify = Users_Verify::create([
+            'user_id' => $user->id,
             'token' => $token
         ]);
 
 
-        Mail::send('email.emailVerificationEmail', compact('id','token'), function($message) use($data){
+        Mail::send('email.emailVerificationEmail', compact('token'), function($message) use($data){
             $message->to($data['email']);
             $message->subject('Confirme o seu e-mail');
         });

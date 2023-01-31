@@ -45,6 +45,7 @@ class GamesController extends Controller
             'team2_img' => asset('images/liga/' . $game->opponent->image),
             'team2' => $game->opponent->name,
             'limit_buy' => $game->limit_buy_ticket,
+            'stock_tickets' => $game->stock_tickets,
             'quantidade' => $game->stock_tickets,
             'preco' => $game->ticket_price,
             'preco_socio' => $game->ticket_price_partner,

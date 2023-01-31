@@ -55,6 +55,9 @@ class PageController extends Controller
         $noticia = News::findOrFail($id);
         $categories = Categorie::all();
 
+        $noticia->views += 1;
+        $noticia->save();
+
         return view('NoticiaModal', compact('noticia', 'categories'));
     }
 
@@ -170,7 +173,7 @@ class PageController extends Controller
 
     public function buy_ticket()
     {
-        $proximos_jogos = Game::AvaliableTicket()->get();
+        $proximos_jogos = Game::AvaliableDateBuyTicket()->get();
 
         return view('tickets', compact('proximos_jogos'));
     }

@@ -82,7 +82,7 @@
                 fator = $('input[name="fator"]:checked').val()
                 val_fator = $('#' + fator + '-odd').text()
 
-                ganhos_possiveis = $('#montante').val() * val_fator + '€';
+                ganhos_possiveis = Math.round($('#montante').val() * val_fator) + '€';
 
                 $('#ganhos_possiveis').text(ganhos_possiveis);
             }
