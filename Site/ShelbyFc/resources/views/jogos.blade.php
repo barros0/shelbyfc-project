@@ -18,7 +18,7 @@
 
                 @foreach ($proximos_jogos as $game)
 
-                @if($game->GameDate())
+                @if($game->NextGames())
 
                     <div class="match-day">
                         <div class="match-details">

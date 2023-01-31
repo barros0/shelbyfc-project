@@ -20,8 +20,6 @@ class Ticket extends Model
         return $this->hasone(User::class, 'id', 'user_id');
     }
 
-
-
     public function game()
     {
         return $this->hasone(Game::class, 'id', 'game_id');
