@@ -55,6 +55,9 @@ class PageController extends Controller
         $noticia = News::findOrFail($id);
         $categories = Categorie::all();
 
+        $noticia->views += 1;
+        $noticia->save();
+
         return view('NoticiaModal', compact('noticia', 'categories'));
     }
 

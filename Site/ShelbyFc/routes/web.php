@@ -44,11 +44,19 @@ Route::get('/verify-email/{token}', [VerificationController::class, 'verify_emai
 
 /*--------------------tests--------------------*/
 
-Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
-
+//Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
+/*
 Route::get("/email", function () {
     return View("email.forgetpassword");
-});
+});*/
+
+/*
+ *
+ * user pendent
+ *
+ *
+ * */
+
 
 /*-----------------tests--------------------*/
 
@@ -72,7 +80,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
-
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
 
     Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
@@ -86,6 +93,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::post('/comprar-bilhete', [UserController::class, 'buy_ticket'])->name('tickets.buy');
 
     Route::get('/imprimir-bilhete/{ticket}', [TicketsController::class, 'print'])->name('print.ticket');
+
     Route::group(['prefix' => 'perfil'], function () {
         Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
@@ -123,7 +131,6 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
 
-
     Route::post('/comentar/{post}', [ForumController::class, 'docomment'])->name('do.comment');
 });
 
@@ -143,7 +150,6 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], 
     Route::resource('/faqs', FaqsController::class);
     Route::resource('/terms', TermsController::class);
     Route::resource('/contacts', ContactsController::class);
-    //Route::resource('/sobre', SobreController::class);
     Route::resource('/withdraw', WithdrawController::class);
 
 
