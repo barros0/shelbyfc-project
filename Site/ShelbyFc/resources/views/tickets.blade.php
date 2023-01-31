@@ -82,7 +82,10 @@
                     <div class="row g-0 m-0 p-0">
 
                         <div class="montante-bilhetes">
-                                <span class="details-montante-ticket"><span class="text-start" style="color:#000">BILHETES</span> <span class="text-end" style="color:#000"><span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
+                               <h6 style="margin: 14px"><span class="text-start" style="color:#000;">BILHETES DISPONÍVEIS:
+                                       <span id="stock_tickets"></span></span></h6>
+                                <span class="details-montante-ticket"><span class="text-start" style="color:#000">BILHETES
+                                    </span> <span class="text-end" style="color:#000"><span class="cinza-montante">Máx:</span> 5 Bilhetes / Jogo</span></span>
                             <input name="quantidade" id="quantidade" type="number" placeholder="Quantidade" min="1" max="5">
                             <div class="montantes-rapidos">
                                 <button type="button" class="bt_add_value btn-secondary" value="1">1</button>
@@ -110,9 +113,9 @@
                                 @endif
                                 </h3>
 
-                                <h2 class="text-primary preco" @if(Auth::user()->subscribed) hidden @endif id="gameprice"></h2>
+                                <h2 class="text-primary preco" @if(Auth::user()->subscribed) hidden @endif id="price_normal">0€</h2>
 
-                                <h2 class="text-primary preco" @if(!Auth::user()->subscribed) hidden @endif id="gameprice_partner"></h2>
+                                <h2 class="text-primary preco" @if(!Auth::user()->subscribed) hidden @endif id="price_partner">0€</h2>
 
                             </div>
                         </div>
@@ -144,6 +147,12 @@
 
 </div>
 </div>
+
+@if(Auth::user()->subscribed)
+    <input id="type_price" type="text" hidden value="price_partner">
+@else
+    <input id="type_price" type="text" hidden value="price_normal">
+@endif
 
 <script>
     /*temporario*/
@@ -194,8 +203,9 @@
                     $('#team2_img').attr('src', data.team2_img)
                     $('#team2').text(data.team2)
                     $('#quantidade').text(data.quantidade)
-                    $('#gameprice').text(data.preco+'€')
-                    $('#gameprice_partner').text(data.preco_socio+'€')
+                    $('#price_normal').text(data.preco+'€')
+                    $('#price_partner').text(data.preco_socio+'€')
+                    $('#stock_tickets').text(data.stock_tickets)
                     $('#location').text(data.location)
 
                     // scroll para o screen de apostas
@@ -227,8 +237,10 @@
 
         function update_values(){
 
-            total =  ($('#quantidade').val() * 9999)+'€';
+            type_price = $('#type_price').val()
 
+            price =  parseFloat($('#'+type_price).text());
+            total =  (Math.round($('#quantidade').val() * price))+'€';
             $('#total').text(total);
         }
         // quando valor muda muda ganhos posssiveis

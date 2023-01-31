@@ -49,13 +49,20 @@ class Game extends Model
     }
 
 
-    public function scopeAvaliableTicket($query)
+    public function scopeAvaliableDateBuyTicket($query)
     {
         return $query->where('limit_buy_ticket','>', Carbon::now());
+    }
+
+    public function scopeAvaliablesStockTicket($query,$quantity)
+    {
+        return $query->where('stock_tickets','>=', $quantity);
     }
 
     public function scopeNextGames($query)
     {
         return $query->where('datetime_game','>', Carbon::now())->whereNull('result');
     }
+
+
 }
