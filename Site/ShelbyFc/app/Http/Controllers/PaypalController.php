@@ -160,7 +160,10 @@ class PayPalController extends Controller
         $response = $provider->capturePaymentOrder($request['token']);
 
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-            $game = Game::AvaliableTicket()->findOrFail($gameid);
+            $game = Game::AvaliableDateBuyTicket()->findOrFail($gameid);
+
+            $game->stock_tickets -= $quantidade;
+            $game->save();
 
             for ($i = 1; $i <= $quantidade; $i++) {
                 $ticket = new Ticket();

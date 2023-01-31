@@ -39,16 +39,16 @@ class UserController extends Controller
             'nascimento' => 'nullable|date',
             'foto_perfil' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4048',
         ],
-        [
-            'codigo_postal.regex' => 'O formato do código de postal é inválido.',
-        ]);
+            [
+                'codigo_postal.regex' => 'O formato do código de postal é inválido.',
+            ]);
 
         $user = Auth::user();
         $photo = $request->foto_perfil;
 
-        if($photo){
-            $name_photo = 'Profile_photo-'.Auth::id().'-'.time() . '.'.$photo->getClientOriginalExtension();
-            $photo->move(public_path('/images/users'),$name_photo);
+        if ($photo) {
+            $name_photo = 'Profile_photo-' . Auth::id() . '-' . time() . '.' . $photo->getClientOriginalExtension();
+            $photo->move(public_path('/images/users'), $name_photo);
             $user->image = $name_photo;
         }
 
@@ -85,19 +85,29 @@ class UserController extends Controller
         ]);
 
         $gameid = $request->jogo;
+        $quantity = $request->quantidade;
 
-        $game = Game::AvaliableTicket()->findOrFail($gameid);
+        $game = Game::AvaliableDateBuyTicket()->findOrFail($gameid);
 
-        if(!empty(Auth::user()->subscribed)){
+        if ($game->stock_tickets < $quantity) {
+
+            if ($game->stock_tickets == 0) {
+                $msg = 'Não existem bilhetes disponiveis';
+            } else {
+                $msg = 'Não temos essa quantidade de bilhetes disponiveis somente temos '.$game->stock_tickets.' disponível!';
+            }
+            Session::flash('alert', $msg);
+            return back();
+        }
+
+        if (!empty(Auth::user()->subscribed)) {
             $price = $game->ticket_price_partner;
-        }
-        else{
-            $price =  $game->ticket_price;
+        } else {
+            $price = $game->ticket_price;
         }
 
-        $quantidade = $request->quantidade;
 
-        $total = $quantidade * $price;
+        $total = $quantity * $price;
 
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
@@ -105,7 +115,7 @@ class UserController extends Controller
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
             "application_context" => [
-                "return_url" => route('paypal.success.transaction.ticket',[$gameid,$quantidade,$price]),
+                "return_url" => route('paypal.success.transaction.ticket', [$gameid, $quantity, $price]),
                 "cancel_url" => route('paypal.cancel.transaction.ticket'),
             ],
             "purchase_units" => [
@@ -121,10 +131,10 @@ class UserController extends Controller
 
         if (isset($response['id']) && $response['id'] != null) {
 
-       /*     $payment = new BetsPayment();
-            $payment->bet_id = $bet_id;
-            $payment->paypal_id = $response['id'];
-            $payment->save();*/
+            /*     $payment = new BetsPayment();
+                 $payment->bet_id = $bet_id;
+                 $payment->paypal_id = $response['id'];
+                 $payment->save();*/
 
             // redirect to approve href
             foreach ($response['links'] as $links) {
@@ -142,18 +152,18 @@ class UserController extends Controller
         }
 
 
+    }
+
+
+    public function success_buy_ticket(Request $request, $gameid)
+    {
+
 
     }
 
 
-    public function success_buy_ticket(Request $request,$gameid) {
-
-
-
-    }
-
-
-    public function update_password(Request $request) {
+    public function update_password(Request $request)
+    {
 
         $validatedData = $request->validate([
             'atual_password' => 'required',
@@ -161,12 +171,12 @@ class UserController extends Controller
         ]);
 
         if (!(Hash::check($request->atual_password, Auth::user()->password))) {
-            Session::flash('error','A password atual não coincide com a password.');
+            Session::flash('error', 'A password atual não coincide com a password.');
             return redirect()->back();
         }
 
-        if(strcmp($request->atual_password, $request->new_password) == 0){
-            Session::flash('error','A nova password não pode ser igual à tua passowrd atual.');
+        if (strcmp($request->atual_password, $request->new_password) == 0) {
+            Session::flash('error', 'A nova password não pode ser igual à tua passowrd atual.');
             return redirect()->back();
         }
 
@@ -240,7 +250,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'nullable|min:8',
@@ -271,16 +281,16 @@ class UserController extends Controller
         return back();
     }
 
-    public function dowithdraw(Request $request){
-        $request->validate(['iban' => 'required|iban'  ],
+    public function dowithdraw(Request $request)
+    {
+        $request->validate(['iban' => 'required|iban'],
             ['iban.iban' => 'O IBAN deve ser um Número de Conta Bancária Internacional (IBAN) válido.'
-         ]);
-
+            ]);
 
 
         $user = Auth::user();
 
-        if($user->balance < 10){
+        if ($user->balance < 10) {
             Session::flash('alert', 'Necessita de pelo menos 10€ na sua conta para fazer um levantamento.');
             return back();
         }
@@ -295,16 +305,15 @@ class UserController extends Controller
         $user->save();
 
 
-        Session::flash('alert','Tranferência registada, deverá receber o valor na sua conta bancaria dentro de alguns dias.');
+        Session::flash('alert', 'Tranferência registada, deverá receber o valor na sua conta bancaria dentro de alguns dias.');
         return back();
     }
 
-    public function apostas(){
+    public function apostas()
+    {
 
         return view('perfil.bets');
     }
-
-
 
 
 }

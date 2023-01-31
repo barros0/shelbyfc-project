@@ -170,7 +170,7 @@ class PageController extends Controller
 
     public function buy_ticket()
     {
-        $proximos_jogos = Game::AvaliableTicket()->get();
+        $proximos_jogos = Game::AvaliableDateBuyTicket()->get();
 
         return view('tickets', compact('proximos_jogos'));
     }
