@@ -3,7 +3,9 @@
       <span class="shrink-btn">
         <i class='bx bx-chevron-left'></i>
       </span>
+      <a href="{{route('index')}}">
         <img src="{{asset('images/logo.svg')}}" class="logo" alt="">
+      </a>
         <h3 class="hide">Shelby FC</h3>
     </div>
 
