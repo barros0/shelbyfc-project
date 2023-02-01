@@ -640,10 +640,7 @@ input.invalid {
     position: absolute;
 }
 
-.text-center {
-    display: flex;
-    justify-content: center;
-}
+
 
 .linha-ajuda {
     clip-path: polygon(0 86%, 100% 63%, 100% 100%, 0% 100%);
@@ -3407,7 +3404,7 @@ span.match-type {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        
+
 
     }
 

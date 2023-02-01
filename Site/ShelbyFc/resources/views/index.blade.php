@@ -57,6 +57,28 @@
             @endif
         @endforeach
     </div>
+
+    <div class="container">
+
+        <div class="col-12 text-center">
+         <div class="col-12">
+             <h3>Há 20 anos a fazer magia no futebol!</h3>
+         </div>
+           <div class="col-12">
+               <p>Conheça a história do ex-jogador de sucesso do shelby!</p>
+           </div>
+        </div>
+
+      <div class="d-flex justify-content-center">
+     <div class="videoyt">
+         <iframe style="max-width: 100%" width="660" height="415" src="https://www.youtube.com/embed/IzQB4uqt_sQ"
+                 title="Shelby FC video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+     </div>
+      </div>
+          </div>
+
+
     <div class="vantagens_index">
         <h1 class="tit-vant">ASSINA PELO SHELBY</h1>
         <div class="row-vant-index">
