@@ -106,7 +106,7 @@
                         <i class='bx bx-calendar'></i>
                         <i class='bx bxs-calendar'></i>
                     </div>
-                    <span class="link hide">Calendario</span>
+                    <span class="link hide">Jogos</span>
                 </a>
             </li>
 
@@ -149,7 +149,7 @@
                 </a>
             </li>
             <div class="tooltip">
-                <span class="show">Calendario</span>
+                <span class="show">Jogos</span>
                 <span>Equipas</span>
                 <span>Bilhetes</span>
                 <span>Apostas</span>
