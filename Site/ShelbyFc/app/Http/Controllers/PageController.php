@@ -94,6 +94,7 @@ class PageController extends Controller
             'cc' => 'required|image|mimes:jpeg,png,jpg,pdf|max:4048',
         ]);
         $user = Auth::user()->id;
+        $nome = Auth::user()->name;
         $email = Auth::user()->email;
 
         $subscription = new Subscription();
@@ -104,9 +105,9 @@ class PageController extends Controller
         $subscription->user_id = $user;
         $subscription->email = $email;
         $subscription->cc = $name_cc;
+        $subscription->name = $nome;
 
         $subscription->address = $request->morada;
-        //$subscription->address = $request->cc;
         $subscription->city = $request->cidade;
         $subscription->country_id = $request->pais;
         $subscription->postal_code = $request->zipcode;

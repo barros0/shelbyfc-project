@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class SubscriptionController extends Controller
 {
@@ -25,6 +26,19 @@ class SubscriptionController extends Controller
     public function show(Subscription $subscription)
     {
         return view('admin.subscriptions.show', compact('subscription'));
+    }
+
+    public function update(Request $request, Subscription $subscription)
+    {
+        //
+
+        $subscription->state = 2;
+        $subscription->save();
+
+        Session::flash('success', 'Subscrição Aprovada!');
+        return back();
+
+
     }
 
 }
