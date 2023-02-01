@@ -2370,7 +2370,6 @@ label.custom-file-upload {
 
 .about-text .right-side {
     height: 100%;
-    width: 40%;
     background-image: url(../images/sobre/fundo-about.svg);
     background-size: cover;
 
@@ -2428,12 +2427,10 @@ label.custom-file-upload {
 
 .what-section .left-side {
     height: 100%;
-    width: 20%;
 }
 
 .what-section .right-side {
     height: 100%;
-    width: 80%;
     display: flex;
     flex-direction: column;
 }
@@ -2762,6 +2759,31 @@ label.custom-file-upload {
     font-size: 18px;
 }
 
+@media(max-width:500px) {
+    .box-content h6{
+        font-size: 20px;
+    }
+    .box-content p{
+        font-size: 14px;
+    }
+    .box-content p span{
+        font-size: 15px;
+    }
+    .box-title{
+        margin-bottom: 5px;
+    }
+    .term-box{
+        width: 80%;
+    }
+}
+
+
+@media(max-width:1200px) {
+    .term-box{
+        width: 80%;
+    }
+}
+
 
 
 /*------------------------------------------------------------------------ CONTACTOS -----------------------------------------------------------------------------------*/
@@ -2791,7 +2813,6 @@ label.custom-file-upload {
 }
 
 .contact-section {
-    width: 100%;
     display: flex;
     flex-direction: row;
     padding: 30px;
@@ -2838,14 +2859,8 @@ label.custom-file-upload {
 
 
 .contact-section .right-side {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
+    padding: 15px;
 }
 
 .form-contact {
@@ -2866,13 +2881,6 @@ label.custom-file-upload {
 }
 
 @media(max-width:1270px) {
-    .contact-section input {
-        width: 450px;
-    }
-
-    .contact-section textarea {
-        width: 450px !important;
-    }
 
     .contact-section .top-form .input-icons {
         width: 225px !important;
@@ -2882,9 +2890,6 @@ label.custom-file-upload {
         font-size: 1.5rem;
     }
 
-    .contact-section {
-        padding: 0px;
-    }
 
     .contact-section .left-side p {
         font-size: 15px;
@@ -2904,20 +2909,10 @@ label.custom-file-upload {
 
 @media(max-width:970px) {
     .contact-section .left-side {
-        width: 100%;
         border-right: 0;
         border-bottom: 1px solid rgba(39, 39, 39, 0.151);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
-    .contact-section .right-side {
-        width: 100%;
-        display: flex !important;
-        flex-direction: column;
-        align-items: center !important;
-    }
 
     .contact-section form {
         margin-top: 50px;
@@ -2928,22 +2923,8 @@ label.custom-file-upload {
     }
 }
 
-.contact-section #nome {
-    margin-right: 15px;
-}
 
 @media(max-width:500px) {
-    .contact-section #nome {
-        margin-right: 0;
-    }
-
-    .contact-section input {
-        width: 200px;
-    }
-
-    .contact-section textarea {
-        width: 200px !important;
-    }
 
     .contact-section .top-form .input-icons {
         width: 200px !important;
@@ -2957,13 +2938,6 @@ label.custom-file-upload {
         font-size: 1rem;
     }
 
-    .contact-section {
-        padding: 0px;
-    }
-
-    .contact-section .left-side p {
-        font-size: 10px;
-    }
 
     .contact-section .left-side i {
         margin-right: 10px;
@@ -2998,7 +2972,6 @@ label.custom-file-upload {
     height: 150px;
     border-radius: 5px;
     font-size: 14px;
-    width: 600px;
     background-color: transparent;
     margin-bottom: 10px;
 }
