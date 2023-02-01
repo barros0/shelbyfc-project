@@ -35,7 +35,7 @@
                     <td>{{ $subscription->expires_at }}</td>
                     <td>
                         @if($subscription->state != 'Ativa')
-                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Aprovar / Negar</a>
+                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Aprovar</a>
                         @else
                         <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Visualizar</a>
                         @endif
