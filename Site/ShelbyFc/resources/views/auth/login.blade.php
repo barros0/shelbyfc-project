@@ -70,12 +70,12 @@
                     <div class="nome-social">Continuar com o Google</div>
                 </a>
 
-                <a href="{{ route('social.redirect','facebook') }}" class="social">
+                <a hidden href="{{ route('social.redirect','facebook') }}" class="social">
                     <div class="logo-social"><img src="{{asset('images/icons/apple.svg')}}" alt="Apple"></div>
                     <div class="nome-social">Continuar com a Apple</div>
                 </a>
 
-                <a href="{{ route('social.redirect','facebook') }}" class="social">
+                <a  href="{{ route('social.redirect','facebook') }}" class="social">
                     <div class="logo-social"><img src="{{asset('images/icons/facebook.svg')}}" alt="Facebook"></div>
                     <div class="nome-social">Continuar com o Facebook</div>
                 </a>

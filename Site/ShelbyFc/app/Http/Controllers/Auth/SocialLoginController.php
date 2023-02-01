@@ -17,7 +17,7 @@ class SocialLoginController extends Controller
     }
 
     public function providerCallback(String $provider){
-
+return 1;
         try{
             $social_user = \Socialite::driver($provider)->user();
 
