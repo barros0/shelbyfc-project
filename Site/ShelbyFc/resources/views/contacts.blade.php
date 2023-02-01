@@ -2,8 +2,6 @@
 
 @section('title','Contactos | ShelbyFC')
 
-@include('partials.head')
-
 @section('content')
 
 <div class="conteudo-contactos">

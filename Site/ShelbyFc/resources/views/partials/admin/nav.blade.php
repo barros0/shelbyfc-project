@@ -17,7 +17,7 @@
     <div class="sidebar-links">
         <ul>
             <li class="active-tab tooltip-element" data-tooltip="0">
-                <a href="#" class="active" data-active="0">
+                <a href="{{route('admin.dashboard')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-tachometer'></i>
                         <i class='bx bxs-tachometer'></i>

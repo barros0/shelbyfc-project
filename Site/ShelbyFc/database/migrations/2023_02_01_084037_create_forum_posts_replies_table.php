@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('forum_posts_comments', function (Blueprint $table) {
+        Schema::create('forum_posts_replies', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('comment_id');
+            $table->foreign('comment_id')->references('id')->on('forum_posts_comments');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-
-            $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('id')->on('forum_posts');
 
             $table->text('comment');
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forum_posts_comments');
+        Schema::dropIfExists('forum_posts_replies');
     }
 };

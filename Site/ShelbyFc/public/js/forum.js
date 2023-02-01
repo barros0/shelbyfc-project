@@ -47,3 +47,8 @@ $("#clear").click(function () {
     $("#images").val("");
     $(".preview_images").empty();
 });
+
+$(".comment_reply").click(function () {
+    $(this).closest(".wrap_post_info").next(".container_replies").slideToggle();
+    $(this).siblings("form").slideToggle();
+});

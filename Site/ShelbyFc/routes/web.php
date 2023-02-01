@@ -132,6 +132,7 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
 
     Route::post('/comentar/{post}', [ForumController::class, 'docomment'])->name('do.comment');
+    Route::post('/reply/{post}', [ForumController::class, 'reply'])->name('reply');
 });
 
 
@@ -164,6 +165,5 @@ Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
     Route::get('success-transaction-ticket/{gameid}/{quantidade}/{price}', [PayPalController::class, 'success_transaction_ticket'])->name('success.transaction.ticket');
     Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
-Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
-
+    Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
 use App\Models\Forum_posts_images;
+use App\Models\Forum_posts_replies;
 use App\Models\Forum_post;
 use Illuminate\Http\Request;
 use Auth;
@@ -25,7 +26,7 @@ class ForumController extends Controller
         $posts_images = Forum_posts_images::get();
         return view('forum.post', compact('post', 'posts_images'));
     }
-    
+
     public function posts_user($user_id)
     {
         $user_id = Forum_post::where('name', $user_id)->firstOrFail();
@@ -103,21 +104,21 @@ class ForumController extends Controller
         return back();
     }
 
-    public function reply(Request $request, $postid, $commentid)
+    public function reply(Request $request)
     {
+        $comment_id = $request->comment_id;
 
-        Forum_post::findorfail($postid);
-        forum_posts_comment::findorfail($commentid);
+        forum_posts_comment::findOrFail($comment_id);
 
-        $comment = new forum_posts_comment();
-        $comment->user_id = Auth::id();
-        $comment->post_id = $postid;
-        $comment->comment = $request->comment;
-        $comment->reply_id = $commentid;
-        $comment->save();
+        $reply = new Forum_posts_replies();
+        $reply->user_id = Auth::id();
+        $reply->comment = $request->reply;
+        $reply->comment_id = $comment_id;
+        $reply->save();
 
         return back();
     }
+
 
     public function delete_comment(Request $request, $commentid)
     {
