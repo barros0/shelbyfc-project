@@ -1,0 +1,39 @@
+WordPress : teste.social-bubble.pt/wp-admin
+
+André Sousa
+
+Nome de Utilizador: shelby
+Email: 2211698@my.ipleiria.pt
+Password: shelby69.bruh
+
+João Duarte
+
+Nome de Utilizador: gajodomustang
+Email: 2211713@my.ipleiria.pt
+Password: Wl(DO&hBXaQ%jL*sJsPLYe2W
+
+João Barros 
+
+Nome de Utilizador: barros_super_sayin
+Email: 2211737@my.ipleiria.pt
+Password: jiV8Rm#kyjVDMu97Ds4sn)w^
+
+Micael Pereira
+
+Nome de Utilizador: micag
+Email: 2211739@my.ipleiria.pt
+Password: Ge(%dbADpggIphfzXj83%aFN
+
+Site
+
+shelbyfc.test/login
+
+Admin
+
+Email: admin@admin.com
+Password: admin
+
+User Normal
+
+Email: mlgoucha@tvi.iol.com
+Password: 1234
