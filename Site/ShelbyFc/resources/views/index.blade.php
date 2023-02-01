@@ -18,11 +18,11 @@
             </div>
             <div class="news_options">
                 @foreach ($noticias->take(3) as $noticia)
-                    <div class="option" id="option{{ $id_js = $id_js + 1 }}">
-                        <p id="image{{ $id_image_js = $id_image_js + 1 }}" style="display:none;">{{ $noticia->image }}</p>
-                        <p id="href_link{{ $id_href_js = $id_href_js + 1 }}" style="display:none;">{{ $noticia->id }}</p>
-                        <p id="date{{ $id_date_js = $id_date_js + 1 }}">{{ $noticia->created_at->format('Y-m-d') }}</p>
-                        <h3 id="text{{ $id_text_js = $id_text_js + 1 }}">{{ $noticia->title }}</h3>
+                    <div class="option" id="option{{ $noticia->id }}">
+                        <p id="image{{ $noticia->id }}" style="display:none;">{{ $noticia->image }}</p>
+                        <p id="href_link{{$noticia->id }}" style="display:none;">{{ $noticia->id }}</p>
+                        <p id="date{{ $noticia->id }}">{{ $noticia->created_at->format('Y-m-d') }}</p>
+                        <h3 id="text{{ $noticia->id }}">{{ $noticia->title }}</h3>
                     </div>
                 @endforeach
             </div>
@@ -33,7 +33,6 @@
     </div>
     <div class="container_last_matches">
         @foreach ($proximos_jogos as $proximo_jogo)
-        @if($proximo_jogo->result_home !== null || $proximo_jogo->result_opponent !== null)
                 <div class="match">
                     <div class="match_home d-flex flex-column justify-content-between align-items-center">
                         <img src="{{ asset('images/liga/shelby_fc.png') }}" alt="logo-shelby_fc.png">
@@ -54,7 +53,6 @@
                     </div>
                 </div>
                 <div class="separador"></div>
-            @endif
         @endforeach
     </div>
 
