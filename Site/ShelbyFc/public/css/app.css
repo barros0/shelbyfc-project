@@ -1943,6 +1943,10 @@ label.custom-file-upload {
     margin: auto;
 }
 
+.forum_comments .ml-5 {
+    margin-left: 5rem;
+}
+
 .forum_comments img {
     width: 50px;
     height: 50px;
@@ -2000,7 +2004,15 @@ label.custom-file-upload {
     float: right;
 }
 
+.container_replies {
+    margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 900px) {
+    .forum_comments .ml-5 {
+        margin: 0;
+    }
+
     .forum_comments {
         max-width: fit-content;
     }
@@ -2884,6 +2896,7 @@ label.custom-file-upload {
 
     }
 }
+
 .contact-section #nome {
     margin-right: 15px;
 }

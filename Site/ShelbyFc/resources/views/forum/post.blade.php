@@ -38,30 +38,36 @@
         </div>
         <div class="forum_comments">
             @foreach ($post->comments as $comment)
-                @if (is_null($comment->reply_id))
-                    <div class="d-flex wrap_post_info">
-                        <img src="{{ asset('images/users/' . $comment->user->image) }}" alt="img_user">
-                        <div class="container_post_info d-flex flex-column">
-                            <p style="font-weight: 800;">{{ $comment->user->name }}</p>
-                            <div class="post_comment">
-                                {{ $comment->comment }}
-                                <p class="comment_reply">reply</p>
-                                <form action="{{ route('forum.reply', $post->id) }}" method="post"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                    <input type="hidden" name="comment_id" value="{{ $comment->id }}">
-                                    <input type="text" name="reply" id="reply">
-                                    <button type="submit">Comentar</button>
-                                </form>
-                            </div>
+                <div class="d-flex wrap_post_info">
+                    <img src="{{ asset('images/users/' . $comment->user->image) }}" alt="img_user">
+                    <div class="container_post_info d-flex flex-column">
+                        <p style="font-weight: 800;">{{ $comment->user->name }}</p>
+                        <div class="post_comment">
+                            {{ $comment->comment }}
+                            <p class="comment_reply">reply</p>
+                            <form action="{{ route('forum.reply', $post->id) }}" method="post">
+                                @csrf
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                <input type="text" name="reply" id="reply">
+                                <button type="submit">Reply</button>
+                            </form>
                         </div>
                     </div>
-                    REPLY APARECEM AQUI
-                    @if(!is_null($comment->reply_id))
-                        {{ $comment->}}
-                    @endif
-                @endif
+                </div>
+                <div class="container_replies">
+                    @foreach ($comment->replies as $reply)
+                        <div class="d-flex wrap_post_info ml-5">
+                            <img src="{{ asset('images/users/' . $reply->user->image) }}" alt="img_user">
+                            <div class="container_post_info d-flex flex-column">
+                                <p style="font-weight: 800;">{{ $reply->user->name }}</p>
+                                <div class="post_comment">
+                                    {{ $reply->comment }}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             @endforeach
         </div>
     </div>
