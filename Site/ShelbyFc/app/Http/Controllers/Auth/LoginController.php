@@ -66,6 +66,7 @@ class LoginController extends Controller
                 }
             }
 
+            Session::flash('success','Bem-Vindo '.$user->name);
             return redirect()->route('index');
         }
 
