@@ -646,6 +646,15 @@ input.invalid {
     width: 20% !important;
     height: 20px;
 }
+.background {
+    display: flex;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
 
 @media only screen and (max-width: 800px) {
     .login-wrapper {
@@ -659,16 +668,26 @@ input.invalid {
     header {
         position: sticky;
     }
+
+    .background {
+        display: none;
+
+    }
+
+    .linha-ajuda{
+        display: none;
+    }
+
+    .footer-bg {
+        clip-path: polygon(0 65%, 100% 0%, 100% 100%, 0% 100%);
+        width: 100%;
+        background: var(--vermelho);
+        bottom: unset;
+        height: 6%;
+        position: absolute;
+    }
 }
 
-.background {
-    display: flex;
-    top: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
 
 /*navbar_geral*/
 
