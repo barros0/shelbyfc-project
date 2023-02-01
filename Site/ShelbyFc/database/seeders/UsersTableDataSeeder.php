@@ -20,7 +20,7 @@ class UsersTableDataSeeder extends Seeder
         $user->name = 'Administrador';
         $user->email = 'admin@admin.com';
         $user->is_admin = 1;
-        $user->status = 1;
+        $user->status = 2;
         $user->email_verified_at = Carbon::now();
         $user->password = bcrypt('admin');
         $user->save();

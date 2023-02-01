@@ -21,6 +21,16 @@ class ForumController extends Controller
         return view('forum.index', compact('posts', 'posts_images'));
     }
 
+
+    /*public function create(Request $request)
+    {
+        $posts = Forum_post::all();
+        return view('forum.index', compact('posts'));
+    }
+    */
+
+
+
     public function post(Forum_post $post)
     {
         $posts_images = Forum_posts_images::get();
@@ -32,12 +42,6 @@ class ForumController extends Controller
         $user_id = Forum_post::where('name', $user_id)->firstOrFail();
 
         return view('forum.index', compact('user_id'));
-    }
-
-    public function create(Request $request)
-    {
-        $posts = Forum_post::all();
-        return view('forum.index', compact('posts'));
     }
 
     public function store_post(Request $request)

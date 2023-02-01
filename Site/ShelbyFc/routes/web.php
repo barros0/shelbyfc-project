@@ -78,7 +78,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/verify-email-resend', [VerificationController::class, 'resend_verify_email'])->name('email.verify.resend');
 });
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified','AuthorizedUser']], function () {
 
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
 
@@ -136,7 +136,7 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
 });
 
 
-Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['admin','AuthorizedUser']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);

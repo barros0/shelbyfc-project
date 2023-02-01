@@ -54,10 +54,8 @@
     <div class="recent_box">
         <h3>Forum Post Mais Recente</h3>
         <div class="content_post">
-            @foreach ($forum_posts as $forum_post)
                 <p>{{ $forum_post->title }} - {{ $forum_post->created_at }}</p>
                 <p>{{ $forum_post->body }}</p>
-            @endforeach
         </div>
     </div>
 @endsection

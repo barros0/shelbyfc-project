@@ -15,11 +15,13 @@
         <div class="row">
 
             <div class="calendar">
-  
+  @if($proximos_jogos->count() == 0)
+      <div class="d-flex jusntify-content-center">
+          <h2>Não temos jogos para os próximos tempos :(</h2>
+      </div>
+      @endif
         @foreach ($proximos_jogos as $proximo_jogo)
 
-        @if($proximo_jogo->result_home !== null || $proximo_jogo->result_opponent !== null)
-    
         <div class="match-day">
             <div class="match-details">
                 <span class="match-date">{{ $data = date('d M y',strtotime($proximo_jogo->datetime_game)) }}</span>
@@ -35,18 +37,16 @@
                     <div class="result-bg"><span class="match-result">{{$proximo_jogo->result_home}}</span></div>
                 </div>
                 <div class="match-vs-half"><span class="match-type">Amigável</span><h3 class="match-day-vs">VS</h3></div>
-                <div class="match-result-container">    
-                    <div class="result-bg"><span class="match-result">{{$proximo_jogo->result_opponent}}</span></div>          
+                <div class="match-result-container">
+                    <div class="result-bg"><span class="match-result">{{$proximo_jogo->result_opponent}}</span></div>
                 </div>
-                
+
                 <div class="match-away-team">
                     <img src="{{asset('images/liga/'.$proximo_jogo->opponent->image)}}" alt="{{$proximo_jogo->opponent->name}}"  class="match-team">
                     <span class="match-type">{{$proximo_jogo->opponent->name}}</span>
                 </div>
             </div>
         </div>
-        @endif
-
         @endforeach
     </div>
 </div>
