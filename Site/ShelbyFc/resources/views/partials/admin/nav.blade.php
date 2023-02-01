@@ -169,6 +169,15 @@
                 </a>
             </li>
             <li class="tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.socios.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-user'></i>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <span class="link hide">Subscrições</span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.withdraw.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-money'></i>

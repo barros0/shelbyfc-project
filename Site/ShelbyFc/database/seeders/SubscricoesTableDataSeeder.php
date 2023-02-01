@@ -36,6 +36,7 @@ class SubscricoesTableDataSeeder extends Seeder
                 'value' => 30,
                 'expires_at' => '2023-12-13 21:41:05.000000',
                 'created_at' => '2022-12-13 21:41:05.000000'],
+                
         ];
 
         DB::table('subscriptions')->insert($categories);

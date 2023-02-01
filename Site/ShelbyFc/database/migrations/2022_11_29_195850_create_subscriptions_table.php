@@ -33,6 +33,8 @@ return new class extends Migration
             $table->float('value')->nullable();
             $table->dateTime('expires_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
