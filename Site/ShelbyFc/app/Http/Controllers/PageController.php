@@ -24,8 +24,7 @@ class PageController extends Controller
     public function index()
     {
         $noticias = News::orderBy('created_at', 'desc')->take(3)->get();
-        $jogos = Game::orderBy('created_at', 'desc')->take(2)->get();
-        $proximos_jogos = Game::nextGames()->orderBy('datetime_game', 'desc')->take(2)->get();
+        $proximos_jogos = Game::lastGames()->orderBy('datetime_game', 'desc')->take(2)->get();
 
         return view('index', compact('noticias',  'proximos_jogos'));
     }
