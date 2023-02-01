@@ -29,32 +29,55 @@
 
     <div class="container_recent">
         <div class="recent_box">
-            <h3>Proximo Jogo</h3>
+            <h3>Proximos 2 Jogos</h3>
             <div class="content_post">
+                @php
+                    $counter = 0;
+                @endphp
                 @foreach ($games as $game)
-                    <p>Bilhetes Restantes - {{ $game->stock_tickets }}</p>
-                    <p>SHELBY FC vs. {{ $game->opponent->name }}</p>
-                @endforeach
-            </div>
-        </div>
-        <div class="recent_box">
-            <h3>Ultimo Jogo</h3>
-            <div class="content_post">
-                @foreach ($games as $game)
-                    <p>Bilhetes Restantes - {{ $game->stock_tickets }}</p>
-                    <p>SHELBY FC vs. {{ $game->opponent->name }}</p>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-    <div class="recent_box">
-        <h3>Forum Post Mais Recente</h3>
-        <div class="content_post">
-            @foreach ($forum_posts as $forum_post)
-                <p>{{ $forum_post->title }} - {{ $forum_post->created_at }}</p>
-                <p>{{ $forum_post->body }}</p>
+                    @if ($counter === 2)
+                    @break
+                @endif
+                <p>SHELBY FC vs. {{ $game->opponent->name }}</p>
+                <p>Bilhetes Restantes - {{ $game->stock_tickets }}</p>
+                <br>
+                @php
+                    $counter++;
+                @endphp
             @endforeach
         </div>
     </div>
+    <div class="recent_box">
+        <h3>Ultimos 2 Jogos</h3>
+        <div class="content_post">
+            @php
+                $counter = 0;
+            @endphp
+            @foreach ($games as $game)
+                @if ($game->result_home !== null || $game->result_opponent !== null)
+                    @if ($counter === 2)
+                    @break
+                @endif
+                <p>SHELBY FC vs. {{ $game->opponent->name }}</p>
+                <p>{{ $game->result_home }} : {{ $game->opponent->name }}</p>
+                <br>
+                @php
+                    $counter++;
+                @endphp
+            @endif
+        @endforeach
+
+    </div>
+</div>
+</div>
+
+<div class="recent_box">
+<h3>Forum Post Mais Recente</h3>
+<div class="content_post">
+    @foreach ($forum_posts as $forum_post)
+        <p>{{ $forum_post->title }} - {{ $forum_post->created_at }}</p>
+        <p>{{ $forum_post->body }}</p>
+    @endforeach
+</div>
+</div>
 @endsection

@@ -20,7 +20,7 @@ class AdminController extends Controller
         $contact = Contact::all();
         $subscription = Subscription::all();
         $forum_posts = Forum_post::orderBy('created_at', 'desc')->take(1)->get();
-        $games = Game::orderBy('created_at', 'desc')->take(1)->get();
+        $games = Game::orderBy('created_at', 'desc')->get();
 
         return view('admin.index', compact('news', 'user', 'subscription', 'contact', 'forum_posts', 'games'));
     }
