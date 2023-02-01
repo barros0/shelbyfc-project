@@ -1687,7 +1687,6 @@ span {
 }
 
 @media only screen and (max-width: 900px) {
-
     .news_from_category a:nth-child(n+2) {
         display: none;
     }
@@ -1919,9 +1918,11 @@ label.custom-file-upload {
     width: 70%;
     padding-top: 25px;
 }
-.create_comment form button{
+
+.create_comment form button {
     float: right;
 }
+
 .create_forum {
     border-top: 3px solid var(--vermelho);
     padding: 30px;
@@ -1973,6 +1974,58 @@ label.custom-file-upload {
 
 .create_forum #close {
     color: #777;
+}
+
+.post_body {
+    font-size: 20px;
+}
+
+.container_post_info {
+    width: -webkit-fill-available;
+}
+
+.post_comment {
+    word-break: break-word;
+}
+
+@media only screen and (max-width: 900px) {
+    .forum_comments {
+        max-width: fit-content;
+    }
+
+    .post_date {
+        text-align: center;
+    }
+
+    .post_body {
+        font-size: 15px;
+    }
+
+    .create_forum {
+        box-shadow: none;
+        width: auto;
+    }
+
+    .user_info_forum {
+        width: 100%;
+        display: flex;
+    }
+
+    .posts_forum {
+        flex-direction: column;
+    }
+
+    .container_forum {
+        width: auto;
+    }
+
+    .content_post {
+        width: auto;
+    }
+
+    .post_user_img {
+        display: none;
+    }
 }
 
 /*NOVA NAVBAR*/
@@ -2783,10 +2836,11 @@ label.custom-file-upload {
         font-size: 25px;
         color: var(--vermelho);
     }
-    .contact-section .row{
+
+    .contact-section .row {
         width: 100%;
     }
-  
+
 }
 
 @media(max-width:970px) {
@@ -2816,7 +2870,7 @@ label.custom-file-upload {
         flex-direction: column;
         align-items: center !important;
 
-}
+    }
 
 
 }
@@ -2855,6 +2909,7 @@ label.custom-file-upload {
         font-size: 25px;
         color: var(--vermelho);
     }
+
     .contact-section #ret1 {
         display: flex;
         align-items: center;
@@ -2875,7 +2930,7 @@ label.custom-file-upload {
         flex-direction: column;
         justify-content: center;
     }
-  
+
 }
 
 
