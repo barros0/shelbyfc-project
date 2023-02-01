@@ -33,6 +33,10 @@ class DatabaseSeeder extends Seeder
             GamesTableSeeder::class,
             CountriesTableSeeder::class,
             SubscricoesTableDataSeeder::class,
+            ForumPostTableDataSeeder::class,
+            ForumRepliesTableDataSeeder::class,
+            ForumImagesTableDataSeeder::class,
+            ForumCommentTableDataSeeder::class,
 
         ]);
     }
