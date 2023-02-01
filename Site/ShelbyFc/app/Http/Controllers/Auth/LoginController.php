@@ -62,11 +62,11 @@ class LoginController extends Controller
                 if ($user->status <> 'Ativo') {
                     Auth::logout();
                     Session::flash('alert', 'A sua conta está ' . $user->status . '.');
-                    return redirect('/');
+                    return redirect()->route('index');
                 }
             }
 
-            return redirect()->route(route('index'));
+            return redirect()->route('index');
         }
 
         return redirect()->back()->withInput($request->only('email'));
