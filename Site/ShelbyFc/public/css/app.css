@@ -1988,6 +1988,17 @@ label.custom-file-upload {
     word-break: break-word;
 }
 
+.comment_reply {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.post_comment form button {
+    float: right;
+}
+
 @media only screen and (max-width: 900px) {
     .forum_comments {
         max-width: fit-content;

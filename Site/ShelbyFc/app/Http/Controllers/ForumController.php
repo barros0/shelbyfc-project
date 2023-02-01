@@ -103,17 +103,19 @@ class ForumController extends Controller
         return back();
     }
 
-    public function reply(Request $request, $postid, $commentid)
+    public function reply(Request $request)
     {
+        $post_id = $request->post_id;
+        $comment_id = $request->comment_id;
 
-        Forum_post::findorfail($postid);
-        forum_posts_comment::findorfail($commentid);
+        Forum_post::findorfail($post_id);
+        forum_posts_comment::findorfail($comment_id);
 
         $comment = new forum_posts_comment();
         $comment->user_id = Auth::id();
-        $comment->post_id = $postid;
-        $comment->comment = $request->comment;
-        $comment->reply_id = $commentid;
+        $comment->post_id = $post_id;
+        $comment->comment = $request->reply;
+        $comment->reply_id = $comment_id;
         $comment->save();
 
         return back();

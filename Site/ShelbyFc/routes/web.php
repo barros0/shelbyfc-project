@@ -132,6 +132,7 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
 
     Route::post('/comentar/{post}', [ForumController::class, 'docomment'])->name('do.comment');
+    Route::post('/reply/{post}', [ForumController::class, 'reply'])->name('reply');
 });
 
 

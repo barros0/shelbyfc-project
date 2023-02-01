@@ -44,6 +44,15 @@
                         <p style="font-weight: 800;">{{ $comment->user->name }}</p>
                         <div class="post_comment">
                             {{ $comment->comment }}
+                            <p class="comment_reply">reply</p>
+                            <form action="{{ route('forum.reply', $post->id) }}" method="post"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <input type="hidden" name="comment_id" value="{{ $comment->id }}">
+                                <input type="text" name="reply" id="reply">
+                                <button type="submit">Comentar</button>
+                            </form>
                         </div>
                     </div>
                     @foreach ($comment->replies as $reply)
