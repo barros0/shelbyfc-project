@@ -5,8 +5,8 @@
 
 @section('content')
 
-    <h1>Editar Equipa</h1>
-
+    <h1>Editar Utilizador</h1>
+    <a style="font-size:25px;" href="{{ route('admin.users.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
     <form action="{{ route('admin.users.update', $user) }}" method="post" enctype="multipart/form-data">
         @method('put')
         @csrf
