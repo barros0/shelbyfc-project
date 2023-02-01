@@ -39,29 +39,14 @@ use App\Http\Controllers\ForumCommentsController;
 |
 */
 
+
+/**--------------------tests--------------------**/
+/**-----------------tests--------------------**/
+
 Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify_email'])->name('email.verify');
-
-
-/*--------------------tests--------------------*/
-
-//Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
-/*
-Route::get("/email", function () {
-    return View("email.forgetpassword");
-});*/
-
-/*
- *
- * user pendent
- *
- *
- * */
-
-
-/*-----------------tests--------------------*/
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/home', [PageController::class, 'index'])->name('home');
@@ -129,7 +114,7 @@ Route::get('/resultados', [PageController::class, 'resultados'])->name('resultad
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 
 
-Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => ['auth', 'verified','AuthorizedUser','subscriber']], function () {
+Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => ['auth', 'verified', 'AuthorizedUser', 'subscriber']], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::get('/{post}', [ForumController::class, 'post'])->name('post');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
