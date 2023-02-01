@@ -161,7 +161,7 @@ input.btn-login:disabled {
     background-color: #f62e33 !important;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
@@ -650,6 +650,7 @@ input.invalid {
     width: 20% !important;
     height: 20px;
 }
+
 .background {
     display: flex;
     top: 0;
@@ -678,7 +679,7 @@ input.invalid {
 
     }
 
-    .linha-ajuda{
+    .linha-ajuda {
         display: none;
     }
 
@@ -691,8 +692,8 @@ input.invalid {
         position: absolute;
     }
 
-    .logo{
-            max-width: 50%;
+    .logo {
+        max-width: 50%;
 
     }
 }
@@ -2764,36 +2765,41 @@ label.custom-file-upload {
 }
 
 @media(max-width:500px) {
-    .box-content h6{
+    .box-content h6 {
         font-size: 20px;
     }
-    .box-content p{
+
+    .box-content p {
         font-size: 14px;
     }
-    .box-content p span{
+
+    .box-content p span {
         font-size: 15px;
     }
-    .box-title{
+
+    .box-title {
         margin-bottom: 5px;
     }
-    .term-box{
+
+    .term-box {
         width: 80%;
     }
 }
 
 
 @media(max-width:1200px) {
-    .term-box{
+    .term-box {
         width: 90%;
 
     }
 }
 
 @media(max-width:500px) {
-    .term-box{
+    .term-box {
         width: 90%;
         padding: 10px;
     }
+
     h2 {
         font-size: 1.2rem;
     }
@@ -3532,91 +3538,6 @@ address a {
 
 address a:hover {
     text-decoration: underline;
-}
-
-.btn {
-    border-radius: 0;
-    border: none;
-    text-transform: uppercase;
-    color: #111;
-    font-size: 26px;
-    padding: 12px 30px;
-}
-
-.btn.btn-motive {
-    background-color: #00bff3;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.btn.btn-motive:hover,
-.btn.btn-motive:hover:active {
-    background-color: #00bff3;
-}
-
-.btn.btn-violet {
-    color: #fff;
-    background-color: #4f4f99;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.btn.btn-violet:hover {
-    background-color: #37376b;
-}
-
-.btn.btn-violet:hover:active {
-    background-color: #2f2f5b
-}
-
-.btn.btn-green {
-    color: #fff;
-    background-color: #43670f;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.btn.btn-green:hover {
-    background-color: #36520c;
-}
-
-.btn.btn-green:hover:active {
-    background-color: #314a0b;
-}
-
-.btn.btn-red {
-    color: #fff;
-    background-color: #da2229;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.btn.btn-red:hover {
-    background-color: #ae1b21;
-}
-
-.btn.btn-red:hover:active {
-    background-color: #9d181e
-}
-
-.btn.btn-white {
-    background-color: #fff;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-}
-
-.btn.btn-white:hover {
-    background-color: #d9d9d9;
-}
-
-.btn.btn-white:hover:active {
-    background-color: #c9c9c9
-}
-
-.btn.btn-large {
-    padding: 20px 50px;
-    font-size: 30px;
-    white-space: normal;
 }
 
 .ct-mediaSection {

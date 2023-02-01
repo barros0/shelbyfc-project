@@ -73,4 +73,3 @@
     </div>
     <script src="{{ asset('js/forum.js') }}"></script>
 @endsection
-

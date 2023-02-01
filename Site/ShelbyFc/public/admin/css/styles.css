@@ -909,3 +909,34 @@ span.match-type {
     margin: 10px 0;
     background-color: white;
 }
+
+.container_post_info p {
+    margin: 0;
+}
+
+.ml-5 {
+    margin-left: 4rem;
+}
+
+.wrap_post_info {
+    margin-top: 10px;
+}
+
+.wrap_post_info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.container_post_info {
+    padding-left: 10px;
+}.post_img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.container_post, .container_comments {
+    margin: 15px;
+    padding: 10px;
+    background-color: #00000017;
+}
