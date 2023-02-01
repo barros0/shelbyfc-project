@@ -646,6 +646,15 @@ input.invalid {
     width: 20% !important;
     height: 20px;
 }
+.background {
+    display: flex;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
 
 @media only screen and (max-width: 800px) {
     .login-wrapper {
@@ -659,16 +668,26 @@ input.invalid {
     header {
         position: sticky;
     }
+
+    .background {
+        display: none;
+
+    }
+
+    .linha-ajuda{
+        display: none;
+    }
+
+    .footer-bg {
+        clip-path: polygon(0 65%, 100% 0%, 100% 100%, 0% 100%);
+        width: 100%;
+        background: var(--vermelho);
+        bottom: unset;
+        height: 6%;
+        position: absolute;
+    }
 }
 
-.background {
-    display: flex;
-    top: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
 
 /*navbar_geral*/
 
@@ -2733,6 +2752,31 @@ label.custom-file-upload {
     color: var(--preto);
     font-weight: bold;
     font-size: 18px;
+}
+
+@media(max-width:500px) {
+    .box-content h6{
+        font-size: 20px;
+    }
+    .box-content p{
+        font-size: 14px;
+    }
+    .box-content p span{
+        font-size: 15px;
+    }
+    .box-title{
+        margin-bottom: 5px;
+    }
+    .term-box{
+        width: 80%;
+    }
+}
+
+
+@media(max-width:1200px) {
+    .term-box{
+        width: 80%;
+    }
 }
 
 
