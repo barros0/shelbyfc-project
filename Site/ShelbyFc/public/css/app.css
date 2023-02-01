@@ -1811,7 +1811,7 @@ span {
     width: 80%;
     margin: 40px auto;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
 }
 
 .container_post {
@@ -1870,12 +1870,6 @@ label.custom-file-upload {
     background-color: white;
 }
 
-.container_post .create_forum {
-    display: none;
-    width: 70%;
-    padding: 30px 0 0;
-}
-
 .container_forum {
     background-color: transparent;
 }
@@ -1888,10 +1882,12 @@ label.custom-file-upload {
     display: flex;
 }
 
-.create_forum {
-    border-top: 3px solid var(--vermelho);
-    padding: 30px;
-    box-shadow: 0px 20px 113px #00000029;
+.post_user_img {
+    margin: 0 10px 10px;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 100%;
 }
 
 .user_forum_img {
@@ -1901,10 +1897,58 @@ label.custom-file-upload {
     border-radius: 100%;
 }
 
+.post_img {
+    margin: 10px 10px 10px 0;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
 .forum_posts_img {
     margin: 0 10px 0 0;
     height: 50px;
     width: 50px;
+    object-fit: cover;
+}
+
+.wrap_post_info {
+    margin: 10px 0;
+}
+
+.create_comment form {
+    width: 70%;
+    padding-top: 25px;
+}
+.create_comment form button{
+    float: right;
+}
+.create_forum {
+    border-top: 3px solid var(--vermelho);
+    padding: 30px;
+    box-shadow: 0px 20px 113px #00000029;
+}
+
+.container_post_info {
+    padding-left: 15px;
+}
+
+.container_post_info p {
+    margin: 0;
+}
+
+.forum_comments {
+    max-width: 80%;
+    margin: auto;
+}
+
+.forum_comments img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.create_forum form {
+    padding-top: 25px;
 }
 
 .create_forum input[type=text] {
@@ -2705,7 +2749,7 @@ label.custom-file-upload {
 
 }
 
-.contact-section form{
+.contact-section form {
     width: auto;
 }
 
@@ -2713,21 +2757,27 @@ label.custom-file-upload {
     .contact-section input {
         width: 450px;
     }
+
     .contact-section textarea {
         width: 450px !important;
     }
+
     .contact-section .top-form .input-icons {
         width: 225px !important;
     }
-    h2{
+
+    h2 {
         font-size: 1.5rem;
     }
-    .contact-section{
+
+    .contact-section {
         padding: 0px;
     }
+
     .contact-section .left-side p {
         font-size: 15px;
     }
+
     .contact-section .left-side i {
         margin-right: 10px;
         font-size: 25px;
@@ -2736,31 +2786,33 @@ label.custom-file-upload {
 }
 
 @media(max-width:970px) {
-  .row{
-    flex-direction: column;
-  }
-  .contact-section .left-side {
-    width: 100%;
-    border-right: 0;
-    border-bottom: 1px solid rgba(39, 39, 39, 0.151);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.contact-section .right-side {
-    width: 100%;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center !important;
-}
+    .row {
+        flex-direction: column;
+    }
 
-.contact-section form{
-    margin-top: 50px;
-    display: flex !important;
-    flex-direction: column;
-    align-items: center !important;
+    .contact-section .left-side {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid rgba(39, 39, 39, 0.151);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-}
+    .contact-section .right-side {
+        width: 100%;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+    }
+
+    .contact-section form {
+        margin-top: 50px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center !important;
+
+    }
 
 
 }
@@ -2769,48 +2821,58 @@ label.custom-file-upload {
     .contact-section input {
         width: 250px;
     }
+
     .contact-section textarea {
         width: 250px !important;
     }
+
     .contact-section .top-form .input-icons {
         width: 220px !important;
     }
-    .contact-section .top-form{
+
+    .contact-section .top-form {
         flex-direction: column !important;
     }
-    h2{
+
+    h2 {
         font-size: 1rem;
     }
-    .contact-section{
+
+    .contact-section {
         padding: 0px;
     }
+
     .contact-section .left-side p {
         font-size: 10px;
     }
+
     .contact-section .left-side i {
         margin-right: 10px;
         font-size: 25px;
         color: var(--vermelho);
     }
+
     .contact-section #ret1 {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
     }
+
     .contact-section #ret2 {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
     }
+
     .contact-section #ret3 {
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
     }
-  
+
 }
 
 

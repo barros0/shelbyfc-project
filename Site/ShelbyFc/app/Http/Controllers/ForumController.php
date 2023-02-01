@@ -25,7 +25,7 @@ class ForumController extends Controller
         $posts_images = Forum_posts_images::get();
         return view('forum.post', compact('post', 'posts_images'));
     }
-    
+
     public function posts_user($user_id)
     {
         $user_id = Forum_post::where('name', $user_id)->firstOrFail();
