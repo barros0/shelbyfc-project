@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\forum_posts_comment;
 use App\Models\Forum_posts_images;
-use App\Models\Forum_posts_replies;
 use App\Models\Forum_post;
 use Illuminate\Http\Request;
 use Session;

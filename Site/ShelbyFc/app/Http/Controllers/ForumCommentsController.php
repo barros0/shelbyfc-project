@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
 use Illuminate\Http\Request;
+use Session;
 
 class ForumCommentsController extends Controller
 {
@@ -78,9 +79,9 @@ class ForumCommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(forum_posts_comment $comments)
+    public function destroy(forum_posts_comment $comment)
     {
-        $comments->delete();
+        $comment->delete();
 
         Session::flash('success', 'Comentario Eliminado!');
         return back();

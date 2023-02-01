@@ -902,7 +902,7 @@ span.match-type {
     word-break: break-word;
 }
 
-.container_recent .recent_box {
+.container_recent .recent_box,.forum_recent_box {
     padding: 20px;
     min-width: 49%;
     box-shadow: 0px 0px 52px #00000014;
@@ -930,11 +930,14 @@ span.match-type {
 
 .container_post_info {
     padding-left: 10px;
-}.post_img{
+}
+
+.post_img {
     width: 100px;
     height: 100px;
     object-fit: cover;
 }
+
 .container_post, .container_comments {
     margin: 15px;
     padding: 10px;

@@ -52,7 +52,10 @@
                     </div>
                 </a>
             @endforeach
-
+            <div class="d-flex justify-content-center">
+                 {{ $posts->links('pagination::bootstrap-4') }}
+            </div>
+           
         </div>
 
         <div id="myModal" class="modal">
