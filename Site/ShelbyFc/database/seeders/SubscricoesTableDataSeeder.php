@@ -30,7 +30,7 @@ class SubscricoesTableDataSeeder extends Seeder
                 'address' => 'Rua de Leiria 92',
                 'city' => 'Leiria',
                 'birthdate' => '2003-12-13',
-                'cc' => 'cc1.pdf',
+                'cc' => 'cc.jpg',
                 'nif' => '256587489',
                 'country_id' => 6,
                 'value' => 30,

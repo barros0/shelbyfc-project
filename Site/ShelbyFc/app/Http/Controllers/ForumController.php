@@ -16,7 +16,7 @@ class ForumController extends Controller
 
     public function index()
     {
-        $posts = Forum_post::orderBy('created_at', 'desc')->get();
+        $posts = Forum_post::orderBy('created_at', 'desc')->paginate(3);
         $posts_images = Forum_posts_images::get();
 
         return view('forum.index', compact('posts', 'posts_images'));
