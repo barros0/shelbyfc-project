@@ -26,7 +26,7 @@ $(function () {
                 }
                 $("#clear").css("display", "block");
             } else {
-                alert("DING DONG U CANNOT UPLOAD MORE THAN 4 IMAGES");
+                alert("SÓ PODES DAR UPLOAD NO MAXIMO A 4 IMAGENS");
             }
         }
     };
