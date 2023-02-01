@@ -1161,11 +1161,14 @@ button:hover {
     .row-vant-index {
         flex-direction: column;
     }
-    .nav-conta ul{
-        margin-top:0;
-        flex-direction:row;
-    }.tab-content{
-        padding:0;
+
+    .nav-conta ul {
+        margin-top: 0;
+        flex-direction: row;
+    }
+
+    .tab-content {
+        padding: 0;
     }
 }
 
