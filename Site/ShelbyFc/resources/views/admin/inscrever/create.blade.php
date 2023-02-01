@@ -6,7 +6,7 @@
 @section('content')
 
     <h1>Novo Pacote</h1>
-
+    <a style="font-size:25px;" href="{{ route('admin.inscrever.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
     <form action="{{ route('admin.inscrever.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">

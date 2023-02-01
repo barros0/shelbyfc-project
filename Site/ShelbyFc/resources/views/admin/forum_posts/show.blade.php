@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 
-@section('title', 'Forum Posts | Shelby FC')
+@section('title', 'Publicação Forum | Shelby FC')
 
 @section('content')
     <a style="font-size:25px;" href="{{ route('admin.forum_posts.index') }}"><i class='bx bx-left-arrow-alt'></i></a>

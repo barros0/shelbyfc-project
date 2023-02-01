@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 
-@section('title','News | Shelby FC')
+@section('title','Transferências | Shelby FC')
 
 @section('content')
 

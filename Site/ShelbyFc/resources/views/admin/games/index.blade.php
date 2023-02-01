@@ -23,6 +23,7 @@
                 <th>Preço sócio</th>
                 <th>Local</th>
                 <th>Bilhetes disponiveis</th>
+                <th>Nº apostas</th>
                 <th>Data</th>
                 <th>Actions</th>
                 <th>Resultados</th>
@@ -35,6 +36,7 @@
                     <td>{{ $game->ticket_price_partner }}€</td>
                     <td>{{ $game->location }}</td>
                     <td>{{ $game->stock_tickets}}</td>
+                    <td>{{ $game->bets->count() }}</td>
                     <td>{{ $game->datetime_game }}</td>
                     <td>
                         <a href="{{ route('admin.games.edit', $game) }}" class="btn"><i class='bx bx-edit-alt'></i></a>

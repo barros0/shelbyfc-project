@@ -34,12 +34,12 @@ class ForumImagesTableDataSeeder extends Seeder
         [
             'id' => '3', 
             'post_id' => '3',
-            'image' => 'forum3.jpg',
+            'image' => 'forum4.jpg',
         ],
         [
             'id' => '4', 
             'post_id' => '4',
-            'image' => 'forum4.jpg',
+            'image' => 'forum3.jpg',
         ],
         ];
 

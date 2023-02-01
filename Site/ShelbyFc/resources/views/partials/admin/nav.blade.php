@@ -130,15 +130,6 @@
                 </a>
             </li>
 
-            <li class=" @if (Route::is('admin.dashboard.*')) active-tab @endif tooltip-element" data-tooltip="1">
-                <a href="#" data-active="1">
-                    <div class="icon">
-                        <i class='bx bx-money-withdraw'></i>
-                        <i class='bx bxs-money-withdraw'></i>
-                    </div>
-                    <span class="link hide">Apostas</span>
-                </a>
-            </li>
             <li class=" @if (Route::is('admin.inscrever.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{ route('admin.inscrever.index') }}" data-active="1">
                     <div class="icon">
@@ -184,7 +175,7 @@
                         <i class='bx bx-money'></i>
                         <i class='bx bxs-money'></i>
                     </div>
-                    <span class="link hide">Tranferências</span>
+                    <span class="link hide">Transferências</span>
                 </a>
             </li>
 

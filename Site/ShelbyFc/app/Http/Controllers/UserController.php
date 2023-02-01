@@ -253,13 +253,18 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',
+            'estado' => 'required',
             'password' => 'nullable|min:8',
             'password_confirmation' => 'nullable|same:password',
         ]);
 
+        if($request->password){
+            $user->password = bcrypt($request->password);
+        }
 
         $user->name = $request->nome;
         $user->email = $request->email;
+        $user->status = $request->estado;
         $user->save();
 
         Session::flash('success', 'Dados atualizado!');
