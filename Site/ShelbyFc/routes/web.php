@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
@@ -20,11 +21,13 @@ use App\Http\Controllers\TermsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
+use App\Http\Controllers\ForumRepliesController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\ForumCommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,29 +40,14 @@ use App\Http\Controllers\Auth\VerificationController;
 |
 */
 
+
+/**--------------------tests--------------------**/
+/**-----------------tests--------------------**/
+
 Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/verify-email/{token}', [VerificationController::class, 'verify_email'])->name('email.verify');
-
-
-/*--------------------tests--------------------*/
-
-//Route::get('testepaypal', [PayPalController::class, 'processTransaction'])->name('testepaypal');
-/*
-Route::get("/email", function () {
-    return View("email.forgetpassword");
-});*/
-
-/*
- *
- * user pendent
- *
- *
- * */
-
-
-/*-----------------tests--------------------*/
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/home', [PageController::class, 'index'])->name('home');
@@ -127,7 +115,7 @@ Route::get('/resultados', [PageController::class, 'resultados'])->name('resultad
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 
 
-Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => ['auth', 'verified','AuthorizedUser','subscriber']], function () {
+Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => ['auth', 'verified', 'AuthorizedUser', 'subscriber']], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::get('/{post}', [ForumController::class, 'post'])->name('post');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
@@ -146,6 +134,9 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['admin', 
 
     Route::resource('/subscriptions', SubscriptionController::class);
     Route::resource('/tickets', TicketsController::class);
+    Route::resource('/comments', ForumCommentsController::class);
+    Route::resource('/replies', ForumRepliesController::class);
+    Route::resource('/forum_posts', AdminForumController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
     Route::resource('/inscrever', InscreverController::class);

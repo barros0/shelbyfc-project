@@ -23,7 +23,7 @@ class ForumPostTableDataSeeder extends Seeder
         $forum_posts = [
         [
             'id' => '1', 
-            'user_id' => '1',
+            'user_id' => '3',
             'title' => 'Falta sobre o Diogo Jota',
             'body' => 'Malta o que acharam do lance sobre o Diogo? A mim pareceu falta ',
             'created_at' => Carbon::now(),
@@ -31,7 +31,7 @@ class ForumPostTableDataSeeder extends Seeder
         ],
         [
             'id' => '2', 
-            'user_id' => '1',
+            'user_id' => '5',
             'title' => 'Festejo do Diogo Jota',
             'body' => 'Malta acharam o festejo do diogo decente? Achei ridiculo ',
             'created_at' => Carbon::now(),
@@ -39,7 +39,7 @@ class ForumPostTableDataSeeder extends Seeder
         ],
         [
             'id' => '3', 
-            'user_id' => '1',
+            'user_id' => '2',
             'title' => 'Nova Contratacao Shelby B',
             'body' => 'Tive a ver videos da nova contracao, e acho que vai ser nova promessa',
             'created_at' => Carbon::now(),
@@ -47,7 +47,7 @@ class ForumPostTableDataSeeder extends Seeder
         ],
         [
             'id' => '4', 
-            'user_id' => '1',
+            'user_id' => '4',
             'title' => 'Lugar na Tabela',
             'body' => 'Alguem me consegue dizer o lugar em que vamos no campeonato?',
             'created_at' => Carbon::now(),

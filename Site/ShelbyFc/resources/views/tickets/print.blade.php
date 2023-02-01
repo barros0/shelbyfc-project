@@ -16,11 +16,12 @@
         }
 
         .card {
-            background: linear-gradient(to bottom, #FF5559 0%, #FF5559 26%, #ecedef 26%, #ecedef 100%);
+           /* background: linear-gradient(to bottom, #FF5559 0%, #FF5559 26%, #ecedef 26%, #ecedef 100%);*/
             height: 11em;
             float: left;
             position: relative;
-            padding: 1em;
+            padding: 22px;
+
             margin-top: 100px;
         }
 
@@ -56,6 +57,9 @@
         h1 {
             font-size: 1.1em;
             margin-top: 0;
+            background: #FF5559;
+            border-top-left-radius: 8px;
+            padding: 12px;
         }
         h1 span {
             font-weight: normal;

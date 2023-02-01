@@ -23,9 +23,10 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
 
-    <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-    {{--  login --}}
+    {{--  <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>--}}
+      {{--  login --}}
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/27dd9727ef.js" crossorigin="anonymous"></script>
 

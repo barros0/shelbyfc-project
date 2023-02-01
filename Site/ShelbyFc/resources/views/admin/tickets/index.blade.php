@@ -9,9 +9,7 @@
     <h1>Bilhetes</h1>
 
     <div class="form-menu d-flex justify-content-between">
-        <div class="form-search">
-            <input type="text" name="" class="form-control" placeholder="Search">
-        </div>
+
     </div>
 
     <div class="table-responsive">
