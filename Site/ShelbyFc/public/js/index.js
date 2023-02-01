@@ -86,7 +86,7 @@ function closeNav() {
 $("#jogos").click(function(){
 
    $x = $("#jogos_menu").css("display");
-
+   
    if ($x == "none"){
     $(this).children("i").attr('class', 'bx bxs-up-arrow');
     $("#jogos_menu").css("display", "block");
@@ -104,11 +104,13 @@ $("#suporte").click(function(){
     $x = $("#suporte_menu").css("display");
  
     if ($x == "none"){
-     
+    
+     $(this).children("i").attr('class', 'bx bxs-up-arrow');
      $("#suporte_menu").css("display", "block");
      
     }else{
  
+     $(this).children("i").attr('class', 'bx bxs-down-arrow');
      $("#suporte_menu").css("display", "none");
  
     }

@@ -90,6 +90,6 @@ class AdminForumController extends Controller
         $forum_post->delete();
 
         Session::flash('success', 'Post Eliminado!');
-        return back();
+        return redirect(route('admin.forum_posts.index'));
     }
 }

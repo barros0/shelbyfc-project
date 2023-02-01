@@ -107,6 +107,24 @@ class UsersTableDataSeeder extends Seeder
                 'image' => '4.jpeg',
             
             ],
+
+            [
+                'id' => '6',
+                'name' => 'Manuel Goucha',
+                'email' => 'mlgoucha@tvi.iol.com',
+                'phone' => '916620467',
+                'postal_code' => 'Leiria',
+                'address'=>'Leiria',
+                'nif'=>'123456789',
+                'birthdate'=>'2003/09/05',
+                'balance'=>'0',
+                'is_admin' => '0',
+                'status' => '2',
+                'email_verified_at' =>  Carbon::now(),
+                'password' =>bcrypt('1234'),
+                'image' => 'noimage.png',
+            
+            ],
             
         ];
 
