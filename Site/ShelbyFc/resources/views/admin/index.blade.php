@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="recent_box">
+    <div class="forum_recent_box">
         <h3>Forum Post Mais Recente</h3>
         <div class="content_post">
                 <p>{{ $forum_post->title }} - {{ $forum_post->created_at }}</p>

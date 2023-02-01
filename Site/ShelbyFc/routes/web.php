@@ -21,6 +21,7 @@ use App\Http\Controllers\TermsController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\BetsController;
+use App\Http\Controllers\ForumRepliesController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;

@@ -24,7 +24,7 @@ class ForumRepliesTableDataSeeder extends Seeder
         [
             'id' => '1', 
             'comment_id' => '1',
-            'user_id' => '1',
+            'user_id' => '2',
             'comment' => 'Por acaso nao acho, nota-se perfeitamente que ele apenas toca na bola',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -32,14 +32,14 @@ class ForumRepliesTableDataSeeder extends Seeder
         [
             'id' => '2', 
             'comment_id' => '2',
-            'user_id' => '1',
+            'user_id' => '3',
             'comment' => 'Não e perseguição, ha atitudes que nao se tem e esse a uma delas.',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ],
         [
             'id' => '3', 
-            'comment_id' => '3',
+            'comment_id' => '4',
             'user_id' => '1',
             'comment' => 'Este vai ser o próximo ronaldo!',
             'created_at' => Carbon::now(),
@@ -47,7 +47,7 @@ class ForumRepliesTableDataSeeder extends Seeder
         ],
         [
             'id' => '4', 
-            'comment_id' => '4',
+            'comment_id' => '5',
             'user_id' => '1',
             'comment' => 'Em breve voltamos para o nosso meerecido lugar.',
             'created_at' => Carbon::now(),

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\forum_posts_replies;
+use Session;
+
 
 class ForumRepliesController extends Controller
 {
@@ -77,8 +80,11 @@ class ForumRepliesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(forum_posts_replies $reply)
     {
-        //
+        $reply->delete();
+
+        Session::flash('success', 'Comentario Eliminado!');
+        return back();
     }
 }

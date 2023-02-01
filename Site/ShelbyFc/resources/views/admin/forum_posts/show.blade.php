@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="{{ route('admin.forum_posts.destroy', $reply) }}" method="post">
+                    <form action="{{ route('admin.replies.destroy', $reply) }}" method="post">
                         @method('delete')
                         @csrf
                         <button type="submit"><i class='bx bx-trash'></i></button>
