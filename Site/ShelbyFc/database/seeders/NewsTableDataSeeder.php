@@ -22,15 +22,15 @@ class NewsTableDataSeeder extends Seeder
 
         $news = [
         [
-            'title' => 'SHELBY FC V ARSENAL: TICKET INFORMATION', 
-            'small_description' => 'TICKET INFORMATION',
-            'body' => 'Shelby FC will play Arsenal at home, in round 4 of the FA Cup on Friday 27th January, kick-off 8pm.',
+            'title' => 'SHELBY FC V ARSENAL: INFORMAÇÕES SOBRE INGRESSOS', 
+            'small_description' => 'INFORMAÇÕES DE INGRESSOS',
+            'body' => 'O Shelby FC enfrentará o Arsenal em casa, na quarta rodada da FA Cup, na sexta-feira, 27 de janeiro, às 20h.',
             'image' => 'noticia1.jpg',
             'categorie_id' => 2,
             'created_at' => Carbon::now(),
         ],
         [
-            'title' => "GUARDIOLA: DON'T WASTE ENERGY ON THE PAST, FOCUS ON SPURS!", 
+            'title' => "GUARDIOLA: NÃO DESPERDICE ENERGIA COM O PASSADO, FOQUE NOS SPURS!", 
             'small_description' => 'Pep Guardiola has urged his players not to waste energy',
             'body' => 'Guardiola was frustrated with the 2-1 loss, of course - and the controversial offside decision that started the comeback for the hosts at Old Trafford.<br>
             But he wants his team to now look ahead to Thursday’s next big Premier League encounter, as we welcome Antonio Conte’s team.<br>
