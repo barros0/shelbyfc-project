@@ -6,6 +6,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminForumController;
 use App\Http\Controllers\UserController;
@@ -78,15 +79,16 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/verify-email-resend', [VerificationController::class, 'resend_verify_email'])->name('email.verify.resend');
+
+    Route::get('perfil', [PageController::class, 'minha_conta'])->name('perfil');
 });
 
-Route::group(['middleware' => ['auth', 'verified','AuthorizedUser']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'AuthorizedUser']], function () {
 
     Route::get('carrinho', [CartController::class, 'cart'])->name('cart');
 
     Route::get('/inscrever', [PageController::class, 'inscrever'])->name('inscrever');
     Route::post('/inscrever', [PageController::class, 'inscrever_post'])->name('inscrever.post');
-
 
     Route::get('/apostar', [PageController::class, 'tobet'])->name('tobet');
     Route::post('/apostar', [BetsController::class, 'dobet'])->name('tobet.post');
@@ -97,7 +99,6 @@ Route::group(['middleware' => ['auth', 'verified','AuthorizedUser']], function (
     Route::get('/imprimir-bilhete/{ticket}', [TicketsController::class, 'print'])->name('print.ticket');
 
     Route::group(['prefix' => 'perfil'], function () {
-        Route::get('/', [PageController::class, 'minha_conta'])->name('perfil');
         Route::get('/remove-photo', [UserController::class, 'remove_photo'])->name('user.remove.photo');
         Route::get('/subscricoes', [PageController::class, 'subscricoes'])->name('subscricoes');
         Route::get('/seguranca', [PageController::class, 'seguranca'])->name('seguranca');
@@ -126,9 +127,9 @@ Route::post('/contacts', [ContactsController::class, 'create'])->name('contacts.
 Route::get('/jogos', [PageController::class, 'jogos'])->name('jogos');
 Route::get('/resultados', [PageController::class, 'resultados'])->name('resultados');
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
-Route::get('/forum', [PageController::class, 'forum'])->name('forum');
 
-Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber'], function () {
+
+Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => ['auth', 'verified','AuthorizedUser','subscriber']], function () {
     Route::get('/', [ForumController::class, 'index'])->name('home');
     Route::get('/{post}', [ForumController::class, 'post'])->name('post');
     Route::post('/store_post', [ForumController::class, 'store_post'])->name('store_post');
@@ -138,13 +139,14 @@ Route::group(['prefix' => 'forum', 'as' => 'forum.', 'middleware' => 'subscriber
 });
 
 
-Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['admin','AuthorizedUser']], function () {
+Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['admin', 'AuthorizedUser']], function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('/categories', CategoriesController::class);
     Route::resource('/games', GamesController::class);
     Route::get('/publicar-resultados/{game}', [GamesController::class, 'post_results'])->name('games.publish.results');
     Route::post('/publicar-resultados/{game}', [GamesController::class, 'dopost_results'])->name('games.publish.doresults');
 
+    Route::resource('/subscriptions', SubscriptionController::class);
     Route::resource('/tickets', TicketsController::class);
     Route::resource('/comments', ForumCommentsController::class);
     Route::resource('/replies', ForumRepliesController::class);

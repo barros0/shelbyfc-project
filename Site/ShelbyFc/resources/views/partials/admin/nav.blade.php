@@ -106,7 +106,7 @@
                         <i class='bx bx-calendar'></i>
                         <i class='bx bxs-calendar'></i>
                     </div>
-                    <span class="link hide">Calendario</span>
+                    <span class="link hide">Jogos</span>
                 </a>
             </li>
 
@@ -149,7 +149,7 @@
                 </a>
             </li>
             <div class="tooltip">
-                <span class="show">Calendario</span>
+                <span class="show">Jogos</span>
                 <span>Equipas</span>
                 <span>Bilhetes</span>
                 <span>Apostas</span>
@@ -168,6 +168,16 @@
                     <span class="link hide">Utilizadores</span>
                 </a>
             </li>
+            <li class="tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.subscriptions.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-user'></i>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <span class="link hide">Subscrições</span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="0">
             <li class=" @if(Route::is('admin.withdraw.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.withdraw.index')}}" class="active" data-active="0">
                     <div class="icon">

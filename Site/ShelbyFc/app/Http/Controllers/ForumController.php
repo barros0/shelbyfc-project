@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentRequest;
 use App\Models\forum_posts_comment;
 use App\Models\Forum_posts_images;
 use App\Models\Forum_posts_replies;
@@ -94,7 +95,7 @@ class ForumController extends Controller
     }
 
 
-    public function docomment(Request $request, Forum_post $post)
+    public function docomment(CommentRequest $request, Forum_post $post)
     {
 
         //Forum_post::findorfail($postid);
@@ -108,7 +109,7 @@ class ForumController extends Controller
         return back();
     }
 
-    public function reply(Request $request)
+    public function reply(CommentRequest $request)
     {
         $comment_id = $request->comment_id;
 

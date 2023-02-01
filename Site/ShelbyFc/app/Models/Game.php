@@ -66,7 +66,7 @@ class Game extends Model
 
     public function scopeLastGames($query)
     {
-        return $query->where('datetime_game','<', Carbon::now())->where('result');
+        return $query->where('datetime_game','<', Carbon::now())->where('result','<>',null);
     }
 
 

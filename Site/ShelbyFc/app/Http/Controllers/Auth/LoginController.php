@@ -44,5 +44,35 @@ class LoginController extends Controller
 
     }
 
+    public function login(Request $request)
+    {
+
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            $user = Auth::user();
+
+            if (empty($user->email_verified_at)) {
+                return redirect()->route('perfil');
+            } else {
+                if ($user->status <> 'Ativo') {
+                    Auth::logout();
+                    Session::flash('alert', 'A sua conta está ' . $user->status . '.');
+                    return redirect()->route('index');
+                }
+            }
+
+            return redirect()->route('index');
+        }
+
+        return redirect()->back()->withInput($request->only('email'));
+
+
+    }
+
 
 }
