@@ -3370,6 +3370,54 @@ span.match-type {
 }
 
 
+@media only screen and (max-width: 800px) {
+    .teams{
+        width: 100%;
+    }
+
+    .match-day{
+        flex-direction: column;
+
+    }
+
+    .match-details {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
+}
+
+@media only screen and (max-width: 400px) {
+    .teams{
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .match-day{
+        flex-direction: column;
+
+    }
+
+    .match-details {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+
+    .match-vs-half{
+        flex-direction: column-reverse;
+
+    }
+
+
+}
+
 
 footer a,
 footer a:hover,
