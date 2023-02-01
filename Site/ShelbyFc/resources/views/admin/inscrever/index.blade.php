@@ -4,6 +4,7 @@
 
 @section('content')
 
+<a style="font-size:25px;" href="{{ route('admin.inscrever.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
 
     <h1>Inscrever para Sócio</h1>
     <div class="form-menu d-flex justify-content-between">

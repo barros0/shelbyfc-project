@@ -22,7 +22,6 @@
                 <th>Email</th>
                 <th>Preço</th>
                 <th>Data de Compra</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -33,13 +32,7 @@
                     <td>{{ $ticket->user->email }}</td>
                     <td>{{ $ticket->price }}€</td>
                     <td>{{ $ticket->created_at }}</td>
-                    <td>
-                        <form action="{{ route('admin.tickets.destroy', $ticket) }}" method="post">
-                            @method('delete')
-                            @csrf
-                            <button type="submit"><i class='bx bx-trash'></i></button>
-                        </form>
-                    </td>
+
 
                 </tr>
             @endforeach
