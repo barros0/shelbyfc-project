@@ -17,10 +17,10 @@
                 </div>
             </div>
             <div class="news_options">
-                @foreach ($noticias->take(3) as $noticia)
+                @foreach ($noticias as $noticia)
                     <div class="option" id="option{{ $noticia->id }}">
                         <p id="image{{ $noticia->id }}" style="display:none;">{{ $noticia->image }}</p>
-                        <p id="href_link{{$noticia->id }}" style="display:none;">{{ $noticia->id }}</p>
+                        <p id="href_link{{ $noticia->id }}" style="display:none;">{{ $noticia->id }}</p>
                         <p id="date{{ $noticia->id }}">{{ $noticia->created_at->format('Y-m-d') }}</p>
                         <h3 id="text{{ $noticia->id }}">{{ $noticia->title }}</h3>
                     </div>
