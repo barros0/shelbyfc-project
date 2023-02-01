@@ -25,13 +25,13 @@
         </div>
         <div class="d-flex justify-content-end">
             {{ $post->comments->count() }}
-            Replies
+            Comentarios
         </div>
         <div class="create_comment">
             <div class="d-flex flex-column align-items-center">
                 <form action="{{ route('forum.do.comment', $post) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input placeholder="Comentário" type="text" name="comment" id="comment" required>
+                    <input placeholder="Comentar" type="text" name="comment" id="comment" required>
                     <button type="submit" id="submit">Comentar</button>
                 </form>
             </div>
@@ -44,18 +44,18 @@
                         <p style="font-weight: 800;">{{ $comment->user->name }}</p>
                         <div class="post_comment">
                             {{ $comment->comment }}
-                            <p class="comment_reply">reply</p>
-                            <form action="{{ route('forum.reply', $post->id) }}" method="post">
+                            <p class="comment_reply">{{ $comment->replies->count() }} Respostas</p>
+                            <form style="display: none;" action="{{ route('forum.reply', $post->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="post_id" value="{{ $post->id }}">
                                 <input type="hidden" name="comment_id" value="{{ $comment->id }}">
-                                <input type="text" name="reply" id="reply">
-                                <button type="submit">Reply</button>
+                                <input type="text" name="reply" id="reply" placeholder="Responder">
+                                <button type="submit">Responder</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="container_replies">
+                <div class="container_replies" style="display: none;">
                     @foreach ($comment->replies as $reply)
                         <div class="d-flex wrap_post_info ml-5">
                             <img src="{{ asset('images/users/' . $reply->user->image) }}" alt="img_user">
@@ -71,4 +71,6 @@
             @endforeach
         </div>
     </div>
+    <script src="{{ asset('js/forum.js') }}"></script>
 @endsection
+

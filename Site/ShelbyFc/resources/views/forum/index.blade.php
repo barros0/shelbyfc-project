@@ -47,7 +47,7 @@
                         </div>
                         <div class="">
                             {{ $post->comments->count() }}
-                            Replies
+                            Comentarios
                         </div>
                     </div>
                 </a>

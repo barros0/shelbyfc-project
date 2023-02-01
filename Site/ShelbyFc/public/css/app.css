@@ -1161,6 +1161,12 @@ button:hover {
     .row-vant-index {
         flex-direction: column;
     }
+    .nav-conta ul{
+        margin-top:0;
+        flex-direction:row;
+    }.tab-content{
+        padding:0;
+    }
 }
 
 /*========================================================Pagins 404=====================================================================*/
@@ -1935,6 +1941,7 @@ label.custom-file-upload {
 }
 
 .container_post_info p {
+    float: right;
     margin: 0;
 }
 
@@ -1945,6 +1952,7 @@ label.custom-file-upload {
 
 .forum_comments .ml-5 {
     margin-left: 5rem;
+    padding: 5px;
 }
 
 .forum_comments img {
@@ -2868,10 +2876,6 @@ label.custom-file-upload {
 }
 
 @media(max-width:970px) {
-    .row {
-        flex-direction: column;
-    }
-
     .contact-section .left-side {
         width: 100%;
         border-right: 0;
