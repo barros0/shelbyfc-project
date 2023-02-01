@@ -15,4 +15,9 @@ class Subscription extends Model
     {
         return $query->where('state', 'Activa');
     }
+
+    function user()
+    {
+        return $this->hasOne(User::class, 'user_id','id');
+    }
 }
