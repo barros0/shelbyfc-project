@@ -161,6 +161,10 @@ input.btn-login:disabled {
     background-color: #f62e33 !important;
 }
 
+.hidden{
+    display: none !important;
+}
+
 .form-profile {
     padding-left: 20px;
     padding-right: 20px;
@@ -2216,7 +2220,7 @@ label.custom-file-upload {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     top: 0;
     left: 0;
     background-color: rgb(0, 0, 0);
@@ -2703,7 +2707,7 @@ label.custom-file-upload {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
+    z-index: 0;
 
 }
 
@@ -2780,7 +2784,18 @@ label.custom-file-upload {
 
 @media(max-width:1200px) {
     .term-box{
-        width: 80%;
+        width: 90%;
+
+    }
+}
+
+@media(max-width:500px) {
+    .term-box{
+        width: 90%;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.2rem;
     }
 }
 

@@ -65,7 +65,17 @@
                                     {{ $reply->comment }}
                                 </div>
                             </div>
+
+                            <form style="display: none;" action="{{ route('forum.reply', $reply->id) }}" method="post">
+                                @csrf
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                <input type="hidden" name="comment_id" value="{{ $reply->id }}">
+                                <input type="text" name="reply" id="reply" placeholder="Responder">
+                                <button type="submit">Responder</button>
+                            </form>
                         </div>
+
+
                     @endforeach
                 </div>
             @endforeach

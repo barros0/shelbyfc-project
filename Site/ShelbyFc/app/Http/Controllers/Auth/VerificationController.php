@@ -56,6 +56,7 @@ class VerificationController extends Controller
 
         if(empty($user->email_verified_at)){
             $user->email_verified_at = Carbon::now();
+            $user->status = 2;
             $user->save();
 
             Session::flash('success','Email confirmado!');

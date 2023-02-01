@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Carbon\Carbon;
-
 
 class Subscription extends Model
 {
@@ -35,5 +34,16 @@ class Subscription extends Model
     {
         return $this->hasone(User::class, 'id', 'user_id');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('state', 'Activa');
+    }
+
+    function user()
+    {
+        return $this->hasOne(User::class, 'user_id','id');
+    }
+
 
 }

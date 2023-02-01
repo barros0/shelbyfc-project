@@ -16,8 +16,8 @@
 
     <div class="sidebar-links">
         <ul>
-            <li class="active-tab tooltip-element" data-tooltip="0">
-                <a href="{{route('admin.dashboard')}}" class="active" data-active="0">
+            <li class=" @if(Route::is('admin.dashboard')) active-tab @endif tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.dashboard')}}"  class="active" >
                     <div class="icon">
                         <i class='bx bx-tachometer'></i>
                         <i class='bx bxs-tachometer'></i>
@@ -34,7 +34,7 @@
 
         <h4 class="hide">Noticias</h4>
         <ul>
-            <li class="tooltip-element" data-tooltip="0">
+            <li class=" @if(Route::is('admin.news.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.news.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-news'></i>
@@ -44,7 +44,7 @@
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.categories.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.categories.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
@@ -61,7 +61,7 @@
 
         <h4 class="hide">Suporte</h4>
         <ul>
-            <li class="tooltip-element" data-tooltip="0">
+            <li class=" @if(Route::is('admin.faqs.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.faqs.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-question-mark'></i>
@@ -71,7 +71,7 @@
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.contacts.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.contacts.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-support'></i>
@@ -80,13 +80,13 @@
                     <span class="link hide">Contactos</span>
                 </a>
             </li>
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.terms.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.terms.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-terminal' ></i>
                         <i class='bx bxs-terminal' ></i>
                     </div>
-                    <span class="link hide">Terms & Conditions</span>
+                    <span class="link hide">Termos & Condições</span>
                 </a>
             </li>
             <div class="tooltip">
@@ -100,17 +100,17 @@
 
         <h4 class="hide">Jogos</h4>
         <ul>
-            <li class="tooltip-element" data-tooltip="0">
+            <li class=" @if(Route::is('admin.games.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.games.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-calendar'></i>
                         <i class='bx bxs-calendar'></i>
                     </div>
-                    <span class="link hide">Calendario</span>
+                    <span class="link hide">Jogos</span>
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.teams.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.teams.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-football'></i>
@@ -120,7 +120,7 @@
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.tickets.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.tickets.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-folder'></i>
@@ -130,7 +130,7 @@
                 </a>
             </li>
 
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.dashboard.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="#" data-active="1">
                     <div class="icon">
                         <i class='bx bx-money-withdraw'></i>
@@ -139,7 +139,7 @@
                     <span class="link hide">Apostas</span>
                 </a>
             </li>
-            <li class="tooltip-element" data-tooltip="1">
+            <li class=" @if(Route::is('admin.inscrever.*')) active-tab @endif tooltip-element" data-tooltip="1">
                 <a href="{{route('admin.inscrever.index')}}" data-active="1">
                     <div class="icon">
                         <i class='bx bx-money-withdraw'></i>
@@ -149,7 +149,7 @@
                 </a>
             </li>
             <div class="tooltip">
-                <span class="show">Calendario</span>
+                <span class="show">Jogos</span>
                 <span>Equipas</span>
                 <span>Bilhetes</span>
                 <span>Apostas</span>
@@ -159,7 +159,7 @@
 
 
         <ul>
-            <li class="tooltip-element" data-tooltip="0">
+            <li class=" @if(Route::is('admin.users.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.users.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-user'></i>
@@ -178,6 +178,7 @@
                 </a>
             </li>
             <li class="tooltip-element" data-tooltip="0">
+            <li class=" @if(Route::is('admin.withdraw.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.withdraw.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-money'></i>
