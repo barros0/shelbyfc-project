@@ -88,11 +88,11 @@ $("#jogos").click(function(){
    $x = $("#jogos_menu").css("display");
 
    if ($x == "none"){
-    $(this).child("i").attr('class', 'bx bxs-up-arrow');
+    $(this).children("i").attr('class', 'bx bxs-up-arrow');
     $("#jogos_menu").css("display", "block");
     
    }else{
-    $(this).child("i").attr('class', 'bx bxs-down-arrow');
+    $(this).children("i").attr('class', 'bx bxs-down-arrow');
     $("#jogos_menu").css("display", "none");
 
    }
