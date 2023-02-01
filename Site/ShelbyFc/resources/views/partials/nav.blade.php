@@ -134,23 +134,51 @@
             <a href="https://teste.social-bubble.pt">Loja Online</a>
             <a href="{{ route('forum.home') }}">Forum</a>
             <a href="{{ route('noticias') }}">Notícias</a>
-            <p>Jogos<i class='bx bxs-down-arrow'></i></p>
+            <p id="jogos">Jogos<i class='bx bxs-down-arrow'></i></p>
+            <div id="jogos_menu" style="display:none">
+                <a class=""
+                    href="{{ route('jogos') }}">
+                    Calendário
+                </a>
+                <a class=""
+                    href="{{ route('resultados') }}">
+                    Resultados
+                </a>
+                <a class=""
+                    href="{{ route('tickets') }}">
+                    Bilheteira
+                </a>
+      
+                <a class=""
+                    href="{{ route('tobet') }}">
+                    Apostar
+                </a>
+        </div>
+            <p id="suporte">Suporte<i class='bx bxs-down-arrow'></i></p>
 
-
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
-
-            <p>Suporte<i class='bx bxs-down-arrow'></i></p>
+                       
+            <div id="suporte_menu" style="display:none">
+                <a class=""
+                    href="{{ route('sobre') }}">
+                    Quem Somos
+                </a>
+     
+                <a class="" href="{{ route('faqs') }}">
+                    FAQs
+                </a>
+      
+                <a class=""
+                    href="{{ route('terms') }}">
+                    Termos e Condições
+                </a>
+       
+                <a class=""
+                    href="{{ route('contacts') }}">
+                    Contactos
+                </a>
+        </div>
             <a href="{{ route('inscrever') }}">Sócio</a>
+
         </div>
     </div>
 </nav>

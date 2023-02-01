@@ -82,3 +82,35 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+
+$("#jogos").click(function(){
+
+   $x = $("#jogos_menu").css("display");
+
+   if ($x == "none"){
+    
+    $("#jogos_menu").css("display", "block");
+    
+   }else{
+
+    $("#jogos_menu").css("display", "none");
+
+   }
+
+});
+
+$("#suporte").click(function(){
+
+    $x = $("#suporte_menu").css("display");
+ 
+    if ($x == "none"){
+     
+     $("#suporte_menu").css("display", "block");
+     
+    }else{
+ 
+     $("#suporte_menu").css("display", "none");
+ 
+    }
+ 
+ });
