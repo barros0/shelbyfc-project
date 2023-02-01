@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminForumController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\NewsController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\SobreController;
 use \App\Http\Controllers\WithdrawController;
 use App\Http\Controllers\TicketsController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\ForumCommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -144,8 +146,11 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['admin', 
     Route::get('/publicar-resultados/{game}', [GamesController::class, 'post_results'])->name('games.publish.results');
     Route::post('/publicar-resultados/{game}', [GamesController::class, 'dopost_results'])->name('games.publish.doresults');
 
-    Route::resource('/socios', SubscriptionController::class);
+    Route::resource('/subscriptions', SubscriptionController::class);
     Route::resource('/tickets', TicketsController::class);
+    Route::resource('/comments', ForumCommentsController::class);
+    Route::resource('/replies', ForumRepliesController::class);
+    Route::resource('/forum_posts', AdminForumController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/news', NewsController::class);
     Route::resource('/inscrever', InscreverController::class);

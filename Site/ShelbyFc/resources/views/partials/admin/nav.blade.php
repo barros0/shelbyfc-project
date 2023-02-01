@@ -157,7 +157,7 @@
         </ul>
 
 
-
+        <h4 class="hide">Utilizadores</h4>
         <ul>
             <li class=" @if(Route::is('admin.users.*')) active-tab @endif tooltip-element" data-tooltip="0">
                 <a href="{{route('admin.users.index')}}" class="active" data-active="0">
@@ -169,7 +169,7 @@
                 </a>
             </li>
             <li class="tooltip-element" data-tooltip="0">
-                <a href="{{route('admin.socios.index')}}" class="active" data-active="0">
+                <a href="{{route('admin.subscriptions.index')}}" class="active" data-active="0">
                     <div class="icon">
                         <i class='bx bx-user'></i>
                         <i class='bx bxs-user'></i>
@@ -193,6 +193,37 @@
                 <span>Tranferências</span>
             </div>
         </ul>
+
+
+
+
+        <h4 class="hide">Forum</h4>
+        <ul>
+            <li class=" @if(Route::is('admin.forum_posts.*')) active-tab @endif tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.forum_posts.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-comment-dots' ></i>
+                        <i class='bx bx-comment-dots' ></i>
+                    </div>
+                    <span class="link hide">Forum Posts</span>
+                </a>
+            </li>
+            <li class=" @if(Route::is('admin.withdraw.*')) active-tab @endif tooltip-element" data-tooltip="0">
+                <a href="{{route('admin.withdraw.index')}}" class="active" data-active="0">
+                    <div class="icon">
+                        <i class='bx bx-money'></i>
+                        <i class='bx bxs-money'></i>
+                    </div>
+                    <span class="link hide">Tranferências</span>
+                </a>
+            </li>
+
+            <div class="tooltip">
+                <span class="show">Utilizadores</span>
+                <span>Tranferências</span>
+            </div>
+        </ul>
+
 
 
     <div class="sidebar-footer">

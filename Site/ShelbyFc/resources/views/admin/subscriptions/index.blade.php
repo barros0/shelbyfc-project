@@ -24,20 +24,20 @@
             </tr>
             </thead>
             <tbody>
-            @foreach ($users_subscribed as $user)
+            @foreach ($subscriptions as $subscription)
                 <tr>
-                    <td>{{ $user->id }}</td>
-                    <td><img style="max-height: 40px" src="{{asset('images/users/'. $user->DadosUser->image)}}" alt=""></td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->state }}</td>
-                    <td>{{ $user->created_at }}</td>
-                    <td>{{ $user->expires_at }}</td>
+                    <td>{{ $subscription->id }}</td>
+                    <td><img style="max-height: 40px" src="{{asset('images/users/'. $subscription->DadosUser->image)}}" alt=""></td>
+                    <td>{{ $subscription->name }}</td>
+                    <td>{{ $subscription->email }}</td>
+                    <td>{{ $subscription->state }}</td>
+                    <td>{{ $subscription->created_at }}</td>
+                    <td>{{ $subscription->expires_at }}</td>
                     <td>
-                        @if($user->state != 'Ativa')
-                        <a href="{{route('admin.socios.show', $user) }}" class="btn">Aprovar / Negar</a>
+                        @if($subscription->state != 'Ativa')
+                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Aprovar / Negar</a>
                         @else
-                        <a href="{{route('admin.socios.show', $user) }}" class="btn">Visualizar</a>
+                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Visualizar</a>
                         @endif
                     </td>
                 </tr>

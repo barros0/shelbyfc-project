@@ -3,13 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\forum_posts_comment;
-use App\Models\Forum_posts_images;
-use App\Models\Forum_posts_replies;
-use App\Models\Forum_post;
 use Illuminate\Http\Request;
-use Session;
 
-class AdminForumController extends Controller
+class ForumCommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +14,7 @@ class AdminForumController extends Controller
      */
     public function index()
     {
-        $posts = Forum_post::all();
-        $posts_images = Forum_posts_images::get();
-
-        return view('admin.forum_posts.index', compact('posts', 'posts_images'));
+        //
     }
 
     /**
@@ -51,11 +44,9 @@ class AdminForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Forum_post $forum_post)
+    public function show($id)
     {
-        $posts_images = Forum_posts_images::get();
-
-        return view('admin.forum_posts.show', compact('forum_post', 'posts_images'));
+        //
     }
 
     /**
@@ -87,11 +78,11 @@ class AdminForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Forum_post $forum_post)
+    public function destroy(forum_posts_comment $comments)
     {
-        $forum_post->delete();
+        $comments->delete();
 
-        Session::flash('success', 'Post Eliminado!');
+        Session::flash('success', 'Comentario Eliminado!');
         return back();
     }
 }

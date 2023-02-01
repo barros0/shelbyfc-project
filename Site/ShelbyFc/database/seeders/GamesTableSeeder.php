@@ -55,7 +55,7 @@ class GamesTableSeeder extends Seeder
                 'lose' => '2.00',
                 'result_home' => '2',
                 'result_opponent' => '2',
-                'result' => 'win',
+                'result' => 'draw',
                 'created_at' => '2023-02-14 13:38:10',
                 'updated_at' => '2023-02-15 12:18:10',
             ],
