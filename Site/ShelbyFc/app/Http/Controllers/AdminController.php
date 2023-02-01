@@ -19,12 +19,12 @@ class AdminController extends Controller
         $users = User::count();
         $contact = Contact::count();
         $subscription = Subscription::Active()->count();
-        $forum_posts = Forum_post::orderBy('created_at', 'desc')->first();
+        $forum_post = Forum_post::orderBy('created_at', 'desc')->first();
 
         $lastgames = Game::orderBy('datetime_game', 'desc')->LastGames()->get()->take(2);
         $nextgames = Game::orderBy('datetime_game', 'desc')->NextGames()->get()->take(2);
 
-        return view('admin.index', compact('news', 'users', 'subscription', 'contact', 'forum_posts', 'lastgames','nextgames'));
+        return view('admin.index', compact('news', 'users', 'subscription', 'contact', 'forum_post', 'lastgames','nextgames'));
     }
 
 }

@@ -86,7 +86,7 @@
                         <i class='bx bx-terminal' ></i>
                         <i class='bx bxs-terminal' ></i>
                     </div>
-                    <span class="link hide">Terms & Conditions</span>
+                    <span class="link hide">Termos & Condições</span>
                 </a>
             </li>
             <div class="tooltip">

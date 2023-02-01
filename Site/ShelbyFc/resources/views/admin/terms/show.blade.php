@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 
-@section('title', 'Terms & Conditions| Shelby FC')
+@section('title', 'Termos & Condições| Shelby FC')
 
 @section('content')
 
@@ -14,7 +14,7 @@
                 {{$term->texto}}
                 </textarea>
         </div>
-        
+
         <div class="form-group col-md-6">
             <label for="categoria">Categoria</label>
             <input disabled type="text" class="form-control" value="{{ $term->categoria }}">

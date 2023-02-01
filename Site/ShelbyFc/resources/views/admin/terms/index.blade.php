@@ -1,12 +1,12 @@
 @extends('layouts.admin.master')
 
 
-@section('title', 'Terms & Conditions | Shelby FC')
+@section('title', 'Termos & Condições | Shelby FC')
 
 @section('content')
 
 
-    <h1>Terms & Conditions</h1>
+    <h1>Termos & Condições</h1>
     <div class="form-menu d-flex justify-content-between">
         <div class="form-search">
             <input type="text" name="" class="form-control" placeholder="Search">
@@ -21,7 +21,7 @@
                 <th>Titulo</th>
                 <th>Categoria</th>
                 <th>Eliminar</th>
-            
+
             </tr>
             </thead>
             <tbody>
@@ -38,7 +38,7 @@
                             <button type="submit"><i class='bx bx-trash'></i></button>
                         </form>
                     </td>
-                   
+
                 </tr>
             @endforeach
             </tbody>
