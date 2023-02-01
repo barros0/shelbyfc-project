@@ -82,7 +82,7 @@
             </div>
 
         </div>
-        <div class="row text-center col-12 title-login">
+        <div class="row text-center col-12 title-login justify-content-center">
             <a href="{{route('forget.password.get')}}" class="trouble">NÃO CONSEGUE INICIAR SESSÃO?</a>
             <div class="linha-ajuda"></div>
         </div>
