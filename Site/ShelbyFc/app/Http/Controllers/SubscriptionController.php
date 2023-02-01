@@ -11,8 +11,8 @@ class SubscriptionController extends Controller
     //
     public function index()
     {
-        $users_subscribed = Subscription::all();
-        return view('admin.socios.index', compact('users_subscribed'));
+        $subscriptions = Subscription::all();
+        return view('admin.subscriptions.index', compact('subscriptions'));
     }
 
     
@@ -24,7 +24,7 @@ class SubscriptionController extends Controller
      */
     public function show(Subscription $subscription)
     {
-        return view('admin.socios.show', compact('subscription'));
+        return view('admin.subscriptions.show', compact('subscription'));
     }
 
 }
