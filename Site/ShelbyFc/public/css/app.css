@@ -2780,7 +2780,18 @@ label.custom-file-upload {
 
 @media(max-width:1200px) {
     .term-box{
-        width: 80%;
+        width: 90%;
+
+    }
+}
+
+@media(max-width:500px) {
+    .term-box{
+        width: 90%;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.2rem;
     }
 }
 
