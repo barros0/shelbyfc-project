@@ -136,47 +136,40 @@
             <a href="{{ route('noticias') }}">Notícias</a>
             <p id="jogos">Jogos<i class='bx bxs-down-arrow'></i></p>
             <div id="jogos_menu" style="display:none">
-                <a class=""
-                    href="{{ route('jogos') }}">
+                <a class="" href="{{ route('jogos') }}">
                     Calendário
                 </a>
-                <a class=""
-                    href="{{ route('resultados') }}">
+                <a class="" href="{{ route('resultados') }}">
                     Resultados
                 </a>
-                <a class=""
-                    href="{{ route('tickets') }}">
+                <a class="" href="{{ route('tickets') }}">
                     Bilheteira
                 </a>
-      
-                <a class=""
-                    href="{{ route('tobet') }}">
+
+                <a class="" href="{{ route('tobet') }}">
                     Apostar
                 </a>
-        </div>
+            </div>
             <p id="suporte">Suporte<i class='bx bxs-down-arrow'></i></p>
 
-                       
+
             <div id="suporte_menu" style="display:none">
-                <a class=""
-                    href="{{ route('sobre') }}">
+                <a class="" href="{{ route('sobre') }}">
                     Quem Somos
                 </a>
-     
+
                 <a class="" href="{{ route('faqs') }}">
                     FAQs
                 </a>
-      
-                <a class=""
-                    href="{{ route('terms') }}">
+
+                <a class="" href="{{ route('terms') }}">
                     Termos e Condições
                 </a>
-       
-                <a class=""
-                    href="{{ route('contacts') }}">
+
+                <a class="" href="{{ route('contacts') }}">
                     Contactos
                 </a>
-        </div>
+            </div>
             <a href="{{ route('inscrever') }}">Sócio</a>
 
         </div>
