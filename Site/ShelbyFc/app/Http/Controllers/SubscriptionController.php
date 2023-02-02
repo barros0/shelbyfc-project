@@ -6,6 +6,7 @@ use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use Carbon\Carbon;
 
 class SubscriptionController extends Controller
 {
@@ -16,7 +17,7 @@ class SubscriptionController extends Controller
         return view('admin.subscriptions.index', compact('subscriptions'));
     }
 
-    
+
     /**
      * Display the specified resource.
      *
@@ -30,9 +31,13 @@ class SubscriptionController extends Controller
 
     public function update(Request $request, Subscription $subscription)
     {
-        //
+        $request->validate([
+            'preco' => 'required|numeric',
+        ]);
 
         $subscription->state = 2;
+        $subscription->value = $request->preço;
+        $subscription->expires_at = Carbon::now()->addYear();
         $subscription->save();
 
         Session::flash('success', 'Subscrição Aprovada!');

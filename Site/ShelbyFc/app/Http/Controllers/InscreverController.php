@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PrecoSocioRequest;
 use App\Models\socio_price;
 use Illuminate\Http\Request;
 use Psy\Util\Str;
@@ -30,7 +31,7 @@ class InscreverController extends Controller
     {
         return view('admin.inscrever.create');
     }
-     
+
      /**
      * Store a newly created resource in storage.
      *
@@ -38,29 +39,25 @@ class InscreverController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(PrecoSocioRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'idade' => 'required',
-            'preco' => 'required',
-        ]);
 
         $item = new socio_price();
-        $item->name = $request->name;
-        $item->idade = $request->idade;
+        $item->name = $request->nome;
+        $item->min_age = $request->idade_minima;
+        $item->max_age = $request->idade_maxima;
         $item->preco = $request->preco;
 
         $item->save();
 
-        Session::flash('Sucesso!', 'Pacote Inserido!');
+        Session::flash('Success', 'Pacote Inserido!');
         return back();
     }
 
         /**
      * Display the specified resource.
      *
-     * @param \App\Models\socio_price 
+     * @param \App\Models\socio_price
      * @return \Illuminate\Http\Response
      */
     public function show(socio_price $item)
@@ -85,21 +82,16 @@ class InscreverController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param  \App\Models\socio_price $item
-     * @return  \Illuminate\Http\Response 
+     * @return  \Illuminate\Http\Response
      */
 
-    public function update(Request $request, socio_price $inscrever)
+    public function update(PrecoSocioRequest $request, socio_price $inscrever)
     {
 
-        $this->validate($request, [
-            'name_new' => 'required',
-            'idade_new' => 'required',
-            'preco_new' => 'required',
-        ]);
-
-        $inscrever->name = $request->name_new;
-        $inscrever->idade = $request->idade_new;
-        $inscrever->preco = $request->preco_new;
+        $inscrever->name = $request->nome;
+        $inscrever->min_age = $request->idade_minima;
+        $inscrever->max_age = $request->idade_maxima;
+        $inscrever->preco = $request->preco;
 
         $inscrever->save();
 

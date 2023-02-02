@@ -181,4 +181,36 @@ class PayPalController extends Controller
         }
     }
 
+    public function success_transaction_subscription(Subscription $subsription, Request $request)
+    {
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->getAccessToken();
+        $response = $provider->capturePaymentOrder($request['token']);
+
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            $subsription->restore();
+
+
+            Session::flash('success', 'Obrigado pela sua subscrição! Receberá uma notificação no seu email quando for aprovada');
+            return redirect()->route('perfil');
+
+        } else {
+            return back()->with('error', $response['message'] ?? 'Algo de errado aconteceu.');
+        }
+
+    }
+
+
+    public function cancelTransactionSubscription(Request $request)
+    {
+
+        return redirect()
+            ->route('inscrever')
+            ->with('error', $response['message'] ?? 'Você cancelou o pagamento!');
+    }
+
+
+
+
 }

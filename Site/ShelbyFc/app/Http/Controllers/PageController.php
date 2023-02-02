@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BetsPayment;
 use App\Models\Contact;
 use App\Models\Country;
 use App\Models\Game;
@@ -17,6 +18,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 
 class PageController extends Controller
@@ -106,6 +108,8 @@ class PageController extends Controller
         $subscription->postal_code = $request->zipcode;
         $subscription->nif = $request->nif;
         $subscription->birthdate = $request->birthdate;
+        $subscription->birthdate = $request->birthdate;
+        $subscription->deleted_at = Carbon::now();
         $subscription->save();
 
         $user = Auth::user();
@@ -115,6 +119,53 @@ class PageController extends Controller
         $user->postal_code = $request->zipcode;
         $user->nif = $request->nif;
         $user->birthdate = $request->birthdate;
+
+        $age = Carbon::parse($request->birthdate)->diff(Carbon::now())->y;
+
+        $preco = socio_price::where('min_age','>=',$age)->where('max_age','<=',$age)->first()->preco;
+
+        if(empty($preco)){
+            Session::flash('alert','Lamentamos mas não temos um preço adquado á sua idade!');
+            return back();
+        }
+
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('paypal.success.transaction.subscription',$subscription),
+                "cancel_url" => route('paypal.cancel.transaction.subscription'),
+            ],
+            "purchase_units" => [
+                0 => [
+                    "amount" => [
+                        "currency_code" => "EUR",
+                        "value" => $preco
+                    ],
+                ],
+
+            ]
+        ]);
+
+        if (isset($response['id']) && $response['id'] != null) {
+
+
+            // redirect to approve href
+            foreach ($response['links'] as $links) {
+                if ($links['rel'] == 'approve') {
+                    return redirect()->away($links['href']);
+                }
+            }
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', 'Algo de errado aconteceu :( .');
+        } else {
+            return redirect()
+                ->route('createTransaction')
+                ->with('error', $response['message'] ?? 'Algo está errado :( .');
+        }
 
 
         Session::flash('success', 'Obrigado pela sua subscrição! Receberá uma notificação no seu email quando for aprovada');

@@ -20,7 +20,7 @@ Para criar as tabelas:
 php artisan migrate
 ```
 
-para inserir os dados default nas tabelas | users e paises
+para inserir os dados default nas tabelas | Utilizadores, noticias, jogos etc...
 ```s
 php artisan db:seed   
 ```
@@ -29,23 +29,27 @@ php artisan db:seed
 npm install & npm run build
 ```
 
+<h3>!!Atenção!!</h3>
+<p>
+O login login com redes sociais só funciona com o "php artisan serve" em localhost, devido ás urls autorizadas pela google e facebook
+<a href="http://127.0.0.1:8000/login">http://127.0.0.1:8000/login</a>
+</p>
 
-// inicia server laravel
 ```s
 php artisan serve
 ```
-! o login login com redes sociais só funciona assim em localhost, devido as urls autorizadas pela google e facebook
-http://127.0.0.1:8000/login
+// inicia server laravel local
 
 Configurar chaves no .env
 
 Documentação de packages:
 
-PayPal: https://github.com/srmklive/laravel-paypal | https://srmklive.github.io/laravel-paypal/docs.html
+PayPal: https://github.com/srmklive/laravel-paypal |
+https://srmklive.github.io/laravel-paypal/docs.html
 
 
 Created by:
 - **[Micael Pereira](https://micael.cansados.pt)**
-- **[João Barros](https://)**
-- **[João Duarte](https://)**
-- **[André Sousa](https://)**
+- **[João Barros](https://barros0.github.io/portfolio-site/)**
+- **[João Duarte](https://bartz89.github.io/CurriculumVittae/)**
+- **[André Sousa](https://www.andresousadev.com/)**

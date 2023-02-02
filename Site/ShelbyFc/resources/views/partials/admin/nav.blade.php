@@ -136,7 +136,7 @@
                         <i class='bx bx-money-withdraw'></i>
                         <i class='bx bxs-money-withdraw'></i>
                     </div>
-                    <span class="link hide">Inscrever</span>
+                    <span class="link hide">Preço - Sócios</span>
                 </a>
             </li>
             <div class="tooltip">

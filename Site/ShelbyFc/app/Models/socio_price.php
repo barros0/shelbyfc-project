@@ -15,7 +15,8 @@ class socio_price extends Model
 
     protected $fillable = [
         'name',
-        'idade',
+        'min_age',
+        'max_age',
         'preco',
     ];
 

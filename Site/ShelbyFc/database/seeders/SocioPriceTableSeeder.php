@@ -21,9 +21,9 @@ class SocioPriceTableSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         $socio_price = [
-            ['name' => 'Júnior', 'idade' => '>13', 'preco' => '5'],
-            ['name' => 'Regular', 'idade' => '15+', 'preco' => '20'],
-            ['name' => 'Sénior', 'idade' => '60+', 'preco' => '15'],
+            ['name' => 'Júnior', 'max_age' => '0','min_age' => '13', 'preco' => '5'],
+            ['name' => 'Regular', 'max_age' => '14','min_age' => '60', 'preco' => '20'],
+            ['name' => 'Sénior', 'max_age' => '61','min_age' => '75', 'preco' => '15'],
         ];
 
         DB::table('socio_price')->insert($socio_price);
