@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('socio_price', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('idade')->nullable();
+            $table->integer('min_age')->nullable();
+            $table->integer('max_age')->nullable();
             $table->double('preco')->nullable();
             $table->timestamps();
             $table->softDeletes();

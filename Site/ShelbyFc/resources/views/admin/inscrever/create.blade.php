@@ -13,11 +13,18 @@
             <div class="col-lg-9">
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required>
+                    <input type="text" class="form-control" name="nome" id="name" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Idade</label>
-                    <input type="text" class="form-control" name="idade" id="idade" placeholder="Idade" required>
+                    <label for="title_new">Idade minima</label>
+                    <input type="text" class="form-control" name="idade_minima" id="idade_new"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title_new">Idade máxima</label>
+                    <input type="text" class="form-control" name="idade_maxima" id="idade_new"
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="name">Preço</label>

@@ -103,7 +103,7 @@
                             <!--para cada registo de pacote-->
                             <tr>
                                 <td>{{ $sociopacote->name }}</td>
-                                <td>{{ $sociopacote->idade }}</td>
+                                <td>{{ $sociopacote->min_age }} - {{ $sociopacote->max_age }}</td>
                                 <td>{{ $sociopacote->preco }} €/Mês</td>
                             </tr>
                         @endforeach

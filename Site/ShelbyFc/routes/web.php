@@ -159,4 +159,10 @@ Route::group(['prefix' => 'paypal/', 'as' => 'paypal.'], function () {
     Route::get('cancel-transaction-ticket', [PayPalController::class, 'cancelTransactionTicket'])->name('cancel.transaction.ticket');
 
     Route::get('pay-subscription/{subscription}', [PayPalController::class, 'pay_subscription'])->name('pay.subscription');
+
+
+    Route::get('success-transaction-subscription/{subscription}', [PayPalController::class, 'success_transaction_subscription'])->name('success.transaction.subscription');
+    Route::get('cancel-transaction-subscription', [PayPalController::class, 'cancelTransactionSubscription'])->name('cancel.transaction.subscription');
 });
+
+

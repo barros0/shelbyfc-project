@@ -15,17 +15,24 @@
             <div class="col-lg-9">
                 <div class="form-group">
                     <label for="title_new">Nome</label>
-                    <input type="text" class="form-control" name="name_new" id="name_new" value="{{ $inscrever->name }}"
+                    <input type="text" class="form-control" name="nome" id="nome" value="{{ $inscrever->name }}"
                         required>
                 </div>
                 <div class="form-group">
-                    <label for="title_new">Idade</label>
-                    <input type="text" class="form-control" name="idade_new" id="idade_new" value="{{ $inscrever->idade }}"
-                        required>
+                    <label for="title_new">Idade minima</label>
+                    <input type="text" class="form-control" name="idade_minima" id="idade_new" value="{{ $inscrever->min_age }}"
+                           required>
                 </div>
+
+                <div class="form-group">
+                    <label for="title_new">Idade máxima</label>
+                    <input type="text" class="form-control" name="idade_maxima" id="idade_new" value="{{ $inscrever->max_age }}"
+                           required>
+                </div>
+
                 <div class="form-group">
                     <label for="title_new">Preço</label>
-                    <input type="text" class="form-control" name="preco_new" id="preco_new" value="{{ $inscrever->preco }}"
+                    <input type="text" class="form-control" name="preco" id="preco_new" value="{{ $inscrever->preco }}"
                         required>
                 </div>
                 <button type="submit" class="btn btn-primary">Atualizar Pacote</button>

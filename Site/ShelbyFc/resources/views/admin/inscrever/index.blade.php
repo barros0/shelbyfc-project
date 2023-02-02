@@ -18,22 +18,24 @@
             <tr class="header">
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Idade</th>
+                <th>Idade Min</th>
+                <th>Idade Max</th>
                 <th>Preço</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($inscrever as $item_db)
+            @foreach ($inscrever as $preco)
                 <tr>
-                    <td>{{ $item_db->id }}</td>
-                    <td>{{ $item_db->name }}</td>
-                    <td>{{ $item_db->idade }}</td>
-                    <td>{{ $item_db->preco }}</td>
+                    <td>{{ $preco->id }}</td>
+                    <td>{{ $preco->name }}</td>
+                    <td>{{ $preco->min_age }}</td>
+                    <td>{{ $preco->max_age }}</td>
+                    <td>{{ $preco->preco }}</td>
                     <td>
-                        <a href="{{ route('admin.inscrever.edit', $item_db) }}" class="btn"><i
+                        <a href="{{ route('admin.inscrever.edit', $preco) }}" class="btn"><i
                                 class='bx bx-edit-alt'></i></a>
-                        <form action="{{ route('admin.inscrever.destroy', $item_db) }}" method="post">
+                        <form action="{{ route('admin.inscrever.destroy', $preco) }}" method="post">
                             @method('delete')
                             @csrf
                             <button type="submit"><i class='bx bx-trash'></i></button>

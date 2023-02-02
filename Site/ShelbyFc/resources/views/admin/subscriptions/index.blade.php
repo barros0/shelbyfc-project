@@ -21,6 +21,7 @@
                 <th>Início Subscrição</th>
                 <th>Fim Subscrição</th>
                 <th>Ações</th>
+                <th>Subscrições</th>
             </tr>
             </thead>
             <tbody>
@@ -34,11 +35,7 @@
                     <td>{{ $subscription->created_at }}</td>
                     <td>{{ $subscription->expires_at }}</td>
                     <td>
-                        @if($subscription->state != 'Ativa')
-                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Aprovar</a>
-                        @else
-                        <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Visualizar</a>
-                        @endif
+                            <a href="{{route('admin.subscriptions.show', $subscription) }}" class="btn">Visualizar</a>
                     </td>
                 </tr>
             @endforeach

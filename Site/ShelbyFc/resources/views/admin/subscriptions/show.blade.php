@@ -39,7 +39,7 @@
                         <br>
                         <label for="nome">Cartão de Cidadão: </label> <span><a href="/users/cc/{{ $subscription->cc }}" target="_blank">Ver Documento</a></span>
                     </div>
-                
+
                     <div class="form-group col-md-6 p-3 ">
                         <h3 >Dados da Subscrição</h3>
                         <label for="nome">Estado: </label> <span>{{ $subscription->state }}</span>
@@ -51,17 +51,24 @@
 
                     <div class="form-group d-flex col-md-12 p-3 text-center justify-content-center">
                         @if($subscription->state == "Pendente")
-                        
+
             <form style="width:100%" action="{{ route('admin.subscriptions.update', $subscription->id) }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 @csrf
+                <div class="form-group">
+                    <label for="small_description_new">Preço</label>
+                    <input type="text" class="form-control" name="preco"
+                           value="" required>
+                </div>
+
+
                         <button type="submit" class="btn btn-primary" style="width: 50%;">Aprovar</button>
                     </form>
 
                         @else
                         @endif
                     </div>
-        
+
                 </div>
         </div>
     </div>
