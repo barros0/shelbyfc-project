@@ -1,11 +1,11 @@
 $(document).ready(function () {
     $("#option2").addClass("selected");
     $image = $("#image2").text();
-    $image = "http://shelbyfc.test/images/noticias/" + $image;
+    $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
     $("#image").attr("src", $image);
 
     $href = $("#href_link2").text();
-    $href = "http://shelbyfc.test/noticia/" + $href;
+    $href = +"/noticia/" + $href;
     $("#button_href").attr("href", $href);
 
     $date = $("#date2").text();
@@ -20,11 +20,11 @@ $(document).ready(function () {
         $("#option3").removeClass("selected");
 
         $image = $("#image1").text();
-        $image = "http://shelbyfc.test/images/noticias/" + $image;
+        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link1").text();
-        $href = "http://shelbyfc.test/noticia/" + $href;
+        $href = +"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date1").text();
@@ -40,11 +40,11 @@ $(document).ready(function () {
         $("#option3").removeClass("selected");
 
         $image = $("#image2").text();
-        $image = "http://shelbyfc.test/images/noticias/" + $image;
+        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link2").text();
-        $href = "http://shelbyfc.test/noticia/" + $href;
+        $href = +"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date2").text();
@@ -60,11 +60,11 @@ $(document).ready(function () {
         $("#option3").addClass("selected");
 
         $image = $("#image3").text();
-        $image = "http://shelbyfc.test/images/noticias/" + $image;
+        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link3").text();
-        $href = "http://shelbyfc.test/noticia/" + $href;
+        $href = +"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date3").text();
@@ -85,34 +85,34 @@ function closeNav() {
 
 $("#jogos").click(function(){
 
-   $x = $("#jogos_menu").css("display");
-   
-   if ($x == "none"){
-    $(this).children("i").attr('class', 'bx bxs-up-arrow');
-    $("#jogos_menu").css("display", "block");
-    
-   }else{
-    $(this).children("i").attr('class', 'bx bxs-down-arrow');
-    $("#jogos_menu").css("display", "none");
+    $x = $("#jogos_menu").css("display");
 
-   }
+    if ($x == "none"){
+        $(this).children("i").attr('class', 'bx bxs-up-arrow');
+        $("#jogos_menu").css("display", "block");
+
+    }else{
+        $(this).children("i").attr('class', 'bx bxs-down-arrow');
+        $("#jogos_menu").css("display", "none");
+
+    }
 
 });
 
 $("#suporte").click(function(){
 
     $x = $("#suporte_menu").css("display");
- 
+
     if ($x == "none"){
-    
-     $(this).children("i").attr('class', 'bx bxs-up-arrow');
-     $("#suporte_menu").css("display", "block");
-     
+
+        $(this).children("i").attr('class', 'bx bxs-up-arrow');
+        $("#suporte_menu").css("display", "block");
+
     }else{
- 
-     $(this).children("i").attr('class', 'bx bxs-down-arrow');
-     $("#suporte_menu").css("display", "none");
- 
+
+        $(this).children("i").attr('class', 'bx bxs-down-arrow');
+        $("#suporte_menu").css("display", "none");
+
     }
- 
- });
+
+});

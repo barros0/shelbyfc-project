@@ -163,7 +163,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShelbyFc/resources/views/tickets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../laragon/www/autoposts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -224,6 +224,12 @@
       <workItem from="1675098217203" duration="14451000" />
       <workItem from="1675163928315" duration="18318000" />
       <workItem from="1675255718990" duration="29687000" />
+      <workItem from="1675382933173" duration="2035000" />
+      <workItem from="1675464554902" duration="1838000" />
+      <workItem from="1675547594153" duration="1542000" />
+      <workItem from="1675555895539" duration="1877000" />
+      <workItem from="1675618038568" duration="1235000" />
+      <workItem from="1675722154449" duration="601000" />
     </task>
     <servers />
   </component>
