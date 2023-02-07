@@ -5,7 +5,7 @@ $(document).ready(function () {
     $("#image").attr("src", $image);
 
     $href = $("#href_link2").text();
-    $href = +"/noticia/" + $href;
+    $href = "https://"+window.location.hostname+"/noticia/" + $href;
     $("#button_href").attr("href", $href);
 
     $date = $("#date2").text();
@@ -24,7 +24,7 @@ $(document).ready(function () {
         $("#image").attr("src", $image);
 
         $href = $("#href_link1").text();
-        $href = +"/noticia/" + $href;
+        $href = "https://"+window.location.hostname+"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date1").text();
@@ -44,7 +44,7 @@ $(document).ready(function () {
         $("#image").attr("src", $image);
 
         $href = $("#href_link2").text();
-        $href = +"/noticia/" + $href;
+        $href = "https://"+window.location.hostname+"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date2").text();
