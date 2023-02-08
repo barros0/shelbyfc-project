@@ -1,11 +1,11 @@
 $(document).ready(function () {
     $("#option2").addClass("selected");
     $image = $("#image2").text();
-    $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
+    $image = "http://"+window.location.hostname+"/images/noticias/" + $image;
     $("#image").attr("src", $image);
 
     $href = $("#href_link2").text();
-    $href = "https://"+window.location.hostname+"/noticia/" + $href;
+    $href = "http://"+window.location.hostname+"/noticia/" + $href;
     $("#button_href").attr("href", $href);
 
     $date = $("#date2").text();
@@ -20,11 +20,11 @@ $(document).ready(function () {
         $("#option3").removeClass("selected");
 
         $image = $("#image1").text();
-        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
+        $image = "http://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link1").text();
-        $href = "https://"+window.location.hostname+"/noticia/" + $href;
+        $href = "http://"+window.location.hostname+"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date1").text();
@@ -40,11 +40,11 @@ $(document).ready(function () {
         $("#option3").removeClass("selected");
 
         $image = $("#image2").text();
-        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
+        $image = "http://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link2").text();
-        $href = "https://"+window.location.hostname+"/noticia/" + $href;
+        $href = "http://"+window.location.hostname+"/noticia/" + $href;
         $("#button_href").attr("href", $href);
 
         $date = $("#date2").text();
@@ -60,7 +60,7 @@ $(document).ready(function () {
         $("#option3").addClass("selected");
 
         $image = $("#image3").text();
-        $image = "https://"+window.location.hostname+"/images/noticias/" + $image;
+        $image = "http://"+window.location.hostname+"/images/noticias/" + $image;
         $("#image").attr("src", $image);
 
         $href = $("#href_link3").text();
