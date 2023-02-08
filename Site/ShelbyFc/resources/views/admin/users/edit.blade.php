@@ -46,6 +46,13 @@
             </div>
 
 
+            <div class="form-group col-md-6">
+                <label for="name">É administrador?</label>
+                <input @if($user->is_admin) checked @endif type="checkbox" name="administrador" id="administrador" value="1">
+            </div>
+
+
+
             <div class="row">
                 <div class="col-sm-6">
                     <button type="submit" class="btn btn-primary">Inserir</button>

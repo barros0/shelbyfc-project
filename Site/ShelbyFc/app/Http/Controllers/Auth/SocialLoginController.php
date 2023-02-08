@@ -17,7 +17,7 @@ class SocialLoginController extends Controller
     }
 
     public function providerCallback(String $provider){
-return 1;
+
         try{
             $social_user = \Socialite::driver($provider)->user();
 
@@ -29,6 +29,10 @@ return 1;
 
             // If Social Account Exist then Find User and Login
             if($account){
+                if(empty($user->email_verified_at)){
+                    $account->user->email_verified_at = Carbon::now();
+                    $account->user->save();
+                }
                 auth()->login($account->user);
                 return redirect()->route('home');
             }
@@ -50,10 +54,10 @@ return 1;
                     $path = public_path('images/users/'.$name);
                     file_put_contents($path, $contents);
 
-                    $avatar = null;
+                    $avatar = $name;
                 }
                 else{
-                    $avatar = null;
+                    $avatar = 'noimage.png';
                 }
 
                 $user = User::create([
@@ -61,8 +65,11 @@ return 1;
                     'name'=>$social_user->getName(),
                     'image'=>$avatar,
                     'email_verified_at'=>Carbon::now(),
+                    'status'=>'Ativo',
                     'password'=>Str::random(50),
                 ]);
+                $user->email_verified_at = Carbon::now();
+                $user->save();
             }
 /*
   +id: "103984469427037044952"

@@ -13,7 +13,7 @@
         <table class="datatable">
             <thead>
             <tr class="header">
-                <th>User ID</th>
+                <th>ID</th>
                 <th>Imagem</th>
                 <th>Nome</th>
                 <th>Email</th>
@@ -21,7 +21,6 @@
                 <th>Início Subscrição</th>
                 <th>Fim Subscrição</th>
                 <th>Ações</th>
-                <th>Subscrições</th>
             </tr>
             </thead>
             <tbody>

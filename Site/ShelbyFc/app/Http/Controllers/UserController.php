@@ -262,6 +262,14 @@ class UserController extends Controller
             $user->password = bcrypt($request->password);
         }
 
+        if($request->administrador){
+            $user->is_admin = 1;
+        }
+        else{
+            $user->is_admin = 0;
+        }
+
+
         $user->name = $request->nome;
         $user->email = $request->email;
         $user->status = $request->estado;
